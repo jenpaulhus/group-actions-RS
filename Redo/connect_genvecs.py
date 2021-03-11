@@ -87,10 +87,10 @@ def process_connections(genus):
             if group['solvable']:
                 for gen_str in connected_genvec:
                     processGen(gen_str, genvec)
+                line = '|'.join([passport_label, str(genvec)])
             else:
-                genvec = connected_genvec.reverse()
+                line = '|'.join([passport_label, str(connected_genvec)])
 
-            line = '|'.join([passport_label, str(genvec)])
             wf.write(line + '\n')
         wf.close()
                 
