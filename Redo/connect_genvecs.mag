@@ -9,10 +9,10 @@
 
 /* Set the variable gxx below to the desired genus and also replace gxx in
       the string for the input file. */
-gxx:=2;
+gxx:=6;
 
 /* Input file */
-load "SupplementaryFiles/BreuerRaw/g02";
+load "SupplementaryFiles/BreuerRaw/g06";
 
 
 
@@ -60,62 +60,67 @@ end for;
 
 
 /* Regex patterns for magma generators */
-identity_regex := "Id\\(\\$\\)";
-base_regex := "\\$.(-?[0-9]+)";
+base_regex := "\\G.(-?[0-9]+)";
 power_regex := "\\^(-?[0-9]+)";
-conjugate_regex := "\\^\\$.(-?[0-9]+)";
 
-/* This function takes in a generator from a generating vector and returns
-      it written in terms of letters from the abstract groups page. */
-process_gen := function(gen, group_solvable)
+/* This function takes in a generator from a generating vector of a solvable
+      group and returns it written in terms of letters from the abstract 
+      groups page, along with a version of it to be used in sorting.
+   G_to_pc is used to rewrite inverse elements as elements raised
+      to positive powers for the purpose of sorting.
+*/
+process_gen := function(gen, G, G_to_pc)
 
-   if not group_solvable then
-      return gen;
-   end if;
+   gen_str := Sprintf("%o", gen);
+   parts := Split(gen_str, " * ");
 
-   parts := Split(gen, " * ");
-   letters := [];
+   /* When iterating through parts, processed_gen and to_sort_gen are built
+         backwards so that evaluating from right to left gives the correct 
+         permutation */
+   processed_gen := "";
+   to_sort_gen := "";
+
    for p in parts do
-      /* p has one of the following forms: $.i, $.i^j, $.i^$.j, Id($) */
-      is_match, match, match_seq := Regexp(identity_regex, p);
-      if is_match then
-         /* p has the form Id($) */
-         Append(~letters, "Id(G)");
+      /* p has one of the following forms: G.i, G.i^j, Id(G) */
+      if p eq "Id(G)" then
+         processed_gen := processed_gen cat "Id(G)";
+         to_sort_gen := to_sort_gen cat "Id(G)";
       else
-         is_match, match, match_seq := Regexp(base_regex, p);
+         is_match, base_match, match_seq := Regexp(base_regex, p);
          i := match_seq[1];
          /* 1 -> a, 2 -> b, and so on */
          letter := CodeToString(StringToInteger(i)+96);
-         if match eq p then
-            /* p has the form $.i */
-            Append(~letters, letter);
+         if base_match eq p then
+            /* p has the form G.i */
+            processed_gen := letter cat processed_gen;
+            to_sort_gen := letter cat to_sort_gen;
          else
-            /* p has one of the following forms: $.i^j, $.i^$.j */
-            remaining := Substring(p, #match+1, #p);
+            /* p has the form G.i^j */
+            remaining := Substring(p, #base_match+1, #p);
             is_match, match, match_seq := Regexp(power_regex, remaining);
-            if is_match then
-               /* p has the form $.i^j */
-               j := match_seq[1];
-               Append(~letters, Sprintf("%o^%o", letter, j));
-            else
-               /* p has the form $.i^$.j */
-               is_match, match, match_seq := Regexp(conjugate_regex, remaining);
-               j := match_seq[1];
-               letter2 := CodeToString(StringToInteger(j)+96);
-               Append(~letters, Sprintf("%o^%o", letter, letter2));
+            j := StringToInteger(match_seq[1]);
+            processed_gen := Sprintf("%o^%o", letter, j) cat processed_gen;
+            if j ge 2 then
+               for k in [1..j] do
+                  to_sort_gen := letter cat to_sort_gen;
+               end for;
+            else /* j is negative */
+               /* The isomorphism G_to_pc maps G.i of the FP group G to the
+                     corresponding element in the PC group so that we can use
+                     the Order function */
+               fp_ele := eval base_match;
+               pc_ele := G_to_pc(fp_ele);
+               order := Order(pc_ele);
+               power := order + j;
+               for k in [1..power] do
+                  to_sort_gen := letter cat to_sort_gen;
+               end for;
             end if;
          end if;
       end if;
    end for;
- 
-   /* Iterate backwards through letters to build processed_gen so that 
-         evaluating from right to left gives the correct permutation */
-   processed_gen := "";
-   for i:=#letters to 1 by -1 do
-      processed_gen := processed_gen cat letters[i];
-   end for;
 
-   return processed_gen;
+   return processed_gen, to_sort_gen;
 
 end function;
 
@@ -124,12 +129,12 @@ end function;
 /* This procedure sorts records from RepresentativesEpimorphisms
       by conjugacy class label vectors and replaces recs[i]`Con
       with index, label pairs. */
-sort_recs_by_cc_label := procedure(~recs, G)
-   cc := ConjugacyClasses(G);
-   cm := ClassMap(G);
-   pm := PowerMap(G);
-   gens := Generators(G);
-   reps, finalkeys, cc_labels := ordercc(G, cc, cm, pm, gens);
+sort_recs_by_cc_label := procedure(~recs, group)
+   cc := ConjugacyClasses(group);
+   cm := ClassMap(group);
+   pm := PowerMap(group);
+   gens := Generators(group);
+   reps, finalkeys, cc_labels := ordercc(group, cc, cm, pm, gens);
 
    /* Create associative array of conjugacy class label and sorting info,
          indexed by conjugacy class representative */
@@ -165,17 +170,25 @@ end procedure;
 
 /* Regex pattern for group generators on abstract groups pages */
 group_gen_regex := "([a-z])(\\^-?[0-9]+)?";
-identity_regex2 := "Id\\(G\\)";
 
-/* This function is a helper function for compare_genvecs_s to
+
+
+/* This function is a helper function for compare_genvecs_s (unused) to
       determine the ordering of the connected generating vectors.
    gen1 and gen2 are elements of two different vectors, but they are
-   at the same position in the two vectors (which have the same length). */
+   at the same position in the two vectors (which have the same length). 
+
+   Id(G) takes precedence, then the alphabetical order of the first letter is
+      considered, then the power of the first letter 
+      (power = 1 takes precedence), and if everything
+      is the same up until this point, the next letter is considered. 
+   Ex: Id(G) < a < ab < abc < ab^2 < a^-1b < a^2 < a^2b < b 
+*/
 compare_gens := function(gen1, gen2)
 
    /* gen1, gen2 might be Id(G) */
-   is_match1, match1, match_seq1 := Regexp(identity_regex2, gen1);
-   is_match2, match2, match_seq2 := Regexp(identity_regex2, gen2);
+   is_match1 := gen1 eq "Id(G)";
+   is_match2 := gen2 eq "Id(G)";
    if is_match1 and not is_match2 then
       return -1;
    elif is_match1 and is_match2 then
@@ -207,7 +220,7 @@ compare_gens := function(gen1, gen2)
       end if;
       /* Either both are to the first power or both are not */
       if #match_seq1 eq 2 then
-         /* Both have a power greater than 1, so order by that power treated
+         /* Both have a power not equal to 1, so order by that power treated
                as an integer */
          power1 := StringToInteger(Substring(match_seq1[2], 2, #match_seq1[2]));
          power2 := StringToInteger(Substring(match_seq2[2], 2, #match_seq2[2]));
@@ -236,7 +249,9 @@ compare_gens := function(gen1, gen2)
    return ordering;
 end function;
 
-/* This function is a comparison function to be used in sorting lists of
+/* Unused function
+
+   This function is a comparison function to be used in sorting lists of
       connected generating vectors lexicographically for solvable groups.
    It determines how genvec1 and genvec2 should be ordered relative to each 
       other. 
@@ -255,19 +270,76 @@ compare_genvecs_s := function(genvec1, genvec2)
 end function;
 
 /* This function is a comparison function to be used in sorting lists of
-      connected generating vectors lexicographically for unsolvable groups.
+      connected generating vectors, or lists of permutations, lexicographically
+      for nonsolvable groups.
    It determines how genvec1 and genvec2 should be ordered relative to each 
       other. 
-   genvec1 and genvec2 must have the same length. */
+   genvec1 and genvec2 must have the same length. Corresponding elements of
+      genvec1 and genvec2 must have the same cycle type and be sorted by the 
+      numbers in the cycle type. 
+*/
 compare_genvecs_ns := function(genvec1, genvec2)
-   /* to do */
+   for i in [1..#genvec1] do
+      perm1 := genvec1[i];
+      perm2 := genvec2[i];
+      cycles1 := Split(perm1, ")(");
+      cycles2 := Split(perm2, ")(");
+      for i in [1..#cycles1] do
+         nums1 := Split(cycles1[i], ", ");
+         nums2 := Split(cycles2[i], ", ");
+         for j in [1..#nums1] do
+            num1 := StringToInteger(nums1[j]);
+            num2 := StringToInteger(nums2[j]);
+            ordering := num1 - num2;
+            if ordering ne 0 then
+               return ordering;
+            end if;
+         end for;
+      end for;
+   end for;
    return 0;
 end function;
 
-/* This procedure sorts connected_genvecs based on group_solvable */
-sort_connected_genvecs := procedure(~connected_genvecs, group_solvable)
+/* This function takes in a permutation (string), sorts it by the numbers 
+      in the cycle type, and returns the sorted version as a string */
+rewrite_perm := function(perm)
+   perm_str := Sprintf("%o", perm);
+   cycles := Split(perm_str, ")(");
+   lengths := [#cycle : cycle in cycles];
+   ParallelSort(~lengths, ~cycles);
+   new_str := "(";
+   for cycle in cycles do
+      new_str := new_str cat cycle cat ")(";
+   end for;
+   return Substring(new_str, 1, #new_str-1);
+end function;
+
+
+
+/* This procedure sorts connected_genvecs based on group_solvable 
+
+   If group_solvable, then connected_genvecs is sorted according to how 
+      to_sort_genvecs is sorted. to_sort_genvecs is sorted lexicographically 
+      by comparing corresponding elements of the vectors
+
+   The elements of the genvecs in connected_genvecs are written in terms of
+      powers, while the corresponding elements in to_sort_genvecs are 
+      expanded from their powers.
+         Ex: a^4b -> aaaab
+      If we have a letter raised to a negative power (inverse), then
+         consider the positive power version and its expansion.
+            Ex: if b has order 4, then b^-1 = b^3 -> bbb
+
+   When making comparisons, Id(G) takes precedence, then alphabetical order
+      is considered.
+      Ex: if a^-1b = aaab, then
+         Id(G) < a < aa < aaab < aab < ab < abb < abc < b
+         Id(G) < a < a^2 < a^-1b < a^2b < ab < ab^2 < abc < b
+*/
+sort_connected_genvecs := procedure(~connected_genvecs, ~to_sort_genvecs,\
+                                    group_solvable)
    if group_solvable then
-      Sort(~connected_genvecs, compare_genvecs_s);
+      ParallelSort(~to_sort_genvecs, ~connected_genvecs);
    else
       Sort(~connected_genvecs, compare_genvecs_ns);
    end if;
@@ -279,14 +351,26 @@ end procedure;
 
 /* This procedure computes the connected genvec of rec and appends it to 
       the list connected_genvecs. */
-append_connected_genvec := procedure(~connected_genvecs, rec, iso, Grp)
+append_connected_genvec := procedure(~connected_genvecs, ~to_sort_genvecs,\
+                                     rec, iso, small_group, G, G_to_pc)
    genvec := rec`genimages;       
-   connected_genvec := [];
-   for gen in genvec do
-      Append(~connected_genvec, process_gen(Sprintf("%o", iso(gen)),\
-                                            IsSolvable(Grp)));
-   end for;
-   Append(~connected_genvecs, connected_genvec);
+   if IsSolvable(small_group) then
+      connected_genvec := [];
+      to_sort_genvec := [];
+      for gen in genvec do
+         processed_gen, to_sort_gen := process_gen(iso(gen), G, G_to_pc);
+         Append(~connected_genvec, processed_gen);
+         Append(~to_sort_genvec, to_sort_gen);
+      end for;
+      Append(~connected_genvecs, connected_genvec);
+      Append(~to_sort_genvecs, to_sort_genvec);
+   else
+      rewritten_genvec := [];
+      for perm in genvec do
+         Append(~rewritten_genvec, rewrite_perm(perm));
+      end for;
+      Append(~connected_genvecs, rewritten_genvec);
+   end if;
 end procedure;
 
 /* This function unpacks the conjugacy class info in cc_info and returns
@@ -309,7 +393,7 @@ for ell in Ldata do
    order := ell[2,1];
    counter := ell[2,2];
 
-   Grp := SmallGroup(order, counter);
+   small_group := SmallGroup(order, counter);
 
    group_label := Sprintf("%o.%o", order, counter);
 
@@ -326,12 +410,6 @@ for ell in Ldata do
       continue;
    end if;
 
-   /* Corresponding permutation group created from the SmallGroup */
-   perm_group_mon := PermRep(Grp);
-
-   /* Compute generating vectors and conjugacy classes */
-   recs := RepresentativesEpimorphisms(sign, perm_group_mon);
-
    sign_str := IntegerToString(sign[1]);
    for i in [2..#sign] do
       sign_str := sign_str cat "." cat IntegerToString(sign[i]);
@@ -345,10 +423,14 @@ for ell in Ldata do
    label := Sprintf("%o.%o-%o.%o", gxx, IntegerToString(order),\
                                    IntegerToString(counter), sign_str);
 
+   iso := "";
+   G_to_pc := "";
+   G := "";
+
    /* Compute isomorphism between monodromy group and the group on abstract
          groups page depending on whether the group is solvable or not */
    /* Group is solvable */
-   if Type(perm_gens) eq MonStgElt and perm_gens eq "solvable" then
+   if IsSolvable(small_group) then
 
       /* Get the PC group decoded from the pc_code */
       pc_code := data[1];
@@ -367,6 +449,12 @@ for ell in Ldata do
          error message;
       end if;
 
+      /* Corresponding permutation group created from the SmallGroup */
+      perm_group_mon := PermRep(small_group);
+
+      /* Compute generating vectors and conjugacy classes */
+      recs := RepresentativesEpimorphisms(sign, perm_group_mon);
+
       fp_group, fp_to_pc := FPGroup(pc_group); 
       pc_to_fp := Inverse(fp_to_pc);
 
@@ -379,22 +467,25 @@ for ell in Ldata do
          Instead, create perm_to_pc, an isomorphism from the monodromy group to
             the decoded PC group. Then compose all the isomorphisms. */
       bool, perm_to_pc := IsIsomorphic(perm_group_mon, pc_group);
-      iso := perm_to_pc * pc_to_fp * fp_to_G;
+      pc_to_G := pc_to_fp * fp_to_G;
+      G_to_pc := Inverse(pc_to_G);
+      iso := perm_to_pc * pc_to_G;
 
-   /* Group is unsolvable, so the abstract groups page has a permutation
+
+   /* Group is nonsolvable, so the abstract groups page has a permutation
          representation of the group */
    else
       degree := data[4];
       group_str := Sprintf("PermutationGroup<%o|%o>", degree, perm_gens);
       perm_group_rep := eval group_str;
 
-      bool, iso := IsIsomorphic(perm_group_mon, perm_group_rep);
+      recs := RepresentativesEpimorphisms(sign, perm_group_rep);
 
    end if;
 
    /* Sort recs by conjugacy class label vectors and replace values in the Con
          fields with index, label pairs */
-   sort_recs_by_cc_label(~recs, Grp);
+   sort_recs_by_cc_label(~recs, small_group);
 
    /* Compute the data to be outputted in a txt file */
 
@@ -402,7 +493,9 @@ for ell in Ldata do
    suffix := 1;
    passport_label := Sprintf("%o.%o", label, suffix);
    connected_genvecs := []; 
-   append_connected_genvec(~connected_genvecs, recs[1], iso, Grp);
+   to_sort_genvecs := [];
+   append_connected_genvec(~connected_genvecs, ~to_sort_genvecs,\
+                           recs[1], iso, small_group, G, G_to_pc);
    prev_cc := recs[1]`Con;
    con, con_label := unpack_cc_info(prev_cc);
 
@@ -417,9 +510,8 @@ for ell in Ldata do
                classes available for both. Treat them as associated with 
                different passport labels. */
 
-         /* Sort connected_genvecs lexicographically according to the
-               comparison function compare_genvecs_s */
-         sort_connected_genvecs(~connected_genvecs, IsSolvable(Grp));
+         sort_connected_genvecs(~connected_genvecs, ~to_sort_genvecs,\
+                                IsSolvable(small_group));
 
          /* Form total labels and add the data */
          for i in [1..#connected_genvecs] do
@@ -434,16 +526,19 @@ for ell in Ldata do
          suffix +:= 1;
          passport_label := Sprintf("%o.%o", label, suffix);
          connected_genvecs := [];
+         to_sort_genvecs := [];
          con, con_label := unpack_cc_info(cur_cc);
 
       end if;
   
-      append_connected_genvec(~connected_genvecs, recs[i], iso, Grp);
+      append_connected_genvec(~connected_genvecs, ~to_sort_genvecs,\
+                              recs[i], iso, small_group, G, G_to_pc);
 
    end for;
 
    /* Add data for the last conjugacy class vector */
-   sort_connected_genvecs(~connected_genvecs, IsSolvable(Grp));
+   sort_connected_genvecs(~connected_genvecs, ~to_sort_genvecs,\
+                          IsSolvable(small_group));
    for i in [1..#connected_genvecs] do
       total_label := Sprintf("%o.%o", passport_label, i);
       line := Sprintf("%o|%o|%o|%o|%o\n", total_label, passport_label,\
