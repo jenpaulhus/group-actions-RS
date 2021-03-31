@@ -3,7 +3,42 @@
 
 
 ## Main Table
-`hgcwa_passports`: Main data for the pages
+
+`hgcwa_genvectors`: (OLD) Main data for the pages
+
+Column            | Type     | Notes
+------------------|----------|------
+id                | bigint   |
+ndim              |smallint  |  cut?
+jacobian_decomp   | jsonb    |
+cc                | jsonb    |  cut and replace with realcc?
+realcc|integer[]|
+full_auto|text|
+passport_label|text|
+group|text|
+signH|text|
+label|text|
+hyp_involution|jsonb|
+full_label|text|
+eqn|jsonb|
+cinv|jsonb|
+hyperelliptic|boolean|
+gen_vectors|jsonb|
+total_label|text|
+g0|smallint|
+dim|smallint|
+group_order|integer|
+cyclic_trigonal|boolean|
+r|smallint|
+signature|text|  integer[]??
+genus|smallint|
+con|text|  may want to store conjugacy classes differently
+braid|integer[]|
+topological|integer[]|
+
+
+
+`hgcwa_passports`: (OLD) Main data for the pages
 
 Column            | Type     | Notes
 ------------------|----------|------
