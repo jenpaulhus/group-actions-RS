@@ -4,7 +4,7 @@
 
 ## Main Table
 
-`hgcwa_genvectors`: (OLD) Main data for the pages
+`hgcwa_genvectors`: (NEW) Main data for the pages
 
 Column            | Type     | Notes
 ------------------|----------|------
