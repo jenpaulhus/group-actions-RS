@@ -23,7 +23,7 @@ full_label|text|
 eqn|jsonb|
 cinv|jsonb|
 hyperelliptic|boolean|
-gen_vectors|jsonb|
+gen_vectors|jsonb|  integer[]?  Store each permutation as integer a la Lehmer codes?
 total_label|text|
 g0|smallint|
 dim|smallint|
