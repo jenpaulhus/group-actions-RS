@@ -1,0 +1,921 @@
+# 4.6-1.0.2-2-3-3-3
+667:
+   topological: 667
+   braid: 667
+675:
+   topological: 667
+   braid: 667
+678:
+   topological: 667
+   braid: 667
+681:
+   topological: 667
+   braid: 667
+# 4.5-1.0.5-5-5-5
+556:
+   topological: 556
+   braid: 556
+610:
+   topological: 610
+   braid: 610
+617:
+   topological: 617
+   braid: 617
+629:
+   topological: 556
+   braid: 629
+634:
+   topological: 556
+   braid: 634
+639:
+   topological: 610
+   braid: 639
+642:
+   topological: 556
+   braid: 642
+# 4.9-1.0.9-9-9
+433:
+   topological: 433
+   braid: 433
+458:
+   topological: 433
+   braid: 458
+477:
+   topological: 433
+   braid: 477
+491:
+   topological: 433
+   braid: 491
+500:
+   topological: 433
+   braid: 500
+507:
+   topological: 433
+   braid: 507
+# 4.36-12.0.2-6-6
+428:
+   topological: 428
+   braid: 428
+454:
+   topological: 428
+   braid: 454
+475:
+   topological: 428
+   braid: 475
+489:
+   topological: 428
+   braid: 489
+# 4.24-10.0.2-6-12
+448:
+   topological: 448
+   braid: 448
+470:
+   topological: 448
+   braid: 470
+484:
+   topological: 448
+   braid: 484
+497:
+   topological: 448
+   braid: 497
+# 4.32-19.0.2-4-16
+427:
+   topological: 427
+   braid: 427
+453:
+   topological: 427
+   braid: 453
+474:
+   topological: 427
+   braid: 474
+488:
+   topological: 427
+   braid: 488
+# 4.10-2.0.5-10-10
+446:
+   topological: 446
+   braid: 446
+459:
+   topological: 459
+   braid: 459
+483:
+   topological: 446
+   braid: 483
+492:
+   topological: 459
+   braid: 492
+501:
+   topological: 459
+   braid: 501
+511:
+   topological: 446
+   braid: 511
+513:
+   topological: 459
+   braid: 513
+519:
+   topological: 446
+   braid: 519
+# 4.12-4.0.2-2-3-6
+543:
+   topological: 543
+   braid: 543
+559:
+   topological: 543
+   braid: 543
+# 4.4-1.0.2-4-4-4-4
+666:
+   topological: 666
+   braid: 666
+703:
+   topological: 666
+   braid: 703
+# 4.18-2.0.2-9-18
+425:
+   topological: 425
+   braid: 425
+451:
+   topological: 425
+   braid: 451
+473:
+   topological: 425
+   braid: 473
+487:
+   topological: 425
+   braid: 487
+499:
+   topological: 425
+   braid: 499
+506:
+   topological: 425
+   braid: 506
+# 4.4-2.0.2-2-2-2-2-2-2
+766:
+   topological: 766
+   braid: 766
+767:
+   topological: 767
+   braid: 767
+768:
+   topological: 767
+   braid: 768
+769:
+   topological: 766
+   braid: 769
+770:
+   topological: 767
+   braid: 770
+771:
+   topological: 766
+   braid: 771
+# 4.18-4.0.2-2-3-3
+555:
+   topological: 555
+   braid: 555
+562:
+   topological: 555
+   braid: 555
+609:
+   topological: 555
+   braid: 609
+613:
+   topological: 555
+   braid: 609
+622:
+   topological: 555
+   braid: 622
+625:
+   topological: 555
+   braid: 622
+628:
+   topological: 555
+   braid: 628
+630:
+   topological: 555
+   braid: 628
+633:
+   topological: 555
+   braid: 633
+635:
+   topological: 555
+   braid: 633
+638:
+   topological: 555
+   braid: 638
+640:
+   topological: 555
+   braid: 638
+# 4.3-1.0.3-3-3-3-3-3
+718:
+   topological: 718
+   braid: 718
+763:
+   topological: 763
+   braid: 763
+765:
+   topological: 718
+   braid: 765
+# 4.12-5.0.2-2-3-6
+544:
+   topological: 544
+   braid: 544
+601:
+   topological: 544
+   braid: 601
+616:
+   topological: 544
+   braid: 616
+626:
+   topological: 544
+   braid: 626
+631:
+   topological: 544
+   braid: 631
+636:
+   topological: 544
+   braid: 636
+# 4.12-5.0.6-6-6
+434:
+   topological: 434
+   braid: 434
+460:
+   topological: 434
+   braid: 460
+# 4.12-2.0.4-6-12
+423:
+   topological: 423
+   braid: 423
+449:
+   topological: 423
+   braid: 449
+471:
+   topological: 423
+   braid: 471
+485:
+   topological: 423
+   braid: 485
+# 4.8-3.0.2-2-2-2-4
+670:
+   topological: 670
+   braid: 670
+706:
+   topological: 706
+   braid: 706
+708:
+   topological: 706
+   braid: 706
+710:
+   topological: 706
+   braid: 706
+712:
+   topological: 706
+   braid: 706
+714:
+   topological: 706
+   braid: 714
+715:
+   topological: 706
+   braid: 714
+716:
+   topological: 706
+   braid: 714
+717:
+   topological: 706
+   braid: 714
+# 4.6-2.0.2-2-2-3-6
+669:
+   topological: 669
+   braid: 669
+705:
+   topological: 669
+   braid: 705
+# 4.18-3.0.2-2-3-3
+546:
+   topological: 546
+   braid: 546
+603:
+   topological: 546
+   braid: 603
+621:
+   topological: 621
+   braid: 621
+624:
+   topological: 621
+   braid: 621
+# 4.16-9.0.4-4-8
+436:
+   topological: 436
+   braid: 436
+462:
+   topological: 436
+   braid: 462
+# 4.60-5.0.2-5-5
+445:
+   topological: 445
+   braid: 445
+# 4.72-40.0.2-4-6
+430:
+   topological: 430
+   braid: 430
+456:
+   topological: 430
+   braid: 456
+# 4.12-3.0.2-3-3-3
+542:
+   topological: 542
+   braid: 542
+558:
+   topological: 542
+   braid: 542
+564:
+   topological: 542
+   braid: 542
+567:
+   topological: 542
+   braid: 542
+600:
+   topological: 542
+   braid: 600
+612:
+   topological: 542
+   braid: 600
+614:
+   topological: 542
+   braid: 600
+615:
+   topological: 542
+   braid: 600
+# 4.16-1.0.2-16-16
+437:
+   topological: 437
+   braid: 437
+463:
+   topological: 437
+   braid: 463
+478:
+   topological: 437
+   braid: 478
+493:
+   topological: 437
+   braid: 493
+# 4.18-3.0.3-6-6
+438:
+   topological: 438
+   braid: 438
+464:
+   topological: 464
+   braid: 464
+479:
+   topological: 464
+   braid: 479
+# 4.6-2.0.2-6-6-6
+541:
+   topological: 541
+   braid: 541
+598:
+   topological: 541
+   braid: 598
+# 4.20-4.0.2-2-2-5
+547:
+   topological: 547
+   braid: 547
+604:
+   topological: 547
+   braid: 604
+# 4.8-1.0.2-2-8-8
+551:
+   topological: 551
+   braid: 551
+606:
+   topological: 551
+   braid: 606
+# 4.4-1.0.2-2-2-2-4-4
+719:
+   topological: 719
+   braid: 719
+# 4.24-3.0.3-4-6
+426:
+   topological: 426
+   braid: 426
+452:
+   topological: 426
+   braid: 452
+# 4.20-5.0.2-10-10
+441:
+   topological: 441
+   braid: 441
+467:
+   topological: 441
+   braid: 467
+481:
+   topological: 441
+   braid: 481
+495:
+   topological: 441
+   braid: 495
+503:
+   topological: 441
+   braid: 503
+509:
+   topological: 441
+   braid: 509
+515:
+   topological: 441
+   braid: 515
+518:
+   topological: 441
+   braid: 518
+521:
+   topological: 441
+   braid: 521
+523:
+   topological: 441
+   braid: 523
+525:
+   topological: 441
+   braid: 525
+527:
+   topological: 441
+   braid: 527
+# 4.36-9.0.3-4-4
+442:
+   topological: 442
+   braid: 442
+468:
+   topological: 442
+   braid: 468
+# 4.40-8.0.2-4-10
+429:
+   topological: 429
+   braid: 429
+455:
+   topological: 429
+   braid: 455
+476:
+   topological: 429
+   braid: 476
+490:
+   topological: 429
+   braid: 490
+# 4.12-4.0.2-2-2-2-2
+671:
+   topological: 671
+   braid: 671
+676:
+   topological: 671
+   braid: 671
+679:
+   topological: 671
+   braid: 671
+682:
+   topological: 671
+   braid: 671
+707:
+   topological: 671
+   braid: 707
+709:
+   topological: 671
+   braid: 707
+711:
+   topological: 671
+   braid: 707
+713:
+   topological: 671
+   braid: 707
+# 4.16-7.0.2-2-2-8
+545:
+   topological: 545
+   braid: 545
+602:
+   topological: 545
+   braid: 602
+# 4.24-12.0.2-2-2-4
+548:
+   topological: 548
+   braid: 548
+560:
+   topological: 548
+   braid: 548
+565:
+   topological: 548
+   braid: 548
+568:
+   topological: 548
+   braid: 548
+# 4.72-42.0.2-3-12
+431:
+   topological: 431
+   braid: 431
+457:
+   topological: 431
+   braid: 457
+# 4.20-3.0.4-4-5
+447:
+   topological: 447
+   braid: 447
+# 4.10-1.0.2-2-5-5
+553:
+   topological: 553
+   braid: 553
+561:
+   topological: 553
+   braid: 553
+599:
+   topological: 599
+   braid: 599
+611:
+   topological: 599
+   braid: 599
+620:
+   topological: 553
+   braid: 620
+623:
+   topological: 553
+   braid: 620
+# 4.15-1.0.3-5-15
+424:
+   topological: 424
+   braid: 424
+450:
+   topological: 424
+   braid: 450
+472:
+   topological: 424
+   braid: 472
+486:
+   topological: 424
+   braid: 486
+498:
+   topological: 424
+   braid: 498
+505:
+   topological: 424
+   braid: 505
+512:
+   topological: 424
+   braid: 512
+516:
+   topological: 424
+   braid: 516
+# 4.2-1.0.2-2-2-2-2-2-2-2-2-2
+774:
+   topological: 774
+   braid: 774
+# 4.36-11.0.3-3-6
+443:
+   topological: 443
+   braid: 443
+469:
+   topological: 443
+   braid: 469
+482:
+   topological: 443
+   braid: 482
+496:
+   topological: 443
+   braid: 496
+504:
+   topological: 443
+   braid: 504
+510:
+   topological: 443
+   braid: 510
+# 4.36-10.0.2-6-6
+444:
+   topological: 444
+   braid: 444
+# 4.6-1.0.2-2-2-2-2-2
+720:
+   topological: 720
+   braid: 720
+724:
+   topological: 720
+   braid: 720
+725:
+   topological: 720
+   braid: 720
+726:
+   topological: 720
+   braid: 720
+727:
+   topological: 720
+   braid: 720
+728:
+   topological: 720
+   braid: 720
+729:
+   topological: 720
+   braid: 720
+730:
+   topological: 720
+   braid: 720
+731:
+   topological: 720
+   braid: 720
+732:
+   topological: 720
+   braid: 720
+733:
+   topological: 720
+   braid: 720
+734:
+   topological: 720
+   braid: 720
+735:
+   topological: 720
+   braid: 720
+736:
+   topological: 720
+   braid: 720
+737:
+   topological: 720
+   braid: 720
+738:
+   topological: 720
+   braid: 720
+739:
+   topological: 720
+   braid: 720
+740:
+   topological: 720
+   braid: 720
+741:
+   topological: 720
+   braid: 720
+742:
+   topological: 720
+   braid: 720
+743:
+   topological: 720
+   braid: 720
+744:
+   topological: 720
+   braid: 720
+745:
+   topological: 720
+   braid: 720
+746:
+   topological: 720
+   braid: 720
+747:
+   topological: 720
+   braid: 720
+748:
+   topological: 720
+   braid: 720
+749:
+   topological: 720
+   braid: 720
+750:
+   topological: 720
+   braid: 720
+751:
+   topological: 720
+   braid: 720
+752:
+   topological: 720
+   braid: 720
+753:
+   topological: 720
+   braid: 720
+754:
+   topological: 720
+   braid: 720
+755:
+   topological: 720
+   braid: 720
+756:
+   topological: 720
+   braid: 720
+757:
+   topological: 720
+   braid: 720
+758:
+   topological: 720
+   braid: 720
+759:
+   topological: 720
+   braid: 720
+760:
+   topological: 720
+   braid: 720
+761:
+   topological: 720
+   braid: 720
+762:
+   topological: 720
+   braid: 720
+# 4.36-10.0.2-2-2-3
+549:
+   topological: 549
+   braid: 549
+# 4.12-2.0.3-12-12
+435:
+   topological: 435
+   braid: 435
+461:
+   topological: 435
+   braid: 461
+# 4.20-1.0.4-4-5
+440:
+   topological: 440
+   braid: 440
+466:
+   topological: 440
+   braid: 466
+# 4.10-2.0.2-2-5-5
+554:
+   topological: 554
+   braid: 554
+608:
+   topological: 554
+   braid: 608
+# 4.6-2.0.3-3-6-6
+550:
+   topological: 550
+   braid: 550
+605:
+   topological: 605
+   braid: 605
+618:
+   topological: 550
+   braid: 618
+# 4.9-2.0.3-3-3-3
+552:
+   topological: 552
+   braid: 552
+607:
+   topological: 552
+   braid: 607
+619:
+   topological: 552
+   braid: 619
+627:
+   topological: 627
+   braid: 627
+632:
+   topological: 627
+   braid: 632
+637:
+   topological: 627
+   braid: 637
+641:
+   topological: 552
+   braid: 641
+643:
+   topological: 552
+   braid: 643
+644:
+   topological: 552
+   braid: 644
+645:
+   topological: 552
+   braid: 645
+646:
+   topological: 552
+   braid: 646
+647:
+   topological: 552
+   braid: 647
+648:
+   topological: 552
+   braid: 648
+649:
+   topological: 552
+   braid: 649
+650:
+   topological: 552
+   braid: 650
+651:
+   topological: 552
+   braid: 651
+652:
+   topological: 552
+   braid: 652
+653:
+   topological: 552
+   braid: 653
+654:
+   topological: 552
+   braid: 654
+655:
+   topological: 552
+   braid: 655
+656:
+   topological: 552
+   braid: 656
+657:
+   topological: 552
+   braid: 657
+658:
+   topological: 627
+   braid: 658
+659:
+   topological: 627
+   braid: 659
+660:
+   topological: 552
+   braid: 660
+661:
+   topological: 552
+   braid: 661
+662:
+   topological: 552
+   braid: 662
+663:
+   topological: 552
+   braid: 663
+664:
+   topological: 552
+   braid: 664
+665:
+   topological: 627
+   braid: 665
+# 4.120-34.0.2-4-5
+432:
+   topological: 432
+   braid: 432
+# 4.6-2.0.2-2-3-3-3
+668:
+   topological: 668
+   braid: 668
+704:
+   topological: 668
+   braid: 704
+# 4.18-5.0.3-6-6
+439:
+   topological: 439
+   braid: 439
+465:
+   topological: 439
+   braid: 465
+480:
+   topological: 439
+   braid: 480
+494:
+   topological: 439
+   braid: 494
+502:
+   topological: 439
+   braid: 502
+508:
+   topological: 439
+   braid: 508
+514:
+   topological: 439
+   braid: 514
+517:
+   topological: 439
+   braid: 517
+520:
+   topological: 439
+   braid: 520
+522:
+   topological: 439
+   braid: 522
+524:
+   topological: 439
+   braid: 524
+526:
+   topological: 439
+   braid: 526
+528:
+   topological: 439
+   braid: 528
+529:
+   topological: 439
+   braid: 529
+530:
+   topological: 439
+   braid: 530
+531:
+   topological: 439
+   braid: 531
+532:
+   topological: 439
+   braid: 532
+533:
+   topological: 439
+   braid: 533
+534:
+   topological: 439
+   braid: 534
+535:
+   topological: 439
+   braid: 535
+536:
+   topological: 439
+   braid: 536
+537:
+   topological: 439
+   braid: 537
+538:
+   topological: 439
+   braid: 538
+539:
+   topological: 439
+   braid: 539
+# 4.8-4.0.2-4-4-4
+540:
+   topological: 540
+   braid: 540
