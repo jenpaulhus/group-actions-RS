@@ -1,0 +1,1113 @@
+/* *********************************************************** 
+
+ries.mag
+
+Copyright (C) 2016 by Jennifer Paulhus
+    
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+This file contains the main functions and procedures to determine if
+a group action is the full action, as determined in: 
+
+Ries, J. F. X. (1993). Subvarieties of moduli space determined
+by finite groups acting on surfaces. Trans. Amer. Math. Soc.,
+335(1):385–406.
+
+Variable names correspond to this paper when possible. 
+
+Questions or comment about the code may be directed to:
+paulhus@math.grinnell.edu 
+
+************************************************************ */
+
+
+/* WARNING: lists Ldata and ccLabels must already be defined
+(see main.mag) */
+
+
+/* List of special cases from Table 1 */
+Tbl1List:=[[*3,[0,7,7,7]*],[*7,[0,2,7,7]*],[*3,[0,3,3,7]*],[*3,[0,4,8,8]*],[*16,[0,3,8,8]*],[*10,[0,9,9,9]*],[*4,[0,4,4,5]*]];
+Tbl1Seconds:=[[0,2,3,7],[0,2,3,7],[0,2,3,7],[0,2,3,8],[0,2,3,8],[0,2,3,9],[0,2,4,5]];
+Tbl1FullGps:=[[168,42],[504,156],[168,42],[96,64],[720,764],[324,160],[120,34]];
+Tbl1G0:=[<7,1>,<56,11>,<21,1>,<8,1>,<72,39>,<27,4>,<20,3>];
+
+
+/* ***************************************
+Function ReadCode 
+
+Inputs:  H        possible full automorphism      
+         signH    possible signature of full
+                  automorphism
+
+Outcome: boolean which is true if the possible
+         full automorphism group and signature
+         pair created from the procedures
+         FindK* are on Breuer's list of possible
+         automorphism group and signature pairs,
+         stored as Ldata from main.mag
+************************************ */
+ReadCode:=function(H,signH);
+
+   for j in [1..#Ldata] do   
+      IdH:=IdentifyGroup(H);
+      if (signH eq Ldata[j,1])  and (IdentifyGroup(SmallGroup(Ldata[j,2,1],Ldata[j,2,2])) eq IdH)  then
+         return true; 
+         break j;  /* done once we find one */
+      end if; 
+   end for;
+   return false;
+end function;
+
+
+/* ***************************************
+Procedure PrintPossibleFullAuto
+
+Inputs: G            group 
+        strngG       signature
+        strngH       signature of possible
+                     full automorphism
+        g            genus
+        cases        which numbered case from
+                     Ries Theorem pg. 390
+        prtfile      where to print to
+        ri           an integer representing
+                     which generating vector
+                     for the given group and
+                     signature          
+           
+Outcome: for each entry which satisfies one
+         of the cases in Ries Theorem pg 390
+         this procedure appends extra Magma commands
+         to the file SupplementaryFiles/testingfull
+         to test whether the group constructed
+         in FindK* is truly an autorphims group
+         for the given genus         
+************************************  */
+PrintPossibleFullAuto:=procedure(G,strngG, strngH, g,cases,prtfile,ri);
+
+/* Sorts strngH as it may not be assigned in increasing order */
+   SList:=Reverse(Prune(Reverse(strngH)));
+   Sort(~SList);
+   strngH:=[strngH[1]] cat SList;
+
+   PrintFile(prtfile,"H:=quo<F | Lreln>;"); /* Lreln from FindK* */
+   idG:=IdentifyGroup(G);
+   PrintFile(prtfile,"Grp:=SmallGroup(" cat IntegerToString(idG[1]) cat "," cat IntegerToString(idG[2]) cat ");") ;
+
+   signGstrg:="[";
+   for gs in [1..#strngG-1] do
+       signGstrg:=signGstrg cat IntegerToString(strngG[gs]) cat ",";
+   end for;
+   signGstrg:=signGstrg cat IntegerToString(strngG[#strngG]) cat "];" ;
+
+  signHstrg:="[";
+   for hs in [1..#strngH-1] do
+      signHstrg:=signHstrg cat IntegerToString(strngH[hs]) cat ",";
+   end for;
+   signHstrg:=signHstrg cat IntegerToString(strngH[#strngH]) cat "];";
+
+   PrintFile(prtfile,"signG:=" cat signGstrg);
+   PrintFile(prtfile,"signH:=" cat signHstrg);
+   PrintFile(prtfile,"g:=" cat IntegerToString(g) cat ";");
+
+   PrintFile(prtfile, "cases:=" cat IntegerToString(cases) cat ";");
+   PrintFile(prtfile, "t:=ReadCode(H,signH);");
+
+   PrintFile(prtfile," if t then PrintNotFull(G_str,H,sign,signH,g,Rlist[" cat IntegerToString(ri) cat "],connected_Rlist[" cat
+   IntegerToString(ri) cat "], Cons[" cat IntegerToString(ri) cat "], Cons_label[" cat IntegerToString(ri) cat "], [" cat
+   IntegerToString(ccLabels[ri,1]) cat "," cat IntegerToString(ccLabels[ri,2]) cat
+   "]); counttoful:=1;  Append(~NotFullList,[[*IdentifyGroup(Grp),sign*],[*IdentifyGroup(H),signH*]]);end if;"); 
+
+end procedure;
+
+
+/* ***************************************
+Procedure FindK12346
+
+Inputs: G         given group 
+        alpha     automorphism which satisfies
+                  condition in Ries Theorem pg 390
+        strngG    given signature
+        strngH    signature of potential full
+                  automorphism
+        g         genus
+        cases     which of cases 1,2,3,4 or 6
+                  from Ries Theorem pg 390
+        prtfile   file to print Magma commands
+                  to determine full automorphism
+                  group
+        ri        an integer representing
+                  which generating vector
+                  for the given group and
+                  signature
+
+Outcome: for each entry which satisfies one
+         of cases 1,2,3,4, or 6 in Ries Theorem
+         pg 390, writes Magma commands to the 
+         file SupplementaryFiles/testingfull
+         which will create the potential corresponding
+         full automorphism group as the quotient
+         of a free group
+************************************ */
+FindK12346:=procedure(G,alpha,strngG,strngH,g,cases,prtfile,ri);
+   F,fm:=FPGroup(G); 
+   ng:=Ngens(F);
+   fi:=Inverse(fm);
+   LG:=[fi(g): g in G ];
+   LaG:=[fi(alpha(g)) : g in G];
+
+   strg:=IntegerToString(ng+1);
+   PrintFile(prtfile,"F:=FreeGroup(" cat strg cat");");
+
+   /* Relations of G */
+   RelnG:=Relations(F);
+   PrintFile(prtfile,"Lreln:=[");
+   for i in [1..#RelnG] do  
+      PrintFile(prtfile,RelnG[i]);
+      PrintFile(prtfile,", ");
+   end for;
+
+   astrg:="F." cat IntegerToString(ng+1);
+
+   for j in [1..#LG] do
+      strg1:=astrg cat "*";
+      strg2:="*" cat astrg cat " = ";
+      PrintFile(prtfile,strg1);
+      PrintFile(prtfile,LG[j]);
+      PrintFile(prtfile,strg2);
+      PrintFile(prtfile,LaG[j]);
+      PrintFile(prtfile,", ");
+   end for;   
+
+   /* a^2=1 */
+   intg:=astrg cat "^2 = Id(F) ];";
+   PrintFile(prtfile,intg);
+
+/* now write additional Magma commands to prtfile */
+   PrintPossibleFullAuto(G,strngG,strngH,g,cases,prtfile,ri);
+end procedure;
+
+
+/* ***************************************
+Procedure FindK5
+
+Inputs: G           given group 
+        alpha,beta  automorphisms which satisfies
+                    conditions in Ries Theorem
+                    pg 390       
+        c           product of the second and third
+                    entries of the generating vector
+        strngG      given signature
+        strngH      signature of potential full
+                    automorphism
+        g           genus
+        prtfile     file to print Magma commands
+                    to determine full automorphism
+                    group
+        ri          an integer representing
+                    which generating vector
+                    for the given group and
+                    signature
+
+Outcome: for each entry which satisfies case 5 of
+         Ries Theorem pg 390, writes Magma commands
+         to the file SupplementaryFiles/testingfull
+         which will create the potential corresponding
+         full automorphism group as the quotient
+         of a free group
+************************************ */
+FindK5:=procedure(G,alpha,beta,c,strngG,strngH,g,prtfile,ri);
+
+/* c is element c_2*c_3 */
+   F,fm:=FPGroup(G); 
+   ng:=Ngens(F);     
+   fi:=Inverse(fm);
+   LG:=[fi(g): g in G ];
+   LaG:=[fi(alpha(g)) : g in G];
+   LbG:=[fi(beta(g)) : g in G];
+   C:=fi(c);
+
+   strg:=IntegerToString(ng+2);
+   PrintFile(prtfile,"F:=FreeGroup(" cat strg cat");");
+
+/* Relations of G */
+   RelnG:=Relations(F);
+   PrintFile(prtfile,"Lreln:=[");
+   for i in [1..#RelnG] do
+      PrintFile(prtfile,RelnG[i]);
+      PrintFile(prtfile,", ");
+   end for;
+
+   astrg:="F." cat IntegerToString(ng+1);
+   bstrg:="F." cat IntegerToString(ng+2);
+
+   for j in [1..#LG] do
+      strg1:=astrg cat "*";
+      strg2:="*" cat astrg cat " = ";
+      PrintFile(prtfile,strg1);
+      PrintFile(prtfile,LG[j]);
+      PrintFile(prtfile,strg2);
+      PrintFile(prtfile,LaG[j]);
+      PrintFile(prtfile,", ");
+
+      strg3:=bstrg cat "*";
+      strg4:="*" cat bstrg cat " = ";
+      PrintFile(prtfile,strg3);
+      PrintFile(prtfile,LG[j]);
+      PrintFile(prtfile,strg4);
+      PrintFile(prtfile,LbG[j]);
+      PrintFile(prtfile,", ");
+   end for;
+
+/* abab=(c)^-1 */
+   abstrg:=astrg cat "*" cat bstrg cat "*" cat astrg cat "*" cat
+     bstrg cat " = ";
+   PrintFile(prtfile,abstrg);
+   PrintFile(prtfile, Sprintf("(%o)", C));
+   PrintFile(prtfile,"^-1, ");
+
+
+/* a^2=1 and b^2=1 */
+   intg:=astrg cat "^2 = Id(F), " cat bstrg cat "^2 = Id(F) ];";
+   PrintFile(prtfile,intg);
+   PrintPossibleFullAuto(G,strngG,strngH,g,5,prtfile,ri);
+end procedure;
+
+
+/* ***************************************
+Procedure FindK7
+
+Inputs: G         given group 
+        beta      automorphism which satisfies
+                  condition in Ries Theorem pg 390
+        strngG    given signature
+        strngH    signature of potential full
+                  automorphism
+        g         genus
+        prtfile   file to print Magma commands
+                  to determine full automorphism
+                  group
+        ri        an integer representing
+                  which generating vector
+                  for the given group and
+                  signature
+
+Outcome: for each entry which satisfies case 7 of
+         Ries Theorem pg 390, writes Magma commands
+         to the file SupplementaryFiles/testingfull
+         which will create the potential corresponding
+         full automorphism group as the quotient
+         of a free group     
+************************************ */
+FindK7:=procedure(G,beta,strngG,strngH,g,prtfile,ri);
+
+   F,fm:=FPGroup(G);    
+   ng:=Ngens(F);
+   fi:=Inverse(fm);
+   LG:=[fi(g): g in G ];
+   LaG:=[fi(beta(g)) : g in G];
+   strg:=IntegerToString(ng+1);
+   PrintFile(prtfile,"F:=FreeGroup(" cat strg cat");");
+
+/* Relations of G */
+   RelnG:=Relations(F);
+   PrintFile(prtfile,"Lreln:=[");
+   for i in [1..#RelnG] do
+      PrintFile(prtfile,RelnG[i]);
+      PrintFile(prtfile,", ");
+   end for;
+
+   bstrg:="F." cat IntegerToString(ng+1);
+
+   for j in [1..#LG] do
+      strg1:=bstrg cat "*";
+      strg2:="*" cat bstrg cat "^2 = ";
+      PrintFile(prtfile,strg1);
+      PrintFile(prtfile,LG[j]);
+      PrintFile(prtfile,strg2);
+      PrintFile(prtfile,LaG[j]);
+      PrintFile(prtfile,", ");
+   end for;   
+
+/* b^3=1 */
+   intg:=bstrg cat "^3 = Id(F) ];";
+   PrintFile(prtfile,intg);
+   PrintPossibleFullAuto(G,strngG,strngH,g,7,prtfile,ri);
+end procedure;
+
+
+/* ***************************************
+Procedure FindK8
+
+Inputs: G           given group 
+        alpha,beta  automorphisms which satisfies
+                    condition in Ries Theorem pg 390
+        c           first element in the generating
+                    vector
+        strngG      given signature
+        strngH      signature of potential full
+                    automorphism
+        g           genus
+        prtfile     file to print Magma commands
+                    to determine full automorphism
+                    group
+        ri          an integer representing
+                    which generating vector
+                    for the given group and
+                    signature
+
+Outcome: for each entry which satisfies case 8 of
+         Ries Theorem pg 390, writes Magma commands
+         to the file SupplementaryFiles/testingfull
+         which will create the potential corresponding
+         full automorphism group as the quotient
+         of a free group         
+************************************ */
+FindK8:=procedure(G,alpha,beta,c,strngG,strngH,g,prtfile,ri);
+
+/* c is element c_1 */
+   F,fm:=FPGroup(G); 
+   ng:=Ngens(F);
+   fi:=Inverse(fm);
+   LG:=[fi(g): g in G ];
+   LaG:=[fi(alpha(g)) : g in G];
+   LbG:=[fi(beta(g)) : g in G];
+   C:=fi(c);
+   strg:=IntegerToString(ng+2);
+   PrintFile(prtfile,"F:=FreeGroup(" cat strg cat");");
+
+/* Relations of G */
+   RelnG:=Relations(F);
+   PrintFile(prtfile,"Lreln:=[");
+   for i in [1..#RelnG] do
+      PrintFile(prtfile,RelnG[i]);
+      PrintFile(prtfile,", ");
+   end for;
+
+   astrg:="F." cat IntegerToString(ng+1);
+   bstrg:="F." cat IntegerToString(ng+2);
+
+   for j in [1..#LG] do
+      strg1:=astrg cat "*";
+      strg2:="*" cat astrg cat " = ";
+      PrintFile(prtfile,strg1);
+      PrintFile(prtfile,LG[j]);
+      PrintFile(prtfile,strg2);
+      PrintFile(prtfile,LaG[j]);
+      PrintFile(prtfile,", ");
+
+      strg3:=bstrg cat "*";
+      strg4:="*" cat bstrg cat "^2 = ";
+      PrintFile(prtfile,strg3);
+      PrintFile(prtfile,LG[j]);
+      PrintFile(prtfile,strg4);
+      PrintFile(prtfile,LbG[j]);
+      PrintFile(prtfile,", ");
+   end for;
+
+/* abab=(c)^-1 */
+   abstrg:=astrg cat "*" cat bstrg cat "*" cat astrg cat "*" cat
+     bstrg cat " = ";
+   PrintFile(prtfile,abstrg);
+   PrintFile(prtfile, Sprintf("(%o)", C));
+   PrintFile(prtfile,"^-1, ");
+
+/* a^2=1 and b^3=1 */
+   intg:=astrg cat "^2 = Id(F), " cat bstrg cat "^3 = Id(F) ];";
+   PrintFile(prtfile,intg);
+   PrintPossibleFullAuto(G,strngG,strngH,g,8,prtfile,ri);
+end procedure;
+
+
+/* ***************************************
+Function Aut_Gamma_4
+
+Input:  L         list of generting vectors
+                  in the same orbit under
+                  actions of Aut(Gamma)
+        sign      signature
+        gen       genus
+        prtfile   output file
+        ri        an integer representing
+                  which generating vector
+                  for the given group and
+                  signature
+        aut       list of all automorphisms
+                  of G
+
+Outcome: tests if any element in L gives a
+         positive hit for case 4 in Ries'
+         Theorem (in the special case when the
+         signature is [0;k,k,k,k] and if so, returns
+         a 1 value and the same list L otherwise
+         it returns a 0 and new list including
+         additional elements in the orbit,
+         computed using the braiding funcion Qi
+**************************************** */
+Aut_Gamma_4:=function(L,sign,gen,prtfile,ri,aut);
+
+for mp in aut do
+   for ell in L do
+      if (mp(ell[1]) eq ell[3]) and (mp(ell[3]) eq ell[1])  and
+      (mp(ell[2]) eq ell[4]) and (mp(ell[4])) eq ell[2] then
+         FindK12346(G,mp,sign,[0,2,2,sign[2],sign[2]],gen,4,prtfile,ri);
+         return 1,L;  
+      end if;
+   end for;
+end for;
+
+for ell in L do
+   for i in [1..3] do
+      brd:=Qi(i,ell);
+      if brd notin L then
+         Append(~L,brd);
+      end if;   
+   end for;   
+end for;
+
+return 0,L;
+
+end function;
+
+
+/* ***************************************
+Function Aut_Gamma_6
+
+Input:  L         list of generting vectors
+                  in the same orbit under
+                  actions of Aut(Gamma)
+        sign      signature
+        gen       genus
+        prtfile   output file
+        ri        an integer representing
+                  which generating vector
+                  for the given group and
+                  signature
+        aut       list of all automorphisms
+                  of G
+
+
+Outcome: tests if any element in L gives a
+         positive hit for case 6 in Ries'
+         Theorem (in the special case when the
+         signature is [0;k,k,k] and if so, returns
+         a 1 value and the same list L otherwise
+         it returns a 0 and new list including
+         additional elements in the orbit,
+         computed using the braiding funcion Qi
+**************************************** */
+Aut_Gamma_6:=function(L,sign,gen,prtfile,ri,aut);
+
+for mp in aut do
+   for ell in L do
+      if  (mp(ell[1]) eq ell[2]) and (mp(ell[2]) eq ell[1])  and (mp(ell[3]) eq ell[2]*ell[3]*ell[2]^-1) then
+         FindK12346(G,mp,sign,[0,2,sign[3],2*sign[2]],gen,6,prtfile,ri);
+         return 1,L; 
+      end if;
+   end for;
+end for;
+
+for ell in L do
+   for i in [1..2] do
+      brd:=Qi(i,ell);
+      if brd notin L then
+         Append(~L,brd);
+      end if;
+   end for;   
+end for;
+
+return 0,L;
+
+end function;
+
+
+/* ***************************************
+Function TestRiesTbl1a
+
+Input:  G       automorphism group
+        sign    signature
+        gen     genus   
+        Rlist   generating vectors
+
+Outcome: a boolean where true means this is
+        not the full automorphism group of
+        the action given by Rlist, based on
+        the first part of Tbl 1 in Ries' paper
+        and false means it does not satisfy
+        the fixed genus cases in Tbl 1
+        if true, it also returns the full
+        automorphism group and corresponding
+        signature, otherwise it returns the
+        given group G and signature sign
+**************************************** */
+TestRiesTbl1a:=function(G,sign,gen,Rlist);
+   if gen in [3, 4, 7, 10, 16] then
+      for j in [1..#Tbl1List] do   
+         if ([*gen,sign*] eq Tbl1List[j]) and (IdentifyGroup(G) eq Tbl1G0[j]) then
+            signH:=Tbl1Seconds[j];            
+            H:=SmallGroup(Tbl1FullGps[j,1], Tbl1FullGps[j,2]);
+            return true, H, signH; 
+            break j;  /* done once we find one */
+         end if;         
+      end for;
+   end if;   /*right genus*/
+   return false, G,sign;
+end function;
+
+
+/* ***************************************
+Function TestRiesTbl1b
+
+Input:  G       automorphism group
+        sign    signature
+        gen     genus   
+        Rlist   generating vectors
+
+Outcome: a boolean where true means this is
+        not the full automorphism group of
+        the action given by Rlist, based on
+        the second part of Tbl 1 in Ries'
+        paper and false means it does not
+        satisfy these cases in Tbl 1
+        if true, it also returns the full
+        automorphism group and corresponding
+        signature, otherwise it returns the
+        given group G and signature sign
+**************************************** */
+TestRiesTbl1b:=function(G,sign,gen,Rlist);
+   SList:=Reverse(Prune(Reverse(sign)));
+   if SList[2] eq SList[3] then
+
+      /* ** CASE H ** */
+      if (4*SList[1] eq SList[2]) and (SList[1] ge 2) then  
+         m:=SList[1];
+         for j in [1..#Ldata] do   
+            if ([0,m,m,m,m,m,m] eq Ldata[j,1])  and IdentifyGroup(QuoGp(G,SmallGroup(Ldata[j,2,1],Ldata[j,2,2]))) eq <4,1> then 
+               K:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+               for k in [1..#Ldata] do
+                  if ([0,2,3,4*m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(SmallGroup(Ldata[k,2,1],Ldata[k,2,2]),K)) eq <24,12>  then 
+                     signH:=[0,2,3,4*m];
+                     H:=SmallGroup(Ldata[k,2,1],Ldata[k,2,2]);
+                     return true, H, signH; 
+                     break j;  /* done once find one */
+                  end if; 
+               end for;
+            end if;
+         end for;
+
+      /* ** CASE I ** */   
+      elif (2*SList[1] eq SList[2]) and (SList[1] ge 3) then      
+   
+         m:=SList[1];
+         for j in [1..#Ldata] do   
+            if ([0,m,m,m,m] eq Ldata[j,1])  and IdentifyGroup(QuoGp(G,SmallGroup(Ldata[j,2,1],Ldata[j,2,2]))) eq <2,1> then 
+               K:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+               for k in [1..#Ldata] do
+                  if ([0,2,4,2*m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(SmallGroup(Ldata[k,2,1],Ldata[k,2,2]),K)) eq <8,3>  then 
+                     signH:=[0,2,4,2*m];
+                     H:=SmallGroup(Ldata[k,2,1],Ldata[k,2,2]);
+                     return true, H, signH; 
+                     break j;  /* done once find one */
+                  end if; 
+               end for;
+            end if;
+         end for;
+      end if;
+
+   /* ** CASE J ** */    
+   elif (SList[1] eq 3) and 3*SList[2] eq SList[3] then
+      m:=SList[2];
+      for j in [1..#Ldata] do   
+         if ([0,m,m,m,m] eq Ldata[j,1])  and IdentifyGroup(QuoGp(G,SmallGroup(Ldata[j,2,1],Ldata[j,2,2]))) eq <3,1> then 
+            K:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+            for k in [1..#Ldata] do
+               if ([0,2,3,3*m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(SmallGroup(Ldata[k,2,1],Ldata[k,2,2]),K)) eq <12,3>  then 
+                  signH:=[0,2,3,3*m];
+                  H:=SmallGroup(Ldata[k,2,1],Ldata[k,2,2]);
+                  return true, H, signH; 
+                  break j;  /* done once find one */
+               end if; 
+            end for;
+         end if;
+      end for;
+
+   /* ** CASE K **  */
+   elif (SList[1] eq 2) and 2*SList[2] eq SList[3] then
+      m:=SList[2];
+      for j in [1..#Ldata] do   
+         if ([0,m,m,m] eq Ldata[j,1])  and IdentifyGroup(QuoGp(G,SmallGroup(Ldata[j,2,1],Ldata[j,2,2]))) eq <2,1> then 
+            K:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+            for k in [1..#Ldata] do
+               if ([0,2,3,2*m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(SmallGroup(Ldata[k,2,1],Ldata[k,2,2]),K)) eq <6,1>  then 
+                  signH:=[0,2,3,2*m];
+                  H:=SmallGroup(Ldata[k,2,1],Ldata[k,2,2]);
+                  return true, H, signH; 
+                  break j;  /* done once find one */
+               end if; 
+            end for;
+         end if;
+      end for;
+   end if;
+   return false, G,sign;
+end function;
+
+
+/* ***************************************
+Function TestRiesTbl2
+
+Input:  G       automorphism group
+        sign    signature
+        gen     genus   
+        Rlist   generating vectors
+
+Outcome: a boolean where true means this is
+        not the full automorphism group of
+        the action given by Rlist, based on
+        Table 2 in Ries' paper and false means
+        it does not satisfy the cases in Tbl 2
+        if true, it also returns the full
+        automorphism group and corresponding
+        signature, otherwise it returns the
+        given group G and signature sign
+**************************************** */
+TestRiesTbl2:=function(G,sign,gen,Rlist);
+   SList:=Reverse(Prune(Reverse(sign)));
+
+ /* ** CASE 1 ** */
+   if (#sign eq 1) and  (sign[1] eq 2) then
+      for j in [1..#Ldata] do   
+         if ([0,2,2,2,2,2] eq Ldata[j,1])  and IdentifyGroup(QuoGp(SmallGroup(Ldata[j,2,1],Ldata[j,2,2]),G)) eq <4,2> then 
+            H:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+            for k in [1..#Ldata] do
+               if ([1,2,2] eq Ldata[k,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[k,2,1],Ldata[k,2,2]))) eq <2,1>  then 
+                  for ell in [1..#Ldata] do
+                     if ([1,2,2] eq Ldata[ell,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[ell,2,1],Ldata[ell,2,2]))) eq <2,1>  then 
+                        signH:=[0,2,2,2,2,2];
+                        return true, H, signH; 
+                        break j;  /* done once find one */
+                     end if;
+                  end for;
+               end if; 
+            end for;
+         end if;
+      end for;
+   end if;
+   
+   /* ** CASE 2 ** */
+   if (#sign eq 3) and  (sign[2] eq sign[3]) and (sign[1] eq 1) then
+      m:=SList[1];
+      for j in [1..#Ldata] do   
+         if ([0,2,2,2,2*m] eq Ldata[j,1])  and IdentifyGroup(QuoGp(SmallGroup(Ldata[j,2,1],Ldata[j,2,2]),G)) eq <4,2> then 
+            H:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+            for k in [1..#Ldata] do
+               if ([0,2,2,2*m,2*m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[k,2,1],Ldata[k,2,2]))) eq <2,1>  then 
+                  for ell in [1..#Ldata] do
+                     if ([1,2] eq Ldata[ell,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[ell,2,1],Ldata[ell,2,2]))) eq <2,1>  then 
+                        signH:=[0,2,2,2,2*m];
+                        return true, H, signH; 
+                        break j;  /* done once find one */
+                     end if;
+                  end for;
+               end if; 
+            end for;
+         end if;
+      end for;
+   end if;
+
+   /* ** CASE 3 ** */
+   if (#sign eq 5) and (sign[1] eq 0) and (sign[2] ge 3) and (sign[2] eq sign[3]) and (sign[3] eq sign[4]) and (sign[4] eq sign[5]) then  
+      m:=SList[1];
+      for j in [1..#Ldata] do   
+         if ([0,2,2,2,m] eq Ldata[j,1])  and IdentifyGroup(QuoGp(SmallGroup(Ldata[j,2,1],Ldata[j,2,2]),G)) eq <4,2> then 
+            H:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+            for k in [1..#Ldata] do
+               if ([0,2,2,m,m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[k,2,1],Ldata[k,2,2]))) eq <2,1>  then 
+                  for ell in [1..#Ldata] do
+                     if ([0,2,2,m,m] eq Ldata[ell,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[ell,2,1],Ldata[ell,2,2]))) eq <2,1>  then 
+                        signH:=[0,2,2,2,m];
+                        return true, H, signH; 
+                        break j;  /* done once find one */
+                     end if;
+                  end for;
+               end if; 
+            end for;
+         end if;
+      end for;
+   end if;
+
+   /* ** CASE 4 ** */
+   if (sign[1] eq 1) and (#sign eq 5) and (sign[2] eq sign[3]) and (sign[3] eq sign[4]) and (sign[4] eq sign[5]) then  
+      m:=SList[1];
+      for j in [1..#Ldata] do   
+         if ([0,2,2,2,2*m] eq Ldata[j,1])  and IdentifyGroup(QuoGp(SmallGroup(Ldata[j,2,1],Ldata[j,2,2]),G)) eq <8,5> then 
+            H:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+            for k in [1..#Ldata] do
+               if ([0,2*m,2*m,2*m,2*m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[k,2,1],Ldata[k,2,2]))) eq <4,2>  then 
+                  for ell in [1..#Ldata] do
+                     if ([1,m] eq Ldata[ell,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[ell,2,1],Ldata[ell,2,2]))) eq <2,1>  then 
+                        signH:=[0,2,2,2,2*m];
+                        return true, H, signH; 
+                        break j;  /* done once find one */
+                     end if;
+                  end for;
+               end if; 
+            end for;
+         end if;
+      end for;
+   end if;
+   return false, G, sign;
+end function;
+
+
+/* *************************************
+Function CheckRiesTables
+
+Input:   G            automorphism group
+         sign         signature
+         Lmonod       generating vectors
+         Con          conjugacy classes for the
+                      given generating vectors
+         cclabel      label as assigned by
+                      generate_ccnums.mag
+         NotFullList  list of known examples
+                      which are not full, this
+                      is changed inside this
+                      function
+
+Outcome: returns the (possibly new) NotFullList
+        calls PrintNotFull for cases that
+        match one of the Tables in Ries' paper
+        also prints to TBLDATA those cases
+        found to be not full here
+**************************************** */ 
+CheckRiesTables:=function(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cclabel,NotFullList);
+   tblprt:= "OutputFiles/TBLDATA";   /* records cases determined here */
+   brkcount:=0;     
+   if #sign eq 4 then  /* restriction for Table 1 */
+      t,H,signH:=TestRiesTbl1a(G,sign,g,Lmonod);
+      if t then
+         PrintNotFull(G_str,H,sign,signH,g,Lmonod,connected_Lmonod,Con,Con_label,cclabel); 
+         Append(~NotFullList,[[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
+         PrintFile(tblprt,"Used Table 1a for genus " cat IntegerToString(g) cat ":");
+         PrintFile(tblprt, "Group:");
+         PrintFile(tblprt, IdentifyGroup(G));
+         PrintFile(tblprt, "Signature:");
+         PrintFile(tblprt, sign);
+         PrintFile(tblprt,"--------------");
+         brkcount:=1;  
+      end if;
+
+      t,H,signH:=TestRiesTbl1b(G,sign,g,Lmonod);
+      if t then
+         PrintNotFull(G_str,H,sign,signH,g,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+         Append(~NotFullList,[[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
+         PrintFile(tblprt,"Used Table 1b for genus " cat IntegerToString(g) cat ":");
+         PrintFile(tblprt, "Group:");
+         PrintFile(tblprt, IdentifyGroup(G));
+         PrintFile(tblprt, "Signature:");
+         PrintFile(tblprt, sign);
+         PrintFile(tblprt,"--------------");
+         brkcount:=1;
+      end if;
+   end if;   
+
+   if brkcount eq 0 then
+      t,H,signH :=TestRiesTbl2(G,sign,g,Lmonod);
+      if t then
+         PrintNotFull(G_str,H,sign,signH,g,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+         Append(~NotFullList,[[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
+         brkcount:=1;
+         PrintFile(tblprt,"Used Table 2 for genus " cat IntegerToString(g) cat ":");
+         PrintFile(tblprt, "Group:");
+         PrintFile(tblprt, IdentifyGroup(G));
+         PrintFile(tblprt, "Signature:");
+         PrintFile(tblprt, sign);
+         PrintFile(tblprt,"--------------");
+      else 
+         PrintFull(G_str,sign,g,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+      end if;
+   end if;    
+
+   return NotFullList;
+end function;
+
+
+/* *************************************
+Function TestRiesCases
+
+Input:   G        automorphism group
+         sign     signature
+         Rlist    generating vectors
+         prtfile  output file
+         ri       an integer representing
+                  which generating vector
+                  for the given group and
+                  signature
+
+Outcome: determines if there are automorphisms
+         alpha and/or beta satisfying the conditions
+         of Ries Theorem pg. 390
+         if so, it calls the procedure FindK* for
+         the appropriate case
+**************************************** */
+TestRiesCases:=function(G,sign,gen,Rlist,prtfile,ri);
+
+   testcounter:=0;  /* if there is at least one case, this is changed to 1 */
+   B:=AutomorphismGroup(G); 
+   f,A,k:=PermutationRepresentation(B);
+   h:=Inverse(f); /* Map from A to B */
+   aut:= [h(aL): aL in A];   /* Automorphisms */
+   SList:=Reverse(Prune(Reverse(sign)));  
+
+   /* ** CASE 1 ** */
+   if (#sign eq 1) and (sign[1] eq 2) then      
+      for mp in aut do
+         d:=Rlist[1]^-1*Rlist[2]^-1*Rlist[3]*Rlist[4];
+         if (mp(Rlist[1]) eq Rlist[1]^-1) and (mp(Rlist[2]) eq Rlist[2]^-1) and
+         (mp(Rlist[3]) eq d*Rlist[3]^-1*d^-1) and
+         (mp(Rlist[4]) eq d*Rlist[4]^-1*d^-1) then
+            FindK12346(G,mp,sign,[0,2,2,2,2,2,2],gen,1,prtfile,ri);
+            testcounter:=1;
+         end if;
+      end for;
+
+    /* ** CASE 3 ** */
+   elif (sign[1] eq 1) and (#sign eq 2) then
+      for mp in aut do
+         if (mp(Rlist[1]) eq Rlist[1]^-1) and (mp(Rlist[2]) eq Rlist[2]^-1) and
+         (mp(Rlist[3]) eq Rlist[1]^-1*Rlist[2]^-1*Rlist[3]*Rlist[2]*Rlist[1]) then
+            FindK12346(G,mp,sign,[0,2,2,2,2*sign[2]],gen,3,prtfile,ri);
+            testcounter:=1;
+         end if;
+      end for;
+
+   /* ** CASE 2 ** */
+   elif (sign[1] eq 1) and (#sign eq 3) and (sign[2] eq sign[3]) then
+      for mp in aut do
+         d:=Rlist[1]^-1*Rlist[2]^-1*Rlist[3];
+         if (mp(Rlist[1]) eq Rlist[1]^-1) and (mp(Rlist[2]) eq Rlist[2]^-1) and
+         (mp(Rlist[3]) eq d*Rlist[4]*d^-1) and
+         (mp(Rlist[4]) eq d*Rlist[3]*d^-1) then
+      	    FindK12346(G,mp,sign,[0,2,2,2,2,sign[2]],gen,2,prtfile,ri);
+            testcounter:=1;
+         end if;
+      end for;
+
+   /* ** CASES 4 and 5 ** */
+   elif (sign[1] eq 0) and (#sign eq 5) then
+      if (SList[1] eq SList[2]) and (SList[3] eq SList[4]) and (SList[3] gt 2) then
+         if (SList[2] ne SList[3]) then  /* just case 4 */
+            for mp in aut do
+               if (mp(Rlist[1]) eq Rlist[2]) and (mp(Rlist[2]) eq Rlist[1]) and
+               (mp(Rlist[3]) eq Rlist[1]^-1*Rlist[4]*Rlist[1]) and
+               (mp(Rlist[4]) eq Rlist[2]*Rlist[3]*Rlist[2]^-1) then   
+	          FindK12346(G,mp,sign,[0,2,2,sign[3],sign[4]],gen,4,prtfile,ri);
+                  testcounter:=1;
+               end if;
+            end for;
+  
+         else  /* distinguish between case 4 or 5  */
+            flag4:=0;  
+            for mp in aut do
+               if (mp(Rlist[1]) eq Rlist[2]) and (mp(Rlist[2]) eq Rlist[1]) and
+               (mp(Rlist[3]) eq Rlist[4]) and (mp(Rlist[4]) eq Rlist[3]) then
+                  flag4:=1;
+                  flag5:=0; /* determine if case 4 or 5 */
+                  for mp2 in aut do
+                     if (mp2(Rlist[1]) eq Rlist[2]) and
+                     (mp2(Rlist[2]) eq Rlist[1]) and
+                     (mp2(Rlist[3]) eq Rlist[1]^-1*Rlist[4]*Rlist[1]) and
+                     (mp2(Rlist[4]) eq Rlist[2]*Rlist[3]*Rlist[2]^-1) then
+	     	        flag5:=1;
+            	        FindK5(G,mp,mp2,Rlist[2]*Rlist[3],sign,[0,2,2,2,sign[2]],gen,prtfile,ri);
+                        testcounter:=1;
+                     end if;
+                  end for;
+                  if flag5 eq 0 then 
+                     FindK12346(G,mp,sign,[0,2,2,sign[2],sign[2]],gen,4,prtfile,ri);
+                     testcounter:=1;
+                  end if;
+
+               else /* check Aut(Gamma)for case when signature is [0,l,l,l,l]*/
+                  if IsAbelian(G) then 
+                     cycList:=permute(Rlist);
+                  else  /* not abelian */
+                     cycList:=cycling(Rlist);
+                  end if;
+                  tempcount:=0;
+                  
+                  while (testcounter eq 0) and (tempcount eq 0) do
+                     M:=#cycList;
+                     testcounter,cycList:=Aut_Gamma_4(cycList,sign,gen,prtfile,ri,aut);
+                     if #cycList eq M  then
+                        tempcount:=1; /* stops when Qi doesn't add more */
+                     end if;    
+                  end while;
+               end if;  /* when at least case 4 is true */
+            end for;   /* mp */
+         end if;   /* whether case 4 or 5 */
+      end if;  /* cases 4 and 5 */
+   
+   elif (sign[1] eq 0) and (#sign eq 4) then 
+     /* ** CASES 6, 7, 8 ** */
+      if ((SList[1] eq SList[2]) and (SList[2] ne SList[3])) or
+      ((SList[1] ne SList[2]) and (SList[2] eq SList[3])) then
+        /* CASE 6 */
+         if SList[2] eq SList[3] then  /* k, l, l */
+            for mp in aut do
+               if (mp(Rlist[2]) eq Rlist[3]) and (mp(Rlist[3]) eq Rlist[2]) and
+               (mp(Rlist[1]) eq Rlist[3]*Rlist[1]*Rlist[3]^-1) then
+                  if sign[3] le 2*sign[2] then /* depends on order of sign */
+  	             FindK12346(G,mp,sign,[0,2,sign[3],2*sign[2]],gen,6,prtfile,ri); 
+	             testcounter:=1;
+                  else
+                     FindK12346(G,mp,sign,[0,2,2*sign[2],sign[3]],gen,6,prtfile,ri);
+	             testcounter:=1;
+                  end if;
+               end if;
+            end for;
+       
+         else  /*   l, l, k */
+            for mp in aut do
+               if (mp(Rlist[1]) eq Rlist[2]) and (mp(Rlist[2]) eq Rlist[1]) and
+               (mp(Rlist[3]) eq Rlist[2]*Rlist[3]*Rlist[2]^-1) then
+                  FindK12346(G,mp,sign,[0,2,sign[2],2*sign[4]],gen,6,prtfile,ri);
+                  testcounter:=1;
+               end if;
+            end for;
+         end if;  /* which location of k */
+    
+      elif  (SList[1] eq SList[2]) and (SList[2] eq SList[3]) and
+      (SList[1] ge 3) then 
+         flaga:=0;  /* if there is alpha */
+         flagb:=0;  /* if there is beta */
+
+         /* Try  7, 8 first (or basic case of 6) */
+         for mp in aut do
+            if (mp(Rlist[1]) eq Rlist[2]) and (mp(Rlist[2]) eq Rlist[1]) and
+            (mp(Rlist[3]) eq Rlist[2]*Rlist[3]*Rlist[2]^-1) then
+               flaga:=1;
+               mpa:=mp;
+               break;
+            end if;
+            if (mp(Rlist[1]) eq Rlist[2]) and (mp(Rlist[2]) eq Rlist[3]) and
+            (mp(Rlist[3]) eq Rlist[1]) then
+               flagb:=1;
+               mpb:=mp;
+               break;
+            end if;
+         end for; 
+ 
+         if (flaga+flagb eq 2) and (SList[1] ge 4) then /* CASE 8 */
+            FindK8(G,mpa,mpb,Rlist[1],sign,[0,2,3,2*sign[2]],gen,prtfile,ri);
+            testcounter:=1;
+
+         elif flaga eq 1 then  /* CASE 6b */
+            FindK12346(G,mpa,sign,[0,2,sign[2],2*sign[2]],gen,6,prtfile,ri);
+            testcounter:=1;
+
+         elif flagb eq 1 and (SList[1] ge 4) then   /* CASE 7 */
+            FindK7(G,mpb,sign,[0,3,3,sign[2]],gen,prtfile,ri);
+            testcounter:=1;
+
+         else /* check Aut(Gamma)for case when signature is [0,l,l,l]*/
+            if IsAbelian(G) then
+               cycList:=permute(Rlist);
+            else
+               cycList:=cycling(Rlist);
+            end if;
+ 
+            tempcount:=0;
+            while (testcounter eq 0) and (tempcount eq 0) do
+               M:=#cycList;
+               testcounter,cycList:=Aut_Gamma_6(cycList,sign,gen,prtfile,ri,aut);
+               if #cycList eq M  then
+                  tempcount:=1;  /* stops when Qi doesn't add more */
+               end if;    
+            end while;
+         end if; /* which of 6b,7,8 */
+      end if; /* cases 6b, 7, and 8 */
+   end if; 
+
+   /* if we found an possible example */
+   if testcounter eq 1 then 
+      return true;
+   end if;   
+
+   /* doesn't satisfy cases in Ries Theorem */
+   return false;
+end function;
+
+
+
+/* *************************************
+
+The following code is run for each possible
+generating vector each time the command
+"load ries.mag" is executed in the files
+SupplementaryFiles/gxx, which are created in
+generate_ccnums.mag.  The code creates
+(or overwrite) the temporary files
+SupplementaryFiles/testingfull and then runs
+the TestRiesCases function (above) on the given
+generating vector.  Finally, it loads the file
+SupplementaryFiles/testingfull which will compute
+the group of full automorphisms (as a quotient of 
+a free group) from the cases in Ries Theorem pg 390.
+
+**************************************** */
+
+Rlist:=Lgenvects;
+connected_Rlist:=connected_Lgenvects;
+n:=#Rlist;
+
+prtfile:="SupplementaryFiles/testingfull";  /* outputfile */
+PrintFile(prtfile," ": Overwrite:=true);   /* clears the file in all cases
+since nead to load later*/ 
+
+if #sign lt 6 and sign[1] lt 3 then
+  /* Rules out the never cases */
+
+   createdtempfile:=0;
+   for i in [1..n] do
+   
+      brkcount:=0;  /* Once find one, finished */
+      Con:=Cons[i];
+      if brkcount eq 0 then   /* this is for the cases situtation */
+         createdtempfile:=1;
+         PrintFile(prtfile," counttoful:=0;"); 
+         t:=TestRiesCases(G,sign,g,Rlist[i],prtfile,i);
+         if t then  /* true means a case was created but will need to check */
+            PrintFile(prtfile,"if counttoful eq 0 then PrintFull(G_str,sign,g,Rlist[" cat IntegerToString(i) cat \
+                      "],connected_Rlist[" cat IntegerToString(i) cat "], Cons[" cat IntegerToString(i) cat \
+                      "], Cons_label[" cat IntegerToString(i) cat "], [" cat IntegerToString(ccLabels[i,1]) cat \
+                      "," cat IntegerToString(ccLabels[i,2]) cat "] : definitely_full:=false); end if; ");
+
+         else
+            PrintFull(G_str,sign,g,Rlist[i],connected_Rlist[i],Cons[i],Cons_label[i],ccLabels[i] : definitely_full:=false);  /* need to consider the tables in
+            next step */
+         end if;
+      end if;
+   end for;
+end if;
+
+load "SupplementaryFiles/testingfull";
+
+if #sign ge 6 or sign[1] ge 3 then
+ /* don't need Ries, always full--don't need to check tables either */
+  for i in [1..n] do
+    PrintFull(G_str,sign,g,Rlist[i],connected_Rlist[i],Cons[i],Cons_label[i],ccLabels[i]);
+  end for;
+end if;
+

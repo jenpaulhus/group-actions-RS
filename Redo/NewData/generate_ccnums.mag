@@ -1,0 +1,104 @@
+/* *********************************************************** 
+
+generate_ccnums.mag
+
+Copyright (C) 2016 by Jennifer Paulhus
+    
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+This file contains code to define the labeling convention used for
+the individual refined passports. It converts a group given in the
+form SmallGroup(n,d) to a specific permutation group of degree the
+size of the group, and prints all this data to a temporary file
+SupplementaryFiles/gxx. This file is loaded from main.mag.
+
+
+Questions or comment about the code may be directed to:
+paulhus@math.grinnell.edu 
+
+************************************************************ */
+
+
+/* WARNING: This code assumes Breuer's data is given
+as a list (called Ldata) of pairs of a signature and group.
+Also, the output file prtfile must already be defined and
+the function RepresentativesEpimorphisms from genvectors.mag
+must also be defined. */
+
+
+/* for compute_rec_data function */
+load "process_recs.mag";
+
+
+for ell in Ldata do
+   sign:=ell[1];
+   if sign[1] eq 0 then /* for now only handles g0=0 */
+      SmallGrp:=SmallGroup(ell[2,1], ell[2,2]);
+      group_str, Cons, Cons_label, ccLabels, Lgenvects, connected_Lgenvects :=compute_rec_data(sign, SmallGrp);
+      if Type(Cons) eq RngIntElt then
+         continue;
+      end if;         
+
+      PrintFile(prtfile, Sprintf("G:=%o;", group_str));
+      PrintFile(prtfile, Sprintf("G_str:=\"%o\";", group_str));
+      PrintFile(prtfile,"sign:=");
+      PrintFile(prtfile,sign);
+      PrintFile(prtfile,";");
+
+      PrintFile(prtfile,"Lgenvects:=[");
+      for w in [1..#Lgenvects] do
+         PrintFile(prtfile,"[G!");
+         vect:=Lgenvects[w];
+         for v in [1..#vect] do
+            perm:=vect[v];
+            PrintFile(prtfile,perm);
+            if v lt #vect then
+               PrintFile(prtfile,", G!");
+            elif w lt #Lgenvects then
+               PrintFile(prtfile,"],");
+            else
+               PrintFile(prtfile,"]];");
+            end if;   
+         end for;
+      end for;
+
+      PrintFile(prtfile,"connected_Lgenvects:=[");
+      for w in [1..#connected_Lgenvects] do
+         PrintFile(prtfile,"[");
+         vect:=connected_Lgenvects[w];
+         for v in [1..#vect] do
+            gen_str:=Sprintf("\"%o\"", vect[v]);
+            PrintFile(prtfile,gen_str);
+            if v lt #vect then
+               PrintFile(prtfile,", ");
+            elif w lt #connected_Lgenvects then
+               PrintFile(prtfile,"],");
+            else
+               PrintFile(prtfile,"]];");
+            end if;   
+         end for;
+      end for;
+
+      PrintFile(prtfile,"Cons:=");
+      PrintFile(prtfile,Cons);
+      PrintFile(prtfile,";");
+      PrintFile(prtfile,"Cons_label:=");
+      PrintFile(prtfile,Cons_label);
+      PrintFile(prtfile,";");
+      PrintFile(prtfile,"ccLabels:=");
+      PrintFile(prtfile,ccLabels);
+      PrintFile(prtfile,";");
+      PrintFile(prtfile,"load 'ries.mag';");
+   end if; /* sign[1]=0 */
+end for;

@@ -1,0 +1,78 @@
+/* *********************************************************** 
+
+main.mag
+
+Copyright (C) 2016 by Jennifer Paulhus
+    
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+This file is the main code for generating data at
+www.lmfdb.org/HigherGenus/C/Aut
+
+Questions or comment about the code may be directed to:
+paulhus@math.grinnell.edu 
+
+************************************************************ */
+
+/* WARNING: Before running this code, replace the 'xx' in the
+seven locations below with a given genus of the form 02-10 */
+
+
+/* functions needed later */
+load "genvectors.mag";
+load "ries_helper_fn.mag";
+
+/* global variables */
+g:=02;    
+NotFullList:=[];
+prtfile:="SupplementaryFiles/g02"; 
+
+
+/* print files without annoying hard returns in the middle of
+a long entry */
+SetColumns(0); 
+
+
+/* This command loads all the group and signature pairs
+which Breuer originally computed */
+load "SupplementaryFiles/BreuerRaw/g02";
+
+
+/* creates file SupplementaryFiles/gyy by taking each pair of
+group and signature, computing all possible generating vectors
+up to simultaneous conjugation, and  assigning a labeling convention
+for the different conjugacy classes representing different actions*/
+load "generate_ccnums.mag";  
+
+
+/* runs ries.mag for each example to determine if the action might
+be the full automorphism group, and creates three possible files:
+SupplementaryFiles/gyyfull for those examples we know are full
+SupplementaryFiles/gyynotfull for those which fit one case of the main
+    Theorem in Ries' paper
+SupplementaryFiles/gyypossible_full for those examples we need to test
+    the Tables in Ries' paper */
+load "SupplementaryFiles/g02";
+
+/* tests the Table cases in ries.mag */
+load "OutputFiles/g02possible_full";
+
+/* file used to compute additional data */
+load "addl_data.mag";
+
+/* runs addl_data.mag on both full and not full data */
+load "OutputFiles/g02full";
+load "OutputFiles/g02notfull";
+
+/* The final output will be a file called gyyfinaldata */

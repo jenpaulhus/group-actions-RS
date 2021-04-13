@@ -1,0 +1,241 @@
+/* *********************************************************** 
+
+addl_data.mag
+
+Copyright (C) 2016 by Jennifer Paulhus
+    
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+This file supplements the main code for generating data at
+www.lmfdb.org/HigherGenus/C/Aut
+
+It is called from OutputFile/gxxfull or OutputFile/gxxnotfull
+which are written in the file ries_helper_fn.mag 
+
+The code is used to compute additional information about actions of
+groups on Riemann surfaces, including:
+     - whether the curve is hyperelliptic and if so, what the
+      defining equations are
+     - whether the curve is cyclic trigonal
+
+Questions or comment about the code may be directed to:
+paulhus@math.grinnell.edu 
+
+************************************************************ */
+
+/* WARNING: This code assumes the genus g is already known. */
+
+load "hyeqn.mag";
+       /* hyperelliptic curve equation files */
+load "ishypiscyc.mag";
+     /* determines if hyperelliptic or cyclic trigonal */
+
+/* for DecomposeJacobians function */
+load "decjac-old.mag";
+
+/* for EncodePerm function */
+Attach("lehmer.m");
+
+
+/* filenames to write the outputs */
+if g lt 10 then
+   storefilename:="g0" cat IntegerToString(g) cat "finaldata";
+else 
+   storefilename:="g" cat IntegerToString(g) cat "finaldata";
+end if;
+
+
+/* *************************************
+Procedure AddlData
+
+Input: G        group
+       sign     signature 
+       Lmonod   generating vectors
+       Con      conjugacy classes for the
+                given generating vectors
+       cclabel  label as assigned by
+                generate_ccnums.mag
+         
+Outcome: determines additional data for
+         full automorphism groups and
+         writes all computed data to
+         the file gxxfinaldata
+**************************************** */ 
+AddlData:=procedure(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+
+/* determine hyperelliptic */
+   boolh,hinv:=IsHyperelliptic(G,g,Lmonod);
+ 
+/* determine cyclic trigonal */
+   if g gt 2 then
+      boolc,cinv:=IsCyclicTrigonal(G,g,Lmonod);
+   else
+      boolc:=false;  /* genus 2 exception */
+   end if;   
+
+   PrintFile( storefilename, "F");
+   gpsize:=IdentifyGroup(G)[1];
+   gpnum:=IdentifyGroup(G)[2];
+   groupstring:=  "[" cat IntegerToString(gpsize) cat"," cat
+      IntegerToString(gpnum) cat"]";
+   PrintFile( storefilename, groupstring);
+   PrintFile( storefilename,Sprint(sign));
+   PrintFile( storefilename,Sprint(Con));
+   PrintFile( storefilename,Sprint(Con_label));
+   PrintFile( storefilename, cclabel);
+
+   decomp := DecomposeJacobians(G, sign, Lmonod);
+   decomp_str := "[ ";
+   for i in [1..#decomp] do
+      if i ne #decomp then
+         decomp_str := decomp_str cat Sprintf("%o", decomp[i]) cat ", ";
+      else
+         decomp_str := decomp_str cat Sprintf("%o", decomp[i]) cat " ]";
+      end if;
+   end for;
+   PrintFile( storefilename, decomp_str);
+
+   ranks := [];
+   genvec_str := "[ ";
+   for i in [1..#Lmonod] do	
+      Append(~ranks, EncodePerm(Lmonod[i]));
+      if i ne #Lmonod then
+         genvec_str := genvec_str cat Sprintf("%o", Eltseq(Lmonod[i])) cat ", ";
+      else
+         genvec_str := genvec_str cat Sprintf("%o", Eltseq(Lmonod[i])) cat " ]";
+      end if;
+   end for;
+   PrintFile( storefilename, ranks);
+   PrintFile( storefilename, genvec_str);
+   if IsSolvable(G) then
+      PrintFile( storefilename, connected_Lmonod);
+   else
+      PrintFile( storefilename, "Nonsolvable");
+   end if;
+
+   if boolh then /* if yes, add equations */
+      eqn:= HypEq(G,sign,g);
+ 
+      PrintFile(storefilename,"HY");
+      PrintFile(storefilename,Eltseq(hinv));
+      /*
+      for eqz in eqn do
+         if eqz ne " " then
+            PrintFile(storefilename,eqz);
+         end if;   
+      end for;   */
+      PrintFile(storefilename, eqn);
+   else
+      PrintFile(storefilename,"HN");     
+   end if;
+
+   if boolc then /* if yes, add corresponding automorphism */
+       
+      PrintFile(storefilename,"CY");
+      PrintFile(storefilename,Eltseq(cinv[1]));
+   else
+      PrintFile(storefilename,"CN");     
+   end if; 
+
+   PrintFile(storefilename, "@"); 
+
+end procedure;
+
+
+/* *************************************
+Procedure AddlDataNF
+
+Input: G        group
+       sign     signature 
+       Lmonod   generating vectors
+       H        full automorphism group
+       signH    signature of full action
+       Con      conjugacy classes for the
+                given generating vectors
+       cclabel  label as assigned by
+                generate_ccnums.mag
+       g        genus
+         
+         
+Outcome: determines additional data for
+         non-full automorphism groups 
+         and writes all computed data to
+         the file gxxfinaldata
+**************************************** */ 
+AddlDataNF:=procedure(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cclabel);
+
+   gpsize:=IdentifyGroup(G)[1];
+   gpnum:=IdentifyGroup(G)[2];
+
+/* deals with the case where the data computed
+  from ries.mag gives a larger group which is
+  still not the full automorphism group */
+   for NFL in NotFullList do
+      if IdentifyGroup(H) eq NFL[1,1] and signH eq NFL[1,2] then
+         H:=SmallGroup(NFL[2,1,1],NFL[2,1,2]);
+         signH:=NFL[2,2];
+         break;
+      end if;    
+   end for;
+
+   IdH:=IdentifyGroup(H);
+
+/* Print */
+   PrintFile( storefilename, "NF");
+   groupstring:=  "[" cat IntegerToString(gpsize) cat"," cat
+      IntegerToString(gpnum) cat"]"; 
+   PrintFile( storefilename, groupstring);
+   PrintFile( storefilename,Sprint(sign));
+   PrintFile( storefilename, Sprint(Con));
+   PrintFile( storefilename, Sprint(Con_label));
+   PrintFile( storefilename, cclabel);
+
+   decomp := DecomposeJacobians(G, sign, Lmonod);
+   decomp_str := "[ ";
+   for i in [1..#decomp] do
+      if i ne #decomp then
+         decomp_str := decomp_str cat Sprintf("%o", decomp[i]) cat ", ";
+      else
+         decomp_str := decomp_str cat Sprintf("%o", decomp[i]) cat " ]";
+      end if;
+   end for;
+   PrintFile( storefilename, decomp_str);
+
+   ranks := [];
+   genvec_str := "[ ";
+   for i in [1..#Lmonod] do	
+      Append(~ranks, EncodePerm(Lmonod[i]));
+      if i ne #Lmonod then
+         genvec_str := genvec_str cat Sprintf("%o", Eltseq(Lmonod[i])) cat ", ";
+      else
+         genvec_str := genvec_str cat Sprintf("%o", Eltseq(Lmonod[i])) cat " ]";
+      end if;
+   end for;
+   PrintFile( storefilename, ranks);
+   PrintFile( storefilename, genvec_str);
+   if IsSolvable(G) then
+      PrintFile( storefilename, connected_Lmonod);
+   else
+      PrintFile( storefilename, "Nonsolvable");
+   end if;
+
+   groupstringH:=  "[" cat IntegerToString(IdH[1]) cat"," cat
+      IntegerToString(IdH[2]) cat"]"; 
+   PrintFile( storefilename, groupstringH);
+   PrintFile( storefilename,Sprint(signH));
+  
+   PrintFile(storefilename, "@"); 
+   
+end procedure;
+
