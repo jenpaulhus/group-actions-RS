@@ -1,0 +1,3288 @@
+G:=PermutationGroup<2|[ (1, 2) ]>;
+sign:=[0, 2, 2, 2, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 2)
+, G!
+(1, 2)
+, G!
+(1, 2)
+, G!
+(1, 2)
+, G!
+(1, 2)
+, G!
+(1, 2)
+, G!
+(1, 2)
+, G!
+(1, 2)
+];
+connected_Lmonod:=[
+"a"
+, 
+"a"
+, 
+"a"
+, 
+"a"
+, 
+"a"
+, 
+"a"
+, 
+"a"
+, 
+"a"
+];
+Con:=
+[ 2, 2, 2, 2, 2, 2, 2, 2 ]
+;
+Con_label:=
+[ "2A", "2A", "2A", "2A", "2A", "2A", "2A", "2A" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<3|[ (1, 2, 3) ]>;
+sign:=[0, 3, 3, 3, 3, 3];
+Lmonod:=[G!
+(1, 2, 3)
+, G!
+(1, 3, 2)
+, G!
+(1, 3, 2)
+, G!
+(1, 3, 2)
+, G!
+(1, 3, 2)
+];
+connected_Lmonod:=[
+"a"
+, 
+"a^2"
+, 
+"a^2"
+, 
+"a^2"
+, 
+"a^2"
+];
+Con:=
+[ 2, 3, 3, 3, 3 ]
+;
+Con_label:=
+[ "3A-1", "3A1", "3A1", "3A1", "3A1" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<3|[ (1, 2, 3) ]>;
+sign:=[0, 3, 3, 3, 3, 3];
+Lmonod:=[G!
+(1, 2, 3)
+, G!
+(1, 2, 3)
+, G!
+(1, 2, 3)
+, G!
+(1, 2, 3)
+, G!
+(1, 3, 2)
+];
+connected_Lmonod:=[
+"a"
+, 
+"a"
+, 
+"a"
+, 
+"a"
+, 
+"a^2"
+];
+Con:=
+[ 2, 2, 2, 2, 3 ]
+;
+Con_label:=
+[ "3A-1", "3A-1", "3A-1", "3A-1", "3A1" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<4|[ (1, 2, 3, 4) ]>;
+sign:=[0, 2, 2, 2, 4, 4];
+Lmonod:=[G!
+(1, 3)(2, 4)
+, G!
+(1, 3)(2, 4)
+, G!
+(1, 3)(2, 4)
+, G!
+(1, 2, 3, 4)
+, G!
+(1, 2, 3, 4)
+];
+connected_Lmonod:=[
+"a^-2"
+, 
+"a^-2"
+, 
+"a^-2"
+, 
+"a"
+, 
+"a"
+];
+Con:=
+[ 2, 2, 2, 3, 3 ]
+;
+Con_label:=
+[ "2A", "2A", "2A", "4A1", "4A1" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<4|[ (1, 2, 3, 4) ]>;
+sign:=[0, 2, 2, 2, 4, 4];
+Lmonod:=[G!
+(1, 3)(2, 4)
+, G!
+(1, 3)(2, 4)
+, G!
+(1, 3)(2, 4)
+, G!
+(1, 4, 3, 2)
+, G!
+(1, 4, 3, 2)
+];
+connected_Lmonod:=[
+"a^-2"
+, 
+"a^-2"
+, 
+"a^-2"
+, 
+"a^-1"
+, 
+"a^-1"
+];
+Con:=
+[ 2, 2, 2, 4, 4 ]
+;
+Con_label:=
+[ "2A", "2A", "2A", "4A-1", "4A-1" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>;
+sign:=[0, 2, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 4)(2, 3)
+, G!
+(1, 4)(2, 3)
+, G!
+(1, 4)(2, 3)
+, G!
+(1, 4)(2, 3)
+, G!
+(1, 3)(2, 4)
+, G!
+(1, 3)(2, 4)
+];
+connected_Lmonod:=[
+"a"
+, 
+"a"
+, 
+"a"
+, 
+"a"
+, 
+"ba"
+, 
+"ba"
+];
+Con:=
+[ 3, 3, 3, 3, 4, 4 ]
+;
+Con_label:=
+[ "2A", "2A", "2A", "2A", "2B", "2B" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>;
+sign:=[0, 2, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 4)(2, 3)
+, G!
+(1, 4)(2, 3)
+, G!
+(1, 3)(2, 4)
+, G!
+(1, 3)(2, 4)
+, G!
+(1, 3)(2, 4)
+, G!
+(1, 3)(2, 4)
+];
+connected_Lmonod:=[
+"a"
+, 
+"a"
+, 
+"ba"
+, 
+"ba"
+, 
+"ba"
+, 
+"ba"
+];
+Con:=
+[ 3, 3, 4, 4, 4, 4 ]
+;
+Con_label:=
+[ "2A", "2A", "2B", "2B", "2B", "2B" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>;
+sign:=[0, 2, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 2)(3, 4)
+, G!
+(1, 2)(3, 4)
+, G!
+(1, 4)(2, 3)
+, G!
+(1, 4)(2, 3)
+, G!
+(1, 4)(2, 3)
+, G!
+(1, 4)(2, 3)
+];
+connected_Lmonod:=[
+"b"
+, 
+"b"
+, 
+"a"
+, 
+"a"
+, 
+"a"
+, 
+"a"
+];
+Con:=
+[ 2, 2, 3, 3, 3, 3 ]
+;
+Con_label:=
+[ "2C", "2C", "2A", "2A", "2A", "2A" ]
+;
+cclabel:=
+[ 3, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>;
+sign:=[0, 2, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 2)(3, 4)
+, G!
+(1, 2)(3, 4)
+, G!
+(1, 4)(2, 3)
+, G!
+(1, 4)(2, 3)
+, G!
+(1, 3)(2, 4)
+, G!
+(1, 3)(2, 4)
+];
+connected_Lmonod:=[
+"b"
+, 
+"b"
+, 
+"a"
+, 
+"a"
+, 
+"ba"
+, 
+"ba"
+];
+Con:=
+[ 2, 2, 3, 3, 4, 4 ]
+;
+Con_label:=
+[ "2C", "2C", "2A", "2A", "2B", "2B" ]
+;
+cclabel:=
+[ 4, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>;
+sign:=[0, 2, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 2)(3, 4)
+, G!
+(1, 2)(3, 4)
+, G!
+(1, 3)(2, 4)
+, G!
+(1, 3)(2, 4)
+, G!
+(1, 3)(2, 4)
+, G!
+(1, 3)(2, 4)
+];
+connected_Lmonod:=[
+"b"
+, 
+"b"
+, 
+"ba"
+, 
+"ba"
+, 
+"ba"
+, 
+"ba"
+];
+Con:=
+[ 2, 2, 4, 4, 4, 4 ]
+;
+Con_label:=
+[ "2C", "2C", "2B", "2B", "2B", "2B" ]
+;
+cclabel:=
+[ 5, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>;
+sign:=[0, 2, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 2)(3, 4)
+, G!
+(1, 2)(3, 4)
+, G!
+(1, 2)(3, 4)
+, G!
+(1, 2)(3, 4)
+, G!
+(1, 4)(2, 3)
+, G!
+(1, 4)(2, 3)
+];
+connected_Lmonod:=[
+"b"
+, 
+"b"
+, 
+"b"
+, 
+"b"
+, 
+"a"
+, 
+"a"
+];
+Con:=
+[ 2, 2, 2, 2, 3, 3 ]
+;
+Con_label:=
+[ "2C", "2C", "2C", "2C", "2A", "2A" ]
+;
+cclabel:=
+[ 6, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>;
+sign:=[0, 2, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 2)(3, 4)
+, G!
+(1, 2)(3, 4)
+, G!
+(1, 2)(3, 4)
+, G!
+(1, 2)(3, 4)
+, G!
+(1, 3)(2, 4)
+, G!
+(1, 3)(2, 4)
+];
+connected_Lmonod:=[
+"b"
+, 
+"b"
+, 
+"b"
+, 
+"b"
+, 
+"ba"
+, 
+"ba"
+];
+Con:=
+[ 2, 2, 2, 2, 4, 4 ]
+;
+Con_label:=
+[ "2C", "2C", "2C", "2C", "2B", "2B" ]
+;
+cclabel:=
+[ 7, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+sign:=[0, 2, 2, 2, 2, 3];
+Lmonod:=[G!
+(1, 2)
+, G!
+(2, 3)
+, G!
+(2, 3)
+, G!
+(2, 3)
+, G!
+(1, 2, 3)
+];
+connected_Lmonod:=[
+"ba"
+, 
+"a"
+, 
+"a"
+, 
+"a"
+, 
+"b"
+];
+Con:=
+[ 2, 2, 2, 2, 3 ]
+;
+Con_label:=
+[ "2A", "2A", "2A", "2A", "3A" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+sign:=[0, 2, 2, 2, 2, 3];
+Lmonod:=[G!
+(1, 2)
+, G!
+(2, 3)
+, G!
+(2, 3)
+, G!
+(1, 3)
+, G!
+(1, 3, 2)
+];
+connected_Lmonod:=[
+"ba"
+, 
+"a"
+, 
+"a"
+, 
+"b^2a"
+, 
+"b^2"
+];
+Con:=
+[ 2, 2, 2, 2, 3 ]
+;
+Con_label:=
+[ "2A", "2A", "2A", "2A", "3A" ]
+;
+cclabel:=
+[ 1, 2 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+sign:=[0, 2, 2, 2, 2, 3];
+Lmonod:=[G!
+(1, 2)
+, G!
+(2, 3)
+, G!
+(1, 2)
+, G!
+(2, 3)
+, G!
+(1, 3, 2)
+];
+connected_Lmonod:=[
+"ba"
+, 
+"a"
+, 
+"ba"
+, 
+"a"
+, 
+"b^2"
+];
+Con:=
+[ 2, 2, 2, 2, 3 ]
+;
+Con_label:=
+[ "2A", "2A", "2A", "2A", "3A" ]
+;
+cclabel:=
+[ 1, 3 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+sign:=[0, 2, 2, 2, 2, 3];
+Lmonod:=[G!
+(1, 2)
+, G!
+(2, 3)
+, G!
+(1, 2)
+, G!
+(1, 2)
+, G!
+(1, 2, 3)
+];
+connected_Lmonod:=[
+"ba"
+, 
+"a"
+, 
+"ba"
+, 
+"ba"
+, 
+"b"
+];
+Con:=
+[ 2, 2, 2, 2, 3 ]
+;
+Con_label:=
+[ "2A", "2A", "2A", "2A", "3A" ]
+;
+cclabel:=
+[ 1, 4 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+sign:=[0, 2, 2, 2, 2, 3];
+Lmonod:=[G!
+(1, 2)
+, G!
+(2, 3)
+, G!
+(1, 3)
+, G!
+(1, 2)
+, G!
+(1, 3, 2)
+];
+connected_Lmonod:=[
+"ba"
+, 
+"a"
+, 
+"b^2a"
+, 
+"ba"
+, 
+"b^2"
+];
+Con:=
+[ 2, 2, 2, 2, 3 ]
+;
+Con_label:=
+[ "2A", "2A", "2A", "2A", "3A" ]
+;
+cclabel:=
+[ 1, 5 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+sign:=[0, 2, 2, 2, 2, 3];
+Lmonod:=[G!
+(1, 2)
+, G!
+(2, 3)
+, G!
+(1, 3)
+, G!
+(1, 3)
+, G!
+(1, 2, 3)
+];
+connected_Lmonod:=[
+"ba"
+, 
+"a"
+, 
+"b^2a"
+, 
+"b^2a"
+, 
+"b"
+];
+Con:=
+[ 2, 2, 2, 2, 3 ]
+;
+Con_label:=
+[ "2A", "2A", "2A", "2A", "3A" ]
+;
+cclabel:=
+[ 1, 6 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+sign:=[0, 2, 2, 2, 2, 3];
+Lmonod:=[G!
+(1, 2)
+, G!
+(1, 2)
+, G!
+(2, 3)
+, G!
+(1, 2)
+, G!
+(1, 3, 2)
+];
+connected_Lmonod:=[
+"ba"
+, 
+"ba"
+, 
+"a"
+, 
+"ba"
+, 
+"b^2"
+];
+Con:=
+[ 2, 2, 2, 2, 3 ]
+;
+Con_label:=
+[ "2A", "2A", "2A", "2A", "3A" ]
+;
+cclabel:=
+[ 1, 7 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+sign:=[0, 2, 2, 2, 2, 3];
+Lmonod:=[G!
+(1, 2)
+, G!
+(1, 2)
+, G!
+(2, 3)
+, G!
+(1, 3)
+, G!
+(1, 2, 3)
+];
+connected_Lmonod:=[
+"ba"
+, 
+"ba"
+, 
+"a"
+, 
+"b^2a"
+, 
+"b"
+];
+Con:=
+[ 2, 2, 2, 2, 3 ]
+;
+Con_label:=
+[ "2A", "2A", "2A", "2A", "3A" ]
+;
+cclabel:=
+[ 1, 8 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+sign:=[0, 2, 2, 2, 2, 3];
+Lmonod:=[G!
+(1, 2)
+, G!
+(1, 2)
+, G!
+(1, 2)
+, G!
+(2, 3)
+, G!
+(1, 2, 3)
+];
+connected_Lmonod:=[
+"ba"
+, 
+"ba"
+, 
+"ba"
+, 
+"a"
+, 
+"b"
+];
+Con:=
+[ 2, 2, 2, 2, 3 ]
+;
+Con_label:=
+[ "2A", "2A", "2A", "2A", "3A" ]
+;
+cclabel:=
+[ 1, 9 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 4)
+, G!
+(1, 3)
+, G!
+(2, 4)
+, G!
+(1, 4)(2, 3)
+, G!
+(1, 4)(2, 3)
+];
+connected_Lmonod:=[
+"b^-2"
+, 
+"b^-2a"
+, 
+"a"
+, 
+"b^-1a"
+, 
+"b^-1a"
+];
+Con:=
+[ 2, 3, 3, 4, 4 ]
+;
+Con_label:=
+[ "2A", "2B", "2B", "2C", "2C" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 4)
+, G!
+(1, 3)
+, G!
+(1, 3)
+, G!
+(1, 4)(2, 3)
+, G!
+(1, 2)(3, 4)
+];
+connected_Lmonod:=[
+"b^-2"
+, 
+"b^-2a"
+, 
+"b^-2a"
+, 
+"b^-1a"
+, 
+"ba"
+];
+Con:=
+[ 2, 3, 3, 4, 4 ]
+;
+Con_label:=
+[ "2A", "2B", "2B", "2C", "2C" ]
+;
+cclabel:=
+[ 1, 2 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"cb"
+, 
+"ca"
+, 
+"ba"
+, 
+"cba"
+, 
+"cba"
+];
+Con:=
+[ 4, 6, 7, 8, 8 ]
+;
+Con_label:=
+[ "2C", "2A", "2B", "2F", "2F" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"cb"
+, 
+"a"
+, 
+"ca"
+, 
+"ca"
+, 
+"cba"
+];
+Con:=
+[ 4, 5, 6, 6, 8 ]
+;
+Con_label:=
+[ "2C", "2E", "2A", "2A", "2F" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"cb"
+, 
+"a"
+, 
+"ba"
+, 
+"ba"
+, 
+"cba"
+];
+Con:=
+[ 4, 5, 7, 7, 8 ]
+;
+Con_label:=
+[ "2C", "2E", "2B", "2B", "2F" ]
+;
+cclabel:=
+[ 3, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+];
+connected_Lmonod:=[
+"cb"
+, 
+"a"
+, 
+"a"
+, 
+"ca"
+, 
+"ba"
+];
+Con:=
+[ 4, 5, 5, 6, 7 ]
+;
+Con_label:=
+[ "2C", "2E", "2E", "2A", "2B" ]
+;
+cclabel:=
+[ 4, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"b"
+, 
+"ca"
+, 
+"ba"
+, 
+"ba"
+, 
+"cba"
+];
+Con:=
+[ 3, 6, 7, 7, 8 ]
+;
+Con_label:=
+[ "2D", "2A", "2B", "2B", "2F" ]
+;
+cclabel:=
+[ 5, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"b"
+, 
+"cb"
+, 
+"cb"
+, 
+"ca"
+, 
+"cba"
+];
+Con:=
+[ 3, 4, 4, 6, 8 ]
+;
+Con_label:=
+[ "2D", "2C", "2C", "2A", "2F" ]
+;
+cclabel:=
+[ 6, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+];
+connected_Lmonod:=[
+"b"
+, 
+"cb"
+, 
+"cb"
+, 
+"a"
+, 
+"ba"
+];
+Con:=
+[ 3, 4, 4, 5, 7 ]
+;
+Con_label:=
+[ "2D", "2C", "2C", "2E", "2B" ]
+;
+cclabel:=
+[ 7, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+];
+connected_Lmonod:=[
+"b"
+, 
+"b"
+, 
+"cb"
+, 
+"ca"
+, 
+"ba"
+];
+Con:=
+[ 3, 3, 4, 6, 7 ]
+;
+Con_label:=
+[ "2D", "2D", "2C", "2A", "2B" ]
+;
+cclabel:=
+[ 8, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"b"
+, 
+"b"
+, 
+"cb"
+, 
+"a"
+, 
+"cba"
+];
+Con:=
+[ 3, 3, 4, 5, 8 ]
+;
+Con_label:=
+[ "2D", "2D", "2C", "2E", "2F" ]
+;
+cclabel:=
+[ 9, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+];
+connected_Lmonod:=[
+"b"
+, 
+"a"
+, 
+"ca"
+, 
+"ca"
+, 
+"ba"
+];
+Con:=
+[ 3, 5, 6, 6, 7 ]
+;
+Con_label:=
+[ "2D", "2E", "2A", "2A", "2B" ]
+;
+cclabel:=
+[ 10, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"b"
+, 
+"a"
+, 
+"ba"
+, 
+"cba"
+, 
+"cba"
+];
+Con:=
+[ 3, 5, 7, 8, 8 ]
+;
+Con_label:=
+[ "2D", "2E", "2B", "2F", "2F" ]
+;
+cclabel:=
+[ 11, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"b"
+, 
+"a"
+, 
+"a"
+, 
+"ca"
+, 
+"cba"
+];
+Con:=
+[ 3, 5, 5, 6, 8 ]
+;
+Con_label:=
+[ "2D", "2E", "2E", "2A", "2F" ]
+;
+cclabel:=
+[ 12, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"ca"
+, 
+"ca"
+, 
+"ba"
+, 
+"cba"
+];
+Con:=
+[ 2, 6, 6, 7, 8 ]
+;
+Con_label:=
+[ "2G", "2A", "2A", "2B", "2F" ]
+;
+cclabel:=
+[ 13, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"cb"
+, 
+"cb"
+, 
+"ba"
+, 
+"cba"
+];
+Con:=
+[ 2, 4, 4, 7, 8 ]
+;
+Con_label:=
+[ "2G", "2C", "2C", "2B", "2F" ]
+;
+cclabel:=
+[ 14, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"cb"
+, 
+"cb"
+, 
+"a"
+, 
+"ca"
+];
+Con:=
+[ 2, 4, 4, 5, 6 ]
+;
+Con_label:=
+[ "2G", "2C", "2C", "2E", "2A" ]
+;
+cclabel:=
+[ 15, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"b"
+, 
+"cb"
+, 
+"ca"
+, 
+"ca"
+];
+Con:=
+[ 2, 3, 4, 6, 6 ]
+;
+Con_label:=
+[ "2G", "2D", "2C", "2A", "2A" ]
+;
+cclabel:=
+[ 16, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"b"
+, 
+"cb"
+, 
+"ba"
+, 
+"ba"
+];
+Con:=
+[ 2, 3, 4, 7, 7 ]
+;
+Con_label:=
+[ "2G", "2D", "2C", "2B", "2B" ]
+;
+cclabel:=
+[ 17, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"b"
+, 
+"cb"
+, 
+"a"
+, 
+"a"
+];
+Con:=
+[ 2, 3, 4, 5, 5 ]
+;
+Con_label:=
+[ "2G", "2D", "2C", "2E", "2E" ]
+;
+cclabel:=
+[ 18, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"b"
+, 
+"cb"
+, 
+"cba"
+, 
+"cba"
+];
+Con:=
+[ 2, 3, 4, 8, 8 ]
+;
+Con_label:=
+[ "2G", "2D", "2C", "2F", "2F" ]
+;
+cclabel:=
+[ 19, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"b"
+, 
+"b"
+, 
+"ba"
+, 
+"cba"
+];
+Con:=
+[ 2, 3, 3, 7, 8 ]
+;
+Con_label:=
+[ "2G", "2D", "2D", "2B", "2F" ]
+;
+cclabel:=
+[ 20, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"b"
+, 
+"b"
+, 
+"a"
+, 
+"ca"
+];
+Con:=
+[ 2, 3, 3, 5, 6 ]
+;
+Con_label:=
+[ "2G", "2D", "2D", "2E", "2A" ]
+;
+cclabel:=
+[ 21, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"a"
+, 
+"ca"
+, 
+"ba"
+, 
+"ba"
+];
+Con:=
+[ 2, 5, 6, 7, 7 ]
+;
+Con_label:=
+[ "2G", "2E", "2A", "2B", "2B" ]
+;
+cclabel:=
+[ 22, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"a"
+, 
+"ca"
+, 
+"cba"
+, 
+"cba"
+];
+Con:=
+[ 2, 5, 6, 8, 8 ]
+;
+Con_label:=
+[ "2G", "2E", "2A", "2F", "2F" ]
+;
+cclabel:=
+[ 23, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"a"
+, 
+"a"
+, 
+"ba"
+, 
+"cba"
+];
+Con:=
+[ 2, 5, 5, 7, 8 ]
+;
+Con_label:=
+[ "2G", "2E", "2E", "2B", "2F" ]
+;
+cclabel:=
+[ 24, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"c"
+, 
+"cb"
+, 
+"ca"
+, 
+"ba"
+];
+Con:=
+[ 2, 2, 4, 6, 7 ]
+;
+Con_label:=
+[ "2G", "2G", "2C", "2A", "2B" ]
+;
+cclabel:=
+[ 25, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"c"
+, 
+"cb"
+, 
+"a"
+, 
+"cba"
+];
+Con:=
+[ 2, 2, 4, 5, 8 ]
+;
+Con_label:=
+[ "2G", "2G", "2C", "2E", "2F" ]
+;
+cclabel:=
+[ 26, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 6)(2, 5)(3, 4)(7, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"c"
+, 
+"b"
+, 
+"ca"
+, 
+"cba"
+];
+Con:=
+[ 2, 2, 3, 6, 8 ]
+;
+Con_label:=
+[ "2G", "2G", "2D", "2A", "2F" ]
+;
+cclabel:=
+[ 27, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+];
+connected_Lmonod:=[
+"c"
+, 
+"c"
+, 
+"b"
+, 
+"a"
+, 
+"ba"
+];
+Con:=
+[ 2, 2, 3, 5, 7 ]
+;
+Con_label:=
+[ "2G", "2G", "2D", "2E", "2B" ]
+;
+cclabel:=
+[ 28, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>;
+sign:=[0, 2, 3, 3, 6];
+Lmonod:=[G!
+(1, 4)(2, 5)(3, 6)
+, G!
+(1, 3, 5)(2, 4, 6)
+, G!
+(1, 3, 5)(2, 4, 6)
+, G!
+(1, 6, 5, 4, 3, 2)
+];
+connected_Lmonod:=[
+"a^3"
+, 
+"a^4"
+, 
+"a^4"
+, 
+"a"
+];
+Con:=
+[ 2, 3, 3, 6 ]
+;
+Con_label:=
+[ "2A", "3A1", "3A1", "6A-1" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>;
+sign:=[0, 2, 3, 3, 6];
+Lmonod:=[G!
+(1, 4)(2, 5)(3, 6)
+, G!
+(1, 5, 3)(2, 6, 4)
+, G!
+(1, 5, 3)(2, 6, 4)
+, G!
+(1, 2, 3, 4, 5, 6)
+];
+connected_Lmonod:=[
+"a^3"
+, 
+"a^2"
+, 
+"a^2"
+, 
+"a^5"
+];
+Con:=
+[ 2, 4, 4, 5 ]
+;
+Con_label:=
+[ "2A", "3A-1", "3A-1", "6A1" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 4, 4];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 2, 3, 8)(4, 5, 6, 7)
+, G!
+(1, 6, 3, 4)(2, 7, 8, 5)
+];
+connected_Lmonod:=[
+"b^-2"
+, 
+"a"
+, 
+"b"
+, 
+"ba"
+];
+Con:=
+[ 2, 3, 5, 7 ]
+;
+Con_label:=
+[ "2A", "2B", "4A-1", "4A1" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 4, 4];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 8, 3, 2)(4, 7, 6, 5)
+, G!
+(1, 4, 3, 6)(2, 5, 8, 7)
+];
+connected_Lmonod:=[
+"b^-2"
+, 
+"a"
+, 
+"b^-1"
+, 
+"b^-1a"
+];
+Con:=
+[ 2, 3, 6, 8 ]
+;
+Con_label:=
+[ "2A", "2B", "4B1", "4B-1" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 4, 4];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 2, 3, 8)(4, 5, 6, 7)
+, G!
+(1, 4, 3, 6)(2, 5, 8, 7)
+];
+connected_Lmonod:=[
+"b^-2"
+, 
+"b^-2a"
+, 
+"b"
+, 
+"b^-1a"
+];
+Con:=
+[ 2, 4, 5, 8 ]
+;
+Con_label:=
+[ "2A", "2C", "4A-1", "4B-1" ]
+;
+cclabel:=
+[ 3, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 4, 4];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 8, 3, 2)(4, 7, 6, 5)
+, G!
+(1, 6, 3, 4)(2, 7, 8, 5)
+];
+connected_Lmonod:=[
+"b^-2"
+, 
+"b^-2a"
+, 
+"b^-1"
+, 
+"ba"
+];
+Con:=
+[ 2, 4, 6, 7 ]
+;
+Con_label:=
+[ "2A", "2C", "4B1", "4A1" ]
+;
+cclabel:=
+[ 4, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<9|[ (1, 2, 3, 4, 5, 6, 7, 8, 9) ]>;
+sign:=[0, 3, 9, 9];
+Lmonod:=[G!
+(1, 4, 7)(2, 5, 8)(3, 6, 9)
+, G!
+(1, 3, 5, 7, 9, 2, 4, 6, 8)
+, G!
+(1, 5, 9, 4, 8, 3, 7, 2, 6)
+];
+connected_Lmonod:=[
+"a^3"
+, 
+"a^2"
+, 
+"a^4"
+];
+Con:=
+[ 2, 5, 6 ]
+;
+Con_label:=
+[ "3A1", "9A1", "9A2" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<9|[ (1, 2, 3, 4, 5, 6, 7, 8, 9) ]>;
+sign:=[0, 3, 9, 9];
+Lmonod:=[G!
+(1, 4, 7)(2, 5, 8)(3, 6, 9)
+, G!
+(1, 8, 6, 4, 2, 9, 7, 5, 3)
+, G!
+(1, 9, 8, 7, 6, 5, 4, 3, 2)
+];
+connected_Lmonod:=[
+"a^3"
+, 
+"a^7"
+, 
+"a^8"
+];
+Con:=
+[ 2, 8, 9 ]
+;
+Con_label:=
+[ "3A1", "9A-2", "9A4" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<9|[ (1, 2, 3, 4, 5, 6, 7, 8, 9) ]>;
+sign:=[0, 3, 9, 9];
+Lmonod:=[G!
+(1, 4, 7)(2, 5, 8)(3, 6, 9)
+, G!
+(1, 2, 3, 4, 5, 6, 7, 8, 9)
+, G!
+(1, 6, 2, 7, 3, 8, 4, 9, 5)
+];
+connected_Lmonod:=[
+"a^3"
+, 
+"a"
+, 
+"a^5"
+];
+Con:=
+[ 2, 4, 7 ]
+;
+Con_label:=
+[ "3A1", "9A-4", "9A-1" ]
+;
+cclabel:=
+[ 3, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<9|[ (1, 2, 3, 4, 5, 6, 7, 8, 9) ]>;
+sign:=[0, 3, 9, 9];
+Lmonod:=[G!
+(1, 7, 4)(2, 8, 5)(3, 9, 6)
+, G!
+(1, 6, 2, 7, 3, 8, 4, 9, 5)
+, G!
+(1, 8, 6, 4, 2, 9, 7, 5, 3)
+];
+connected_Lmonod:=[
+"a^6"
+, 
+"a^5"
+, 
+"a^7"
+];
+Con:=
+[ 3, 7, 8 ]
+;
+Con_label:=
+[ "3A-1", "9A-1", "9A-2" ]
+;
+cclabel:=
+[ 4, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<9|[ (1, 2, 3, 4, 5, 6, 7, 8, 9) ]>;
+sign:=[0, 3, 9, 9];
+Lmonod:=[G!
+(1, 7, 4)(2, 8, 5)(3, 9, 6)
+, G!
+(1, 5, 9, 4, 8, 3, 7, 2, 6)
+, G!
+(1, 9, 8, 7, 6, 5, 4, 3, 2)
+];
+connected_Lmonod:=[
+"a^6"
+, 
+"a^4"
+, 
+"a^8"
+];
+Con:=
+[ 3, 6, 9 ]
+;
+Con_label:=
+[ "3A-1", "9A2", "9A4" ]
+;
+cclabel:=
+[ 5, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<9|[ (1, 2, 3, 4, 5, 6, 7, 8, 9) ]>;
+sign:=[0, 3, 9, 9];
+Lmonod:=[G!
+(1, 7, 4)(2, 8, 5)(3, 9, 6)
+, G!
+(1, 2, 3, 4, 5, 6, 7, 8, 9)
+, G!
+(1, 3, 5, 7, 9, 2, 4, 6, 8)
+];
+connected_Lmonod:=[
+"a^6"
+, 
+"a"
+, 
+"a^2"
+];
+Con:=
+[ 3, 4, 5 ]
+;
+Con_label:=
+[ "3A-1", "9A-4", "9A1" ]
+;
+cclabel:=
+[ 6, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<6|[ (1, 4)(2, 3)(5, 6), (1, 2, 3, 4, 5, 6) ]>;
+sign:=[0, 2, 2, 2, 6];
+Lmonod:=[G!
+(1, 4)(2, 5)(3, 6)
+, G!
+(1, 5)(2, 4)
+, G!
+(1, 3)(4, 6)
+, G!
+(1, 6, 5, 4, 3, 2)
+];
+connected_Lmonod:=[
+"b^3"
+, 
+"ba"
+, 
+"b^5a"
+, 
+"b^5"
+];
+Con:=
+[ 2, 4, 4, 6 ]
+;
+Con_label:=
+[ "2A", "2B", "2B", "6A" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<6|[ (1, 4)(2, 3)(5, 6), (1, 2, 3, 4, 5, 6) ]>;
+sign:=[0, 2, 2, 2, 6];
+Lmonod:=[G!
+(1, 4)(2, 5)(3, 6)
+, G!
+(1, 4)(2, 3)(5, 6)
+, G!
+(1, 6)(2, 5)(3, 4)
+, G!
+(1, 2, 3, 4, 5, 6)
+];
+connected_Lmonod:=[
+"b^3"
+, 
+"a"
+, 
+"b^2a"
+, 
+"b"
+];
+Con:=
+[ 2, 3, 3, 6 ]
+;
+Con_label:=
+[ "2A", "2C", "2C", "6A" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<14|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) ]>;
+sign:=[0, 2, 7, 14];
+Lmonod:=[G!
+(1, 8)(2, 9)(3, 10)(4, 11)(5, 12)(6, 13)(7, 14)
+, G!
+(1, 3, 5, 7, 9, 11, 13)(2, 4, 6, 8, 10, 12, 14)
+, G!
+(1, 6, 11, 2, 7, 12, 3, 8, 13, 4, 9, 14, 5, 10)
+];
+connected_Lmonod:=[
+"a^7"
+, 
+"a^12"
+, 
+"a^9"
+];
+Con:=
+[ 2, 3, 11 ]
+;
+Con_label:=
+[ "2A", "7A1", "14A3" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<14|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) ]>;
+sign:=[0, 2, 7, 14];
+Lmonod:=[G!
+(1, 8)(2, 9)(3, 10)(4, 11)(5, 12)(6, 13)(7, 14)
+, G!
+(1, 9, 3, 11, 5, 13, 7)(2, 10, 4, 12, 6, 14, 8)
+, G!
+(1, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2)
+];
+connected_Lmonod:=[
+"a^7"
+, 
+"a^6"
+, 
+"a"
+];
+Con:=
+[ 2, 6, 14 ]
+;
+Con_label:=
+[ "2A", "7A-1", "14A1" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<14|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) ]>;
+sign:=[0, 2, 7, 14];
+Lmonod:=[G!
+(1, 8)(2, 9)(3, 10)(4, 11)(5, 12)(6, 13)(7, 14)
+, G!
+(1, 7, 13, 5, 11, 3, 9)(2, 8, 14, 6, 12, 4, 10)
+, G!
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+];
+connected_Lmonod:=[
+"a^7"
+, 
+"a^8"
+, 
+"a^13"
+];
+Con:=
+[ 2, 5, 9 ]
+;
+Con_label:=
+[ "2A", "7A2", "14A-1" ]
+;
+cclabel:=
+[ 3, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<14|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) ]>;
+sign:=[0, 2, 7, 14];
+Lmonod:=[G!
+(1, 8)(2, 9)(3, 10)(4, 11)(5, 12)(6, 13)(7, 14)
+, G!
+(1, 5, 9, 13, 3, 7, 11)(2, 6, 10, 14, 4, 8, 12)
+, G!
+(1, 4, 7, 10, 13, 2, 5, 8, 11, 14, 3, 6, 9, 12)
+];
+connected_Lmonod:=[
+"a^7"
+, 
+"a^10"
+, 
+"a^11"
+];
+Con:=
+[ 2, 4, 10 ]
+;
+Con_label:=
+[ "2A", "7A-2", "14A-5" ]
+;
+cclabel:=
+[ 4, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<14|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) ]>;
+sign:=[0, 2, 7, 14];
+Lmonod:=[G!
+(1, 8)(2, 9)(3, 10)(4, 11)(5, 12)(6, 13)(7, 14)
+, G!
+(1, 11, 7, 3, 13, 9, 5)(2, 12, 8, 4, 14, 10, 6)
+, G!
+(1, 12, 9, 6, 3, 14, 11, 8, 5, 2, 13, 10, 7, 4)
+];
+connected_Lmonod:=[
+"a^7"
+, 
+"a^4"
+, 
+"a^3"
+];
+Con:=
+[ 2, 7, 13 ]
+;
+Con_label:=
+[ "2A", "7A3", "14A5" ]
+;
+cclabel:=
+[ 5, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<14|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) ]>;
+sign:=[0, 2, 7, 14];
+Lmonod:=[G!
+(1, 8)(2, 9)(3, 10)(4, 11)(5, 12)(6, 13)(7, 14)
+, G!
+(1, 13, 11, 9, 7, 5, 3)(2, 14, 12, 10, 8, 6, 4)
+, G!
+(1, 10, 5, 14, 9, 4, 13, 8, 3, 12, 7, 2, 11, 6)
+];
+connected_Lmonod:=[
+"a^7"
+, 
+"a^2"
+, 
+"a^5"
+];
+Con:=
+[ 2, 8, 12 ]
+;
+Con_label:=
+[ "2A", "7A-3", "14A-3" ]
+;
+cclabel:=
+[ 6, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (4, 5)(6, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 4];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 3)(2, 8)(4, 7)(5, 6)
+, G!
+(1, 7, 8, 6)(2, 4, 3, 5)
+];
+connected_Lmonod:=[
+"a"
+, 
+"c^-1b"
+, 
+"b"
+, 
+"c^-1a"
+];
+Con:=
+[ 2, 6, 8, 10 ]
+;
+Con_label:=
+[ "2B", "2D", "2E", "4B" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (4, 5)(6, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 4];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(4, 5)(6, 7)
+, G!
+(1, 5, 8, 4)(2, 6, 3, 7)
+];
+connected_Lmonod:=[
+"a"
+, 
+"c^-1b"
+, 
+"ba"
+, 
+"c^-1"
+];
+Con:=
+[ 2, 6, 7, 9 ]
+;
+Con_label:=
+[ "2B", "2D", "2F", "4A" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (4, 5)(6, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 4];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 3)(2, 8)(4, 7)(5, 6)
+, G!
+(1, 5, 8, 4)(2, 6, 3, 7)
+];
+connected_Lmonod:=[
+"a"
+, 
+"c^-1ba"
+, 
+"b"
+, 
+"c^-1"
+];
+Con:=
+[ 2, 5, 8, 9 ]
+;
+Con_label:=
+[ "2B", "2G", "2E", "4A" ]
+;
+cclabel:=
+[ 3, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (4, 5)(6, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 4];
+Lmonod:=[G!
+(1, 3)(2, 8)(4, 6)(5, 7)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(4, 5)(6, 7)
+, G!
+(1, 7, 8, 6)(2, 4, 3, 5)
+];
+connected_Lmonod:=[
+"a"
+, 
+"c^-1ba"
+, 
+"ba"
+, 
+"c^-1a"
+];
+Con:=
+[ 2, 5, 7, 10 ]
+;
+Con_label:=
+[ "2B", "2G", "2F", "4B" ]
+;
+cclabel:=
+[ 4, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (4, 5)(6, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 4];
+Lmonod:=[G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(1, 3)(2, 8)(4, 7)(5, 6)
+, G!
+(1, 6, 8, 7)(2, 5, 3, 4)
+];
+connected_Lmonod:=[
+"c^-2a"
+, 
+"c^-1b"
+, 
+"b"
+, 
+"ca"
+];
+Con:=
+[ 4, 6, 8, 10 ]
+;
+Con_label:=
+[ "2C", "2D", "2E", "4B" ]
+;
+cclabel:=
+[ 5, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (4, 5)(6, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 4];
+Lmonod:=[G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 7)(2, 4)(3, 5)(6, 8)
+, G!
+(4, 5)(6, 7)
+, G!
+(1, 4, 8, 5)(2, 7, 3, 6)
+];
+connected_Lmonod:=[
+"c^-2a"
+, 
+"c^-1b"
+, 
+"ba"
+, 
+"c"
+];
+Con:=
+[ 4, 6, 7, 9 ]
+;
+Con_label:=
+[ "2C", "2D", "2F", "4A" ]
+;
+cclabel:=
+[ 6, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (4, 5)(6, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 4];
+Lmonod:=[G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(1, 3)(2, 8)(4, 7)(5, 6)
+, G!
+(1, 4, 8, 5)(2, 7, 3, 6)
+];
+connected_Lmonod:=[
+"c^-2a"
+, 
+"c^-1ba"
+, 
+"b"
+, 
+"c"
+];
+Con:=
+[ 4, 5, 8, 9 ]
+;
+Con_label:=
+[ "2C", "2G", "2E", "4A" ]
+;
+cclabel:=
+[ 7, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3)(2, 8)(4, 6)(5, 7), (4, 5)(6, 7), (1, 8)(2, 3)(4, 5)(6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+sign:=[0, 2, 2, 2, 4];
+Lmonod:=[G!
+(1, 2)(3, 8)(4, 7)(5, 6)
+, G!
+(1, 5)(2, 6)(3, 7)(4, 8)
+, G!
+(4, 5)(6, 7)
+, G!
+(1, 6, 8, 7)(2, 5, 3, 4)
+];
+connected_Lmonod:=[
+"c^-2a"
+, 
+"c^-1ba"
+, 
+"ba"
+, 
+"ca"
+];
+Con:=
+[ 4, 5, 7, 10 ]
+;
+Con_label:=
+[ "2C", "2G", "2F", "4B" ]
+;
+cclabel:=
+[ 8, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3, 5, 7)(2, 4, 6, 8), (1, 5)(3, 7), (1, 4, 5, 8)(2, 3, 6, 7) ]>;
+sign:=[0, 2, 2, 2, 4];
+Lmonod:=[G!
+(1, 6)(2, 5)(3, 8)(4, 7)
+, G!
+(1, 5)(3, 7)
+, G!
+(1, 8)(2, 3)(4, 5)(6, 7)
+, G!
+(1, 3, 5, 7)(2, 4, 6, 8)
+];
+connected_Lmonod:=[
+"cba"
+, 
+"c^-2b"
+, 
+"a"
+, 
+"c"
+];
+Con:=
+[ 3, 4, 5, 6 ]
+;
+Con_label:=
+[ "2C", "2D", "2B", "4A1" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<8|[ (1, 3, 5, 7)(2, 4, 6, 8), (1, 5)(3, 7), (1, 4, 5, 8)(2, 3, 6, 7) ]>;
+sign:=[0, 2, 2, 2, 4];
+Lmonod:=[G!
+(1, 6)(2, 5)(3, 8)(4, 7)
+, G!
+(1, 5)(3, 7)
+, G!
+(1, 4)(2, 7)(3, 6)(5, 8)
+, G!
+(1, 7, 5, 3)(2, 8, 6, 4)
+];
+connected_Lmonod:=[
+"cba"
+, 
+"c^-2b"
+, 
+"c^-2a"
+, 
+"c^-1"
+];
+Con:=
+[ 3, 4, 5, 7 ]
+;
+Con_label:=
+[ "2C", "2D", "2B", "4A-1" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<12|[ (1, 5)(2, 10)(4, 8)(7, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
+sign:=[0, 2, 4, 12];
+Lmonod:=[G!
+(1, 11)(2, 4)(3, 9)(5, 7)(6, 12)(8, 10)
+, G!
+(1, 4, 7, 10)(2, 9, 8, 3)(5, 12, 11, 6)
+, G!
+(1, 8, 3, 10, 5, 12, 7, 2, 9, 4, 11, 6)
+];
+connected_Lmonod:=[
+"b^2a"
+, 
+"b^9a"
+, 
+"b^5"
+];
+Con:=
+[ 4, 8, 11 ]
+;
+Con_label:=
+[ "2B", "4B1", "12A1" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<12|[ (1, 5)(2, 10)(4, 8)(7, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
+sign:=[0, 2, 4, 12];
+Lmonod:=[G!
+(1, 11)(2, 4)(3, 9)(5, 7)(6, 12)(8, 10)
+, G!
+(1, 10, 7, 4)(2, 3, 8, 9)(5, 6, 11, 12)
+, G!
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+];
+connected_Lmonod:=[
+"b^2a"
+, 
+"b^3a"
+, 
+"b^11"
+];
+Con:=
+[ 4, 9, 12 ]
+;
+Con_label:=
+[ "2B", "4B-1", "12A-1" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<12|[ (1, 5)(2, 10)(4, 8)(7, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
+sign:=[0, 2, 4, 12];
+Lmonod:=[G!
+(1, 5)(2, 10)(4, 8)(7, 11)
+, G!
+(1, 4, 7, 10)(2, 9, 8, 3)(5, 12, 11, 6)
+, G!
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+];
+connected_Lmonod:=[
+"b^8a"
+, 
+"b^9a"
+, 
+"b^11"
+];
+Con:=
+[ 3, 8, 12 ]
+;
+Con_label:=
+[ "2C", "4B1", "12A-1" ]
+;
+cclabel:=
+[ 3, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<12|[ (1, 5)(2, 10)(4, 8)(7, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
+sign:=[0, 2, 4, 12];
+Lmonod:=[G!
+(1, 5)(2, 10)(4, 8)(7, 11)
+, G!
+(1, 10, 7, 4)(2, 3, 8, 9)(5, 6, 11, 12)
+, G!
+(1, 8, 3, 10, 5, 12, 7, 2, 9, 4, 11, 6)
+];
+connected_Lmonod:=[
+"b^8a"
+, 
+"b^3a"
+, 
+"b^5"
+];
+Con:=
+[ 3, 9, 11 ]
+;
+Con_label:=
+[ "2C", "4B-1", "12A1" ]
+;
+cclabel:=
+[ 4, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 2) ]>;
+sign:=[0, 2, 2, 2, 3];
+Lmonod:=[G!
+(1, 2)(3, 4)
+, G!
+(1, 4)
+, G!
+(1, 3)
+, G!
+(1, 4, 2)
+];
+connected_Lmonod:=[
+"dc"
+, 
+"db^2a"
+, 
+"cba"
+, 
+"db"
+];
+Con:=
+[ 2, 3, 3, 4 ]
+;
+Con_label:=
+[ "2A", "2B", "2B", "3A" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 2) ]>;
+sign:=[0, 2, 2, 2, 3];
+Lmonod:=[G!
+(1, 2)(3, 4)
+, G!
+(1, 4)
+, G!
+(1, 2)
+, G!
+(2, 3, 4)
+];
+connected_Lmonod:=[
+"dc"
+, 
+"db^2a"
+, 
+"dca"
+, 
+"b^2"
+];
+Con:=
+[ 2, 3, 3, 4 ]
+;
+Con_label:=
+[ "2A", "2B", "2B", "3A" ]
+;
+cclabel:=
+[ 1, 2 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 2) ]>;
+sign:=[0, 2, 2, 2, 3];
+Lmonod:=[G!
+(1, 2)(3, 4)
+, G!
+(1, 2)
+, G!
+(2, 3)
+, G!
+(2, 4, 3)
+];
+connected_Lmonod:=[
+"dc"
+, 
+"dca"
+, 
+"b^2a"
+, 
+"b"
+];
+Con:=
+[ 2, 3, 3, 4 ]
+;
+Con_label:=
+[ "2A", "2B", "2B", "3A" ]
+;
+cclabel:=
+[ 1, 3 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<16|[ (1, 3, 2, 4)(5, 16, 6, 15)(7, 13, 8, 14)(9, 11, 10, 12), (1, 5)(2, 6)(3, 4)(7, 15)(8, 16)(9, 14)(10, 13)(11, 12) ]>;
+sign:=[0, 2, 4, 8];
+Lmonod:=[G!
+(1, 6)(2, 5)(7, 16)(8, 15)(9, 13)(10, 14)
+, G!
+(1, 4, 2, 3)(5, 15, 6, 16)(7, 14, 8, 13)(9, 12, 10, 11)
+, G!
+(1, 3, 5, 7, 9, 11, 14, 16)(2, 4, 6, 8, 10, 12, 13, 15)
+];
+connected_Lmonod:=[
+"c^-2ba"
+, 
+"c^-1a"
+, 
+"c^-1b"
+];
+Con:=
+[ 6, 10, 14 ]
+;
+Con_label:=
+[ "2D", "4C1", "8A3" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<16|[ (1, 3, 2, 4)(5, 16, 6, 15)(7, 13, 8, 14)(9, 11, 10, 12), (1, 5)(2, 6)(3, 4)(7, 15)(8, 16)(9, 14)(10, 13)(11, 12) ]>;
+sign:=[0, 2, 4, 8];
+Lmonod:=[G!
+(1, 6)(2, 5)(7, 16)(8, 15)(9, 13)(10, 14)
+, G!
+(1, 16, 2, 15)(3, 13, 4, 14)(5, 11, 6, 12)(7, 10, 8, 9)
+, G!
+(1, 8, 14, 4, 9, 15, 5, 12)(2, 7, 13, 3, 10, 16, 6, 11)
+];
+connected_Lmonod:=[
+"c^-2ba"
+, 
+"cba"
+, 
+"c^-3"
+];
+Con:=
+[ 6, 10, 12 ]
+;
+Con_label:=
+[ "2D", "4C1", "8A-3" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<16|[ (1, 3, 2, 4)(5, 16, 6, 15)(7, 13, 8, 14)(9, 11, 10, 12), (1, 5)(2, 6)(3, 4)(7, 15)(8, 16)(9, 14)(10, 13)(11, 12) ]>;
+sign:=[0, 2, 4, 8];
+Lmonod:=[G!
+(1, 6)(2, 5)(7, 16)(8, 15)(9, 13)(10, 14)
+, G!
+(1, 3, 2, 4)(5, 16, 6, 15)(7, 13, 8, 14)(9, 11, 10, 12)
+, G!
+(1, 4, 5, 8, 9, 12, 14, 15)(2, 3, 6, 7, 10, 11, 13, 16)
+];
+connected_Lmonod:=[
+"c^-2ba"
+, 
+"c^-1ba"
+, 
+"c^-1"
+];
+Con:=
+[ 6, 9, 11 ]
+;
+Con_label:=
+[ "2D", "4C-1", "8A1" ]
+;
+cclabel:=
+[ 3, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<16|[ (1, 3, 2, 4)(5, 16, 6, 15)(7, 13, 8, 14)(9, 11, 10, 12), (1, 5)(2, 6)(3, 4)(7, 15)(8, 16)(9, 14)(10, 13)(11, 12) ]>;
+sign:=[0, 2, 4, 8];
+Lmonod:=[G!
+(1, 6)(2, 5)(7, 16)(8, 15)(9, 13)(10, 14)
+, G!
+(1, 15, 2, 16)(3, 14, 4, 13)(5, 12, 6, 11)(7, 9, 8, 10)
+, G!
+(1, 7, 14, 3, 9, 16, 5, 11)(2, 8, 13, 4, 10, 15, 6, 12)
+];
+connected_Lmonod:=[
+"c^-2ba"
+, 
+"ca"
+, 
+"c^-3b"
+];
+Con:=
+[ 6, 9, 13 ]
+;
+Con_label:=
+[ "2D", "4C-1", "8A-1" ]
+;
+cclabel:=
+[ 4, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<16|[ (1, 3, 2, 4)(5, 16, 6, 15)(7, 13, 8, 14)(9, 11, 10, 12), (1, 5)(2, 6)(3, 4)(7, 15)(8, 16)(9, 14)(10, 13)(11, 12) ]>;
+sign:=[0, 2, 4, 8];
+Lmonod:=[G!
+(1, 5)(2, 6)(3, 4)(7, 15)(8, 16)(9, 14)(10, 13)(11, 12)
+, G!
+(1, 4, 2, 3)(5, 15, 6, 16)(7, 14, 8, 13)(9, 12, 10, 11)
+, G!
+(1, 4, 5, 8, 9, 12, 14, 15)(2, 3, 6, 7, 10, 11, 13, 16)
+];
+connected_Lmonod:=[
+"c^-2a"
+, 
+"c^-1a"
+, 
+"c^-1"
+];
+Con:=
+[ 5, 10, 11 ]
+;
+Con_label:=
+[ "2E", "4C1", "8A1" ]
+;
+cclabel:=
+[ 5, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<16|[ (1, 3, 2, 4)(5, 16, 6, 15)(7, 13, 8, 14)(9, 11, 10, 12), (1, 5)(2, 6)(3, 4)(7, 15)(8, 16)(9, 14)(10, 13)(11, 12) ]>;
+sign:=[0, 2, 4, 8];
+Lmonod:=[G!
+(1, 5)(2, 6)(3, 4)(7, 15)(8, 16)(9, 14)(10, 13)(11, 12)
+, G!
+(1, 16, 2, 15)(3, 13, 4, 14)(5, 11, 6, 12)(7, 10, 8, 9)
+, G!
+(1, 7, 14, 3, 9, 16, 5, 11)(2, 8, 13, 4, 10, 15, 6, 12)
+];
+connected_Lmonod:=[
+"c^-2a"
+, 
+"cba"
+, 
+"c^-3b"
+];
+Con:=
+[ 5, 10, 13 ]
+;
+Con_label:=
+[ "2E", "4C1", "8A-1" ]
+;
+cclabel:=
+[ 6, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<16|[ (1, 3, 2, 4)(5, 16, 6, 15)(7, 13, 8, 14)(9, 11, 10, 12), (1, 5)(2, 6)(3, 4)(7, 15)(8, 16)(9, 14)(10, 13)(11, 12) ]>;
+sign:=[0, 2, 4, 8];
+Lmonod:=[G!
+(1, 5)(2, 6)(3, 4)(7, 15)(8, 16)(9, 14)(10, 13)(11, 12)
+, G!
+(1, 3, 2, 4)(5, 16, 6, 15)(7, 13, 8, 14)(9, 11, 10, 12)
+, G!
+(1, 3, 5, 7, 9, 11, 14, 16)(2, 4, 6, 8, 10, 12, 13, 15)
+];
+connected_Lmonod:=[
+"c^-2a"
+, 
+"c^-1ba"
+, 
+"c^-1b"
+];
+Con:=
+[ 5, 9, 14 ]
+;
+Con_label:=
+[ "2E", "4C-1", "8A3" ]
+;
+cclabel:=
+[ 7, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<16|[ (1, 3, 2, 4)(5, 16, 6, 15)(7, 13, 8, 14)(9, 11, 10, 12), (1, 5)(2, 6)(3, 4)(7, 15)(8, 16)(9, 14)(10, 13)(11, 12) ]>;
+sign:=[0, 2, 4, 8];
+Lmonod:=[G!
+(1, 5)(2, 6)(3, 4)(7, 15)(8, 16)(9, 14)(10, 13)(11, 12)
+, G!
+(1, 15, 2, 16)(3, 14, 4, 13)(5, 12, 6, 11)(7, 9, 8, 10)
+, G!
+(1, 8, 14, 4, 9, 15, 5, 12)(2, 7, 13, 3, 10, 16, 6, 11)
+];
+connected_Lmonod:=[
+"c^-2a"
+, 
+"ca"
+, 
+"c^-3"
+];
+Con:=
+[ 5, 9, 12 ]
+;
+Con_label:=
+[ "2E", "4C-1", "8A-3" ]
+;
+cclabel:=
+[ 8, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<6|[ (1, 5)(2, 4), (1, 3, 5)(2, 4, 6), (3, 6) ]>;
+sign:=[0, 2, 4, 6];
+Lmonod:=[G!
+(1, 5)(2, 4)(3, 6)
+, G!
+(1, 3, 4, 6)(2, 5)
+, G!
+(1, 3, 5, 4, 6, 2)
+];
+connected_Lmonod:=[
+"db^5a"
+, 
+"db^4a"
+, 
+"dcb"
+];
+Con:=
+[ 6, 9, 10 ]
+;
+Con_label:=
+[ "2D", "4B", "6A" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<6|[ (1, 5)(2, 4), (1, 3, 5)(2, 4, 6), (3, 6) ]>;
+sign:=[0, 2, 4, 6];
+Lmonod:=[G!
+(1, 5)(2, 4)
+, G!
+(1, 6, 4, 3)
+, G!
+(1, 3, 2, 4, 6, 5)
+];
+connected_Lmonod:=[
+"b^2a"
+, 
+"dba"
+, 
+"cb"
+];
+Con:=
+[ 5, 8, 10 ]
+;
+Con_label:=
+[ "2E", "4A", "6A" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<16|[ (1, 14, 5, 11, 16, 8, 2, 13, 6, 12, 15, 7)(3, 10, 4, 9), (1, 13)(2, 14)(3, 8)(4, 7)(5, 10)(6, 9)(11, 15)(12, 16) ]>;
+sign:=[0, 2, 3, 12];
+Lmonod:=[G!
+(1, 13)(2, 14)(3, 8)(4, 7)(5, 10)(6, 9)(11, 15)(12, 16)
+, G!
+(1, 6, 16)(2, 5, 15)(7, 13, 11)(8, 14, 12)
+, G!
+(1, 12, 2, 11)(3, 8, 16, 9, 6, 13, 4, 7, 15, 10, 5, 14)
+];
+connected_Lmonod:=[
+"cba^3"
+, 
+"b^-2ca^4"
+, 
+"a^5"
+];
+Con:=
+[ 3, 5, 11 ]
+;
+Con_label:=
+[ "2B", "3A1", "12A-1" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<16|[ (1, 14, 5, 11, 16, 8, 2, 13, 6, 12, 15, 7)(3, 10, 4, 9), (1, 13)(2, 14)(3, 8)(4, 7)(5, 10)(6, 9)(11, 15)(12, 16) ]>;
+sign:=[0, 2, 3, 12];
+Lmonod:=[G!
+(1, 13)(2, 14)(3, 8)(4, 7)(5, 10)(6, 9)(11, 15)(12, 16)
+, G!
+(3, 15, 6)(4, 16, 5)(7, 9, 14)(8, 10, 13)
+, G!
+(1, 13, 5, 12, 16, 7, 2, 14, 6, 11, 15, 8)(3, 9, 4, 10)
+];
+connected_Lmonod:=[
+"cba^3"
+, 
+"a^4"
+, 
+"b^-2cba^5"
+];
+Con:=
+[ 3, 5, 13 ]
+;
+Con_label:=
+[ "2B", "3A1", "12A5" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<16|[ (1, 14, 5, 11, 16, 8, 2, 13, 6, 12, 15, 7)(3, 10, 4, 9), (1, 13)(2, 14)(3, 8)(4, 7)(5, 10)(6, 9)(11, 15)(12, 16) ]>;
+sign:=[0, 2, 3, 12];
+Lmonod:=[G!
+(1, 13)(2, 14)(3, 8)(4, 7)(5, 10)(6, 9)(11, 15)(12, 16)
+, G!
+(1, 16, 6)(2, 15, 5)(7, 11, 13)(8, 12, 14)
+, G!
+(1, 9, 6, 12, 3, 8, 2, 10, 5, 11, 4, 7)(13, 15, 14, 16)
+];
+connected_Lmonod:=[
+"cba^3"
+, 
+"b^-2cba^2"
+, 
+"ba"
+];
+Con:=
+[ 3, 4, 14 ]
+;
+Con_label:=
+[ "2B", "3A-1", "12A1" ]
+;
+cclabel:=
+[ 3, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<16|[ (1, 14, 5, 11, 16, 8, 2, 13, 6, 12, 15, 7)(3, 10, 4, 9), (1, 13)(2, 14)(3, 8)(4, 7)(5, 10)(6, 9)(11, 15)(12, 16) ]>;
+sign:=[0, 2, 3, 12];
+Lmonod:=[G!
+(1, 13)(2, 14)(3, 8)(4, 7)(5, 10)(6, 9)(11, 15)(12, 16)
+, G!
+(3, 6, 15)(4, 5, 16)(7, 14, 9)(8, 13, 10)
+, G!
+(1, 13, 3, 11, 15, 9, 2, 14, 4, 12, 16, 10)(5, 7, 6, 8)
+];
+connected_Lmonod:=[
+"cba^3"
+, 
+"b^-2a^2"
+, 
+"b^-2cba"
+];
+Con:=
+[ 3, 4, 12 ]
+;
+Con_label:=
+[ "2B", "3A-1", "12A-5" ]
+;
+cclabel:=
+[ 4, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<12|[ (1, 5)(2, 10)(4, 8)(7, 11), (1, 10, 7, 4)(3, 6, 9, 12), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12) ]>;
+sign:=[0, 2, 3, 8];
+Lmonod:=[G!
+(1, 5)(2, 10)(4, 8)(7, 11)
+, G!
+(1, 2, 3)(4, 5, 6)(7, 8, 9)(10, 11, 12)
+, G!
+(1, 3, 10, 12, 7, 9, 4, 6)(2, 5, 8, 11)
+];
+connected_Lmonod:=[
+"b^2a"
+, 
+"dc^-1b^2"
+, 
+"d^-1ba"
+];
+Con:=
+[ 3, 4, 9 ]
+;
+Con_label:=
+[ "2B", "3A", "8A1" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<12|[ (1, 5)(2, 10)(4, 8)(7, 11), (1, 10, 7, 4)(3, 6, 9, 12), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12) ]>;
+sign:=[0, 2, 3, 8];
+Lmonod:=[G!
+(1, 5)(2, 10)(4, 8)(7, 11)
+, G!
+(1, 8, 3)(2, 9, 7)(4, 11, 6)(5, 12, 10)
+, G!
+(1, 3, 4, 6, 7, 9, 10, 12)(2, 11, 8, 5)
+];
+connected_Lmonod:=[
+"b^2a"
+, 
+"d^-1cb^2"
+, 
+"dba"
+];
+Con:=
+[ 3, 4, 10 ]
+;
+Con_label:=
+[ "2B", "3A", "8A-1" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<7|[ (2,3,4)(5,6,7), (1,2)(4,5) ]>;
+sign:=[0, 2, 3, 7];
+Lmonod:=[G!
+(1, 2)(4, 5)
+, G!
+(1, 5, 3)(2, 6, 7)
+, G!
+(1, 3, 4, 5, 2, 7, 6)
+];
+connected_Lmonod:=[
+"(1, 2)(4, 5)"
+, 
+"(1, 5, 3)(2, 6, 7)"
+, 
+"(1, 3, 4, 5, 2, 7, 6)"
+];
+Con:=
+[ 2, 3, 6 ]
+;
+Con_label:=
+[ "2A", "3A", "7A1" ]
+;
+cclabel:=
+[ 1, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
+G:=PermutationGroup<7|[ (2,3,4)(5,6,7), (1,2)(4,5) ]>;
+sign:=[0, 2, 3, 7];
+Lmonod:=[G!
+(1, 2)(4, 5)
+, G!
+(1, 5, 3)(4, 7, 6)
+, G!
+(1, 3, 4, 6, 7, 5, 2)
+];
+connected_Lmonod:=[
+"(1, 2)(4, 5)"
+, 
+"(1, 5, 3)(4, 7, 6)"
+, 
+"(1, 3, 4, 6, 7, 5, 2)"
+];
+Con:=
+[ 2, 3, 5 ]
+;
+Con_label:=
+[ "2A", "3A", "7A-1" ]
+;
+cclabel:=
+[ 2, 1 ]
+;
+AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cclabel);
