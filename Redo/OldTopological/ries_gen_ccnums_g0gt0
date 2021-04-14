@@ -1,0 +1,92 @@
+/* *********************************************************** 
+
+ries_generate_ccnums.mag
+
+Copyright (C) 2016 by Jennifer Paulhus
+    
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+This file contains supplementary code for the main functions in ries.mag
+It defines the labeling convention used for the 
+
+
+Ries, J. F. X. (1993). Subvarieties of moduli space determined by finite groups acting on surfaces. Trans. Amer. Math. Soc., 335(1):385–406.
+
+
+Questions or comment about the code may be directed to:
+paulhus@math.grinnell.edu 
+
+************************************************************ */
+
+
+for ell in Ldata do
+   sign:=ell[1];
+   if sign[1] gt 0 then
+      Grp:=PermRep(SmallGroup(ell[2,1], ell[2,2]));
+      R:=RepresentativesEpimorphisms(sign,Grp);
+      Lgenvects:=[R[i]`genimages : i in [1..#R]];
+      Cons:=[R[i]`Con: i in [1..#R]];   
+
+      /* LABEL CONVENTION */
+      cc:=Cons[1];
+      ccnumb:=1;
+      ccLabels:=[[1,1]];
+      countletters:=2;
+      for j in [2..#Cons] do
+         con:=Cons[j];
+         if con eq cc then
+            Append(~ccLabels,[ccnumb,countletters]);
+            countletters+:=1;
+         else
+            ccnumb+:=1; countletters:=1;
+            cc:=Cons[j];
+            Append(~ccLabels,[ccnumb,countletters]);
+            countletters+:=1;
+         end if;
+      end for;
+      
+      PrintFile(prtfile,"G:=PermRep(SmallGroup(" cat IntegerToString(ell[2,1]) cat "," cat IntegerToString(ell[2,2]) cat "));");
+      PrintFile(prtfile,"sign:=");
+      PrintFile(prtfile,sign);
+      PrintFile(prtfile,";");
+
+      PrintFile(prtfile,"Lgenvects:=[");
+      for w in [1..#Lgenvects] do
+         PrintFile(prtfile,"[G!");
+         vect:=Lgenvects[w];
+         for v in [1..#vect] do
+            perm:=vect[v];
+            if perm eq Id(Grp) then
+               PrintFile(prtfile,"Id(G)");
+            else   
+               PrintFile(prtfile,perm);
+            end if;   
+            if v lt #vect then
+               PrintFile(prtfile,", G!");
+            elif w lt #Lgenvects then
+               PrintFile(prtfile,"],");
+            else
+               PrintFile(prtfile,"]];");
+            end if;   
+         end for;
+      end for;
+      PrintFile(prtfile,"Cons:=");
+      PrintFile(prtfile,Cons);
+      PrintFile(prtfile,";");
+      PrintFile(prtfile,"ccLabels:=");
+      PrintFile(prtfile,ccLabels);
+      PrintFile(prtfile,";");
+      PrintFile(prtfile,"load m1g0;");
+   end if; /* sign[1]>0 */
+end for;

@@ -1,0 +1,36 @@
+/* Main file -- run in ~/CurvesDB/JenCode/   */
+/* Last updated: Jul 5, 2018--CODE FOR g0>0 cases */
+
+
+/* FILL IN THE FOLLOWING FOR DIFFERENT GENUS -- 7 CHANGES  can search replace "0x" with "0y"*/
+
+/* DONT RUN MORE THAN ONCE SINCE WRITE TO OTHER SAME NAME FILES */
+
+
+PATH:= "~/CurvesDB/ourdata/";
+
+load "~/Desktop/Research/FinishedWork/BreuerProgram/PostOnArXiV/genvectors.m";
+
+load "ries_helper_fng0";
+
+
+g:=3;   
+SetColumns(0); /* print nice */
+
+NotFullList:=[];
+load "~/CurvesDB/BreuerRaw/g003sp"; /* SPECIAL ONE TIME DEAL */
+prtfile:="~/CurvesDB/TempFiles/g03g0"; /* Ldata --added g0 here */
+
+load "ries_gen_ccnums_g0gt0"; /* needs Ldata */
+
+load "~/CurvesDB/TempFiles/g03g0";
+
+load "~/CurvesDB/ourdata/g03possible_fullg0";
+
+load "m2g0";
+
+load "~/CurvesDB/ourdata/g03fullg0";
+
+load "~/CurvesDB/ourdata/g03notfullg0";
+
+

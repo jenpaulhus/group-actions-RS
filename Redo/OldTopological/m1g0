@@ -1,0 +1,62 @@
+/* Main routine 1 */
+
+
+/* Last edited 7/6/18 by Jen FOR g0>0 */
+
+
+load "~/CurvesDB/JenCode/riesg0";
+
+Rlist:=Lgenvects;
+n:=#Rlist;
+
+prtfile:="~/CurvesDB/TempFiles/testingfullg0";  /* outputfile */
+PrintFile(prtfile," ": Overwrite:=true);   /* clears the file in all cases
+since nead to load later*/ 
+
+if #sign lt 6 and sign[1] lt 3 then
+  /* Rules out the never cases */
+
+   createdtempfile:=0;
+   for i in [1..n] do
+   
+      brkcount:=0;  /* Once find one, finished */
+      Con:=Cons[i];
+      if (#sign eq 4) and (sign[1] eq 0) then
+         t,H,signH:=TestRiesTbl1a(G,sign,g,Rlist[i]);
+         if t then
+            PrintNotFull(G,H,sign,signH,g,Rlist[i],Con,ccLabels[i]); 
+            Append(~NotFullList,[[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
+            brkcount:=1;  
+         end if;
+      end if;
+
+      if brkcount eq 0 then   /* this is for the cases situtation */
+         createdtempfile:=1;
+         PrintFile(prtfile," counttoful:=0;"); 
+         t:=TestRiesCases(G,sign,g,Rlist[i],prtfile,i);
+         if t then  /* true means a case was created but will need to check */
+            PrintFile(prtfile,"if counttoful eq 0 then PrintFull(Grp,
+       sign,g,Rlist[" cat IntegerToString(i) cat"],Cons[" cat IntegerToString(i) cat"],[" cat
+         IntegerToString(ccLabels[i,1]) cat "," cat IntegerToString(ccLabels[i,2]) cat  "] : definitely_full:=false);
+         end if; ");
+
+         else
+            PrintFull(G,sign,g,Rlist[i],Cons[i],ccLabels[i] : definitely_full:=false);  /* need to consider the tables in
+            next step */
+        end if;
+     end if;
+  end for;
+end if;
+
+load "~/CurvesDB/TempFiles/testingfullg0";
+
+
+
+
+if #sign ge 6 or sign[1] ge 3 then
+ /* don't need Ries, always full--don't need to check tables either */
+  for i in [1..n] do
+    PrintFull(G,sign,g,Rlist[i],Cons[i],ccLabels[i]);
+  end for;
+end if;
+

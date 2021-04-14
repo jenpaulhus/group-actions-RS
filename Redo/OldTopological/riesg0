@@ -1,0 +1,890 @@
+/* *********************************************************** 
+
+ries.mag
+
+Copyright (C) 2016 by Jennifer Paulhus
+    
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+This file contains the main functions and procedures to determine if
+a group action is the full action 
+
+Ries, J. F. X. (1993). Subvarieties of moduli space determined by finite groups acting on surfaces. Trans. Amer. Math. Soc., 335(1):385–406.
+
+Questions or comment about the code may be directed to:
+paulhus@math.grinnell.edu 
+
+************************************************************ */
+
+
+/*
+Functions
+ReadCode
+TestRiesTbl1a
+TestRiesTbl1b
+TestRiesTbl2
+TestRiesCases
+Aut_Gamma_4
+Aut_Gamma_6
+
+Procedures
+FindK12346
+FindK5
+FindK7
+FindK8
+*/
+
+
+/* SPECIFY Ldata somewhere AND ccLabels AND PATH*/
+
+
+/* List of special cases from Table 1 */
+Tbl1List:=[[*3,[0,7,7,7]*],[*7,[0,2,7,7]*],[*3,[0,3,3,7]*],[*3,[0,4,8,8]*],[*16,[0,3,8,8]*],[*10,[0,9,9,9]*],[*4,[0,4,4,5]*]];
+Tbl1Seconds:=[[0,2,3,7],[0,2,3,7],[0,2,3,7],[0,2,3,8],[0,2,3,8],[0,2,3,9],[0,2,4,5]];
+Tbl1FullGps:=[[168,42],[504,156],[168,42],[96,64],[720,764],[324,160],[120,34]];
+Tbl1G0:=[<7,1>,<56,11>,<21,1>,<8,1>,<72,39>,<27,4>,<20,3>];
+
+
+/* ***************************************
+ReadCode 
+
+reads riestemp file from Cases
+and returns full gp if it exists
+Needs Ldata already installed
+************************************ */
+ReadCode:=function(H,signH);
+
+   for j in [1..#Ldata] do   
+      IdH:=IdentifyGroup(H);
+      if (signH eq Ldata[j,1])  and (IdentifyGroup(SmallGroup(Ldata[j,2,1],Ldata[j,2,2])) eq IdH)  then
+         return true, H, signH; 
+         break j;  /* done once we find one */
+      end if; 
+   end for;
+return false, H, signH;
+
+end function;
+
+
+/* ***************************************
+PrintPossibleFullAuto(G1,G2,sign1,sign2,g)
+
+Inputs: G1            group 
+        G2           bigger group
+        sign1 
+        sign2
+        g
+        Lmonod
+        Con
+        cclabel
+
+Outcome: prints relevant info for possible non
+full automorphism
+************************************  */
+
+PrintPossibleFullAuto:=procedure(G,strngG, strngH, g,cases,prtfile,ri);
+
+/* Sorts strngH as it may not be assigned in increasing order */
+   SList:=Reverse(Prune(Reverse(strngH)));
+   Sort(~SList);
+   strngH:=[strngH[1]] cat SList;
+
+   PrintFile(prtfile,"H:=quo<F | Lreln>;");
+   idG:=IdentifyGroup(G);
+   PrintFile(prtfile,"Grp:=PermRep(SmallGroup(" cat IntegerToString(idG[1]) cat "," cat IntegerToString(idG[2]) cat "));") ;
+
+   signGstrg:="[";
+   for gs in [1..#strngG-1] do
+       signGstrg:=signGstrg cat IntegerToString(strngG[gs]) cat ",";
+   end for;
+   signGstrg:=signGstrg cat IntegerToString(strngG[#strngG]) cat "];" ;
+
+  signHstrg:="[";
+   for hs in [1..#strngH-1] do
+      signHstrg:=signHstrg cat IntegerToString(strngH[hs]) cat ",";
+   end for;
+   signHstrg:=signHstrg cat IntegerToString(strngH[#strngH]) cat "];";
+
+   PrintFile(prtfile,"signG:=" cat signGstrg);
+   PrintFile(prtfile,"signH:=" cat signHstrg);
+   PrintFile(prtfile,"g:=" cat IntegerToString(g) cat ";");
+
+   PrintFile(prtfile, "cases:=" cat IntegerToString(cases) cat ";");
+   PrintFile(prtfile, "t,H,signH:=ReadCode(H,signH);");
+
+   PrintFile(prtfile," if t then PrintNotFull(Grp,H,sign,signH,g,Rlist[" cat IntegerToString(ri) cat "],Cons[" cat
+   IntegerToString(ri) cat "], [" cat IntegerToString(ccLabels[ri,1]) cat "," cat IntegerToString(ccLabels[ri,2]) cat
+   "]); counttoful:=1;  Append(~NotFullList,[[*IdentifyGroup(Grp),sign*],[*IdentifyGroup(H),signH*]]);end if;"); 
+
+end procedure;
+
+
+
+/* ***************************************
+FindK12346(G,alpha,strngG,strngH,iR,sizeR,g)
+
+Inputs: G   permutation group 
+        alpha automorphism
+        strngG 
+        strngH
+        iR
+        sizeR
+        g
+        cases
+        prtfile
+        ri
+
+Outcome: prints relevant info for possible non
+full automorphism Then need to run the file
+printed here
+************************************ */
+FindK12346:=procedure(G,alpha,strngG,strngH,g,cases,prtfile,ri);
+
+   F,fm:=FPGroup(G); 
+   ng:=Ngens(F);
+   fi:=Inverse(fm);
+   LG:=[fi(g): g in G ];
+   LaG:=[fi(alpha(g)) : g in G];
+
+   strg:=IntegerToString(ng+1);
+   PrintFile(prtfile,"F:=FreeGroup(" cat strg cat");");
+
+   /* Relations of G */
+   RelnG:=Relations(F);
+   PrintFile(prtfile,"Lreln:=[");
+   for i in [1..#RelnG] do  /* changes this from ng??? */
+      PrintFile(prtfile,RelnG[i]);
+      PrintFile(prtfile,", ");
+   end for;
+
+   astrg:="F." cat IntegerToString(ng+1);
+
+   for j in [1..#LG] do
+      strg1:=astrg cat "*";
+      strg2:="*" cat astrg cat " = ";
+      PrintFile(prtfile,strg1);
+      PrintFile(prtfile,LG[j]);
+      PrintFile(prtfile,strg2);
+      PrintFile(prtfile,LaG[j]);
+      PrintFile(prtfile,", ");
+   end for;   
+
+   /* a^2=1 */
+   intg:=astrg cat "^2 = Id(F) ];";
+   PrintFile(prtfile,intg);
+
+/* NOW WRITE TO FILE H */
+
+PrintPossibleFullAuto(G,strngG,strngH,g,cases,prtfile,ri);
+
+end procedure;
+
+
+/* ***************************************
+FindK5(G,beta)
+
+Inputs: G   permutation group 
+        alpha automorphism
+
+Outcome: prints relevant info for possible non
+full automorphism
+************************************ */
+FindK5:=procedure(G,alpha,beta,c,strngG,strngH,g,prtfile,ri);
+
+/* c is element c_2*c_3 */
+F,fm:=FPGroup(G); 
+ng:=Ngens(F);
+fi:=Inverse(fm);
+LG:=[fi(g): g in G ];
+LaG:=[fi(alpha(g)) : g in G];
+LbG:=[fi(beta(g)) : g in G];
+
+C:=fi(c);
+
+strg:=IntegerToString(ng+2);
+PrintFile(prtfile,"F:=FreeGroup(" cat strg cat");");
+
+
+/* Relations of G */
+RelnG:=Relations(F);
+PrintFile(prtfile,"Lreln:=[");
+for i in [1..#RelnG] do
+   PrintFile(prtfile,RelnG[i]);
+   PrintFile(prtfile,", ");
+end for;
+
+astrg:="F." cat IntegerToString(ng+1);
+bstrg:="F." cat IntegerToString(ng+2);
+
+for j in [1..#LG] do
+   strg1:=astrg cat "*";
+   strg2:="*" cat astrg cat " = ";
+   PrintFile(prtfile,strg1);
+   PrintFile(prtfile,LG[j]);
+   PrintFile(prtfile,strg2);
+   PrintFile(prtfile,LaG[j]);
+   PrintFile(prtfile,", ");
+
+   strg3:=bstrg cat "*";
+   strg4:="*" cat bstrg cat " = ";
+   PrintFile(prtfile,strg3);
+   PrintFile(prtfile,LG[j]);
+   PrintFile(prtfile,strg4);
+   PrintFile(prtfile,LbG[j]);
+   PrintFile(prtfile,", ");
+end for;
+
+/* abab=(c)^-1 */
+
+abstrg:=astrg cat "*" cat bstrg cat "*" cat astrg cat "*" cat bstrg cat " = ";
+PrintFile(prtfile,abstrg);
+PrintFile(prtfile, C);
+PrintFile(prtfile,"^-1, ");
+
+
+/* a^2=1 and b^2=1 */
+intg:=astrg cat "^2 = Id(F), " cat bstrg cat "^2 = Id(F) ];";
+PrintFile(prtfile,intg);
+
+
+PrintPossibleFullAuto(G,strngG,strngH,g,5,prtfile,ri);
+
+end procedure;
+
+
+/* ***************************************
+FindK7(G,beta,strngG,strngH,iR,sizeR,g)
+
+Inputs: G   permutation group 
+        alpha automorphism
+
+Outcome: prints relevant info for possible non
+full automorphism
+************************************ */
+FindK7:=procedure(G,beta,strngG,strngH,g,prtfile,ri);
+
+F,fm:=FPGroup(G); 
+ng:=Ngens(F);
+fi:=Inverse(fm);
+LG:=[fi(g): g in G ];
+LaG:=[fi(beta(g)) : g in G];
+
+strg:=IntegerToString(ng+1);
+PrintFile(prtfile,"F:=FreeGroup(" cat strg cat");");
+
+
+
+/* Relations of G */
+RelnG:=Relations(F);
+PrintFile(prtfile,"Lreln:=[");
+for i in [1..#RelnG] do
+   PrintFile(prtfile,RelnG[i]);
+   PrintFile(prtfile,", ");
+end for;
+
+bstrg:="F." cat IntegerToString(ng+1);
+
+for j in [1..#LG] do
+   strg1:=bstrg cat "*";
+   strg2:="*" cat bstrg cat "^2 = ";
+   PrintFile(prtfile,strg1);
+   PrintFile(prtfile,LG[j]);
+   PrintFile(prtfile,strg2);
+   PrintFile(prtfile,LaG[j]);
+   PrintFile(prtfile,", ");
+end for;   
+
+/* b^3=1 */
+intg:=bstrg cat "^3 = Id(F) ];";
+PrintFile(prtfile,intg);
+
+PrintPossibleFullAuto(G,strngG,strngH,g,7,prtfile,ri);
+
+end procedure;
+
+
+
+/* ***************************************
+FindK8(G,alpha,beta,c)
+
+Inputs: G   permutation group 
+        alpha automorphism
+
+Outcome: prints relevant info for possible non
+full automorphism
+************************************ */
+FindK8:=procedure(G,alpha,beta,c,strngG,strngH,g,prtfile,ri);
+
+/* c is element c_1 */
+
+F,fm:=FPGroup(G); 
+ng:=Ngens(F);
+fi:=Inverse(fm);
+LG:=[fi(g): g in G ];
+LaG:=[fi(alpha(g)) : g in G];
+LbG:=[fi(beta(g)) : g in G];
+
+C:=fi(c);
+
+strg:=IntegerToString(ng+2);
+PrintFile(prtfile,"F:=FreeGroup(" cat strg cat");");
+
+
+/* Relations of G */
+RelnG:=Relations(F);
+PrintFile(prtfile,"Lreln:=[");
+for i in [1..#RelnG] do
+   PrintFile(prtfile,RelnG[i]);
+   PrintFile(prtfile,", ");
+end for;
+
+astrg:="F." cat IntegerToString(ng+1);
+bstrg:="F." cat IntegerToString(ng+2);
+
+for j in [1..#LG] do
+   strg1:=astrg cat "*";
+   strg2:="*" cat astrg cat " = ";
+   PrintFile(prtfile,strg1);
+   PrintFile(prtfile,LG[j]);
+   PrintFile(prtfile,strg2);
+   PrintFile(prtfile,LaG[j]);
+   PrintFile(prtfile,", ");
+
+   strg3:=bstrg cat "*";
+   strg4:="*" cat bstrg cat "^2 = ";
+   PrintFile(prtfile,strg3);
+   PrintFile(prtfile,LG[j]);
+   PrintFile(prtfile,strg4);
+   PrintFile(prtfile,LbG[j]);
+   PrintFile(prtfile,", ");
+end for;
+
+/* abab=(c)^-1 */
+abstrg:=astrg cat "*" cat bstrg cat "*" cat astrg cat "*" cat bstrg cat " = ";
+PrintFile(prtfile,abstrg);
+PrintFile(prtfile, C);
+PrintFile(prtfile,"^-1, ");
+
+
+/* a^2=1 and b^3=1 */
+intg:=astrg cat "^2 = Id(F), " cat bstrg cat "^3 = Id(F) ];";
+PrintFile(prtfile,intg);
+
+PrintPossibleFullAuto(G,strngG,strngH,g,8,prtfile,ri);
+
+
+end procedure;
+
+
+
+
+/*  *********************
+Aut_Gamma_4 gives braid of list L in kth spot
+*********************** */
+
+
+Aut_Gamma_4:=function(L,sign,gen,prtfile,ri,aut);
+
+for mp in aut do
+   for ell in L do
+      if (mp(ell[1]) eq ell[3]) and (mp(ell[3]) eq ell[1])  and (mp(ell[2]) eq ell[4]) and (mp(ell[4])) eq ell[2] then
+         FindK12346(G,mp,sign,[0,2,2,sign[2],sign[2]],gen,4,prtfile,ri);
+         return 1,L;  /* testcounter value?? */
+      end if;
+   end for;
+end for;
+
+for ell in L do
+   for i in [1..3] do
+      brd:=Qi(i,ell);
+      if brd notin L then
+         Append(~L,brd);
+      end if;   
+   end for;   
+end for;
+
+return 0,L;
+
+end function;
+
+
+/*  *********************
+Aut_Gamma_6 gives braid of list L in kth spot
+*********************** */
+
+Aut_Gamma_6:=function(L,sign,gen,prtfile,ri,aut);
+
+for mp in aut do
+   for ell in L do
+      if  (mp(ell[1]) eq ell[2]) and (mp(ell[2]) eq ell[1])  and (mp(ell[3]) eq ell[2]*ell[3]*ell[2]^-1) then
+         FindK12346(G,mp,sign,[0,2,sign[3],2*sign[2]],gen,6,prtfile,ri);
+         return 1,L;  /* testcounter value?? */
+      end if;
+   end for;
+end for;
+
+for ell in L do
+   for i in [1..2] do
+      brd:=Qi(i,ell);
+      if brd notin L then
+         Append(~L,brd);
+      end if;
+   end for;   
+end for;
+
+return 0,L;
+
+end function;
+
+
+/* ***************************************
+TestRiesTbl1a(G,sign,gen,Rlist[i]);
+
+returns boolean true: not full, false: can't tell
+             H, signH if second group
+************************************ */
+
+TestRiesTbl1a:=function(G,sign,gen,Rlist);
+   if gen in [3, 4, 7, 10, 16] then
+      for j in [1..#Tbl1List] do   
+         if ([*gen,sign*] eq Tbl1List[j]) and (IdentifyGroup(G) eq Tbl1G0[j]) then
+            signH:=Tbl1Seconds[j];
+            
+            H:=SmallGroup(Tbl1FullGps[j,1], Tbl1FullGps[j,2]);
+            return true, H, signH; 
+            break j;  /* done once find one */
+         end if;         
+      end for;
+   end if;   /*right genus*/
+   return false, G,sign;
+end function;
+
+
+/* ***************************************
+TestRiesTbl1b(G,sign,gen,Rlist[i]);
+
+returns boolean true: not full, false: can't tell
+             H, signH if second group
+
+************************************ */
+
+TestRiesTbl1b:=function(G,sign,gen,Rlist);
+   SList:=Reverse(Prune(Reverse(sign)));
+   if SList[2] eq SList[3] then
+      /* ** Case H ** */
+      if (4*SList[1] eq SList[2]) and (SList[1] ge 2) then  
+         m:=SList[1];
+         for j in [1..#Ldata] do   
+            if ([0,m,m,m,m,m,m] eq Ldata[j,1])  and IdentifyGroup(QuoGp(G,SmallGroup(Ldata[j,2,1],Ldata[j,2,2]))) eq <4,1> then 
+               K:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+               for k in [1..#Ldata] do
+                  if ([0,2,3,4*m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(SmallGroup(Ldata[k,2,1],Ldata[k,2,2]),K)) eq <24,12>  then 
+                     signH:=[0,2,3,4*m];
+                     H:=SmallGroup(Ldata[k,2,1],Ldata[k,2,2]);
+                     return true, H, signH; 
+                     break j;  /* done once find one */
+                  end if; 
+               end for;
+            end if;
+         end for;
+
+      /* ** Case I ** */   
+      elif (2*SList[1] eq SList[2]) and (SList[1] ge 3) then      
+   
+         m:=SList[1];
+         for j in [1..#Ldata] do   
+            if ([0,m,m,m,m] eq Ldata[j,1])  and IdentifyGroup(QuoGp(G,SmallGroup(Ldata[j,2,1],Ldata[j,2,2]))) eq <2,1> then 
+               K:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+               for k in [1..#Ldata] do
+                  if ([0,2,4,2*m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(SmallGroup(Ldata[k,2,1],Ldata[k,2,2]),K)) eq <8,3>  then 
+                     signH:=[0,2,4,2*m];
+                     H:=SmallGroup(Ldata[k,2,1],Ldata[k,2,2]);
+                     return true, H, signH; 
+                     break j;  /* done once find one */
+                  end if; 
+               end for;
+            end if;
+         end for;
+      end if;
+
+   /* ** Case J ** */    
+   elif (SList[1] eq 3) and 3*SList[2] eq SList[3] then
+      m:=SList[2];
+      for j in [1..#Ldata] do   
+         if ([0,m,m,m,m] eq Ldata[j,1])  and IdentifyGroup(QuoGp(G,SmallGroup(Ldata[j,2,1],Ldata[j,2,2]))) eq <3,1> then 
+            K:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+            for k in [1..#Ldata] do
+               if ([0,2,3,3*m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(SmallGroup(Ldata[k,2,1],Ldata[k,2,2]),K)) eq <12,3>  then 
+                  signH:=[0,2,3,3*m];
+                  H:=SmallGroup(Ldata[k,2,1],Ldata[k,2,2]);
+                  return true, H, signH; 
+                  break j;  /* done once find one */
+               end if; 
+            end for;
+         end if;
+      end for;
+
+   /* ** Case K **  */
+   elif (SList[1] eq 2) and 2*SList[2] eq SList[3] then
+      m:=SList[2];
+      for j in [1..#Ldata] do   
+         if ([0,m,m,m] eq Ldata[j,1])  and IdentifyGroup(QuoGp(G,SmallGroup(Ldata[j,2,1],Ldata[j,2,2]))) eq <2,1> then 
+            K:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+            for k in [1..#Ldata] do
+               if ([0,2,3,2*m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(SmallGroup(Ldata[k,2,1],Ldata[k,2,2]),K)) eq <6,1>  then 
+                  signH:=[0,2,3,2*m];
+                  H:=SmallGroup(Ldata[k,2,1],Ldata[k,2,2]);
+                  return true, H, signH; 
+                  break j;  /* done once find one */
+               end if; 
+            end for;
+         end if;
+      end for;
+   end if;
+   return false, G,sign;
+end function;
+
+
+/* ***************************************
+TestRiesTbl2(G,sign,gen,Rlist);
+
+returns boolean true: not full, false: can'92t tell
+             H, signH if second group
+
+************************************ */
+
+TestRiesTbl2:=function(G,sign,gen,Rlist);
+   SList:=Reverse(Prune(Reverse(sign)));
+
+ /* ** Case 1 ** */
+   if (#sign eq 1) and  (sign[1] eq 2) then
+      for j in [1..#Ldata] do   
+         if ([0,2,2,2,2,2] eq Ldata[j,1])  and IdentifyGroup(QuoGp(SmallGroup(Ldata[j,2,1],Ldata[j,2,2]),G)) eq <4,2> then 
+            H:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+            for k in [1..#Ldata] do
+               if ([1,2,2] eq Ldata[k,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[k,2,1],Ldata[k,2,2]))) eq <2,1>  then 
+                  for ell in [1..#Ldata] do
+                     if ([1,2,2] eq Ldata[ell,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[ell,2,1],Ldata[ell,2,2]))) eq <2,1>  then 
+                        signH:=[0,2,2,2,2,2];
+                        return true, H, signH; 
+                        break j;  /* done once find one */
+                     end if;
+                  end for;
+               end if; 
+            end for;
+         end if;
+      end for;
+   end if;
+   
+   /* ** Case 2 ** */
+   if (#sign eq 3) and  (sign[2] eq sign[3]) and (sign[1] eq 1) then
+
+      m:=SList[1];
+      for j in [1..#Ldata] do   
+         if ([0,2,2,2,2*m] eq Ldata[j,1])  and IdentifyGroup(QuoGp(SmallGroup(Ldata[j,2,1],Ldata[j,2,2]),G)) eq <4,2> then 
+            H:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+            for k in [1..#Ldata] do
+               if ([0,2,2,2*m,2*m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[k,2,1],Ldata[k,2,2]))) eq <2,1>  then 
+                  for ell in [1..#Ldata] do
+                     if ([1,2] eq Ldata[ell,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[ell,2,1],Ldata[ell,2,2]))) eq <2,1>  then 
+                        signH:=[0,2,2,2,2*m];
+                        return true, H, signH; 
+                        break j;  /* done once find one */
+                     end if;
+                  end for;
+               end if; 
+            end for;
+         end if;
+      end for;
+   end if;
+
+   /* ** Case 3 ** */
+   if (#sign eq 5) and (sign[1] eq 0) and (sign[2] ge 3) and (sign[2] eq sign[3]) and (sign[3] eq sign[4]) and (sign[4] eq sign[5]) then  
+      m:=SList[1];
+      for j in [1..#Ldata] do   
+         if ([0,2,2,2,m] eq Ldata[j,1])  and IdentifyGroup(QuoGp(SmallGroup(Ldata[j,2,1],Ldata[j,2,2]),G)) eq <4,2> then 
+            H:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+            for k in [1..#Ldata] do
+               if ([0,2,2,m,m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[k,2,1],Ldata[k,2,2]))) eq <2,1>  then 
+                  for ell in [1..#Ldata] do
+                     if ([0,2,2,m,m] eq Ldata[ell,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[ell,2,1],Ldata[ell,2,2]))) eq <2,1>  then 
+                        signH:=[0,2,2,2,m];
+                        return true, H, signH; 
+                        break j;  /* done once find one */
+                     end if;
+                  end for;
+               end if; 
+            end for;
+         end if;
+      end for;
+   end if;
+
+   /* ** Case 4 ** */
+   if (sign[1] eq 1) and (#sign eq 5) and (sign[2] eq sign[3]) and (sign[3] eq sign[4]) and (sign[4] eq sign[5]) then  
+      m:=SList[1];
+      for j in [1..#Ldata] do   
+         if ([0,2,2,2,2*m] eq Ldata[j,1])  and IdentifyGroup(QuoGp(SmallGroup(Ldata[j,2,1],Ldata[j,2,2]),G)) eq <8,5> then 
+            H:=SmallGroup(Ldata[j,2,1],Ldata[j,2,2]);
+            for k in [1..#Ldata] do
+               if ([0,2*m,2*m,2*m,2*m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[k,2,1],Ldata[k,2,2]))) eq <4,2>  then 
+                  for ell in [1..#Ldata] do
+                     if ([1,m] eq Ldata[ell,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[ell,2,1],Ldata[ell,2,2]))) eq <2,1>  then 
+                        signH:=[0,2,2,2,2*m];
+                        return true, H, signH; 
+                        break j;  /* done once find one */
+                     end if;
+                  end for;
+               end if; 
+            end for;
+         end if;
+      end for;
+   end if;
+   return false, G, sign;
+end function;
+
+
+/* *************************************
+CheckRiesTables(filename, functioncall)
+
+Input: -  G (group), sign (signature), 
+         Lmonod (the generating vectors) and
+         return "true/false"
+
+         determines if hyperelliptic and prints
+         data with HY or HN for this
+
+         if HY, also finds family
+
+**************************************** */ 
+
+CheckRiesTables:=function(G,sign,Lmonod,Con,cclabel,NotFullList);
+
+/* RECORD WHICH ONES PASS THROUGH HERE?? */
+
+   tblprt:= PATH cat "TBLDATA";
+
+   brkcount:=0;     
+   if #sign eq 4 then
+      t,H,signH:=TestRiesTbl1b(G,sign,g,Lmonod);
+      if t then
+         PrintNotFull(G,H,sign,signH,g,Lmonod,Con,cclabel);
+         Append(~NotFullList,[[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
+         PrintFile(tblprt,"Used Table 1b for genus " cat IntegerToString(g) cat ":");
+         PrintFile(tblprt, "Group:");
+         PrintFile(tblprt, IdentifyGroup(G));
+         PrintFile(tblprt, "Signature:");
+         PrintFile(tblprt, sign);
+         PrintFile(tblprt,"--------------");
+         brkcount:=1;
+      end if;
+   end if;   
+
+   if brkcount eq 0 then
+      t,H,signH :=TestRiesTbl2(G,sign,g,Lmonod);
+      if t then
+         PrintNotFull(G,H,sign,signH,g,Lmonod,Con,cclabel);
+         Append(~NotFullList,[[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
+         brkcount:=1;
+         PrintFile(tblprt,"Used Table 2 for genus " cat IntegerToString(g) cat ":");
+         PrintFile(tblprt, "Group:");
+         PrintFile(tblprt, IdentifyGroup(G));
+         PrintFile(tblprt, "Signature:");
+         PrintFile(tblprt, sign);
+         PrintFile(tblprt,"--------------");
+      else 
+         PrintFull(G,sign,g,Lmonod,Con,cclabel);
+      
+        /*  PrintFile(prtfile,"Append(~NotFullList,[[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);"); --THIS  SEEMS BAD?? */
+       end if;
+   end if;    
+
+return NotFullList;
+end function;
+
+
+
+
+/* ***************************************
+TestRiesCases(G,sign,gen,Rlist);
+
+returns boolean true: not full, false: can't tell
+             H, signH if second group
+
+************************************ */
+
+TestRiesCases:=function(G,sign,gen,Rlist,prtfile,ri);
+
+   testcounter:=0;  /* if there is at least one case, this will be changed to 1 */
+   B:=AutomorphismGroup(G); 
+   f,A,k:=PermutationRepresentation(B);
+   h:=Inverse(f); /* Map from A to B */
+   aut:= [h(aL): aL in A];   /* Automorphisms */
+
+   SList:=Reverse(Prune(Reverse(sign)));  
+
+   /* ** CASE 1 ** */
+   if (#sign eq 1) and (sign[1] eq 2) then      
+      for mp in aut do
+         d:=Rlist[1]^-1*Rlist[2]^-1*Rlist[3]*Rlist[4];
+         if  (mp(Rlist[1]) eq Rlist[1]^-1) and (mp(Rlist[2]) eq Rlist[2]^-1) and  (mp(Rlist[3]) eq d*Rlist[3]^-1*d^-1) and (mp(Rlist[4]) eq d*Rlist[4]^-1*d^-1) then
+            FindK12346(G,mp,sign,[0,2,2,2,2,2,2],gen,1,prtfile,ri); testcounter:=1;
+         end if;
+      end for;
+
+    /* ** CASE 3 ** */
+   elif (sign[1] eq 1) and (#sign eq 2) then
+      for mp in aut do
+         if  (mp(Rlist[1]) eq Rlist[1]^-1) and (mp(Rlist[2]) eq Rlist[2]^-1) and  (mp(Rlist[3]) eq Rlist[1]^-1*Rlist[2]^-1*Rlist[3]*Rlist[2]*Rlist[1]) then
+            FindK12346(G,mp,sign,[0,2,2,2,2*sign[2]],gen,3,prtfile,ri); testcounter:=1;
+         end if;
+      end for;
+
+   /* ** CASE 2 ** */
+   elif (sign[1] eq 1) and (#sign eq 3) and (sign[2] eq sign[3]) then
+      for mp in aut do
+         d:=Rlist[1]^-1*Rlist[2]^-1*Rlist[3];
+         if  (mp(Rlist[1]) eq Rlist[1]^-1) and (mp(Rlist[2]) eq Rlist[2]^-1) and  (mp(Rlist[3]) eq d*Rlist[4]*d^-1) and (mp(Rlist[4]) eq d*Rlist[3]*d^-1) then
+      	    FindK12346(G,mp,sign,[0,2,2,2,2,sign[2]],gen,2,prtfile,ri); testcounter:=1;
+         end if;
+      end for;
+
+   /* ** CASES 4 and 5 ** */
+   elif (sign[1] eq 0) and (#sign eq 5) then
+      if (SList[1] eq SList[2]) and (SList[3] eq SList[4]) and (SList[3] gt 2) then
+         if (SList[2] ne SList[3]) then  /* just case 4 */
+            for mp in aut do
+               if  (mp(Rlist[1]) eq Rlist[2]) and (mp(Rlist[2]) eq Rlist[1]) and (mp(Rlist[3]) eq Rlist[1]^-1*Rlist[4]*Rlist[1]) and (mp(Rlist[4]) eq Rlist[2]*Rlist[3]*Rlist[2]^-1) then   
+	          FindK12346(G,mp,sign,[0,2,2,sign[3],sign[4]],gen,4,prtfile,ri);
+                  testcounter:=1;
+               end if;
+            end for;
+  
+         else  /* case 4 or 5  */
+            flag4:=0;  /* 4 with more options */
+            for mp in aut do
+               if  (mp(Rlist[1]) eq Rlist[2]) and (mp(Rlist[2]) eq  Rlist[1]) and  (mp(Rlist[3]) eq Rlist[4]) and (mp(Rlist[4]) eq Rlist[3]) then
+                  flag4:=1;
+                  flag5:=0; /* determine if case 4 or 5 */
+                  for mp2 in aut do
+                     if (mp2(Rlist[1]) eq Rlist[2]) and (mp2(Rlist[2]) eq Rlist[1]) and  (mp2(Rlist[3]) eq Rlist[1]^-1*Rlist[4]*Rlist[1]) and (mp2(Rlist[4]) eq Rlist[2]*Rlist[3]*Rlist[2]^-1) then
+	     	        flag5:=1;
+            	        FindK5(G,mp,mp2,Rlist[2]*Rlist[3],sign,[0,2,2,2,sign[2]],gen,prtfile,ri);testcounter:=1;
+                     end if;
+                  end for;
+
+                  if flag5 eq 0 then 
+                     FindK12346(G,mp,sign,[0,2,2,sign[2],sign[2]],gen,4,prtfile,ri); testcounter:=1;
+                  end if;
+
+               else /* check Aut(Gamma) for case 4 */
+               /* ** Special Case where case 4 but all equal? ** */
+
+                  if IsAbelian(G) then 
+                     cycList:=permute(Rlist);
+                  else  /* not abelian */
+                     cycList:=cycling(Rlist);
+                  end if;
+                  tempcount:=0;
+                  
+                  while (testcounter eq 0) and (tempcount eq 0) do
+                     M:=#cycList;
+                     testcounter,cycList:=Aut_Gamma_4(cycList,sign,gen,prtfile,ri,aut);              if #cycList eq M  then
+                        tempcount:=1; /* Qi not adding more */
+                     end if;    
+                  end while;
+               end if;  /* when at least case 4 is true */
+            end for;   /* mp */
+     
+         end if;   /* else above */
+      end if;  /* cased 4 and 5 in general */
+   
+
+   elif (sign[1] eq 0) and (#sign eq 4) then 
+     /* TEST CASES 6, 7, 8 */
+      if ((SList[1] eq SList[2]) and (SList[2] ne SList[3])) or ((SList[1] ne SList[2]) and (SList[2] eq SList[3])) then
+        /* Case 6 */
+         if SList[2] eq SList[3] then  /* k, l, l */
+            for mp in aut do
+               if (mp(Rlist[2]) eq Rlist[3]) and (mp(Rlist[3]) eq Rlist[2]) and  (mp(Rlist[1]) eq Rlist[3]*Rlist[1]*Rlist[3]^-1) then
+                  if sign[3] le 2*sign[2] then /* worry about order of sign */
+  	             FindK12346(G,mp,sign,[0,2,sign[3],2*sign[2]],gen,6,prtfile,ri); 
+	             testcounter:=1;
+                  else
+                     FindK12346(G,mp,sign,[0,2,2*sign[2],sign[3]],gen,6,prtfile,ri);
+	             testcounter:=1;
+                  end if;
+               end if;
+            end for;
+       
+         else  /*   l, l, k */
+            for mp in aut do
+               if (mp(Rlist[1]) eq Rlist[2]) and (mp(Rlist[2]) eq Rlist[1]) and  (mp(Rlist[3]) eq Rlist[2]*Rlist[3]*Rlist[2]^-1) then
+                  FindK12346(G,mp,sign,[0,2,sign[2],2*sign[4]],gen,6,prtfile,ri);  testcounter:=1;
+               end if;
+           end for;
+          
+         end if;  /* which location of k */
+    
+      elif  (SList[1] eq SList[2]) and (SList[2] eq SList[3]) and (SList[1] ge 3) then 
+         flaga:=0;  /* if there is alpha */
+         flagb:=0;  /* if there is beta */
+         /* Try  7, 8 first (or basic case of 6) */
+   
+         for mp in aut do
+            if (mp(Rlist[1]) eq Rlist[2]) and (mp(Rlist[2]) eq Rlist[1])  and  (mp(Rlist[3]) eq Rlist[2]*Rlist[3]*Rlist[2]^-1) then
+               flaga:=1; mpa:=mp;
+               break;
+            end if;
+            if (mp(Rlist[1]) eq Rlist[2]) and (mp(Rlist[2]) eq Rlist[3]) and  (mp(Rlist[3]) eq Rlist[1]) then
+               flagb:=1; mpb:=mp;
+               break;
+            end if;
+         end for; /* mp in aut */
+ 
+         if (flaga+flagb eq 2) and (SList[1] ge 4) then /* Case 8 */
+            FindK8(G,mpa,mpb,Rlist[1],sign,[0,2,3,2*sign[2]],gen,prtfile,ri);
+            testcounter:=1;
+
+         elif flaga eq 1 then  /* Case 6b */
+            FindK12346(G,mpa,sign,[0,2,sign[2],2*sign[2]],gen,6,prtfile,ri);
+            testcounter:=1;
+
+         elif flagb eq 1 and (SList[1] ge 4) then   /* Case 7 */
+            FindK7(G,mpb,sign,[0,3,3,sign[2]],gen,prtfile,ri);
+            testcounter:=1;
+
+         else /* TEST 6 with Aut(Gamma) */
+            if IsAbelian(G) then
+               cycList:=permute(Rlist);
+            else
+               cycList:=cycling(Rlist);
+            end if;
+ 
+            tempcount:=0;
+            while (testcounter eq 0) and (tempcount eq 0) do
+               M:=#cycList;
+               testcounter,cycList:=Aut_Gamma_6(cycList,sign,gen,prtfile,ri,aut);              if #cycList eq M  then
+                  tempcount:=1; /* Qi not adding more */
+               end if;    
+            end while;
+         end if; /* which of 6b,7,8 */
+      end if; /* 6b, 7,8 */
+   end if; /* All the possibilities */
+
+   if testcounter eq 1 then 
+      return true;
+   end if;   
+
+   return false;
+end function;

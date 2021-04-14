@@ -1,0 +1,289 @@
+/* *********************************************************** 
+
+ries_helper_fn.mag
+
+Copyright (C) 2016 by Jennifer Paulhus
+    
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+This file contains supplementary functions and procedures for the
+main functions in ries.mag cite Ries paper
+
+Ries, J. F. X. (1993). Subvarieties of moduli space determined by finite groups acting on surfaces. Trans. Amer. Math. Soc., 335(1):385–406.
+
+Questions or comment about the code may be directed to:
+paulhus@math.grinnell.edu 
+
+************************************************************ */
+
+
+
+
+/* ***************************************
+PermRep  
+
+Program to convert to PermRepn a la proof of Cayley
+************************************ */
+PermRep:=function(G);
+
+   LP:=[];
+   n:=#G;
+   LG:=[g : g in G];
+
+   for i in [1..n] do  /* Create each perm */
+      x:=LG[i];
+      Tx:=[LG[j]*x : j in [1..n]];
+      permL:=[];
+      for j in [1..n] do
+         for k in [1..n] do
+            if Tx[j] eq LG[k] then
+               permL[j]:=k;
+               break;
+            end if;   
+         end for; 
+      end for;
+      Append(~LP,permL);
+   end for;
+
+   H:=PermutationGroup<n|LP>;
+   return H;
+
+end function;
+
+
+
+
+/* ***************************************
+QuoGp  finds quotient group of two gps
+
+returns trivial group if not normal subgroup
+************************************ */
+QuoGp:=function(G,H);
+
+IdH :=IdentifyGroup(H);
+   N:=NormalSubgroups(G);
+   S:=[N[i]`subgroup : i in [1..#N] | IdentifyGroup(N[i]`subgroup) eq IdH];
+   if #S gt 0 then
+      return G/S[1];
+   else 
+      return sub<G|Id(G)>;
+   end if;
+end function;
+
+
+
+
+/*  *********************
+cycling(L)
+
+ recursively returns all
+ cycles of list L
+*********************** */
+function cycling(L);
+  if #L lt 2 then
+     return [L];
+  elif #L eq 2 then
+     L1:=[L[2],L[1]];
+     return [L,L1];
+  else
+     AllCycs:=[];
+     for i in [1..#L] do
+        headsy:=[L[j]: j in [1..i-1]];
+        tailsy:=[L[j]: j in [i.. #L]];
+        L2:=tailsy cat headsy;
+        Append(~AllCycs,L2);
+     end for;
+     return AllCycs;
+  end if;
+end function;
+
+
+/*  *********************
+permute(L)
+
+recursively returns all
+permutations of list L
+*********************** */
+function permute(L);  /* Ignores repeats --overgenerates */
+   if #L lt 2 then
+      return [L];
+   elif #L eq 2 then
+      L1:=[L[2],L[1]];
+      return [L,L1];
+   else
+      AllPerms:=[];
+      for i in [1..#L] do
+         headsy:=[L[j]: j in [1..i-1]];
+         tailsy:=[L[j]: j in [i+1.. #L]];
+         L2:=headsy cat tailsy;
+         listsy:=permute(L2);
+         for l in listsy do
+            m:=[L[i]] cat l;
+            Append(~AllPerms,m);
+         end for;  
+      end for;
+      return AllPerms;
+   end if;
+end function;
+
+
+
+/*  *********************
+Qi gives braid of list L in kth spot
+*********************** */
+Qi:=function(k,L);
+    left_unchanged:=[L[i] : i in [1..k-1]];
+    braid:=[L[k]*L[k+1]*L[k]^-1,L[k]];
+    right_unchanged:=[L[i]: i in [k+2..#L] ];
+    return left_unchanged cat braid cat right_unchanged;
+end function;
+
+
+
+/* ***************************************
+PrintFull(G,sign,g, Lmonod)
+
+Inputs: G            group 
+        sign
+        g
+        Lmonod
+        Con
+        cclabel
+        
+Outcome: prints relevant info for possible
+full automorphism
+************************************ */
+
+PrintFull:=procedure(G, sign,g,Lmonod,Con,cclabel : definitely_full:=true);
+   if definitely_full then
+      if g lt 10 then                     
+         storefilename:=PATH cat "g0" cat IntegerToString(g) cat "fullg0";
+      else
+         storefilename:=PATH cat "g" cat IntegerToString(g) cat "fullg0";
+      end if;
+  else    
+      if g lt 10 then                     
+         storefilename:=PATH cat "g0" cat IntegerToString(g) cat "possible_fullg0";
+      else
+         storefilename:=PATH cat "g" cat IntegerToString(g) cat "possible_fullg0";
+      end if;
+   end if;
+
+
+   Idt:=IdentifyGroup(G);
+   grpstring:=  "(" cat IntegerToString(Idt[1]) cat"," cat IntegerToString(Idt[2]) cat")";
+   signprt:="[";
+   for j in [1..#sign-1] do
+      signprt:=signprt cat IntegerToString(sign[j]) cat ", ";
+   end for;
+   signprt:=signprt cat IntegerToString(sign[#sign]) cat "]";
+
+
+   PrintFile( storefilename,"G:=PermRep(SmallGroup" cat  grpstring cat ");");
+   PrintFile( storefilename, "sign:=" cat signprt cat ";");
+   PrintFile(storefilename, "Lmonod:=[G!");
+   for l in [1..#Lmonod] do
+      perm:=Lmonod[l];
+      if perm eq Identity(G) then
+         PrintFile(storefilename,"Id(G)");
+      else   
+         PrintFile(storefilename,perm);
+      end if;   
+      if l lt #Lmonod then
+         PrintFile(storefilename,", G!");
+      end if;
+   end for;   
+   PrintFile(storefilename, "]; Con:=");
+   PrintFile(storefilename, Con);
+   PrintFile(storefilename,";");
+   PrintFile(storefilename, "cclabel:=");
+   PrintFile(storefilename, cclabel);
+   PrintFile(storefilename, ";");
+
+   if definitely_full then
+      PrintFile(storefilename, "AddlData(G,sign,Lmonod,Con,cclabel);");
+   else
+      PrintFile(storefilename, "NotFullList:=CheckRiesTables(G,sign,Lmonod,Con,cclabel,NotFullList);");
+   end if;   
+end procedure;
+
+
+/* ***************************************
+PrintNotFull(G1,G2,sign1,sign2,g)
+
+Inputs: G1            group 
+        G2           bigger group
+        sign1 
+        sign2
+        g
+        Lmonod
+        Con
+        cclabel
+
+Outcome: prints relevant info for possible non
+full automorphism
+************************************ */
+
+PrintNotFull:=procedure(G1,G2, sign1,sign2,g,Lmonod,Con,cclabel);
+   if g lt 10 then
+      storefilename:=PATH cat "g0" cat IntegerToString(g) cat "notfullg0";
+   else
+      storefilename:=PATH cat "g" cat IntegerToString(g) cat "notfullg0";
+   end if;   
+   Id1:=IdentifyGroup(G1);
+   Id2:=IdentifyGroup(G2);
+
+   grpstring1:=  "(" cat IntegerToString(Id1[1]) cat"," cat IntegerToString(Id1[2]) cat")";
+
+   grpstring2:=  "(" cat IntegerToString(Id2[1]) cat"," cat IntegerToString(Id2[2]) cat")";
+
+   sign1prt:="[";
+   for j in [1..#sign1-1] do
+      sign1prt:=sign1prt cat IntegerToString(sign1[j]) cat ", ";
+   end for;
+   sign1prt:=sign1prt cat IntegerToString(sign1[#sign1]) cat "]";
+
+
+   sign2prt:="[";
+   for j in [1..#sign2-1] do
+      sign2prt:=sign2prt cat IntegerToString(sign2[j]) cat ", ";
+   end for;
+   sign2prt:=sign2prt cat IntegerToString(sign2[#sign2]) cat "]";
+
+   PrintFile( storefilename, "G:=PermRep(SmallGroup" cat grpstring1 cat ");");
+   PrintFile( storefilename,"sign:=" cat sign1prt cat ";");
+   PrintFile( storefilename, "H:=SmallGroup" cat grpstring2 cat ";");
+   PrintFile(storefilename,"signH:=" cat sign2prt cat ";");
+   PrintFile(storefilename, "Lmonod:=[G!");
+   for l in [1..#Lmonod] do
+      perm:=Lmonod[l];
+      if perm eq Id(G1) then
+         PrintFile(storefilename,"Id(G)");
+      else    
+         PrintFile(storefilename,perm);
+      end if;   
+      if l lt #Lmonod then
+         PrintFile(storefilename,", G!");
+      end if;
+   end for;      
+   PrintFile(storefilename, "]; Con:=");
+   PrintFile(storefilename, Con);
+   PrintFile(storefilename,";");
+   PrintFile(storefilename, "cclabel:=");
+   PrintFile(storefilename, cclabel);
+   PrintFile(storefilename, ";");
+   PrintFile(storefilename,"AddlDataNF(G,sign,Lmonod,H,signH,Con,cclabel);");
+
+end procedure;

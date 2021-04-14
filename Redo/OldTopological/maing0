@@ -1,0 +1,14 @@
+PATH:="~/CurvesDB/ourdata/";
+load "~/Desktop/Research/FinishedWork/BreuerProgram/PostOnArXiV/genvectors.m";
+load "ries_helper_fng0";
+g:=05;
+SetColumns(0);
+NotFullList:=[];
+load "~/CurvesDB/BreuerRaw/g005";
+prtfile:="~/CurvesDB/TempFiles/g05g0";
+load "ries_gen_ccnums_g0gt0";
+load "~/CurvesDB/TempFiles/g05g0";
+load "~/CurvesDB/ourdata/g05possible_fullg0";
+load "m2g0";
+load "~/CurvesDB/ourdata/g05fullg0";
+load "~/CurvesDB/ourdata/g05notfullg0";

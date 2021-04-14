@@ -1,0 +1,152 @@
+/* Contains function AddlData
+
+
+TO ADD: More generally cyclic n-gonal?
+        superelliptic, generalized fermat curves?
+              simply that full auto is Z/pZ??
+        
+
+ONLY WORKS FOR IDENTIFYABLE GROUPS
+
+*/
+
+
+/* 6/25/18 running for g0>0 */
+
+/* FILES WITH OTHER PROGRAMS */
+/* load "/home/paulhusj/Desktop/PostOnArXiV/searchroutines.m"; */
+/* 6/13/17 don't need above? */
+
+/* load "/home/paulhusj/CurvesDB/JenCode/hyeqn"; */
+       /* hyperelliptic curve files */
+
+load "/home/paulhusj/CurvesDB/JenCode/decjac";
+/* load "/home/paulhusj/CurvesDB/JenCode/ndim"; */
+
+
+/* FILES TO READ IN */
+
+
+if g lt 10 then
+   storefilename:=PATH cat "g0" cat IntegerToString(g) cat "finaldatag0";
+
+else 
+   storefilename:=PATH cat "g" cat IntegerToString(g) cat "finaldatag0";
+end if;
+
+
+
+
+/* *************************************
+AddlData(filename, functioncall)
+
+Input: -  G (group), sign (signature), 
+         Lmonod (the generating vectors) and
+         return "true/false"
+
+         determines if hyperelliptic and prints
+         data with HY or HN for this
+
+         if HY, also finds family
+
+Output: returns false just to return something
+
+TODO: ADD OTHER CHECKS FOR ADDL DATA
+**************************************** */ 
+
+
+AddlData:=function(G,sign,Lmonod,Con,cclabel);
+
+ 
+
+   gpsize:=IdentifyGroup(G)[1];
+   gpnum:=IdentifyGroup(G)[2];
+   groupstring:=  "[" cat IntegerToString(gpsize) cat"," cat IntegerToString(gpnum) cat"]";
+   PrintFile( storefilename, "- group: " cat groupstring);
+   PrintFile( storefilename, "  signature: " cat Sprint(sign));
+   PrintFile( storefilename,"  con: " cat Sprint(Con));
+   PrintFile( storefilename, "  cc: " cat Sprint(cclabel));
+   PrintFile( storefilename, "  gen_vecs:");
+   for i in [1..#Lmonod] do	 
+      PrintFile( storefilename, "    - " cat Sprint(Eltseq(Lmonod[i])));
+   end for;   
+
+   d:=Sprint(DecomposeJacobians(G,sign,Lmonod));
+   /* strip off the "*" */
+   dec:=d[1];
+   for i in [2..#d] do 
+      if d[i] ne "*" then
+        dec:=dec cat d[i];
+      end if;
+   end for;
+
+
+   PrintFile(storefilename, "  decompose_jac: " cat dec);
+
+
+/*    PrintFile(storefilename, "@"); */
+
+
+   return false;
+
+end function;
+
+
+
+
+/* ************* */
+/* NF CASES HERE */
+/* ************* */
+
+
+AddlDataNF:=function(G,sign,Lmonod,H,signH,Con,cclabel);
+
+
+gpsize:=IdentifyGroup(G)[1];
+gpnum:=IdentifyGroup(G)[2];
+
+
+/* issue of not full of not full */
+for NFL in NotFullList do
+   if IdentifyGroup(H) eq NFL[1,1] and signH eq NFL[1,2] then
+      H:=SmallGroup(NFL[2,1,1],NFL[2,1,2]);
+      signH:=NFL[2,2];
+      break;
+   end if;    
+end for;
+
+IdH:=IdentifyGroup(H);
+
+/* Print */
+ groupstring:=  "[" cat IntegerToString(gpsize) cat"," cat IntegerToString(gpnum) cat"]"; 
+   PrintFile( storefilename, "- group: " cat groupstring);
+   PrintFile( storefilename, "  signature: " cat Sprint(sign));
+   PrintFile( storefilename,"  con: " cat Sprint(Con));
+   PrintFile( storefilename, "  cc: " cat Sprint(cclabel));
+
+   groupstringH:=  "[" cat IntegerToString(IdH[1]) cat"," cat IntegerToString(IdH[2]) cat"]"; 
+   PrintFile( storefilename,"  full_auto: " cat groupstringH);
+   PrintFile( storefilename,"  signH: " cat Sprint(signH));
+
+
+   PrintFile( storefilename, "  gen_vecs:");
+   for i in [1..#Lmonod] do	 
+      PrintFile( storefilename, "    - " cat Sprint(Eltseq(Lmonod[i])));
+   end for;   
+
+   d:=Sprint(DecomposeJacobians(G,sign,Lmonod));
+   /* strip off the "*" */
+   dec:=d[1];
+   for i in [2..#d] do 
+      if d[i] ne "*" then
+         dec:=dec cat d[i];
+      end if;
+   end for;
+
+
+   PrintFile(storefilename, "  decompose_jac: " cat dec);
+   
+   return false;
+
+end function;
+
