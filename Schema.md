@@ -9,10 +9,10 @@
 Column            | Type     | Notes
 ------------------|----------|------
 id                | bigint   |
-~~ndim              |smallint  |  cut?~~
+~~ndim~~              |~~smallint~~  |  ~~cut?~~
 jacobian_decomp   | jsonb    |
 cc                | ~~jsonb~~ integer[]    |  what used to be realcc, end label for each passport
-~~realcc|integer[]|~~
+~~realcc~~|~~integer[]~~|~~replaced with cc~~
 full_auto|text|
 passport_label|text|
 group|text|
