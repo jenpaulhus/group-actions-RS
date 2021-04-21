@@ -9,10 +9,10 @@
 Column            | Type     | Notes
 ------------------|----------|------
 id                | bigint   |
-ndim              |smallint  |  cut?
+~~ndim              |smallint  |  cut?~~
 jacobian_decomp   | jsonb    |
-cc                | jsonb    |  cut and replace with realcc?
-realcc|integer[]|
+cc                | ~~jsonb~~ integer[]    |  what used to be realcc, end label for each passport
+~~realcc|integer[]|~~
 full_auto|text|
 passport_label|text|
 group|text|
@@ -30,7 +30,7 @@ dim|smallint|
 group_order|integer|
 cyclic_trigonal|boolean|
 r|smallint|
-signature|text|  integer[]??
+signature|~~text~~ integer[]|  
 genus|smallint|
 con|text|  may want to store conjugacy classes differently
 braid|integer[]|
