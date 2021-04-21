@@ -23,7 +23,7 @@ full_label|text|
 eqn|jsonb|
 cinv|jsonb|
 hyperelliptic|boolean|
-gen_vectors|jsonb|  integer[]?  Store each permutation as integer a la Lehmer codes?
+gen_vector|jsonb|  integer[]?  Store each permutation as integer a la Lehmer codes?
 total_label|text|
 g0|smallint|
 dim|smallint|
@@ -35,6 +35,7 @@ genus|smallint|
 con|text|  may want to store conjugacy classes differently
 braid|integer[]|
 topological|integer[]|
+connected_gen_vector|text[]|generatting vectors listed as poroducts of generators from abstrat groups db
 
 
 
