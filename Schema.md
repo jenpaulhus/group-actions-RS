@@ -35,7 +35,7 @@ genus|smallint|
 con|text|  may want to store conjugacy classes differently
 braid|integer[]|
 topological|integer[]|
-connected_gen_vector|text[]|generatting vectors listed as poroducts of generators from abstrat groups db
+connected_genvec|text[]|generatting vectors listed as poroducts of generators from abstrat groups db
 
 
 
