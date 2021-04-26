@@ -15,13 +15,13 @@ cc                | ~~jsonb~~ integer[]    |  what used to be realcc, end label 
 ~~realcc~~|~~integer[]~~|~~replaced with cc~~
 full_auto|text|
 passport_label|text|
-group|text|
+group|text|  stored as N.i to match abstract group db.  N is order, i is GAP ID or 
 signH|text|
 label|text|
-hyp_involution|jsonb|
+hyp_involution|~~jsonb~~ integer| store Lehmer code?
 full_label|text|
 eqn|jsonb|
-cinv|jsonb|
+cinv|~~jsonb~~ integer | store Lehmer code?
 hyperelliptic|boolean|
 gen_vector|jsonb|  integer[]?  Store each permutation as integer a la Lehmer codes?
 total_label|text|
@@ -35,7 +35,7 @@ genus|smallint|
 con|text|  may want to store conjugacy classes differently
 braid|integer[]|
 topological|integer[]|
-connected_genvec|text[]|generatting vectors listed as poroducts of generators from abstrat groups db
+connected_genvec|text[]|generating vectors listed as poroducts of generators from abstrat groups db
 
 
 
