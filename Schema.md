@@ -16,7 +16,7 @@ cc                | ~~jsonb~~ integer[]    |  what used to be realcc, end label 
 full_auto|text|
 passport_label|text|
 group|text|  stored as N.i to match abstract group db.  N is order, i is GAP ID or 
-signH|text|
+signH|~~text~~|string of integers representing the sign of the full automorphism group
 label|text|
 hyp_involution|~~jsonb~~ integer| store Lehmer code?
 full_label|text|
