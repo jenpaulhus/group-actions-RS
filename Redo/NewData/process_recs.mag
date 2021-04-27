@@ -12,6 +12,9 @@ load "gps_decode.mag";
 
 load "gps_transitive.mag";
 
+/* for FindOrbits function */
+load "orbits.mag";
+
 /* for ordercc function */
 Attach("orderCC.m");
 
@@ -168,7 +171,9 @@ end function;
       genvec1 and genvec2 must have the same cycle type and be sorted by the 
       numbers in the cycle type. 
 */
-compare_genvecs_ns := function(genvec1, genvec2)
+compare_genvecs_ns := function(pair1, pair2)
+   genvec1 := pair1[2];
+   genvec2 := pair2[2];
    for i in [1..#genvec1] do
       perm1 := genvec1[i];
       perm2 := genvec2[i];
@@ -188,18 +193,22 @@ compare_genvecs_ns := function(genvec1, genvec2)
       end for;
    end for;
    return 0;
-end function;
+end function; 
+
 
 /* This function takes in a permutation (string), sorts it by the numbers 
       in the cycle type, and returns the sorted version as a string */
 rewrite_perm := function(perm)
    perm_str := Sprintf("%o", perm);
    cycles := Split(perm_str, ")(");
-   lengths := [#cycle : cycle in cycles];
+   nums := [Split(cycle, ",") : cycle in cycles];
+   lengths := [#ls : ls in nums];
+
    ParallelSort(~lengths, ~cycles);
+
    new_str := "(";
-   for cycle in cycles do
-      new_str := new_str cat cycle cat ")(";
+   for i in [1..#cycles] do
+      new_str := new_str cat cycles[i] cat ")(";
    end for;
    return Substring(new_str, 1, #new_str-1);
 end function;
@@ -230,7 +239,7 @@ end function;
 
 
 
-compute_iso := function(perm_group_mon, pc_group, gens_used)
+compute_iso := function(perm_group, pc_group, gens_used)
 
    fp_group, fp_to_pc := FPGroup(pc_group); 
    pc_to_fp := Inverse(fp_to_pc);
@@ -242,7 +251,7 @@ compute_iso := function(perm_group_mon, pc_group, gens_used)
    /* G is an FP group, so it cannot be passed to IsIsomorphic.
       Instead, create perm_to_pc, an isomorphism from the monodromy group to
          the decoded PC group. Then compose all the isomorphisms. */
-   bool, perm_to_pc := IsIsomorphic(perm_group_mon, pc_group);
+   bool, perm_to_pc := IsIsomorphic(perm_group, pc_group);
    pc_to_G := pc_to_fp * fp_to_G;
    G_to_pc := Inverse(pc_to_G);
    iso := perm_to_pc * pc_to_G;
@@ -270,12 +279,15 @@ end procedure;
 
 
 append_cc_genvec_ns := procedure(~cc_genvecs, rec)
+   pair := [* *];
    genvec := rec`genimages; 
+   Append(~pair, genvec);
    rewritten_genvec := [];
    for perm in genvec do
       Append(~rewritten_genvec, rewrite_perm(perm));
    end for;
-   Append(~cc_genvecs, rewritten_genvec);
+   Append(~pair, rewritten_genvec);
+   Append(~cc_genvecs, pair);
 end procedure;
 
 
@@ -283,6 +295,13 @@ sort_cc_genvecs_s := procedure(~cc_genvecs, ~cc_connected_genvecs, ~cc_sortable_
    copy := cc_sortable_genvecs;
    ParallelSort(~cc_sortable_genvecs, ~cc_genvecs);
    ParallelSort(~copy, ~cc_connected_genvecs);
+end procedure;
+
+
+sort_cc_genvecs_ns := procedure(~cc_genvecs, ~cc_rewritten_genvecs, ~keys)
+   copy := keys;
+   ParallelSort(~keys, ~cc_genvecs);
+   ParallelSort(~copy, ~cc_rewritten_genvecs);
 end procedure;
 
 
@@ -298,16 +317,20 @@ append_genvec_data_s := procedure(~Lgenvects, ~connected_Lgenvects, ~cc_labels,
 end procedure;
 
 
-append_genvec_data_ns := procedure(~Lgenvects, ~cc_labels, cc_genvecs, cc_numb);
+append_genvec_data_ns := procedure(~Lgenvects, ~rewritten_Lgenvects, ~cc_labels, 
+                                   cc_genvecs, cc_numb);
    genvec_numb := 1;
    for i in [1..#cc_genvecs] do
-      Append(~Lgenvects, cc_genvecs[i]);
+      pair := cc_genvecs[i];
+      Append(~Lgenvects, pair[1]);
+      Append(~rewritten_Lgenvects, pair[2]);
       Append(~cc_labels, [cc_numb, genvec_numb]);
       genvec_numb +:= 1;
    end for;
 end procedure;
 
 
+/* cc_labels is sorted */
 get_rec_data_s := function(recs, iso, G, G_to_pc)
 
    cc_labels := [];
@@ -364,7 +387,9 @@ get_rec_data_ns := function(recs)
    cc_numb := 1;
 
    Lgenvects := [];
+   rewritten_Lgenvects := [];
 
+   // List to hold elements of the form [genvec, rewritten_genvec]
    cc_genvecs := [];
 
    /* Data for the first record */
@@ -382,22 +407,24 @@ get_rec_data_ns := function(recs)
                classes for both (cover is unramified). 
                Treat them as associated with different passport labels. */
          Sort(~cc_genvecs, compare_genvecs_ns);
-         append_genvec_data_ns(~Lgenvects, ~cc_labels, cc_genvecs, cc_numb);
+         //sort_cc_genvecs_ns(~cc_genvecs, ~cc_rewritten_genvecs);
+         append_genvec_data_ns(~Lgenvects, ~rewritten_Lgenvects, ~cc_labels, 
+                               cc_genvecs, cc_numb);
 
          /* Set new values according to the new conjugacy class vector */
          prev_Con := cur_Con;
          cc_genvecs := [];
          cc_numb +:= 1;
       end if;
-  
       append_cc_genvec_ns(~cc_genvecs, recs[i]);
    end for;
 
    /* Add data for the last conjugacy class vector */
    Sort(~cc_genvecs, compare_genvecs_ns);
-   append_genvec_data_ns(~Lgenvects, ~cc_labels, cc_genvecs, cc_numb);
+   append_genvec_data_ns(~Lgenvects, ~rewritten_Lgenvects, ~cc_labels, 
+                         cc_genvecs, cc_numb);
 
-   return cc_labels, Lgenvects;
+   return cc_labels, Lgenvects, rewritten_Lgenvects;
 end function;
 
 
@@ -411,13 +438,13 @@ compute_rec_data := function(sign, small_group)
       data := gps_db[group_label];
    catch e
       printf "%o is not in the groups db\n", group_label;
-      return 0,0,0,0;
+      return 0,0,0,0,0,0,0,0;
    end try;
 
    perm_gens := data[5];
    if Type(perm_gens) eq MonStgElt and perm_gens eq "error" then 
       printf "perm_gens not available for %o\n", group_label;
-      return 0,0,0,0;
+      return 0,0,0,0,0,0,0,0;
    end if;
 
    /* Compute isomorphism between monodromy group and the group on abstract
@@ -430,14 +457,14 @@ compute_rec_data := function(sign, small_group)
          pc_group := SmallGroupDecoding(pc_code, order);
       catch e
          printf "Error decoding PC group for %o\n", group_label;
-         return 0,0,0,0;
+         return 0,0,0,0,0,0,0,0;
       end try;
 
       try
          trans_data := gps_trans_db[group_label];
       catch e
          printf "%o is not in the transitive groups db\n", group_label;
-         return 0,0,0,0;
+         return 0,0,0,0,0,0,0,0;
       end try;
 
       /* Check that ngens matches the number of generators in PC group */
@@ -451,24 +478,28 @@ compute_rec_data := function(sign, small_group)
       degree := trans_data[1];
       perm_gens := trans_data[2];
       group_str := Sprintf("PermutationGroup<%o|%o>", degree, perm_gens);
-      perm_group_mon := eval group_str; // PermRep(small_group);
+      perm_group := eval group_str; // PermRep(small_group);
       gens_used := data[3];
-      iso, G, G_to_pc := compute_iso(perm_group_mon, pc_group, gens_used);
-      recs := RepresentativesEpimorphisms(sign, perm_group_mon);
+      iso, G, G_to_pc := compute_iso(perm_group, pc_group, gens_used);
+      recs := RepresentativesEpimorphisms(sign, perm_group);
       /* Sort recs by conjugacy class label vectors and replace values in the Con
             fields with index, label pairs */
       recs, Cons, Cons_label := sort_recs_by_cc_label(recs, small_group);
       cc_labels, Lgenvects, connected_Lgenvects := get_rec_data_s(recs, iso, G, G_to_pc);
+      braids, topos := FindOrbits(perm_group, sign, Lgenvects, cc_labels, sign[1]);
       // group_str := Sprintf("PermRep(SmallGroup(%o,%o))", IntegerToString(order), IntegerToString(counter));
-      return group_str, Cons, Cons_label, cc_labels, Lgenvects, connected_Lgenvects;
+      return group_str, Cons, Cons_label, cc_labels, Lgenvects, connected_Lgenvects, braids, topos;
    else
       degree := data[4];
       group_str := Sprintf("PermutationGroup<%o|%o>", degree, perm_gens);
-      perm_group_rep := eval group_str;
-      recs := RepresentativesEpimorphisms(sign, perm_group_rep);
+      perm_group := eval group_str;
+      recs := RepresentativesEpimorphisms(sign, perm_group);
       recs, Cons, Cons_label := sort_recs_by_cc_label(recs, small_group);
-      cc_labels, Lgenvects := get_rec_data_ns(recs);
-      return group_str, Cons, Cons_label, cc_labels, Lgenvects, Lgenvects;
+      // Lgenvects is a list of permutations, rewritten_Lgenvects is a list of permutation strings
+      cc_labels, Lgenvects, rewritten_Lgenvects := get_rec_data_ns(recs);
+      braids, topos := FindOrbits(perm_group, sign, Lgenvects, cc_labels, sign[1]);
+      // rewritten_Lgenvects is returned for connected_Lgenvects because it is already connected
+      return group_str, Cons, Cons_label, cc_labels, rewritten_Lgenvects, rewritten_Lgenvects, braids, topos;
    end if; 
 end function;
 

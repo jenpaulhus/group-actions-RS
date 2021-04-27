@@ -1,0 +1,35 @@
+F
+group
+sign
+conjugacy class vector
+conjugacy class label vector
+cc (last two numbers in total_label)
+braid       (or [ 0, 0 ] if g0>0)
+topological (or [ 0, 0 ] if g0>0)
+jacobian decomposition
+ranks
+genvec
+connected genvec (if group is nonsolvable, then this line is "Nonsolvable")
+HY or HN (if HN, then the next three lines are "N/A")
+hyperelliptic involution
+hyperelliptic involution rank
+equations
+CY or CN (if CY, then the next two lines are "N/A")
+trigonal automorphism
+trigonal automorphism rank
+
+
+NF
+group
+sign
+conjugacy class vector
+conjugacy class label vector
+cc (last two numbers in total_label)
+braid       (or [ 0, 0 ] if g0>0)
+topological (or [ 0, 0 ] if g0>0)
+jacobian decomposition
+ranks
+genvec
+connected genvec (if group is nonsolvable, then this line is "Nonsolvable")
+full automorphism group
+sign of full automorphism group

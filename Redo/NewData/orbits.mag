@@ -1,0 +1,109 @@
+/* LAST UPDATED:  Jan 05, 2020 */
+/* TO DO:  more efficient algorithms
+	   abelian case speed up?
+	   is it ok that I only use OUTER
+	   write up mathematics  */
+
+load "orbit_helper_fns.mag";
+
+
+// #genvecs eq #cc
+FindOrbits:=function(G,signature,genvecs,cc,g0);
+
+if g0 eq 0 then
+	if #genvecs eq 1 then
+		return [[1,1]], [[1,1]];
+	else
+   		/* ABELIAN?? */
+   		B:=AutomorphismGroup(G); 
+   		f,A,k:=PermutationRepresentation(B);
+   		h:=Inverse(f); /* Map from A to B */
+   		aut:= [h(aL): aL in A | not IsInner(h(aL))];   /* Outer Automorphisms */
+   		/* aut:= [h(aL): aL in A ]; */
+      
+   		Vects:={g : g in genvecs};
+
+   		/* CHECK IF BRAIDS ALL DISTINCT */
+   		flag:=0;
+   		for pair in cc do
+      		if pair[2] gt 1 then
+         		flag:=1;
+      		end if;
+   		end for;
+   		if flag eq 1 then
+      		BrdRep,BrdOrbs:=OrbitComputeBraid(Vects,#signature-1);
+   		else
+	  		BrdRep:=Vects;
+	  		BrdOrbs:=[{vec} : vec in Vects];
+   		end if;
+
+   		TopRep,TopOrbs:=OrbitComputeAut(Vects,aut,#signature-1);
+
+		/* The Braid list will hold the corresponding representatives of the
+	   		entries in cc */
+		Braid := [[] : i in [1..#cc]];
+		// Iterate over all the orbits
+    	for i in [1..#BrdOrbs] do
+   	    	OrbCC:={};
+			// Iterate over the genvecs in this particular orbit
+   	    	for genvec in BrdOrbs[i] do
+		   		// Search for a match in the genvecs list
+       	    	for k in [1..#genvecs] do
+			   		// When a match is found, record the corresponding cc entry
+                	if genvec eq genvecs[k] then
+	      	     		Include(~OrbCC, cc[k]);
+	      	     		break;
+	   	  			end if;
+	        	end for; 
+   	    	end for;
+   	    
+			// m is the representative 
+			m:=Min(OrbCC);
+
+			// Iterate over OrbCC to assign m to the correct positions in Braid
+			for orb in OrbCC do
+				// Each orb comes from cc, so pos is always a valid index
+				pos := Index(cc, orb);
+				Braid[pos] := m;
+			end for;
+		end for;
+
+		/* The Topo list will hold the corresponding representatives of the
+		entries in cc */
+		Topo := [[] : i in [1..#cc]];
+		// Iterate over all the orbits
+		for i in [1..#TopOrbs] do
+			OrbCC:={};
+			// Iterate over the genvecs in this particular orbit
+			for genvec in TopOrbs[i] do
+				// Search for a match in the genvecs list
+				for k in [1..#genvecs] do
+					// When a match is found, record the corresponding cc entry
+					if genvec eq genvecs[k] then
+						Include(~OrbCC, cc[k]);
+						break;
+					end if;
+				end for; 
+			end for;
+			
+			// m is the representative 
+			m:=Min(OrbCC);
+
+			// Iterate over OrbCC to assign m to the correct positions in Braid
+			for orb in OrbCC do
+				// Each orb comes from cc, so pos is always a valid index
+				pos := Index(cc, orb);
+				Topo[pos] := m;
+			end for;
+		end for;
+	end if;
+
+	return Braid, Topo;
+
+else // g0 > 0
+	temp := [[0,0] : i in [1..#genvecs]]; 
+	return temp, temp;
+
+end if;
+
+end function;

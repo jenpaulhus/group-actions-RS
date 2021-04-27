@@ -14,9 +14,10 @@ def create_list():
     gapidfull_list = db.gps_transitive.distinct('gapidfull')
     output_str = 'gps_transitive := [ '
     for gapidfull in gapidfull_list:
-        min_n = db.gps_transitive.min('n', {'gapidfull':gapidfull})
-        min_iter = db.gps_transitive.search({'gapidfull':gapidfull, 'n':min_n})
-        min_entry = next(min_iter)
+        # db.gps_transitive is sorted by [n, t], so we can just pick the first entry from
+        # each gapidfull query to get the entry with minimal n and t
+        iter = db.gps_transitive.search({'gapidfull':gapidfull})
+        min_entry = next(iter)
         gens_str = ''
         for perm in min_entry['gens']:
             formatted_perm = [f'({str(p)[1:-1]})' for p in perm]
@@ -26,7 +27,7 @@ def create_list():
         gens_str = '[' + gens_str[:-2] + ']'
         group_label = '.'.join(gapidfull[1:-1].split(','))
         group_label = f'\"{group_label}\"'
-        data_str = ', '.join([group_label, str(min_n), gens_str])
+        data_str = ', '.join([group_label, str(min_entry['n']), gens_str])
         output_str += f'[* {data_str} *],\n'
     output_str = output_str[:-2] + ' ];'
     f.write(output_str)

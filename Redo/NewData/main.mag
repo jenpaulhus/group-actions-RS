@@ -34,9 +34,9 @@ load "genvectors.mag";
 load "ries_helper_fn.mag";
 
 /* global variables */
-g:=02;    
+g:=05;    
 NotFullList:=[];
-prtfile:="SupplementaryFiles/g02"; 
+prtfile:="SupplementaryFiles/g05"; 
 
 
 /* print files without annoying hard returns in the middle of
@@ -46,7 +46,7 @@ SetColumns(0);
 
 /* This command loads all the group and signature pairs
 which Breuer originally computed */
-load "SupplementaryFiles/BreuerRaw/g02";
+load "SupplementaryFiles/BreuerRaw/g05";
 
 
 /* creates file SupplementaryFiles/gyy by taking each pair of
@@ -63,16 +63,16 @@ SupplementaryFiles/gyynotfull for those which fit one case of the main
     Theorem in Ries' paper
 SupplementaryFiles/gyypossible_full for those examples we need to test
     the Tables in Ries' paper */
-load "SupplementaryFiles/g02";
+load "SupplementaryFiles/g05";
 
 /* tests the Table cases in ries.mag */
-load "OutputFiles/g02possible_full";
+load "OutputFiles/g05possible_full";
 
 /* file used to compute additional data */
 load "addl_data.mag";
 
 /* runs addl_data.mag on both full and not full data */
-load "OutputFiles/g02full";
-load "OutputFiles/g02notfull";
+load "OutputFiles/g05full";
+load "OutputFiles/g05notfull";
 
 /* The final output will be a file called gyyfinaldata */
