@@ -20,7 +20,7 @@ signH|~~text~~|string of integers representing the sign of the full automorphism
 label|text|
 hyp_involution|~~jsonb~~ integer| store Lehmer code?
 full_label|text|
-eqn|jsonb|
+eqn|text|
 cinv|~~jsonb~~ integer | store Lehmer code?
 hyperelliptic|boolean|
 gen_vector|~~jsonb~~ integer[] |  ?  Store each permutation as integer a la Lehmer codes?
@@ -32,7 +32,7 @@ cyclic_trigonal|boolean|
 r|smallint|
 signature|~~text~~ integer[]|  
 genus|smallint|
-con|~~text~~ jsonb|  may want to store conjugacy classes differently
+con|~~text~~ text[]|  may want to store conjugacy classes differently
 braid|integer[]|
 topological|integer[]|
 connected_genvec|text[]|generating vectors listed as products of generators from abstract groups db
