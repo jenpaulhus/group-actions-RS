@@ -35,7 +35,7 @@ genus|smallint|
 con|~~text~~ jsonb|  may want to store conjugacy classes differently
 braid|integer[]|
 topological|integer[]|
-connected_genvec|~~text[]~~ jsonb ?|generating vectors listed as products of generators from abstract groups db
+connected_genvec|text[]|generating vectors listed as products of generators from abstract groups db
 
 
 
