@@ -21,11 +21,11 @@ full_auto|text|
 signH|~~text~~ integer[]|string of integers representing the sign of the full automorphism group
 hyperelliptic|boolean|
 full_label|text|
-hyp_involution|~~jsonb~~ integer| store Lehmer code?
+hyp_involution|~~jsonb~~ ~~integer~~ numeric| store Lehmer code?
 eqn|text|
 cyclic_trigonal|boolean|
-cinv|~~jsonb~~ integer | store Lehmer code?
-genvec|~~jsonb~~ integer[] |  ?  Store each permutation as integer a la Lehmer codes?
+cinv|~~jsonb~~ ~~integer~~ numeric | store Lehmer code?
+genvec|~~jsonb~~ ~~integer[]~~ numeric[] |  ?  Store each permutation as integer a la Lehmer codes?
 g0|smallint|
 dim|smallint|
 group_order|integer|
