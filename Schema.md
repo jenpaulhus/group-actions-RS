@@ -36,6 +36,8 @@ con|~~text~~ text[]|  labels connected to abstract db
 braid|integer[]|
 topological|integer[]|
 connected_genvec|text[]|generating vectors listed as products of generators from abstract groups db
+trans_group | text | if nonabelian or abelian and of order <=47, smallest transitive group nTt from Galois group db, NULL if abelian and order >48 or nonabelian and not in db
+min_deg | smallint | if nonabelian and in Galois group db, the n from trans_group else NULL,  if abelian the order of the group, i.e. smallest transitive degree
 
 
 
