@@ -22,7 +22,7 @@ signH|~~text~~ integer[]|string of integers representing the sign of the full au
 hyperelliptic|boolean|
 full_label|text|
 hyp_involution|~~jsonb~~ ~~integer~~ numeric| store Lehmer code?
-eqn|text|
+eqn|~~text~~ text[]|
 cyclic_trigonal|boolean|
 cinv|~~jsonb~~ ~~integer~~ numeric | store Lehmer code?
 genvec|~~jsonb~~ ~~integer[]~~ numeric[] |  ?  Store each permutation as integer a la Lehmer codes?
