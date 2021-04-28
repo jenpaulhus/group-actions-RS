@@ -108,4 +108,5 @@ num_families      | integer[]| 1st entry is number of distinct families for this
 num_refined_pp    | integer[]| 1st entry is number of distinct refined passports for this genus, nth entry is for quotient genus n-2
 num_gen_vectors   | integer[]| 1st entry is number of distinct generating vectors for this genus, nth entry is for quotient genus n-2
 num_unique_groups | integer  | number of distinct groups of this genus 
+nonabelian_only   | boolean  | whether only nonabelian groups have been computed or all groups
 
