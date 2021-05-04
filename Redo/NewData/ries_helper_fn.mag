@@ -176,7 +176,7 @@ definitely_full is true, else to
 gxxpossible_full if the Tables in Ries still
 need to be checked
 ************************************ */
-PrintFull:=procedure(G_str,sign,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo : definitely_full:=true);
+PrintFull:=procedure(G_str,trans_gp_label,sign,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo : definitely_full:=true);
    if definitely_full then
       if g lt 10 then                     
          storefilename:="OutputFiles/g0" cat IntegerToString(g) cat "full";
@@ -195,6 +195,8 @@ PrintFull:=procedure(G_str,sign,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label
       PrintFile( storefilename, Sprintf("G:=%o;", G_str));
       PrintFile( storefilename, Sprintf("G_str:=\"%o\";", G_str));
    end if;
+
+   PrintFile( storefilename, Sprintf("trans_gp_label:=\"%o\";", trans_gp_label));
 
    signprt:="[";
    for j in [1..#sign-1] do
@@ -246,9 +248,9 @@ PrintFull:=procedure(G_str,sign,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label
    PrintFile(storefilename, ";");
 
    if definitely_full then
-      PrintFile(storefilename, "AddlData(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);");
+      PrintFile(storefilename, "AddlData(G,trans_gp_label,sign,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);");
    else
-      PrintFile(storefilename, "NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);");
+      PrintFile(storefilename, "NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);");
    end if;   
 end procedure;
 
@@ -272,7 +274,7 @@ Outcome: prints relevant info for families
 with non-full automorphism to a file
 gxxnotfull
 ************************************ */
-PrintNotFull:=procedure(G1_str,G2, sign1,sign2,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);
+PrintNotFull:=procedure(G1_str,trans_gp_label,G2,sign1,sign2,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);
    if g lt 10 then
       storefilename:="OutputFiles/g0" cat IntegerToString(g) cat "notfull";
    else
@@ -293,9 +295,11 @@ PrintNotFull:=procedure(G1_str,G2, sign1,sign2,g,Lmonod,connected_Lmonod,Con,Con
    for j in [1..#sign2-1] do
       sign2prt:=sign2prt cat IntegerToString(sign2[j]) cat ", ";
    end for;
-   sign2prt:=sign2prt cat IntegerToString(sign2[#sign1]) cat "]";
+   sign2prt:=sign2prt cat IntegerToString(sign2[#sign2]) cat "]";
 
    PrintFile( storefilename, Sprintf("G:=%o;", G1_str));
+
+   PrintFile( storefilename, Sprintf("trans_gp_label:=\"%o\";", trans_gp_label));
 
    PrintFile( storefilename,"sign:=" cat sign1prt cat ";");
    PrintFile( storefilename, "H:=SmallGroup" cat grpstring2 cat ";");
@@ -341,6 +345,6 @@ PrintNotFull:=procedure(G1_str,G2, sign1,sign2,g,Lmonod,connected_Lmonod,Con,Con
    PrintFile(storefilename, "topo:=");
    PrintFile(storefilename, topo);
    PrintFile(storefilename, ";");
-   PrintFile(storefilename,"AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);");
+   PrintFile(storefilename,"AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);");
 
 end procedure;

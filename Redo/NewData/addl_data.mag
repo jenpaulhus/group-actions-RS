@@ -72,7 +72,7 @@ Outcome: determines additional data for
          writes all computed data to
          the file gxxfinaldata
 **************************************** */ 
-AddlData:=procedure(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);
+AddlData:=procedure(G,trans_gp_label,sign,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);
 
 /* determine hyperelliptic */
    boolh,hinv:=IsHyperelliptic(G,g,Lmonod);
@@ -124,6 +124,17 @@ AddlData:=procedure(G,sign,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,
       PrintFile( storefilename, [Sprintf("\"%o\"", gen) : gen in connected_Lmonod]);
    else
       PrintFile( storefilename, "Nonsolvable");
+   end if;
+
+   PrintFile( storefilename, trans_gp_label);
+   if trans_gp_label eq "N/A" then
+      if IsAbelian(G) then
+         PrintFile( storefilename, gpsize);
+      else
+         PrintFile( storefilename, "N/A");
+      end if;
+   else
+      PrintFile( storefilename, Degree(G));
    end if;
 
    if boolh then /* if yes, add equations */
@@ -182,7 +193,7 @@ Outcome: determines additional data for
          and writes all computed data to
          the file gxxfinaldata
 **************************************** */ 
-AddlDataNF:=procedure(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF:=procedure(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 
    gpsize:=IdentifyGroup(G)[1];
    gpnum:=IdentifyGroup(G)[2];
@@ -239,6 +250,17 @@ AddlDataNF:=procedure(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_la
       PrintFile( storefilename, [Sprintf("\"%o\"", gen) : gen in connected_Lmonod]);
    else
       PrintFile( storefilename, "Nonsolvable");
+   end if;
+
+   PrintFile( storefilename, trans_gp_label);
+   if trans_gp_label eq "N/A" then
+      if IsAbelian(G) then
+         PrintFile( storefilename, gpsize);
+      else
+         PrintFile( storefilename, "N/A");
+      end if;
+   else
+      PrintFile( storefilename, Degree(G));
    end if;
 
    groupstringH:=  "[" cat IntegerToString(IdH[1]) cat"," cat

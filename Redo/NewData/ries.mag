@@ -125,7 +125,7 @@ PrintPossibleFullAuto:=procedure(G,strngG, strngH, g,cases,prtfile,ri);
    PrintFile(prtfile, "t:=ReadCode(H,signH);");
 
    printnotfull_str := 
-      Sprintf("PrintNotFull(G_str,H,sign,signH,g,Rlist[%o],connected_Rlist[%o], 
+      Sprintf("PrintNotFull(G_str,trans_gp_label,H,sign,signH,g,Rlist[%o],connected_Rlist[%o], 
                Cons[%o], Cons_label[%o], cc_labels[%o], braids[%o], topos[%o]);",
                ri, ri, ri, ri, ri, ri, ri);
 
@@ -793,13 +793,13 @@ Outcome: returns the (possibly new) NotFullList
         also prints to TBLDATA those cases
         found to be not full here
 **************************************** */ 
-CheckRiesTables:=function(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+CheckRiesTables:=function(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
    tblprt:= "OutputFiles/TBLDATA";   /* records cases determined here */
    brkcount:=0;     
    if #sign eq 4 then  /* restriction for Table 1 */
       t,H,signH:=TestRiesTbl1a(G,sign,g,Lmonod);
       if t then
-         PrintNotFull(G_str,H,sign,signH,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo); 
+         PrintNotFull(G_str,trans_gp_label,H,sign,signH,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo); 
          Append(~NotFullList,[[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
          PrintFile(tblprt,"Used Table 1a for genus " cat IntegerToString(g) cat ":");
          PrintFile(tblprt, "Group:");
@@ -812,7 +812,7 @@ CheckRiesTables:=function(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_
 
       t,H,signH:=TestRiesTbl1b(G,sign,g,Lmonod);
       if t then
-         PrintNotFull(G_str,H,sign,signH,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);
+         PrintNotFull(G_str,trans_gp_label,H,sign,signH,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);
          Append(~NotFullList,[[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
          PrintFile(tblprt,"Used Table 1b for genus " cat IntegerToString(g) cat ":");
          PrintFile(tblprt, "Group:");
@@ -827,7 +827,7 @@ CheckRiesTables:=function(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_
    if brkcount eq 0 then
       t,H,signH :=TestRiesTbl2(G,sign,g,Lmonod);
       if t then
-         PrintNotFull(G_str,H,sign,signH,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);
+         PrintNotFull(G_str,trans_gp_label,H,sign,signH,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);
          Append(~NotFullList,[[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
          brkcount:=1;
          PrintFile(tblprt,"Used Table 2 for genus " cat IntegerToString(g) cat ":");
@@ -837,7 +837,7 @@ CheckRiesTables:=function(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_
          PrintFile(tblprt, sign);
          PrintFile(tblprt,"--------------");
       else 
-         PrintFull(G_str,sign,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);
+         PrintFull(G_str,trans_gp_label,sign,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);
       end if;
    end if;    
 
@@ -1091,12 +1091,12 @@ if #sign lt 6 and sign[1] lt 3 then
          t:=TestRiesCases(G,sign,g,Rlist[i],prtfile,i);
          if t then  /* true means a case was created but will need to check */
             printfull_str := 
-               Sprintf("PrintFull(G_str,sign,g,Rlist[%o],connected_Rlist[%o], 
+               Sprintf("PrintFull(G_str,trans_gp_label,sign,g,Rlist[%o],connected_Rlist[%o], 
                         Cons[%o], Cons_label[%o], cc_labels[%o], braids[%o], topos[%o] : definitely_full:=false);",
                         i, i, i, i, i, i, i);
             PrintFile(prtfile,"if counttoful eq 0 then " cat printfull_str cat " end if; ");
          else
-            PrintFull(G_str,sign,g,Rlist[i],connected_Rlist[i],
+            PrintFull(G_str,trans_gp_label,sign,g,Rlist[i],connected_Rlist[i],
                       Cons[i],Cons_label[i],cc_labels[i],braids[i],topos[i] : definitely_full:=false);  
                       /* need to consider the tables in next step */
          end if;
@@ -1109,7 +1109,7 @@ load "SupplementaryFiles/testingfull";
 if #sign ge 6 or sign[1] ge 3 then
  /* don't need Ries, always full--don't need to check tables either */
   for i in [1..n] do
-    PrintFull(G_str,sign,g,Rlist[i],connected_Rlist[i],
+    PrintFull(G_str,trans_gp_label,sign,g,Rlist[i],connected_Rlist[i],
               Cons[i],Cons_label[i],cc_labels[i],braids[i],topos[i]);
   end for;
 end if;

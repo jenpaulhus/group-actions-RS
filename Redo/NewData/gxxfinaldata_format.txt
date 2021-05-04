@@ -10,6 +10,9 @@ jacobian decomposition
 ranks
 genvec
 connected genvec (if group is nonsolvable, then this line is "Nonsolvable")
+transitive group label (or "N/A" if group is not in trans db or 
+                                 if it is abelian and the order is too large)
+minimum degree
 HY or HN (if HN, then the next three lines are "N/A")
 hyperelliptic involution
 hyperelliptic involution rank
@@ -31,5 +34,8 @@ jacobian decomposition
 ranks
 genvec
 connected genvec (if group is nonsolvable, then this line is "Nonsolvable")
+transitive group label (or "N/A" if group is not in trans db or 
+                                 if it is abelian and the order is too large)
+minimum degree
 full automorphism group
 sign of full automorphism group

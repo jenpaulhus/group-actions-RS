@@ -34,10 +34,12 @@ end for;
 /* Create associative array of transitive groups to input into RepEpi, 
       indexed by gp_label, for quick accessing */
 gps_trans_db := AssociativeArray();
-for gp in gps_transitive do
+for i in [2..#gps_transitive] do
+   gp := gps_transitive[i];
    group_label := gp[1];
-   gps_trans_db[group_label] := [* gp[2], gp[3] *];
+   gps_trans_db[group_label] := [* gp[2], gp[3], gp[4] *];
 end for;
+max_ab_order := gps_transitive[1];
 
 
 /* Regex patterns for magma generators */
@@ -437,15 +439,9 @@ compute_rec_data := function(sign, small_group)
    try
       data := gps_db[group_label];
    catch e
-      printf "%o is not in the groups db\n", group_label;
-      return 0,0,0,0,0,0,0,0;
+      PrintFile(errorfile, Sprintf("%o is not in the groups db\n", group_label));
+      return 0,0,0,0,0,0,0,0,0;
    end try;
-
-   perm_gens := data[5];
-   if Type(perm_gens) eq MonStgElt and perm_gens eq "error" then 
-      printf "perm_gens not available for %o\n", group_label;
-      return 0,0,0,0,0,0,0,0;
-   end if;
 
    /* Compute isomorphism between monodromy group and the group on abstract
          groups page depending on whether the group is solvable or not */
@@ -456,29 +452,37 @@ compute_rec_data := function(sign, small_group)
       try
          pc_group := SmallGroupDecoding(pc_code, order);
       catch e
-         printf "Error decoding PC group for %o\n", group_label;
-         return 0,0,0,0,0,0,0,0;
-      end try;
-
-      try
-         trans_data := gps_trans_db[group_label];
-      catch e
-         printf "%o is not in the transitive groups db\n", group_label;
-         return 0,0,0,0,0,0,0,0;
+         PrintFile(errorfile, Sprintf("Error decoding PC group for %o\n", group_label));
+         return 0,0,0,0,0,0,0,0,0;
       end try;
 
       /* Check that ngens matches the number of generators in PC group */
       ngens := data[2];
       if ngens ne NumberOfGenerators(pc_group) then
-         message := Sprintf("Number of generators in PC group does not " cat \
-			    "match ngens in groups db: %o\n", [order,counter]);
-         error message;
+         PrintFile(errorfile, Sprintf("Number of generators in PC group does " cat
+                              "not match ngens in groups db: %o\n", [order,counter]));
+         return 0,0,0,0,0,0,0,0,0;
       end if;
 
-      degree := trans_data[1];
-      perm_gens := trans_data[2];
-      group_str := Sprintf("PermutationGroup<%o|%o>", degree, perm_gens);
-      perm_group := eval group_str; // PermRep(small_group);
+      in_trans_db := true;
+      try
+         trans_data := gps_trans_db[group_label];
+      catch e
+         PrintFile(errorfile, Sprintf("%o is not in the transitive groups db\n", group_label));
+         in_trans_db := false;
+      end try;
+
+      if in_trans_db and (not IsAbelian(small_group) or order le max_ab_order) then
+         trans_gp_label := trans_data[1];
+         degree := trans_data[2];
+         perm_gens := trans_data[3];
+         group_str := Sprintf("PermutationGroup<%o|%o>", degree, perm_gens);
+         perm_group := eval group_str;
+      else  // (not in trans db) or (abelian and order <= max abelian order)
+         trans_gp_label := "N/A";
+         group_str := Sprintf("ConvertToPerm(SmallGroup(%o,%o))", order, counter);
+         perm_group := ConvertToPerm(small_group);
+      end if;
       gens_used := data[3];
       iso, G, G_to_pc := compute_iso(perm_group, pc_group, gens_used);
       recs := RepresentativesEpimorphisms(sign, perm_group);
@@ -487,9 +491,13 @@ compute_rec_data := function(sign, small_group)
       recs, Cons, Cons_label := sort_recs_by_cc_label(recs, small_group);
       cc_labels, Lgenvects, connected_Lgenvects := get_rec_data_s(recs, iso, G, G_to_pc);
       braids, topos := FindOrbits(perm_group, sign, Lgenvects, cc_labels, sign[1]);
-      // group_str := Sprintf("PermRep(SmallGroup(%o,%o))", IntegerToString(order), IntegerToString(counter));
-      return group_str, Cons, Cons_label, cc_labels, Lgenvects, connected_Lgenvects, braids, topos;
+      return group_str, trans_gp_label, Cons, Cons_label, cc_labels, Lgenvects, connected_Lgenvects, braids, topos;
    else
+      perm_gens := data[5];
+      if Type(perm_gens) eq MonStgElt and perm_gens eq "error" then 
+         PrintFile(errorfile, Sprintf("perm_gens not available for %o\n", group_label));
+         return 0,0,0,0,0,0,0,0,0;
+      end if;
       degree := data[4];
       group_str := Sprintf("PermutationGroup<%o|%o>", degree, perm_gens);
       perm_group := eval group_str;
@@ -499,7 +507,7 @@ compute_rec_data := function(sign, small_group)
       cc_labels, Lgenvects, rewritten_Lgenvects := get_rec_data_ns(recs);
       braids, topos := FindOrbits(perm_group, sign, Lgenvects, cc_labels, sign[1]);
       // rewritten_Lgenvects is returned for connected_Lgenvects because it is already connected
-      return group_str, Cons, Cons_label, cc_labels, rewritten_Lgenvects, rewritten_Lgenvects, braids, topos;
+      return group_str, "N/A", Cons, Cons_label, cc_labels, rewritten_Lgenvects, rewritten_Lgenvects, braids, topos;
    end if; 
 end function;
 

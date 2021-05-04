@@ -43,73 +43,78 @@ load "process_recs.mag";
 
 for ell in Ldata do
    sign:=ell[1];
-   //if sign[1] eq 0 then /* for now only handles g0=0 */
-      SmallGrp:=SmallGroup(ell[2,1], ell[2,2]);
-      group_str, Cons, Cons_label, cc_labels, 
-         Lgenvects, connected_Lgenvects, braids, topos := compute_rec_data(sign, SmallGrp);
-      if Type(Cons) eq RngIntElt then
-         continue;
-      end if;         
+   SmallGrp:=SmallGroup(ell[2,1], ell[2,2]);
+   if IsAbelian(SmallGrp) and mode eq "nonabel" then
+      continue;
+   end if;
+   if not IsAbelian(SmallGrp) and mode eq "abel" then
+      continue;
+   end if;
+   group_str, trans_gp_label, Cons, Cons_label, cc_labels, 
+      Lgenvects, connected_Lgenvects, braids, topos := compute_rec_data(sign, SmallGrp);
+   if Type(Cons) eq RngIntElt then
+      continue;
+   end if;         
 
-      PrintFile(prtfile, Sprintf("G:=%o;", group_str));
-      PrintFile(prtfile, Sprintf("G_str:=\"%o\";", group_str));
-      PrintFile(prtfile,"sign:=");
-      PrintFile(prtfile,sign);
-      PrintFile(prtfile,";");
+   PrintFile(prtfile, Sprintf("G:=%o;", group_str));
+   PrintFile(prtfile, Sprintf("G_str:=\"%o\";", group_str));
+   PrintFile(prtfile, Sprintf("trans_gp_label:=\"%o\";", trans_gp_label));
+   PrintFile(prtfile,"sign:=");
+   PrintFile(prtfile,sign);
+   PrintFile(prtfile,";");
 
-      PrintFile(prtfile,"Lgenvects:=[");
-      for w in [1..#Lgenvects] do
-         PrintFile(prtfile,"[G!");
-         vect:=Lgenvects[w];
-         for v in [1..#vect] do
-            perm:=vect[v];
-            perm_str:=Sprintf("%o", perm);
-            if perm_str eq "Id($)" then
-               perm_str:="Id(G)";
-            end if;
-            if v lt #vect then
-               perm_str:=Sprintf("%o, G!", perm_str);
-            elif w lt #Lgenvects then
-               perm_str:=Sprintf("%o],", perm_str);
-            else
-               perm_str:=Sprintf("%o]];", perm_str);
-            end if;   
-            PrintFile(prtfile, perm_str);
-         end for;
+   PrintFile(prtfile,"Lgenvects:=[");
+   for w in [1..#Lgenvects] do
+      PrintFile(prtfile,"[G!");
+      vect:=Lgenvects[w];
+      for v in [1..#vect] do
+         perm:=vect[v];
+         perm_str:=Sprintf("%o", perm);
+         if perm_str eq "Id($)" then
+            perm_str:="Id(G)";
+         end if;
+         if v lt #vect then
+            perm_str:=Sprintf("%o, G!", perm_str);
+         elif w lt #Lgenvects then
+            perm_str:=Sprintf("%o],", perm_str);
+         else
+            perm_str:=Sprintf("%o]];", perm_str);
+         end if;   
+         PrintFile(prtfile, perm_str);
       end for;
+   end for;
 
-      PrintFile(prtfile,"connected_Lgenvects:=[");
-      for w in [1..#connected_Lgenvects] do
-         PrintFile(prtfile,"[");
-         vect:=connected_Lgenvects[w];
-         for v in [1..#vect] do
-            gen_str:=Sprintf("\"%o\"", vect[v]);
-            if v lt #vect then
-               gen_str:=Sprintf("%o, ", gen_str);
-            elif w lt #connected_Lgenvects then
-               gen_str:=Sprintf("%o],", gen_str);
-            else
-               gen_str:=Sprintf("%o]];", gen_str);
-            end if;   
-            PrintFile(prtfile,gen_str);
-         end for;
+   PrintFile(prtfile,"connected_Lgenvects:=[");
+   for w in [1..#connected_Lgenvects] do
+      PrintFile(prtfile,"[");
+      vect:=connected_Lgenvects[w];
+      for v in [1..#vect] do
+         gen_str:=Sprintf("\"%o\"", vect[v]);
+         if v lt #vect then
+            gen_str:=Sprintf("%o, ", gen_str);
+         elif w lt #connected_Lgenvects then
+            gen_str:=Sprintf("%o],", gen_str);
+         else
+            gen_str:=Sprintf("%o]];", gen_str);
+         end if;   
+         PrintFile(prtfile,gen_str);
       end for;
+   end for;
 
-      PrintFile(prtfile,"Cons:=");
-      PrintFile(prtfile,Cons);
-      PrintFile(prtfile,";");
-      PrintFile(prtfile,"Cons_label:=");
-      PrintFile(prtfile,Cons_label);
-      PrintFile(prtfile,";");
-      PrintFile(prtfile,"cc_labels:=");
-      PrintFile(prtfile,cc_labels);
-      PrintFile(prtfile,";");
-      PrintFile(prtfile,"braids:=");
-      PrintFile(prtfile,braids);
-      PrintFile(prtfile,";");
-      PrintFile(prtfile,"topos:=");
-      PrintFile(prtfile,topos);
-      PrintFile(prtfile,";");
-      PrintFile(prtfile,"load 'ries.mag';");
-   //end if; /* sign[1]=0 */
+   PrintFile(prtfile,"Cons:=");
+   PrintFile(prtfile,Cons);
+   PrintFile(prtfile,";");
+   PrintFile(prtfile,"Cons_label:=");
+   PrintFile(prtfile,Cons_label);
+   PrintFile(prtfile,";");
+   PrintFile(prtfile,"cc_labels:=");
+   PrintFile(prtfile,cc_labels);
+   PrintFile(prtfile,";");
+   PrintFile(prtfile,"braids:=");
+   PrintFile(prtfile,braids);
+   PrintFile(prtfile,";");
+   PrintFile(prtfile,"topos:=");
+   PrintFile(prtfile,topos);
+   PrintFile(prtfile,";");
+   PrintFile(prtfile,"load 'ries.mag';");
 end for;
