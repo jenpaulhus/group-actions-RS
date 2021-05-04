@@ -1,5 +1,6 @@
 G:=PermutationGroup<2|[ (1, 2) ]>;
 G_str:="PermutationGroup<2|[ (1, 2) ]>";
+trans_gp_label:="2T1";
 sign:=
 [ 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ]
 ;
@@ -55,6 +56,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<3|[ (1, 2, 3) ]>;
 G_str:="PermutationGroup<3|[ (1, 2, 3) ]>";
+trans_gp_label:="3T1";
 sign:=
 [ 0, 3, 3, 3, 3, 3, 3 ]
 ;
@@ -140,6 +142,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<4|[ (1, 2, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (1, 2, 3, 4) ]>";
+trans_gp_label:="4T1";
 sign:=
 [ 0, 2, 4, 4, 4, 4 ]
 ;
@@ -202,6 +205,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<4|[ (1, 2, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (1, 2, 3, 4) ]>";
+trans_gp_label:="4T1";
 sign:=
 [ 0, 2, 2, 2, 2, 4, 4 ]
 ;
@@ -249,6 +253,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>;
 G_str:="PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>";
+trans_gp_label:="4T2";
 sign:=
 [ 0, 2, 2, 2, 2, 2, 2, 2 ]
 ;
@@ -403,6 +408,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<5|[ (1, 2, 3, 4, 5) ]>;
 G_str:="PermutationGroup<5|[ (1, 2, 3, 4, 5) ]>";
+trans_gp_label:="5T1";
 sign:=
 [ 0, 5, 5, 5, 5 ]
 ;
@@ -536,6 +542,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>";
+trans_gp_label:="6T1";
 sign:=
 [ 0, 3, 3, 6, 6 ]
 ;
@@ -609,6 +616,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>";
+trans_gp_label:="6T1";
 sign:=
 [ 0, 2, 6, 6, 6 ]
 ;
@@ -667,6 +675,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
 G_str:="PermutationGroup<3|[ (1, 3), (1, 2) ]>";
+trans_gp_label:="3T2";
 sign:=
 [ 0, 2, 2, 3, 3, 3 ]
 ;
@@ -763,6 +772,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>";
+trans_gp_label:="6T1";
 sign:=
 [ 0, 2, 2, 3, 3, 3 ]
 ;
@@ -825,6 +835,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>";
+trans_gp_label:="6T1";
 sign:=
 [ 0, 2, 2, 2, 3, 6 ]
 ;
@@ -887,6 +898,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
 G_str:="PermutationGroup<3|[ (1, 3), (1, 2) ]>";
+trans_gp_label:="3T2";
 sign:=
 [ 0, 2, 2, 2, 2, 2, 2 ]
 ;
@@ -1675,6 +1687,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
 G_str:="PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>";
+trans_gp_label:="8T5";
 sign:=
 [ 0, 2, 4, 4, 4 ]
 ;
@@ -1718,6 +1731,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8) ]>;
 G_str:="PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8) ]>";
+trans_gp_label:="8T1";
 sign:=
 [ 0, 2, 2, 8, 8 ]
 ;
@@ -1776,6 +1790,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
 G_str:="PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>";
+trans_gp_label:="4T3";
 sign:=
 [ 0, 2, 2, 2, 2, 4 ]
 ;
@@ -1957,6 +1972,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<9|[ (1, 2, 3, 4, 5, 6, 7, 8, 9) ]>;
 G_str:="PermutationGroup<9|[ (1, 2, 3, 4, 5, 6, 7, 8, 9) ]>";
+trans_gp_label:="9T1";
 sign:=
 [ 0, 9, 9, 9 ]
 ;
@@ -2063,6 +2079,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<9|[ (1, 2, 9)(3, 4, 5)(6, 7, 8), (1, 4, 7)(2, 5, 8)(3, 6, 9) ]>;
 G_str:="PermutationGroup<9|[ (1, 2, 9)(3, 4, 5)(6, 7, 8), (1, 4, 7)(2, 5, 8)(3, 6, 9) ]>";
+trans_gp_label:="9T2";
 sign:=
 [ 0, 3, 3, 3, 3 ]
 ;
@@ -2541,6 +2558,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) ]>;
 G_str:="PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) ]>";
+trans_gp_label:="10T1";
 sign:=
 [ 0, 5, 10, 10 ]
 ;
@@ -2673,6 +2691,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<5|[ (1, 2, 3, 4, 5), (1, 4)(2, 3) ]>;
 G_str:="PermutationGroup<5|[ (1, 2, 3, 4, 5), (1, 4)(2, 3) ]>";
+trans_gp_label:="5T2";
 sign:=
 [ 0, 2, 2, 5, 5 ]
 ;
@@ -2791,6 +2810,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) ]>;
 G_str:="PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) ]>";
+trans_gp_label:="10T1";
 sign:=
 [ 0, 2, 2, 5, 5 ]
 ;
@@ -2849,6 +2869,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>";
+trans_gp_label:="12T2";
 sign:=
 [ 0, 6, 6, 6 ]
 ;
@@ -2903,6 +2924,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>";
+trans_gp_label:="12T1";
 sign:=
 [ 0, 4, 6, 12 ]
 ;
@@ -2983,6 +3005,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>";
+trans_gp_label:="12T1";
 sign:=
 [ 0, 3, 12, 12 ]
 ;
@@ -3037,6 +3060,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=
 [ 0, 2, 3, 3, 3 ]
 ;
@@ -3185,6 +3209,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<6|[ (1, 4)(2, 3)(5, 6), (1, 2, 3, 4, 5, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 4)(2, 3)(5, 6), (1, 2, 3, 4, 5, 6) ]>";
+trans_gp_label:="6T3";
 sign:=
 [ 0, 2, 2, 3, 6 ]
 ;
@@ -3243,6 +3268,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>";
+trans_gp_label:="12T2";
 sign:=
 [ 0, 2, 2, 3, 6 ]
 ;
@@ -3361,6 +3387,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<6|[ (1, 4)(2, 3)(5, 6), (1, 2, 3, 4, 5, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 4)(2, 3)(5, 6), (1, 2, 3, 4, 5, 6) ]>";
+trans_gp_label:="6T3";
 sign:=
 [ 0, 2, 2, 2, 2, 2 ]
 ;
@@ -3525,6 +3552,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>;
 G_str:="PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>";
+trans_gp_label:="15T1";
 sign:=
 [ 0, 3, 5, 15 ]
 ;
@@ -3657,6 +3685,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<16|[ (1, 13, 2, 14)(3, 12, 4, 11)(5, 9, 6, 10)(7, 15, 8, 16), (1, 12, 2, 11)(3, 9, 4, 10)(5, 8, 6, 7)(13, 15, 14, 16) ]>;
 G_str:="PermutationGroup<16|[ (1, 13, 2, 14)(3, 12, 4, 11)(5, 9, 6, 10)(7, 15, 8, 16), (1, 12, 2, 11)(3, 9, 4, 10)(5, 8, 6, 7)(13, 15, 14, 16) ]>";
+trans_gp_label:="16T14";
 sign:=
 [ 0, 4, 4, 8 ]
 ;
@@ -3711,6 +3740,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<16|[ (1, 7, 14, 4, 9, 15, 5, 11, 2, 8, 13, 3, 10, 16, 6, 12) ]>;
 G_str:="PermutationGroup<16|[ (1, 7, 14, 4, 9, 15, 5, 11, 2, 8, 13, 3, 10, 16, 6, 12) ]>";
+trans_gp_label:="16T1";
 sign:=
 [ 0, 2, 16, 16 ]
 ;
@@ -3791,6 +3821,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8), (1, 6)(2, 5)(3, 4)(7, 8) ]>;
 G_str:="PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8), (1, 6)(2, 5)(3, 4)(7, 8) ]>";
+trans_gp_label:="8T6";
 sign:=
 [ 0, 2, 2, 2, 8 ]
 ;
@@ -3849,6 +3880,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<6|[ (1, 4)(2, 5)(3, 6), (2, 4, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 4)(2, 5)(3, 6), (2, 4, 6) ]>";
+trans_gp_label:="6T5";
 sign:=
 [ 0, 3, 6, 6 ]
 ;
@@ -3916,6 +3948,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<18|[ (1, 7, 13, 2, 8, 14)(3, 9, 15, 4, 10, 16)(5, 11, 17, 6, 12, 18), (1, 16, 5, 2, 15, 6)(3, 11, 8, 4, 12, 7)(9, 17, 14, 10, 18, 13) ]>;
 G_str:="PermutationGroup<18|[ (1, 7, 13, 2, 8, 14)(3, 9, 15, 4, 10, 16)(5, 11, 17, 6, 12, 18), (1, 16, 5, 2, 15, 6)(3, 11, 8, 4, 12, 7)(9, 17, 14, 10, 18, 13) ]>";
+trans_gp_label:="18T2";
 sign:=
 [ 0, 3, 6, 6 ]
 ;
@@ -4256,6 +4289,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<18|[ (1, 15, 11, 8, 3, 17, 14, 9, 6, 2, 16, 12, 7, 4, 18, 13, 10, 5) ]>;
 G_str:="PermutationGroup<18|[ (1, 15, 11, 8, 3, 17, 14, 9, 6, 2, 16, 12, 7, 4, 18, 13, 10, 5) ]>";
+trans_gp_label:="18T1";
 sign:=
 [ 0, 2, 9, 18 ]
 ;
@@ -4362,6 +4396,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<6|[ (1, 4)(2, 5)(3, 6), (2, 4, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 4)(2, 5)(3, 6), (2, 4, 6) ]>";
+trans_gp_label:="6T5";
 sign:=
 [ 0, 2, 2, 3, 3 ]
 ;
@@ -4450,6 +4485,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<9|[ (1, 2, 9)(3, 4, 5)(6, 7, 8), (1, 2)(3, 6)(4, 8)(5, 7), (1, 4, 7)(2, 5, 8)(3, 6, 9) ]>;
 G_str:="PermutationGroup<9|[ (1, 2, 9)(3, 4, 5)(6, 7, 8), (1, 2)(3, 6)(4, 8)(5, 7), (1, 4, 7)(2, 5, 8)(3, 6, 9) ]>";
+trans_gp_label:="9T5";
 sign:=
 [ 0, 2, 2, 3, 3 ]
 ;
@@ -4658,6 +4694,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<20|[ (1, 19, 2, 20)(3, 17, 4, 18)(5, 15, 6, 16)(7, 14, 8, 13)(9, 12, 10, 11), (1, 12, 2, 11)(3, 10, 4, 9)(5, 7, 6, 8)(13, 19, 14, 20)(15, 17, 16, 18) ]>;
 G_str:="PermutationGroup<20|[ (1, 19, 2, 20)(3, 17, 4, 18)(5, 15, 6, 16)(7, 14, 8, 13)(9, 12, 10, 11), (1, 12, 2, 11)(3, 10, 4, 9)(5, 7, 6, 8)(13, 19, 14, 20)(15, 17, 16, 18) ]>";
+trans_gp_label:="20T2";
 sign:=
 [ 0, 4, 4, 5 ]
 ;
@@ -4712,6 +4749,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<5|[ (1, 2, 3, 4, 5), (1, 2, 4, 3) ]>;
 G_str:="PermutationGroup<5|[ (1, 2, 3, 4, 5), (1, 2, 4, 3) ]>";
+trans_gp_label:="5T3";
 sign:=
 [ 0, 4, 4, 5 ]
 ;
@@ -4753,6 +4791,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<20|[ (1, 13, 5, 17, 9, 2, 14, 6, 18, 10)(3, 15, 8, 20, 11, 4, 16, 7, 19, 12), (1, 19, 18, 16, 14, 11, 9, 8, 5, 3)(2, 20, 17, 15, 13, 12, 10, 7, 6, 4) ]>;
 G_str:="PermutationGroup<20|[ (1, 13, 5, 17, 9, 2, 14, 6, 18, 10)(3, 15, 8, 20, 11, 4, 16, 7, 19, 12), (1, 19, 18, 16, 14, 11, 9, 8, 5, 3)(2, 20, 17, 15, 13, 12, 10, 7, 6, 4) ]>";
+trans_gp_label:="20T3";
 sign:=
 [ 0, 2, 10, 10 ]
 ;
@@ -4937,6 +4976,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10), (1, 8)(2, 7)(3, 6)(4, 5)(9, 10) ]>;
 G_str:="PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10), (1, 8)(2, 7)(3, 6)(4, 5)(9, 10) ]>";
+trans_gp_label:="10T3";
 sign:=
 [ 0, 2, 2, 2, 5 ]
 ;
@@ -4995,6 +5035,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<8|[ (1, 3, 5, 7)(2, 4, 6, 8), (1, 3, 8)(4, 5, 7) ]>;
 G_str:="PermutationGroup<8|[ (1, 3, 5, 7)(2, 4, 6, 8), (1, 3, 8)(4, 5, 7) ]>";
+trans_gp_label:="8T12";
 sign:=
 [ 0, 3, 4, 6 ]
 ;
@@ -5049,6 +5090,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<12|[ (1, 7)(3, 9)(5, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 7)(3, 9)(5, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>";
+trans_gp_label:="12T14";
 sign:=
 [ 0, 2, 6, 12 ]
 ;
@@ -5129,6 +5171,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 2) ]>;
 G_str:="PermutationGroup<4|[ (1, 2, 3, 4), (1, 2) ]>";
+trans_gp_label:="4T5";
 sign:=
 [ 0, 2, 2, 2, 4 ]
 ;
@@ -5217,6 +5260,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<16|[ (1, 15, 2, 16)(3, 14, 4, 13)(5, 12, 6, 11)(7, 9, 8, 10), (1, 16, 14, 11, 9, 8, 6, 4, 2, 15, 13, 12, 10, 7, 5, 3) ]>;
 G_str:="PermutationGroup<16|[ (1, 15, 2, 16)(3, 14, 4, 13)(5, 12, 6, 11)(7, 9, 8, 10), (1, 16, 14, 11, 9, 8, 6, 4, 2, 15, 13, 12, 10, 7, 5, 3) ]>";
+trans_gp_label:="16T55";
 sign:=
 [ 0, 2, 4, 16 ]
 ;
@@ -5297,6 +5341,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<6|[ (1, 4, 5, 2)(3, 6), (2, 4, 6), (1, 5)(2, 4) ]>;
 G_str:="PermutationGroup<6|[ (1, 4, 5, 2)(3, 6), (2, 4, 6), (1, 5)(2, 4) ]>";
+trans_gp_label:="6T10";
 sign:=
 [ 0, 3, 4, 4 ]
 ;
@@ -5351,6 +5396,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<12|[ (1, 7, 10)(2, 5, 11)(3, 6, 9), (2, 8, 11)(3, 6, 12)(4, 7, 10), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 7, 10)(2, 5, 11)(3, 6, 9), (2, 8, 11)(3, 6, 12)(4, 7, 10), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12) ]>";
+trans_gp_label:="12T20";
 sign:=
 [ 0, 3, 3, 6 ]
 ;
@@ -5457,6 +5503,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<6|[ (1, 4)(2, 5)(3, 6), (2, 4, 6), (1, 5)(2, 4) ]>;
 G_str:="PermutationGroup<6|[ (1, 4)(2, 5)(3, 6), (2, 4, 6), (1, 5)(2, 4) ]>";
+trans_gp_label:="6T9";
 sign:=
 [ 0, 2, 6, 6 ]
 ;
@@ -5468,8 +5515,8 @@ Lgenvects:=[
 connected_Lgenvects:=[
 [
 "c^2b^3a", 
-"b", 
-"c^2b^4a"]];
+"b^5", 
+"c^2b^2a"]];
 Cons:=
 [
 [ 4, 8, 9 ]
@@ -5498,6 +5545,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (2, 6, 10)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (2, 6, 10)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>";
+trans_gp_label:="12T18";
 sign:=
 [ 0, 2, 6, 6 ]
 ;
@@ -5578,6 +5626,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<6|[ (1, 4)(2, 5)(3, 6), (2, 4, 6), (1, 5)(2, 4) ]>;
 G_str:="PermutationGroup<6|[ (1, 4)(2, 5)(3, 6), (2, 4, 6), (1, 5)(2, 4) ]>";
+trans_gp_label:="6T9";
 sign:=
 [ 0, 2, 2, 2, 3 ]
 ;
@@ -5621,6 +5670,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<20|[ (1, 11, 2, 12)(3, 9, 4, 10)(5, 8, 6, 7)(13, 19, 14, 20)(15, 17, 16, 18), (1, 8, 13, 20, 6, 12, 18, 4, 10, 16)(2, 7, 14, 19, 5, 11, 17, 3, 9, 15) ]>;
 G_str:="PermutationGroup<20|[ (1, 11, 2, 12)(3, 9, 4, 10)(5, 8, 6, 7)(13, 19, 14, 20)(15, 17, 16, 18), (1, 8, 13, 20, 6, 12, 18, 4, 10, 16)(2, 7, 14, 19, 5, 11, 17, 3, 9, 15) ]>";
+trans_gp_label:="20T7";
 sign:=
 [ 0, 2, 4, 10 ]
 ;
@@ -5701,6 +5751,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<5|[ (1,2,4,3,5), (1,3,5) ]>;
 G_str:="PermutationGroup<5|[ (1,2,4,3,5), (1,3,5) ]>";
+trans_gp_label:="N/A";
 sign:=
 [ 0, 2, 5, 5 ]
 ;
@@ -5742,6 +5793,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<6|[ (2, 4), (1, 4)(2, 5)(3, 6), (2, 4, 6) ]>;
 G_str:="PermutationGroup<6|[ (2, 4), (1, 4)(2, 5)(3, 6), (2, 4, 6) ]>";
+trans_gp_label:="6T13";
 sign:=
 [ 0, 2, 4, 6 ]
 ;
@@ -5796,6 +5848,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(6, 9), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(6, 9), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>";
+trans_gp_label:="12T45";
 sign:=
 [ 0, 2, 3, 12 ]
 ;
@@ -5850,6 +5903,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<5|[ (1,2), (1,2,3,4,5) ]>;
 G_str:="PermutationGroup<5|[ (1,2), (1,2,3,4,5) ]>";
+trans_gp_label:="N/A";
 sign:=
 [ 0, 2, 4, 5 ]
 ;
@@ -5891,6 +5945,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<2|[ (1, 2) ]>;
 G_str:="PermutationGroup<2|[ (1, 2) ]>";
+trans_gp_label:="2T1";
 sign:=
 [ 1, 2, 2, 2, 2, 2, 2 ]
 ;
@@ -5942,6 +5997,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<3|[ (1, 2, 3) ]>;
 G_str:="PermutationGroup<3|[ (1, 2, 3) ]>";
+trans_gp_label:="3T1";
 sign:=
 [ 1, 3, 3, 3 ]
 ;
@@ -6004,6 +6060,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<4|[ (1, 2, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (1, 2, 3, 4) ]>";
+trans_gp_label:="4T1";
 sign:=
 [ 1, 4, 4 ]
 ;
@@ -6047,6 +6104,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>;
 G_str:="PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>";
+trans_gp_label:="4T2";
 sign:=
 [ 1, 2, 2, 2 ]
 ;
@@ -6092,6 +6150,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
 G_str:="PermutationGroup<3|[ (1, 3), (1, 2) ]>";
+trans_gp_label:="3T2";
 sign:=
 [ 1, 2, 2 ]
 ;
@@ -6465,6 +6524,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>";
+trans_gp_label:="6T1";
 sign:=
 [ 1, 2, 2 ]
 ;
@@ -6508,6 +6568,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=
 [ 1, 2 ]
 ;
@@ -6952,6 +7013,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<2|[ (1, 2) ]>;
 G_str:="PermutationGroup<2|[ (1, 2) ]>";
+trans_gp_label:="2T1";
 sign:=
 [ 2, 2, 2 ]
 ;
@@ -6999,6 +7061,7 @@ topos:=
 load 'ries.mag';
 G:=PermutationGroup<3|[ (1, 2, 3) ]>;
 G_str:="PermutationGroup<3|[ (1, 2, 3) ]>";
+trans_gp_label:="3T1";
 sign:=
 [ 2 ]
 ;
