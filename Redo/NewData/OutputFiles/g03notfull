@@ -1,4 +1,5 @@
 G:=PermutationGroup<4|[ (1, 2, 3, 4) ]>;
+trans_gp_label:="4T1";
 sign:=[0, 4, 4, 4, 4];
 H:=SmallGroup(16,13);
 signH:=[0, 2, 2, 2, 4];
@@ -29,8 +30,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4) ]>;
+trans_gp_label:="4T1";
 sign:=[0, 4, 4, 4, 4];
 H:=SmallGroup(16,13);
 signH:=[0, 2, 2, 2, 4];
@@ -61,8 +63,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>;
+trans_gp_label:="6T1";
 sign:=[0, 2, 2, 6, 6];
 H:=SmallGroup(12,4);
 signH:=[0, 2, 2, 2, 6];
@@ -93,8 +96,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<7|[ (1, 2, 3, 4, 5, 6, 7) ]>;
+trans_gp_label:="7T1";
 sign:=[0, 7, 7, 7];
 H:=SmallGroup(14,2);
 signH:=[0, 2, 7, 14];
@@ -123,8 +127,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<7|[ (1, 2, 3, 4, 5, 6, 7) ]>;
+trans_gp_label:="7T1";
 sign:=[0, 7, 7, 7];
 H:=SmallGroup(21,1);
 signH:=[0, 3, 3, 7];
@@ -153,8 +158,9 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<7|[ (1, 2, 3, 4, 5, 6, 7) ]>;
+trans_gp_label:="7T1";
 sign:=[0, 7, 7, 7];
 H:=SmallGroup(14,2);
 signH:=[0, 2, 7, 14];
@@ -183,8 +189,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<7|[ (1, 2, 3, 4, 5, 6, 7) ]>;
+trans_gp_label:="7T1";
 sign:=[0, 7, 7, 7];
 H:=SmallGroup(14,2);
 signH:=[0, 2, 7, 14];
@@ -213,8 +220,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<7|[ (1, 2, 3, 4, 5, 6, 7) ]>;
+trans_gp_label:="7T1";
 sign:=[0, 7, 7, 7];
 H:=SmallGroup(14,2);
 signH:=[0, 2, 7, 14];
@@ -243,8 +251,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<7|[ (1, 2, 3, 4, 5, 6, 7) ]>;
+trans_gp_label:="7T1";
 sign:=[0, 7, 7, 7];
 H:=SmallGroup(21,1);
 signH:=[0, 3, 3, 7];
@@ -273,8 +282,9 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<7|[ (1, 2, 3, 4, 5, 6, 7) ]>;
+trans_gp_label:="7T1";
 sign:=[0, 7, 7, 7];
 H:=SmallGroup(14,2);
 signH:=[0, 2, 7, 14];
@@ -303,8 +313,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<7|[ (1, 2, 3, 4, 5, 6, 7) ]>;
+trans_gp_label:="7T1";
 sign:=[0, 7, 7, 7];
 H:=SmallGroup(14,2);
 signH:=[0, 2, 7, 14];
@@ -333,8 +344,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8) ]>;
+trans_gp_label:="8T1";
 sign:=[0, 4, 8, 8];
 H:=SmallGroup(16,5);
 signH:=[0, 2, 8, 8];
@@ -363,8 +375,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8) ]>;
+trans_gp_label:="8T1";
 sign:=[0, 4, 8, 8];
 H:=SmallGroup(16,6);
 signH:=[0, 2, 8, 8];
@@ -393,8 +406,9 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8) ]>;
+trans_gp_label:="8T1";
 sign:=[0, 4, 8, 8];
 H:=SmallGroup(16,5);
 signH:=[0, 2, 8, 8];
@@ -423,8 +437,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8) ]>;
+trans_gp_label:="8T1";
 sign:=[0, 4, 8, 8];
 H:=SmallGroup(16,6);
 signH:=[0, 2, 8, 8];
@@ -453,8 +468,9 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8) ]>;
+trans_gp_label:="8T1";
 sign:=[0, 4, 8, 8];
 H:=SmallGroup(16,5);
 signH:=[0, 2, 8, 8];
@@ -483,8 +499,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8) ]>;
+trans_gp_label:="8T1";
 sign:=[0, 4, 8, 8];
 H:=SmallGroup(16,5);
 signH:=[0, 2, 8, 8];
@@ -513,8 +530,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+trans_gp_label:="8T2";
 sign:=[0, 2, 2, 4, 4];
 H:=SmallGroup(16,11);
 signH:=[0, 2, 2, 2, 4];
@@ -545,8 +563,9 @@ braid:=
 topo:=
 [ 5, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+trans_gp_label:="8T2";
 sign:=[0, 2, 2, 4, 4];
 H:=SmallGroup(16,11);
 signH:=[0, 2, 2, 2, 4];
@@ -577,8 +596,9 @@ braid:=
 topo:=
 [ 5, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+trans_gp_label:="8T2";
 sign:=[0, 2, 2, 4, 4];
 H:=SmallGroup(16,13);
 signH:=[0, 2, 2, 2, 4];
@@ -609,8 +629,9 @@ braid:=
 topo:=
 [ 7, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+trans_gp_label:="8T2";
 sign:=[0, 2, 2, 4, 4];
 H:=SmallGroup(16,13);
 signH:=[0, 2, 2, 2, 4];
@@ -641,8 +662,9 @@ braid:=
 topo:=
 [ 7, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+trans_gp_label:="8T2";
 sign:=[0, 2, 2, 4, 4];
 H:=SmallGroup(16,13);
 signH:=[0, 2, 2, 2, 4];
@@ -673,8 +695,9 @@ braid:=
 topo:=
 [ 7, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+trans_gp_label:="8T2";
 sign:=[0, 2, 2, 4, 4];
 H:=SmallGroup(16,13);
 signH:=[0, 2, 2, 2, 4];
@@ -705,8 +728,9 @@ braid:=
 topo:=
 [ 7, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+trans_gp_label:="8T2";
 sign:=[0, 2, 2, 4, 4];
 H:=SmallGroup(16,11);
 signH:=[0, 2, 2, 2, 4];
@@ -737,8 +761,9 @@ braid:=
 topo:=
 [ 5, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+trans_gp_label:="8T2";
 sign:=[0, 2, 2, 4, 4];
 H:=SmallGroup(16,11);
 signH:=[0, 2, 2, 2, 4];
@@ -769,8 +794,9 @@ braid:=
 topo:=
 [ 5, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[0, 2, 2, 4, 4];
 H:=SmallGroup(16,11);
 signH:=[0, 2, 2, 2, 4];
@@ -801,8 +827,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[0, 2, 2, 4, 4];
 H:=SmallGroup(16,11);
 signH:=[0, 2, 2, 2, 4];
@@ -833,8 +860,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[0, 2, 2, 4, 4];
 H:=SmallGroup(16,11);
 signH:=[0, 2, 2, 2, 4];
@@ -865,8 +893,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[0, 2, 2, 4, 4];
 H:=SmallGroup(16,11);
 signH:=[0, 2, 2, 2, 4];
@@ -897,8 +926,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<12|[ (1, 8, 7, 2)(3, 6, 9, 12)(4, 11, 10, 5), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
+trans_gp_label:="12T5";
 sign:=[0, 4, 4, 6];
 H:=SmallGroup(24,5);
 signH:=[0, 2, 4, 12];
@@ -927,8 +957,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<12|[ (1, 8, 7, 2)(3, 6, 9, 12)(4, 11, 10, 5), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
+trans_gp_label:="12T5";
 sign:=[0, 4, 4, 6];
 H:=SmallGroup(24,5);
 signH:=[0, 2, 4, 12];
@@ -957,8 +988,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
+trans_gp_label:="12T1";
 sign:=[0, 2, 12, 12];
 H:=SmallGroup(24,5);
 signH:=[0, 2, 4, 12];
@@ -987,8 +1019,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
+trans_gp_label:="12T1";
 sign:=[0, 2, 12, 12];
 H:=SmallGroup(24,5);
 signH:=[0, 2, 4, 12];
@@ -1017,8 +1050,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
+trans_gp_label:="4T4";
 sign:=[0, 2, 2, 3, 3];
 H:=SmallGroup(24,12);
 signH:=[0, 2, 2, 2, 3];
@@ -1049,8 +1083,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
+trans_gp_label:="4T4";
 sign:=[0, 2, 2, 3, 3];
 H:=SmallGroup(24,12);
 signH:=[0, 2, 2, 2, 3];
@@ -1081,8 +1116,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
+trans_gp_label:="4T4";
 sign:=[0, 2, 2, 3, 3];
 H:=SmallGroup(24,12);
 signH:=[0, 2, 2, 2, 3];
@@ -1113,8 +1149,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(48,3);
 signH:=[0, 3, 3, 4];
@@ -1143,8 +1180,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(32,11);
 signH:=[0, 2, 4, 8];
@@ -1173,8 +1211,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(32,11);
 signH:=[0, 2, 4, 8];
@@ -1203,8 +1242,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(32,11);
 signH:=[0, 2, 4, 8];
@@ -1233,8 +1273,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(32,11);
 signH:=[0, 2, 4, 8];
@@ -1263,8 +1304,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(48,3);
 signH:=[0, 3, 3, 4];
@@ -1293,8 +1335,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(32,11);
 signH:=[0, 2, 4, 8];
@@ -1323,8 +1366,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(32,11);
 signH:=[0, 2, 4, 8];
@@ -1353,8 +1397,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(32,11);
 signH:=[0, 2, 4, 8];
@@ -1383,8 +1428,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(32,11);
 signH:=[0, 2, 4, 8];
@@ -1413,8 +1459,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(32,11);
 signH:=[0, 2, 4, 8];
@@ -1443,8 +1490,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(48,3);
 signH:=[0, 3, 3, 4];
@@ -1473,8 +1521,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(32,11);
 signH:=[0, 2, 4, 8];
@@ -1503,8 +1552,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(48,3);
 signH:=[0, 3, 3, 4];
@@ -1533,8 +1583,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(48,3);
 signH:=[0, 3, 3, 4];
@@ -1563,8 +1614,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 7, 5, 11)(2, 8, 6, 12)(3, 9, 15, 13)(4, 10, 16, 14), (1, 13, 2, 14)(3, 8, 4, 7)(5, 9, 6, 10)(11, 15, 12, 16) ]>;
+trans_gp_label:="16T4";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(48,3);
 signH:=[0, 3, 3, 4];
@@ -1593,8 +1645,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 15, 6, 3)(2, 16, 5, 4)(7, 14, 11, 9)(8, 13, 12, 10), (1, 8, 6, 12)(2, 7, 5, 11)(3, 9, 15, 14)(4, 10, 16, 13) ]>;
+trans_gp_label:="16T8";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(32,9);
 signH:=[0, 2, 4, 8];
@@ -1623,8 +1676,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 15, 6, 3)(2, 16, 5, 4)(7, 14, 11, 9)(8, 13, 12, 10), (1, 8, 6, 12)(2, 7, 5, 11)(3, 9, 15, 14)(4, 10, 16, 13) ]>;
+trans_gp_label:="16T8";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(32,9);
 signH:=[0, 2, 4, 8];
@@ -1653,8 +1707,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 15, 6, 3)(2, 16, 5, 4)(7, 14, 11, 9)(8, 13, 12, 10), (1, 8, 6, 12)(2, 7, 5, 11)(3, 9, 15, 14)(4, 10, 16, 13) ]>;
+trans_gp_label:="16T8";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(32,9);
 signH:=[0, 2, 4, 8];
@@ -1683,8 +1738,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 15, 6, 3)(2, 16, 5, 4)(7, 14, 11, 9)(8, 13, 12, 10), (1, 8, 6, 12)(2, 7, 5, 11)(3, 9, 15, 14)(4, 10, 16, 13) ]>;
+trans_gp_label:="16T8";
 sign:=[0, 4, 4, 4];
 H:=SmallGroup(32,9);
 signH:=[0, 2, 4, 8];
@@ -1713,8 +1769,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 4, 5, 8, 9, 11, 13, 16)(2, 3, 6, 7, 10, 12, 14, 15), (1, 15, 13, 12, 9, 7, 5, 3)(2, 16, 14, 11, 10, 8, 6, 4) ]>;
+trans_gp_label:="16T5";
 sign:=[0, 2, 8, 8];
 H:=SmallGroup(32,9);
 signH:=[0, 2, 4, 8];
@@ -1743,8 +1800,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 4, 5, 8, 9, 11, 13, 16)(2, 3, 6, 7, 10, 12, 14, 15), (1, 15, 13, 12, 9, 7, 5, 3)(2, 16, 14, 11, 10, 8, 6, 4) ]>;
+trans_gp_label:="16T5";
 sign:=[0, 2, 8, 8];
 H:=SmallGroup(32,9);
 signH:=[0, 2, 4, 8];
@@ -1773,8 +1831,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 4, 5, 8, 9, 11, 13, 16)(2, 3, 6, 7, 10, 12, 14, 15), (1, 15, 13, 12, 9, 7, 5, 3)(2, 16, 14, 11, 10, 8, 6, 4) ]>;
+trans_gp_label:="16T5";
 sign:=[0, 2, 8, 8];
 H:=SmallGroup(32,9);
 signH:=[0, 2, 4, 8];
@@ -1803,8 +1862,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 4, 5, 8, 9, 11, 13, 16)(2, 3, 6, 7, 10, 12, 14, 15), (1, 15, 13, 12, 9, 7, 5, 3)(2, 16, 14, 11, 10, 8, 6, 4) ]>;
+trans_gp_label:="16T5";
 sign:=[0, 2, 8, 8];
 H:=SmallGroup(32,9);
 signH:=[0, 2, 4, 8];
@@ -1833,8 +1893,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 4, 5, 8, 9, 11, 13, 16)(2, 3, 6, 7, 10, 12, 14, 15), (1, 15, 13, 12, 9, 7, 5, 3)(2, 16, 14, 11, 10, 8, 6, 4) ]>;
+trans_gp_label:="16T5";
 sign:=[0, 2, 8, 8];
 H:=SmallGroup(32,9);
 signH:=[0, 2, 4, 8];
@@ -1863,8 +1924,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 4, 5, 8, 9, 11, 13, 16)(2, 3, 6, 7, 10, 12, 14, 15), (1, 15, 13, 12, 9, 7, 5, 3)(2, 16, 14, 11, 10, 8, 6, 4) ]>;
+trans_gp_label:="16T5";
 sign:=[0, 2, 8, 8];
 H:=SmallGroup(32,9);
 signH:=[0, 2, 4, 8];
@@ -1893,8 +1955,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 4, 5, 8, 9, 11, 13, 16)(2, 3, 6, 7, 10, 12, 14, 15), (1, 15, 13, 12, 9, 7, 5, 3)(2, 16, 14, 11, 10, 8, 6, 4) ]>;
+trans_gp_label:="16T5";
 sign:=[0, 2, 8, 8];
 H:=SmallGroup(32,9);
 signH:=[0, 2, 4, 8];
@@ -1923,8 +1986,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<16|[ (1, 4, 5, 8, 9, 11, 13, 16)(2, 3, 6, 7, 10, 12, 14, 15), (1, 15, 13, 12, 9, 7, 5, 3)(2, 16, 14, 11, 10, 8, 6, 4) ]>;
+trans_gp_label:="16T5";
 sign:=[0, 2, 8, 8];
 H:=SmallGroup(32,9);
 signH:=[0, 2, 4, 8];
@@ -1953,8 +2017,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8), (1, 5)(3, 7) ]>;
+trans_gp_label:="8T7";
 sign:=[0, 2, 8, 8];
 H:=SmallGroup(32,11);
 signH:=[0, 2, 4, 8];
@@ -1983,8 +2048,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8), (1, 5)(3, 7) ]>;
+trans_gp_label:="8T7";
 sign:=[0, 2, 8, 8];
 H:=SmallGroup(32,11);
 signH:=[0, 2, 4, 8];
@@ -2013,8 +2079,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 2) ]>;
+trans_gp_label:="4T5";
 sign:=[0, 3, 4, 4];
 H:=SmallGroup(48,48);
 signH:=[0, 2, 4, 6];
@@ -2043,8 +2110,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 3, 5, 7)(2, 4, 6, 8), (1, 3, 8)(4, 5, 7) ]>;
+trans_gp_label:="8T12";
 sign:=[0, 3, 3, 6];
 H:=SmallGroup(48,33);
 signH:=[0, 2, 3, 12];
@@ -2073,8 +2141,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 3, 5, 7)(2, 4, 6, 8), (1, 3, 8)(4, 5, 7) ]>;
+trans_gp_label:="8T12";
 sign:=[0, 3, 3, 6];
 H:=SmallGroup(48,33);
 signH:=[0, 2, 3, 12];
@@ -2103,8 +2172,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<6|[ (1, 3, 5)(2, 4, 6), (3, 6) ]>;
+trans_gp_label:="6T6";
 sign:=[0, 2, 6, 6];
 H:=SmallGroup(48,48);
 signH:=[0, 2, 4, 6];
@@ -2133,8 +2203,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<12|[ (1, 10, 7, 4)(3, 6, 9, 12), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12) ]>;
+trans_gp_label:="12T31";
 sign:=[0, 3, 3, 4];
 H:=SmallGroup(96,64);
 signH:=[0, 2, 3, 8];
@@ -2163,8 +2234,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<12|[ (1, 10, 7, 4)(3, 6, 9, 12), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12) ]>;
+trans_gp_label:="12T31";
 sign:=[0, 3, 3, 4];
 H:=SmallGroup(96,64);
 signH:=[0, 2, 3, 8];
@@ -2193,8 +2265,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<12|[ (1, 10, 7, 4)(3, 6, 9, 12), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12) ]>;
+trans_gp_label:="12T31";
 sign:=[0, 3, 3, 4];
 H:=SmallGroup(96,64);
 signH:=[0, 2, 3, 8];
@@ -2223,8 +2296,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<12|[ (1, 10, 7, 4)(3, 6, 9, 12), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12) ]>;
+trans_gp_label:="12T31";
 sign:=[0, 3, 3, 4];
 H:=SmallGroup(96,64);
 signH:=[0, 2, 3, 8];
@@ -2253,11 +2327,12 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<3|[ (1, 2, 3) ]>;
+trans_gp_label:="3T1";
 sign:=[1, 3, 3];
 H:=SmallGroup(6,1);
-signH:=[0, 2, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 2, 3];
 Lmonod:=[G!
 (1, 2, 3), G!
 Id(G), G!
@@ -2285,8 +2360,9 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4) ]>;
+trans_gp_label:="4T1";
 sign:=[1, 2, 2];
 H:=SmallGroup(8,3);
 signH:=[0, 2, 2, 2, 2, 2];
@@ -2317,8 +2393,9 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>;
+trans_gp_label:="4T2";
 sign:=[1, 2, 2];
 H:=SmallGroup(8,5);
 signH:=[0, 2, 2, 2, 2, 2];
@@ -2349,8 +2426,9 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>;
+trans_gp_label:="4T2";
 sign:=[1, 2, 2];
 H:=SmallGroup(8,5);
 signH:=[0, 2, 2, 2, 2, 2];
@@ -2381,8 +2459,9 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>;
+trans_gp_label:="4T2";
 sign:=[1, 2, 2];
 H:=SmallGroup(8,5);
 signH:=[0, 2, 2, 2, 2, 2];
@@ -2413,11 +2492,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+trans_gp_label:="3T2";
 sign:=[1, 3];
 H:=SmallGroup(12,4);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 6];
 Lmonod:=[G!
 (2, 3), G!
 (1, 2, 3), G!
@@ -2443,11 +2523,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+trans_gp_label:="3T2";
 sign:=[1, 3];
 H:=SmallGroup(12,4);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 6];
 Lmonod:=[G!
 (2, 3), G!
 (1, 2), G!
@@ -2473,11 +2554,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+trans_gp_label:="3T2";
 sign:=[1, 3];
 H:=SmallGroup(12,4);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 6];
 Lmonod:=[G!
 (1, 2), G!
 (1, 2, 3), G!
@@ -2503,11 +2585,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+trans_gp_label:="3T2";
 sign:=[1, 3];
 H:=SmallGroup(12,4);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 6];
 Lmonod:=[G!
 (1, 2), G!
 (1, 3), G!
@@ -2533,11 +2616,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+trans_gp_label:="3T2";
 sign:=[1, 3];
 H:=SmallGroup(12,4);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 6];
 Lmonod:=[G!
 (1, 3, 2), G!
 (2, 3), G!
@@ -2563,11 +2647,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+trans_gp_label:="3T2";
 sign:=[1, 3];
 H:=SmallGroup(12,4);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 6];
 Lmonod:=[G!
 (1, 3, 2), G!
 (1, 2), G!
@@ -2593,11 +2678,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+trans_gp_label:="3T2";
 sign:=[1, 3];
 H:=SmallGroup(12,4);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 6];
 Lmonod:=[G!
 (1, 3, 2), G!
 (1, 3), G!
@@ -2623,11 +2709,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+trans_gp_label:="3T2";
 sign:=[1, 3];
 H:=SmallGroup(12,4);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 6];
 Lmonod:=[G!
 (1, 3), G!
 (2, 3), G!
@@ -2653,11 +2740,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+trans_gp_label:="3T2";
 sign:=[1, 3];
 H:=SmallGroup(12,4);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 6];
 Lmonod:=[G!
 (1, 3), G!
 (1, 2, 3), G!
@@ -2683,11 +2771,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (2, 4), G!
 (1, 2, 3, 4), G!
@@ -2713,11 +2802,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (2, 4), G!
 (1, 2)(3, 4), G!
@@ -2743,11 +2833,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (2, 4), G!
 (1, 4, 3, 2), G!
@@ -2773,11 +2864,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (2, 4), G!
 (1, 4)(2, 3), G!
@@ -2803,11 +2895,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2, 3, 4), G!
 (2, 4), G!
@@ -2833,11 +2926,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2, 3, 4), G!
 (1, 2)(3, 4), G!
@@ -2863,11 +2957,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2, 3, 4), G!
 (1, 3), G!
@@ -2893,11 +2988,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2, 3, 4), G!
 (1, 4)(2, 3), G!
@@ -2923,11 +3019,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2)(3, 4), G!
 (2, 4), G!
@@ -2953,11 +3050,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2)(3, 4), G!
 (1, 2, 3, 4), G!
@@ -2983,11 +3081,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2)(3, 4), G!
 (1, 3), G!
@@ -3013,11 +3112,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2)(3, 4), G!
 (1, 4, 3, 2), G!
@@ -3043,11 +3143,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 3), G!
 (1, 2, 3, 4), G!
@@ -3073,11 +3174,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 3), G!
 (1, 2)(3, 4), G!
@@ -3103,11 +3205,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 3), G!
 (1, 4, 3, 2), G!
@@ -3133,11 +3236,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 3), G!
 (1, 4)(2, 3), G!
@@ -3163,11 +3267,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 4, 3, 2), G!
 (2, 4), G!
@@ -3193,11 +3298,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 4, 3, 2), G!
 (1, 2)(3, 4), G!
@@ -3223,11 +3329,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 4, 3, 2), G!
 (1, 3), G!
@@ -3253,11 +3360,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 4, 3, 2), G!
 (1, 4)(2, 3), G!
@@ -3283,11 +3391,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 4)(2, 3), G!
 (2, 4), G!
@@ -3313,11 +3422,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 4)(2, 3), G!
 (1, 2, 3, 4), G!
@@ -3343,11 +3453,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 4)(2, 3), G!
 (1, 3), G!
@@ -3373,11 +3484,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 3) ]>;
+trans_gp_label:="4T3";
 sign:=[1, 2];
 H:=SmallGroup(16,11);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 4)(2, 3), G!
 (1, 4, 3, 2), G!
@@ -3403,11 +3515,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 7, 3, 5)(2, 6, 8, 4), G!
 (1, 8, 3, 2)(4, 7, 6, 5), G!
@@ -3433,11 +3546,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 7, 3, 5)(2, 6, 8, 4), G!
 (1, 6, 3, 4)(2, 5, 8, 7), G!
@@ -3463,11 +3577,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 7, 3, 5)(2, 6, 8, 4), G!
 (1, 2, 3, 8)(4, 5, 6, 7), G!
@@ -3493,11 +3608,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 7, 3, 5)(2, 6, 8, 4), G!
 (1, 4, 3, 6)(2, 7, 8, 5), G!
@@ -3523,11 +3639,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 5, 3, 7)(2, 4, 8, 6), G!
 (1, 8, 3, 2)(4, 7, 6, 5), G!
@@ -3553,11 +3670,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 5, 3, 7)(2, 4, 8, 6), G!
 (1, 6, 3, 4)(2, 5, 8, 7), G!
@@ -3583,11 +3701,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 5, 3, 7)(2, 4, 8, 6), G!
 (1, 2, 3, 8)(4, 5, 6, 7), G!
@@ -3613,11 +3732,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 5, 3, 7)(2, 4, 8, 6), G!
 (1, 4, 3, 6)(2, 7, 8, 5), G!
@@ -3643,11 +3763,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 8, 3, 2)(4, 7, 6, 5), G!
 (1, 7, 3, 5)(2, 6, 8, 4), G!
@@ -3673,11 +3794,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 8, 3, 2)(4, 7, 6, 5), G!
 (1, 5, 3, 7)(2, 4, 8, 6), G!
@@ -3703,11 +3825,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 8, 3, 2)(4, 7, 6, 5), G!
 (1, 6, 3, 4)(2, 5, 8, 7), G!
@@ -3733,11 +3856,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 8, 3, 2)(4, 7, 6, 5), G!
 (1, 4, 3, 6)(2, 7, 8, 5), G!
@@ -3763,11 +3887,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 6, 3, 4)(2, 5, 8, 7), G!
 (1, 7, 3, 5)(2, 6, 8, 4), G!
@@ -3793,11 +3918,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 6, 3, 4)(2, 5, 8, 7), G!
 (1, 5, 3, 7)(2, 4, 8, 6), G!
@@ -3823,11 +3949,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 6, 3, 4)(2, 5, 8, 7), G!
 (1, 8, 3, 2)(4, 7, 6, 5), G!
@@ -3853,11 +3980,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 6, 3, 4)(2, 5, 8, 7), G!
 (1, 2, 3, 8)(4, 5, 6, 7), G!
@@ -3883,11 +4011,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2, 3, 8)(4, 5, 6, 7), G!
 (1, 7, 3, 5)(2, 6, 8, 4), G!
@@ -3913,11 +4042,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2, 3, 8)(4, 5, 6, 7), G!
 (1, 5, 3, 7)(2, 4, 8, 6), G!
@@ -3943,11 +4073,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2, 3, 8)(4, 5, 6, 7), G!
 (1, 6, 3, 4)(2, 5, 8, 7), G!
@@ -3973,11 +4104,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2, 3, 8)(4, 5, 6, 7), G!
 (1, 4, 3, 6)(2, 7, 8, 5), G!
@@ -4003,11 +4135,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 4, 3, 6)(2, 7, 8, 5), G!
 (1, 7, 3, 5)(2, 6, 8, 4), G!
@@ -4033,11 +4166,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 4, 3, 6)(2, 7, 8, 5), G!
 (1, 5, 3, 7)(2, 4, 8, 6), G!
@@ -4063,11 +4197,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 4, 3, 6)(2, 7, 8, 5), G!
 (1, 8, 3, 2)(4, 7, 6, 5), G!
@@ -4093,11 +4228,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
+trans_gp_label:="8T5";
 sign:=[1, 2];
 H:=SmallGroup(16,13);
-signH:=[0, 2, 2, 2, 2];
+signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 4, 3, 6)(2, 7, 8, 5), G!
 (1, 2, 3, 8)(4, 5, 6, 7), G!
@@ -4123,11 +4259,12 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<2|[ (1, 2) ]>;
+trans_gp_label:="2T1";
 sign:=[2];
 H:=SmallGroup(4,2);
-signH:=[0, 2, 2, 2, 2, 2, 0];
+signH:=[0, 2, 2, 2, 2, 2, 2];
 Lmonod:=[G!
 (1, 2), G!
 Id(G), G!
@@ -4155,8 +4292,9 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<4|[ (1, 2, 3, 4) ]>;
+trans_gp_label:="4T1";
 sign:=[0, 4, 4, 4, 4];
 H:=SmallGroup(16,11);
 signH:=[0, 2, 2, 2, 4];
@@ -4187,8 +4325,9 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
+trans_gp_label:="12T1";
 sign:=[0, 3, 4, 12];
 H:=SmallGroup(48,33);
 signH:=[0, 2, 3, 12];
@@ -4217,8 +4356,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
+trans_gp_label:="12T1";
 sign:=[0, 3, 4, 12];
 H:=SmallGroup(48,33);
 signH:=[0, 2, 3, 12];
@@ -4247,8 +4387,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
+trans_gp_label:="12T1";
 sign:=[0, 3, 4, 12];
 H:=SmallGroup(48,33);
 signH:=[0, 2, 3, 12];
@@ -4277,8 +4418,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
+trans_gp_label:="12T1";
 sign:=[0, 3, 4, 12];
 H:=SmallGroup(48,33);
 signH:=[0, 2, 3, 12];
@@ -4307,8 +4449,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<7|[ (1, 2, 4)(3, 6, 5), (1, 2, 3, 4, 5, 6, 7) ]>;
+trans_gp_label:="7T3";
 sign:=[0, 3, 3, 7];
 H:=SmallGroup(168,42);
 signH:=[0, 2, 3, 7];
@@ -4337,8 +4480,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<7|[ (1, 2, 4)(3, 6, 5), (1, 2, 3, 4, 5, 6, 7) ]>;
+trans_gp_label:="7T3";
 sign:=[0, 3, 3, 7];
 H:=SmallGroup(168,42);
 signH:=[0, 2, 3, 7];
@@ -4367,8 +4511,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+trans_gp_label:="8T17";
 sign:=[0, 2, 4, 8];
 H:=SmallGroup(96,64);
 signH:=[0, 2, 3, 8];
@@ -4397,8 +4542,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+trans_gp_label:="8T17";
 sign:=[0, 2, 4, 8];
 H:=SmallGroup(96,64);
 signH:=[0, 2, 3, 8];
@@ -4427,8 +4573,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+trans_gp_label:="8T17";
 sign:=[0, 2, 4, 8];
 H:=SmallGroup(96,64);
 signH:=[0, 2, 3, 8];
@@ -4457,8 +4604,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<8|[ (1, 2, 3, 8), (1, 5)(2, 6)(3, 7)(4, 8) ]>;
+trans_gp_label:="8T17";
 sign:=[0, 2, 4, 8];
 H:=SmallGroup(96,64);
 signH:=[0, 2, 3, 8];
@@ -4487,8 +4635,9 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
 G:=PermutationGroup<2|[ (1, 2) ]>;
+trans_gp_label:="2T1";
 sign:=[1, 2, 2, 2, 2];
 H:=SmallGroup(16,11);
 signH:=[0, 2, 2, 2, 4];
@@ -4523,4 +4672,4 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-AddlDataNF(G,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);

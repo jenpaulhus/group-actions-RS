@@ -1,5 +1,6 @@
 G:=PermutationGroup<5|[ (1, 2, 3, 4, 5) ]>;
 G_str:="PermutationGroup<5|[ (1, 2, 3, 4, 5) ]>";
+trans_gp_label:="5T1";
 sign:=[0, 5, 5, 5, 5];
 Lmonod:=[G!
 (1, 2, 3, 4, 5), G!
@@ -28,9 +29,10 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<5|[ (1, 2, 3, 4, 5) ]>;
 G_str:="PermutationGroup<5|[ (1, 2, 3, 4, 5) ]>";
+trans_gp_label:="5T1";
 sign:=[0, 5, 5, 5, 5];
 Lmonod:=[G!
 (1, 2, 3, 4, 5), G!
@@ -59,9 +61,10 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<5|[ (1, 2, 3, 4, 5) ]>;
 G_str:="PermutationGroup<5|[ (1, 2, 3, 4, 5) ]>";
+trans_gp_label:="5T1";
 sign:=[0, 5, 5, 5, 5];
 Lmonod:=[G!
 (1, 4, 2, 5, 3), G!
@@ -90,9 +93,10 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<5|[ (1, 2, 3, 4, 5) ]>;
 G_str:="PermutationGroup<5|[ (1, 2, 3, 4, 5) ]>";
+trans_gp_label:="5T1";
 sign:=[0, 5, 5, 5, 5];
 Lmonod:=[G!
 (1, 3, 5, 2, 4), G!
@@ -121,9 +125,10 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<5|[ (1, 2, 3, 4, 5) ]>;
 G_str:="PermutationGroup<5|[ (1, 2, 3, 4, 5) ]>";
+trans_gp_label:="5T1";
 sign:=[0, 5, 5, 5, 5];
 Lmonod:=[G!
 (1, 2, 3, 4, 5), G!
@@ -152,9 +157,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<5|[ (1, 2, 3, 4, 5) ]>;
 G_str:="PermutationGroup<5|[ (1, 2, 3, 4, 5) ]>";
+trans_gp_label:="5T1";
 sign:=[0, 5, 5, 5, 5];
 Lmonod:=[G!
 (1, 3, 5, 2, 4), G!
@@ -183,9 +189,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>";
+trans_gp_label:="6T1";
 sign:=[0, 2, 6, 6, 6];
 Lmonod:=[G!
 (1, 4)(2, 5)(3, 6), G!
@@ -214,9 +221,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 2, 3, 4, 5, 6) ]>";
+trans_gp_label:="6T1";
 sign:=[0, 2, 6, 6, 6];
 Lmonod:=[G!
 (1, 4)(2, 5)(3, 6), G!
@@ -245,9 +253,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>;
 G_str:="PermutationGroup<8|[ (1, 2, 3, 8)(4, 5, 6, 7), (1, 7, 3, 5)(2, 6, 8, 4) ]>";
+trans_gp_label:="8T5";
 sign:=[0, 2, 4, 4, 4];
 Lmonod:=[G!
 (1, 3)(2, 8)(4, 6)(5, 7), G!
@@ -276,9 +285,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) ]>;
 G_str:="PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) ]>";
+trans_gp_label:="10T1";
 sign:=[0, 5, 10, 10];
 Lmonod:=[G!
 (1, 3, 5, 7, 9)(2, 4, 6, 8, 10), G!
@@ -305,9 +315,10 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) ]>;
 G_str:="PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) ]>";
+trans_gp_label:="10T1";
 sign:=[0, 5, 10, 10];
 Lmonod:=[G!
 (1, 5, 9, 3, 7)(2, 6, 10, 4, 8), G!
@@ -334,9 +345,10 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) ]>;
 G_str:="PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) ]>";
+trans_gp_label:="10T1";
 sign:=[0, 5, 10, 10];
 Lmonod:=[G!
 (1, 7, 3, 9, 5)(2, 8, 4, 10, 6), G!
@@ -363,9 +375,10 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) ]>;
 G_str:="PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) ]>";
+trans_gp_label:="10T1";
 sign:=[0, 5, 10, 10];
 Lmonod:=[G!
 (1, 9, 7, 5, 3)(2, 10, 8, 6, 4), G!
@@ -392,9 +405,10 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<5|[ (1, 2, 3, 4, 5), (1, 4)(2, 3) ]>;
 G_str:="PermutationGroup<5|[ (1, 2, 3, 4, 5), (1, 4)(2, 3) ]>";
+trans_gp_label:="5T2";
 sign:=[0, 2, 2, 5, 5];
 Lmonod:=[G!
 (1, 4)(2, 3), G!
@@ -423,9 +437,10 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<5|[ (1, 2, 3, 4, 5), (1, 4)(2, 3) ]>;
 G_str:="PermutationGroup<5|[ (1, 2, 3, 4, 5), (1, 4)(2, 3) ]>";
+trans_gp_label:="5T2";
 sign:=[0, 2, 2, 5, 5];
 Lmonod:=[G!
 (1, 4)(2, 3), G!
@@ -454,9 +469,10 @@ braid:=
 topo:=
 [ 2, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>";
+trans_gp_label:="12T1";
 sign:=[0, 4, 6, 12];
 Lmonod:=[G!
 (1, 10, 7, 4)(2, 11, 8, 5)(3, 12, 9, 6), G!
@@ -483,9 +499,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>";
+trans_gp_label:="12T1";
 sign:=[0, 4, 6, 12];
 Lmonod:=[G!
 (1, 10, 7, 4)(2, 11, 8, 5)(3, 12, 9, 6), G!
@@ -512,9 +529,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>";
+trans_gp_label:="12T1";
 sign:=[0, 4, 6, 12];
 Lmonod:=[G!
 (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12), G!
@@ -541,9 +559,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>";
+trans_gp_label:="12T1";
 sign:=[0, 4, 6, 12];
 Lmonod:=[G!
 (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12), G!
@@ -570,9 +589,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[0, 2, 3, 3, 3];
 Lmonod:=[G!
 (1, 2)(3, 4), G!
@@ -601,9 +621,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[0, 2, 3, 3, 3];
 Lmonod:=[G!
 (1, 2)(3, 4), G!
@@ -632,9 +653,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[0, 2, 3, 3, 3];
 Lmonod:=[G!
 (1, 2)(3, 4), G!
@@ -663,9 +685,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[0, 2, 3, 3, 3];
 Lmonod:=[G!
 (1, 2)(3, 4), G!
@@ -694,9 +717,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[0, 2, 3, 3, 3];
 Lmonod:=[G!
 (1, 2)(3, 4), G!
@@ -725,9 +749,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[0, 2, 3, 3, 3];
 Lmonod:=[G!
 (1, 2)(3, 4), G!
@@ -756,9 +781,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[0, 2, 3, 3, 3];
 Lmonod:=[G!
 (1, 2)(3, 4), G!
@@ -787,9 +813,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[0, 2, 3, 3, 3];
 Lmonod:=[G!
 (1, 2)(3, 4), G!
@@ -818,9 +845,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<6|[ (1, 4)(2, 3)(5, 6), (1, 2, 3, 4, 5, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 4)(2, 3)(5, 6), (1, 2, 3, 4, 5, 6) ]>";
+trans_gp_label:="6T3";
 sign:=[0, 2, 2, 3, 6];
 Lmonod:=[G!
 (1, 4)(2, 3)(5, 6), G!
@@ -849,9 +877,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<6|[ (1, 4)(2, 3)(5, 6), (1, 2, 3, 4, 5, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 4)(2, 3)(5, 6), (1, 2, 3, 4, 5, 6) ]>";
+trans_gp_label:="6T3";
 sign:=[0, 2, 2, 3, 6];
 Lmonod:=[G!
 (1, 4)(2, 3)(5, 6), G!
@@ -880,9 +909,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>";
+trans_gp_label:="12T2";
 sign:=[0, 2, 2, 3, 6];
 Lmonod:=[G!
 (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), G!
@@ -911,9 +941,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>";
+trans_gp_label:="12T2";
 sign:=[0, 2, 2, 3, 6];
 Lmonod:=[G!
 (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), G!
@@ -942,9 +973,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>";
+trans_gp_label:="12T2";
 sign:=[0, 2, 2, 3, 6];
 Lmonod:=[G!
 (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), G!
@@ -973,9 +1005,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>";
+trans_gp_label:="12T2";
 sign:=[0, 2, 2, 3, 6];
 Lmonod:=[G!
 (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), G!
@@ -1004,9 +1037,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>";
+trans_gp_label:="12T2";
 sign:=[0, 2, 2, 3, 6];
 Lmonod:=[G!
 (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12), G!
@@ -1035,9 +1069,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>";
+trans_gp_label:="12T2";
 sign:=[0, 2, 2, 3, 6];
 Lmonod:=[G!
 (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12), G!
@@ -1066,9 +1101,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>;
 G_str:="PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>";
+trans_gp_label:="15T1";
 sign:=[0, 3, 5, 15];
 Lmonod:=[G!
 (1, 6, 11)(2, 7, 12)(3, 8, 13)(4, 9, 14)(5, 10, 15), G!
@@ -1095,9 +1131,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>;
 G_str:="PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>";
+trans_gp_label:="15T1";
 sign:=[0, 3, 5, 15];
 Lmonod:=[G!
 (1, 6, 11)(2, 7, 12)(3, 8, 13)(4, 9, 14)(5, 10, 15), G!
@@ -1124,9 +1161,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>;
 G_str:="PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>";
+trans_gp_label:="15T1";
 sign:=[0, 3, 5, 15];
 Lmonod:=[G!
 (1, 6, 11)(2, 7, 12)(3, 8, 13)(4, 9, 14)(5, 10, 15), G!
@@ -1153,9 +1191,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>;
 G_str:="PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>";
+trans_gp_label:="15T1";
 sign:=[0, 3, 5, 15];
 Lmonod:=[G!
 (1, 6, 11)(2, 7, 12)(3, 8, 13)(4, 9, 14)(5, 10, 15), G!
@@ -1182,9 +1221,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>;
 G_str:="PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>";
+trans_gp_label:="15T1";
 sign:=[0, 3, 5, 15];
 Lmonod:=[G!
 (1, 11, 6)(2, 12, 7)(3, 13, 8)(4, 14, 9)(5, 15, 10), G!
@@ -1211,9 +1251,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>;
 G_str:="PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>";
+trans_gp_label:="15T1";
 sign:=[0, 3, 5, 15];
 Lmonod:=[G!
 (1, 11, 6)(2, 12, 7)(3, 13, 8)(4, 14, 9)(5, 15, 10), G!
@@ -1240,9 +1281,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>;
 G_str:="PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>";
+trans_gp_label:="15T1";
 sign:=[0, 3, 5, 15];
 Lmonod:=[G!
 (1, 11, 6)(2, 12, 7)(3, 13, 8)(4, 14, 9)(5, 15, 10), G!
@@ -1269,9 +1311,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>;
 G_str:="PermutationGroup<15|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) ]>";
+trans_gp_label:="15T1";
 sign:=[0, 3, 5, 15];
 Lmonod:=[G!
 (1, 11, 6)(2, 12, 7)(3, 13, 8)(4, 14, 9)(5, 15, 10), G!
@@ -1298,9 +1341,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8), (1, 6)(2, 5)(3, 4)(7, 8) ]>;
 G_str:="PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8), (1, 6)(2, 5)(3, 4)(7, 8) ]>";
+trans_gp_label:="8T6";
 sign:=[0, 2, 2, 2, 8];
 Lmonod:=[G!
 (1, 5)(2, 6)(3, 7)(4, 8), G!
@@ -1329,9 +1373,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8), (1, 6)(2, 5)(3, 4)(7, 8) ]>;
 G_str:="PermutationGroup<8|[ (1, 2, 3, 4, 5, 6, 7, 8), (1, 6)(2, 5)(3, 4)(7, 8) ]>";
+trans_gp_label:="8T6";
 sign:=[0, 2, 2, 2, 8];
 Lmonod:=[G!
 (1, 5)(2, 6)(3, 7)(4, 8), G!
@@ -1360,9 +1405,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<18|[ (1, 15, 11, 8, 3, 17, 14, 9, 6, 2, 16, 12, 7, 4, 18, 13, 10, 5) ]>;
 G_str:="PermutationGroup<18|[ (1, 15, 11, 8, 3, 17, 14, 9, 6, 2, 16, 12, 7, 4, 18, 13, 10, 5) ]>";
+trans_gp_label:="18T1";
 sign:=[0, 2, 9, 18];
 Lmonod:=[G!
 (1, 2)(3, 4)(5, 6)(7, 8)(9, 10)(11, 12)(13, 14)(15, 16)(17, 18), G!
@@ -1389,9 +1435,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<18|[ (1, 15, 11, 8, 3, 17, 14, 9, 6, 2, 16, 12, 7, 4, 18, 13, 10, 5) ]>;
 G_str:="PermutationGroup<18|[ (1, 15, 11, 8, 3, 17, 14, 9, 6, 2, 16, 12, 7, 4, 18, 13, 10, 5) ]>";
+trans_gp_label:="18T1";
 sign:=[0, 2, 9, 18];
 Lmonod:=[G!
 (1, 2)(3, 4)(5, 6)(7, 8)(9, 10)(11, 12)(13, 14)(15, 16)(17, 18), G!
@@ -1418,9 +1465,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<18|[ (1, 15, 11, 8, 3, 17, 14, 9, 6, 2, 16, 12, 7, 4, 18, 13, 10, 5) ]>;
 G_str:="PermutationGroup<18|[ (1, 15, 11, 8, 3, 17, 14, 9, 6, 2, 16, 12, 7, 4, 18, 13, 10, 5) ]>";
+trans_gp_label:="18T1";
 sign:=[0, 2, 9, 18];
 Lmonod:=[G!
 (1, 2)(3, 4)(5, 6)(7, 8)(9, 10)(11, 12)(13, 14)(15, 16)(17, 18), G!
@@ -1447,9 +1495,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<18|[ (1, 15, 11, 8, 3, 17, 14, 9, 6, 2, 16, 12, 7, 4, 18, 13, 10, 5) ]>;
 G_str:="PermutationGroup<18|[ (1, 15, 11, 8, 3, 17, 14, 9, 6, 2, 16, 12, 7, 4, 18, 13, 10, 5) ]>";
+trans_gp_label:="18T1";
 sign:=[0, 2, 9, 18];
 Lmonod:=[G!
 (1, 2)(3, 4)(5, 6)(7, 8)(9, 10)(11, 12)(13, 14)(15, 16)(17, 18), G!
@@ -1476,9 +1525,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<18|[ (1, 15, 11, 8, 3, 17, 14, 9, 6, 2, 16, 12, 7, 4, 18, 13, 10, 5) ]>;
 G_str:="PermutationGroup<18|[ (1, 15, 11, 8, 3, 17, 14, 9, 6, 2, 16, 12, 7, 4, 18, 13, 10, 5) ]>";
+trans_gp_label:="18T1";
 sign:=[0, 2, 9, 18];
 Lmonod:=[G!
 (1, 2)(3, 4)(5, 6)(7, 8)(9, 10)(11, 12)(13, 14)(15, 16)(17, 18), G!
@@ -1505,9 +1555,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<18|[ (1, 15, 11, 8, 3, 17, 14, 9, 6, 2, 16, 12, 7, 4, 18, 13, 10, 5) ]>;
 G_str:="PermutationGroup<18|[ (1, 15, 11, 8, 3, 17, 14, 9, 6, 2, 16, 12, 7, 4, 18, 13, 10, 5) ]>";
+trans_gp_label:="18T1";
 sign:=[0, 2, 9, 18];
 Lmonod:=[G!
 (1, 2)(3, 4)(5, 6)(7, 8)(9, 10)(11, 12)(13, 14)(15, 16)(17, 18), G!
@@ -1534,9 +1585,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<6|[ (1, 4)(2, 5)(3, 6), (2, 4, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 4)(2, 5)(3, 6), (2, 4, 6) ]>";
+trans_gp_label:="6T5";
 sign:=[0, 2, 2, 3, 3];
 Lmonod:=[G!
 (1, 4)(2, 5)(3, 6), G!
@@ -1565,9 +1617,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<6|[ (1, 4)(2, 5)(3, 6), (2, 4, 6) ]>;
 G_str:="PermutationGroup<6|[ (1, 4)(2, 5)(3, 6), (2, 4, 6) ]>";
+trans_gp_label:="6T5";
 sign:=[0, 2, 2, 3, 3];
 Lmonod:=[G!
 (1, 4)(2, 5)(3, 6), G!
@@ -1596,9 +1649,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<5|[ (1, 2, 3, 4, 5), (1, 2, 4, 3) ]>;
 G_str:="PermutationGroup<5|[ (1, 2, 3, 4, 5), (1, 2, 4, 3) ]>";
+trans_gp_label:="5T3";
 sign:=[0, 4, 4, 5];
 Lmonod:=[G!
 (2, 4, 5, 3), G!
@@ -1625,9 +1679,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10), (1, 8)(2, 7)(3, 6)(4, 5)(9, 10) ]>;
 G_str:="PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10), (1, 8)(2, 7)(3, 6)(4, 5)(9, 10) ]>";
+trans_gp_label:="10T3";
 sign:=[0, 2, 2, 2, 5];
 Lmonod:=[G!
 (1, 6)(2, 7)(3, 8)(4, 9)(5, 10), G!
@@ -1656,9 +1711,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10), (1, 8)(2, 7)(3, 6)(4, 5)(9, 10) ]>;
 G_str:="PermutationGroup<10|[ (1, 2, 3, 4, 5, 6, 7, 8, 9, 10), (1, 8)(2, 7)(3, 6)(4, 5)(9, 10) ]>";
+trans_gp_label:="10T3";
 sign:=[0, 2, 2, 2, 5];
 Lmonod:=[G!
 (1, 6)(2, 7)(3, 8)(4, 9)(5, 10), G!
@@ -1687,9 +1743,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<8|[ (1, 3, 5, 7)(2, 4, 6, 8), (1, 3, 8)(4, 5, 7) ]>;
 G_str:="PermutationGroup<8|[ (1, 3, 5, 7)(2, 4, 6, 8), (1, 3, 8)(4, 5, 7) ]>";
+trans_gp_label:="8T12";
 sign:=[0, 3, 4, 6];
 Lmonod:=[G!
 (1, 4, 2)(5, 8, 6), G!
@@ -1716,9 +1773,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<8|[ (1, 3, 5, 7)(2, 4, 6, 8), (1, 3, 8)(4, 5, 7) ]>;
 G_str:="PermutationGroup<8|[ (1, 3, 5, 7)(2, 4, 6, 8), (1, 3, 8)(4, 5, 7) ]>";
+trans_gp_label:="8T12";
 sign:=[0, 3, 4, 6];
 Lmonod:=[G!
 (1, 2, 4)(5, 6, 8), G!
@@ -1745,9 +1803,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 7)(3, 9)(5, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 7)(3, 9)(5, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>";
+trans_gp_label:="12T14";
 sign:=[0, 2, 6, 12];
 Lmonod:=[G!
 (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), G!
@@ -1774,9 +1833,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 7)(3, 9)(5, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 7)(3, 9)(5, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>";
+trans_gp_label:="12T14";
 sign:=[0, 2, 6, 12];
 Lmonod:=[G!
 (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), G!
@@ -1803,9 +1863,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 7)(3, 9)(5, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 7)(3, 9)(5, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>";
+trans_gp_label:="12T14";
 sign:=[0, 2, 6, 12];
 Lmonod:=[G!
 (1, 7)(3, 9)(5, 11), G!
@@ -1832,9 +1893,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 7)(3, 9)(5, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 7)(3, 9)(5, 11), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>";
+trans_gp_label:="12T14";
 sign:=[0, 2, 6, 12];
 Lmonod:=[G!
 (1, 7)(3, 9)(5, 11), G!
@@ -1861,9 +1923,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 2) ]>;
 G_str:="PermutationGroup<4|[ (1, 2, 3, 4), (1, 2) ]>";
+trans_gp_label:="4T5";
 sign:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2), G!
@@ -1892,9 +1955,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 2) ]>;
 G_str:="PermutationGroup<4|[ (1, 2, 3, 4), (1, 2) ]>";
+trans_gp_label:="4T5";
 sign:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2), G!
@@ -1923,9 +1987,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 2) ]>;
 G_str:="PermutationGroup<4|[ (1, 2, 3, 4), (1, 2) ]>";
+trans_gp_label:="4T5";
 sign:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2), G!
@@ -1954,9 +2019,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (1, 2, 3, 4), (1, 2) ]>;
 G_str:="PermutationGroup<4|[ (1, 2, 3, 4), (1, 2) ]>";
+trans_gp_label:="4T5";
 sign:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
 (1, 2), G!
@@ -1985,9 +2051,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<16|[ (1, 15, 2, 16)(3, 14, 4, 13)(5, 12, 6, 11)(7, 9, 8, 10), (1, 16, 14, 11, 9, 8, 6, 4, 2, 15, 13, 12, 10, 7, 5, 3) ]>;
 G_str:="PermutationGroup<16|[ (1, 15, 2, 16)(3, 14, 4, 13)(5, 12, 6, 11)(7, 9, 8, 10), (1, 16, 14, 11, 9, 8, 6, 4, 2, 15, 13, 12, 10, 7, 5, 3) ]>";
+trans_gp_label:="16T55";
 sign:=[0, 2, 4, 16];
 Lmonod:=[G!
 (1, 13)(2, 14)(3, 11)(4, 12)(5, 10)(6, 9)(7, 8), G!
@@ -2014,9 +2081,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<16|[ (1, 15, 2, 16)(3, 14, 4, 13)(5, 12, 6, 11)(7, 9, 8, 10), (1, 16, 14, 11, 9, 8, 6, 4, 2, 15, 13, 12, 10, 7, 5, 3) ]>;
 G_str:="PermutationGroup<16|[ (1, 15, 2, 16)(3, 14, 4, 13)(5, 12, 6, 11)(7, 9, 8, 10), (1, 16, 14, 11, 9, 8, 6, 4, 2, 15, 13, 12, 10, 7, 5, 3) ]>";
+trans_gp_label:="16T55";
 sign:=[0, 2, 4, 16];
 Lmonod:=[G!
 (1, 13)(2, 14)(3, 11)(4, 12)(5, 10)(6, 9)(7, 8), G!
@@ -2043,9 +2111,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<16|[ (1, 15, 2, 16)(3, 14, 4, 13)(5, 12, 6, 11)(7, 9, 8, 10), (1, 16, 14, 11, 9, 8, 6, 4, 2, 15, 13, 12, 10, 7, 5, 3) ]>;
 G_str:="PermutationGroup<16|[ (1, 15, 2, 16)(3, 14, 4, 13)(5, 12, 6, 11)(7, 9, 8, 10), (1, 16, 14, 11, 9, 8, 6, 4, 2, 15, 13, 12, 10, 7, 5, 3) ]>";
+trans_gp_label:="16T55";
 sign:=[0, 2, 4, 16];
 Lmonod:=[G!
 (1, 13)(2, 14)(3, 11)(4, 12)(5, 10)(6, 9)(7, 8), G!
@@ -2072,9 +2141,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<16|[ (1, 15, 2, 16)(3, 14, 4, 13)(5, 12, 6, 11)(7, 9, 8, 10), (1, 16, 14, 11, 9, 8, 6, 4, 2, 15, 13, 12, 10, 7, 5, 3) ]>;
 G_str:="PermutationGroup<16|[ (1, 15, 2, 16)(3, 14, 4, 13)(5, 12, 6, 11)(7, 9, 8, 10), (1, 16, 14, 11, 9, 8, 6, 4, 2, 15, 13, 12, 10, 7, 5, 3) ]>";
+trans_gp_label:="16T55";
 sign:=[0, 2, 4, 16];
 Lmonod:=[G!
 (1, 13)(2, 14)(3, 11)(4, 12)(5, 10)(6, 9)(7, 8), G!
@@ -2101,9 +2171,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (2, 6, 10)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (2, 6, 10)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>";
+trans_gp_label:="12T18";
 sign:=[0, 2, 6, 6];
 Lmonod:=[G!
 (1, 4)(2, 11)(3, 6)(5, 8)(7, 10)(9, 12), G!
@@ -2130,9 +2201,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (2, 6, 10)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (2, 6, 10)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>";
+trans_gp_label:="12T18";
 sign:=[0, 2, 6, 6];
 Lmonod:=[G!
 (1, 4)(2, 11)(3, 6)(5, 8)(7, 10)(9, 12), G!
@@ -2159,9 +2231,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (2, 6, 10)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (2, 6, 10)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>";
+trans_gp_label:="12T18";
 sign:=[0, 2, 6, 6];
 Lmonod:=[G!
 (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), G!
@@ -2188,9 +2261,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (2, 6, 10)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), (2, 6, 10)(4, 8, 12), (1, 7)(2, 8)(3, 9)(4, 10)(5, 11)(6, 12) ]>";
+trans_gp_label:="12T18";
 sign:=[0, 2, 6, 6];
 Lmonod:=[G!
 (1, 10)(2, 5)(3, 12)(4, 7)(6, 9)(8, 11), G!
@@ -2217,9 +2291,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<6|[ (1, 4)(2, 5)(3, 6), (2, 4, 6), (1, 5)(2, 4) ]>;
 G_str:="PermutationGroup<6|[ (1, 4)(2, 5)(3, 6), (2, 4, 6), (1, 5)(2, 4) ]>";
+trans_gp_label:="6T9";
 sign:=[0, 2, 2, 2, 3];
 Lmonod:=[G!
 (1, 4)(2, 5)(3, 6), G!
@@ -2248,9 +2323,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<20|[ (1, 11, 2, 12)(3, 9, 4, 10)(5, 8, 6, 7)(13, 19, 14, 20)(15, 17, 16, 18), (1, 8, 13, 20, 6, 12, 18, 4, 10, 16)(2, 7, 14, 19, 5, 11, 17, 3, 9, 15) ]>;
 G_str:="PermutationGroup<20|[ (1, 11, 2, 12)(3, 9, 4, 10)(5, 8, 6, 7)(13, 19, 14, 20)(15, 17, 16, 18), (1, 8, 13, 20, 6, 12, 18, 4, 10, 16)(2, 7, 14, 19, 5, 11, 17, 3, 9, 15) ]>";
+trans_gp_label:="20T7";
 sign:=[0, 2, 4, 10];
 Lmonod:=[G!
 (1, 17)(2, 18)(3, 15)(4, 16)(5, 13)(6, 14)(7, 11)(8, 12)(9, 10), G!
@@ -2277,9 +2353,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<20|[ (1, 11, 2, 12)(3, 9, 4, 10)(5, 8, 6, 7)(13, 19, 14, 20)(15, 17, 16, 18), (1, 8, 13, 20, 6, 12, 18, 4, 10, 16)(2, 7, 14, 19, 5, 11, 17, 3, 9, 15) ]>;
 G_str:="PermutationGroup<20|[ (1, 11, 2, 12)(3, 9, 4, 10)(5, 8, 6, 7)(13, 19, 14, 20)(15, 17, 16, 18), (1, 8, 13, 20, 6, 12, 18, 4, 10, 16)(2, 7, 14, 19, 5, 11, 17, 3, 9, 15) ]>";
+trans_gp_label:="20T7";
 sign:=[0, 2, 4, 10];
 Lmonod:=[G!
 (1, 17)(2, 18)(3, 15)(4, 16)(5, 13)(6, 14)(7, 11)(8, 12)(9, 10), G!
@@ -2306,9 +2383,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<20|[ (1, 11, 2, 12)(3, 9, 4, 10)(5, 8, 6, 7)(13, 19, 14, 20)(15, 17, 16, 18), (1, 8, 13, 20, 6, 12, 18, 4, 10, 16)(2, 7, 14, 19, 5, 11, 17, 3, 9, 15) ]>;
 G_str:="PermutationGroup<20|[ (1, 11, 2, 12)(3, 9, 4, 10)(5, 8, 6, 7)(13, 19, 14, 20)(15, 17, 16, 18), (1, 8, 13, 20, 6, 12, 18, 4, 10, 16)(2, 7, 14, 19, 5, 11, 17, 3, 9, 15) ]>";
+trans_gp_label:="20T7";
 sign:=[0, 2, 4, 10];
 Lmonod:=[G!
 (1, 17)(2, 18)(3, 15)(4, 16)(5, 13)(6, 14)(7, 11)(8, 12)(9, 10), G!
@@ -2335,9 +2413,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<20|[ (1, 11, 2, 12)(3, 9, 4, 10)(5, 8, 6, 7)(13, 19, 14, 20)(15, 17, 16, 18), (1, 8, 13, 20, 6, 12, 18, 4, 10, 16)(2, 7, 14, 19, 5, 11, 17, 3, 9, 15) ]>;
 G_str:="PermutationGroup<20|[ (1, 11, 2, 12)(3, 9, 4, 10)(5, 8, 6, 7)(13, 19, 14, 20)(15, 17, 16, 18), (1, 8, 13, 20, 6, 12, 18, 4, 10, 16)(2, 7, 14, 19, 5, 11, 17, 3, 9, 15) ]>";
+trans_gp_label:="20T7";
 sign:=[0, 2, 4, 10];
 Lmonod:=[G!
 (1, 17)(2, 18)(3, 15)(4, 16)(5, 13)(6, 14)(7, 11)(8, 12)(9, 10), G!
@@ -2364,9 +2443,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<6|[ (2, 4), (1, 4)(2, 5)(3, 6), (2, 4, 6) ]>;
 G_str:="PermutationGroup<6|[ (2, 4), (1, 4)(2, 5)(3, 6), (2, 4, 6) ]>";
+trans_gp_label:="6T13";
 sign:=[0, 2, 4, 6];
 Lmonod:=[G!
 (1, 5), G!
@@ -2393,9 +2473,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<6|[ (2, 4), (1, 4)(2, 5)(3, 6), (2, 4, 6) ]>;
 G_str:="PermutationGroup<6|[ (2, 4), (1, 4)(2, 5)(3, 6), (2, 4, 6) ]>";
+trans_gp_label:="6T13";
 sign:=[0, 2, 4, 6];
 Lmonod:=[G!
 (1, 4)(2, 5)(3, 6), G!
@@ -2422,9 +2503,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(6, 9), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(6, 9), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>";
+trans_gp_label:="12T45";
 sign:=[0, 2, 3, 12];
 Lmonod:=[G!
 (1, 10)(2, 5)(6, 9), G!
@@ -2451,9 +2533,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<12|[ (1, 10)(2, 5)(6, 9), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>;
 G_str:="PermutationGroup<12|[ (1, 10)(2, 5)(6, 9), (1, 5, 9)(2, 6, 10)(3, 7, 11)(4, 8, 12), (1, 4, 7, 10)(2, 5, 8, 11)(3, 6, 9, 12) ]>";
+trans_gp_label:="12T45";
 sign:=[0, 2, 3, 12];
 Lmonod:=[G!
 (1, 10)(2, 5)(6, 9), G!
@@ -2480,9 +2563,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<5|[ (1,2), (1,2,3,4,5) ]>;
 G_str:="PermutationGroup<5|[ (1,2), (1,2,3,4,5) ]>";
+trans_gp_label:="N/A";
 sign:=[0, 2, 4, 5];
 Lmonod:=[G!
 (1, 2), G!
@@ -2509,9 +2593,10 @@ braid:=
 topo:=
 [ 1, 1 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<3|[ (1, 2, 3) ]>;
 G_str:="PermutationGroup<3|[ (1, 2, 3) ]>";
+trans_gp_label:="3T1";
 sign:=[1, 3, 3, 3];
 Lmonod:=[G!
 (1, 2, 3), G!
@@ -2542,9 +2627,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<3|[ (1, 2, 3) ]>;
 G_str:="PermutationGroup<3|[ (1, 2, 3) ]>";
+trans_gp_label:="3T1";
 sign:=[1, 3, 3, 3];
 Lmonod:=[G!
 (1, 2, 3), G!
@@ -2575,9 +2661,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>;
 G_str:="PermutationGroup<4|[ (1, 2)(3, 4), (1, 4)(2, 3) ]>";
+trans_gp_label:="4T2";
 sign:=[1, 2, 2, 2];
 Lmonod:=[G!
 (1, 2)(3, 4), G!
@@ -2608,9 +2695,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
 G_str:="PermutationGroup<3|[ (1, 3), (1, 2) ]>";
+trans_gp_label:="3T2";
 sign:=[1, 2, 2];
 Lmonod:=[G!
 (2, 3), G!
@@ -2639,9 +2727,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
 G_str:="PermutationGroup<3|[ (1, 3), (1, 2) ]>";
+trans_gp_label:="3T2";
 sign:=[1, 2, 2];
 Lmonod:=[G!
 (1, 2, 3), G!
@@ -2670,9 +2759,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
 G_str:="PermutationGroup<3|[ (1, 3), (1, 2) ]>";
+trans_gp_label:="3T2";
 sign:=[1, 2, 2];
 Lmonod:=[G!
 (1, 2, 3), G!
@@ -2701,9 +2791,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
 G_str:="PermutationGroup<3|[ (1, 3), (1, 2) ]>";
+trans_gp_label:="3T2";
 sign:=[1, 2, 2];
 Lmonod:=[G!
 (1, 2, 3), G!
@@ -2732,9 +2823,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
 G_str:="PermutationGroup<3|[ (1, 3), (1, 2) ]>";
+trans_gp_label:="3T2";
 sign:=[1, 2, 2];
 Lmonod:=[G!
 (1, 2), G!
@@ -2763,9 +2855,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
 G_str:="PermutationGroup<3|[ (1, 3), (1, 2) ]>";
+trans_gp_label:="3T2";
 sign:=[1, 2, 2];
 Lmonod:=[G!
 (1, 3), G!
@@ -2794,9 +2887,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (2, 3, 4), G!
@@ -2823,9 +2917,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (2, 3, 4), G!
@@ -2852,9 +2947,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (2, 4, 3), G!
@@ -2881,9 +2977,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (2, 4, 3), G!
@@ -2910,9 +3007,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 4)(2, 3), G!
@@ -2939,9 +3037,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 4)(2, 3), G!
@@ -2968,9 +3067,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 4)(2, 3), G!
@@ -2997,9 +3097,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 4)(2, 3), G!
@@ -3026,9 +3127,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 4, 3), G!
@@ -3055,9 +3157,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 4, 3), G!
@@ -3084,9 +3187,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 4, 2), G!
@@ -3113,9 +3217,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 4, 2), G!
@@ -3142,9 +3247,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 2, 4), G!
@@ -3171,9 +3277,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 2, 4), G!
@@ -3200,9 +3307,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 2, 3), G!
@@ -3229,9 +3337,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 2, 3), G!
@@ -3258,9 +3367,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 3)(2, 4), G!
@@ -3287,9 +3397,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 3)(2, 4), G!
@@ -3316,9 +3427,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 3)(2, 4), G!
@@ -3345,9 +3457,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 3)(2, 4), G!
@@ -3374,9 +3487,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 3, 2), G!
@@ -3403,9 +3517,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 3, 2), G!
@@ -3432,9 +3547,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 3, 4), G!
@@ -3461,9 +3577,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
 G_str:="PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>";
+trans_gp_label:="4T4";
 sign:=[1, 2];
 Lmonod:=[G!
 (1, 3, 4), G!
@@ -3490,9 +3607,10 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
 G:=PermutationGroup<2|[ (1, 2) ]>;
 G_str:="PermutationGroup<2|[ (1, 2) ]>";
+trans_gp_label:="2T1";
 sign:=[2, 2, 2];
 Lmonod:=[G!
 (1, 2), G!
@@ -3525,4 +3643,4 @@ braid:=
 topo:=
 [ 0, 0 ]
 ;
-NotFullList:=CheckRiesTables(G,sign,G_str,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+NotFullList:=CheckRiesTables(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
