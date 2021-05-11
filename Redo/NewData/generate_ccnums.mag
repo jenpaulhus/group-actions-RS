@@ -51,7 +51,8 @@ for ell in Ldata do
       continue;
    end if;
    group_str, trans_gp_label, Cons, Cons_label, cc_labels, 
-      Lgenvects, connected_Lgenvects, braids, topos := compute_rec_data(sign, SmallGrp);
+   Lgenvects, connected_Lgenvects, braids, topos := 
+     compute_rec_data(sign, SmallGrp);
    if Type(Cons) eq RngIntElt then
       continue;
    end if;         

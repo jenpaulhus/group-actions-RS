@@ -3,21 +3,22 @@ from lmfdb.groups.abstract.web_groups import WebAbstractGroup
 
 # Instructions:
 # sage
-# from scripts.higher_genus_w_automorphisms.gps_decode import create_list
+# from gps_decode import create_list
 # create_list()
 
-# Note that the gps_groups database is sorted by order, then counter.
-# create_list writes the list gps_decode to a magma file.
-# Each element of gps_decode is 
-#    [label, pc_code, ngens, gens_used, -elt_rep_type, perm_gens],
-#    representing a group in the groups db.
-# If a group is solvable, then perm_gens is the string "solvable"
-# Otherwise, the group is unsolvable:
-#    -elt_rep_type is the degree of the permutation representation and 
-#       perm_gens is a list of generators
-#    if an exception occurred when trying to get perm_gens,
-#       perm_gens is the string "error"
 def create_list():
+    '''
+    Write the list gps_decode to a magma file.
+    Each element of gps_decode is 
+      [label, pc_code, ngens, gens_used, -elt_rep_type, perm_gens], 
+      representing a group in the groups db.
+    If the group is solvable, then perm_gens is the string "solvable".
+    Otherwise, the group is nonsolvable:
+      -elt_rep_type is the degree of the permutation representation and 
+         perm_gens is a list of generators.
+      if an exception occurred when trying to decode perm_gens,
+         perm_gens is the string "error".
+    '''
     f = open('scripts/higher_genus_w_automorphisms/gps_decode.mag', 'x')
     gps_db = db.gps_groups
     gps_iter = gps_db.search()

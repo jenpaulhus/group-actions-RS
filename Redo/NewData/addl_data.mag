@@ -42,7 +42,7 @@ load "ishypiscyc.mag";
      /* determines if hyperelliptic or cyclic trigonal */
 
 /* for DecomposeJacobians function */
-load "decjac-old.mag";
+load "decjac.mag";
 
 /* for EncodePerm function */
 Attach("lehmer.m");
@@ -59,20 +59,25 @@ end if;
 /* *************************************
 Procedure AddlData
 
-Input: G        group
-       sign     signature 
-       Lmonod   generating vectors
-       Con      conjugacy classes for the
-                given generating vectors
-       cc_label  label as assigned by
-                generate_ccnums.mag
+Input: G                  group
+       trans_gp_label     transitive group label
+       sign               signature 
+       Lmonod             generating vector
+       connected_Lmonod   generating vector connected to the groups page
+       Con                conjugacy class indices for the generating vector
+       Con_label          conjugacy class labels for the generating vector
+                             (connected to the groups page)
+       cc_label           label as assigned in process_recs.mag
+       braid              braid label as assigned in process_recs.mag
+       topo               topological label as assigned in process_recs.mag
          
 Outcome: determines additional data for
          full automorphism groups and
          writes all computed data to
          the file gxxfinaldata
 **************************************** */ 
-AddlData:=procedure(G,trans_gp_label,sign,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);
+AddlData:=procedure(G,trans_gp_label,sign,Lmonod,connected_Lmonod,
+                    Con,Con_label,cc_label,braid,topo);
 
 /* determine hyperelliptic */
    boolh,hinv:=IsHyperelliptic(G,g,Lmonod);
@@ -84,18 +89,18 @@ AddlData:=procedure(G,trans_gp_label,sign,Lmonod,connected_Lmonod,Con,Con_label,
       boolc:=false;  /* genus 2 exception */
    end if;   
 
-   PrintFile( storefilename, "F");
+   PrintFile(storefilename, "F");
    gpsize:=IdentifyGroup(G)[1];
    gpnum:=IdentifyGroup(G)[2];
-   groupstring:=  "[" cat IntegerToString(gpsize) cat"," cat
-      IntegerToString(gpnum) cat"]";
-   PrintFile( storefilename, groupstring);
-   PrintFile( storefilename, Sprint(sign));
-   PrintFile( storefilename, Sprint(Con));
-   PrintFile( storefilename, [Sprintf("\"%o\"", label) : label in Con_label]);
-   PrintFile( storefilename, cc_label);
-   PrintFile( storefilename, braid);
-   PrintFile( storefilename, topo);
+   groupstring:= "[" cat IntegerToString(gpsize) cat "," cat
+                         IntegerToString(gpnum) cat "]";
+   PrintFile(storefilename, groupstring);
+   PrintFile(storefilename, Sprint(sign));
+   PrintFile(storefilename, Sprint(Con));
+   PrintFile(storefilename, [Sprintf("\"%o\"", label) : label in Con_label]);
+   PrintFile(storefilename, cc_label);
+   PrintFile(storefilename, braid);
+   PrintFile(storefilename, topo);
 
    decomp := DecomposeJacobians(G, sign, Lmonod);
    decomp_str := "[ ";
@@ -118,23 +123,24 @@ AddlData:=procedure(G,trans_gp_label,sign,Lmonod,connected_Lmonod,Con,Con_label,
          genvec_str := genvec_str cat Sprintf("%o", Eltseq(Lmonod[i])) cat " ]";
       end if;
    end for;
-   PrintFile( storefilename, ranks);
-   PrintFile( storefilename, genvec_str);
+   PrintFile(storefilename, ranks);
+   PrintFile(storefilename, genvec_str);
    if IsSolvable(G) then
-      PrintFile( storefilename, [Sprintf("\"%o\"", gen) : gen in connected_Lmonod]);
+      PrintFile(storefilename, 
+                [Sprintf("\"%o\"", gen) : gen in connected_Lmonod]);
    else
-      PrintFile( storefilename, "Nonsolvable");
+      PrintFile(storefilename, "Nonsolvable");
    end if;
 
-   PrintFile( storefilename, trans_gp_label);
+   PrintFile(storefilename, trans_gp_label);
    if trans_gp_label eq "N/A" then
       if IsAbelian(G) then
-         PrintFile( storefilename, gpsize);
+         PrintFile(storefilename, gpsize);
       else
-         PrintFile( storefilename, "N/A");
+         PrintFile(storefilename, "N/A");
       end if;
    else
-      PrintFile( storefilename, Degree(G));
+      PrintFile(storefilename, Degree(G));
    end if;
 
    if boolh then /* if yes, add equations */
@@ -143,12 +149,6 @@ AddlData:=procedure(G,trans_gp_label,sign,Lmonod,connected_Lmonod,Con,Con_label,
       PrintFile(storefilename,"HY");
       PrintFile(storefilename,Eltseq(hinv));
       PrintFile(storefilename,EncodePerm(hinv));
-      /*
-      for eqz in eqn do
-         if eqz ne " " then
-            PrintFile(storefilename,eqz);
-         end if;   
-      end for;   */
       PrintFile(storefilename, [Sprintf("\"%o\"", eqz) : eqz in eqn]);
    else
       PrintFile(storefilename,"HN");  
@@ -176,24 +176,27 @@ end procedure;
 /* *************************************
 Procedure AddlDataNF
 
-Input: G        group
-       sign     signature 
-       Lmonod   generating vectors
-       H        full automorphism group
-       signH    signature of full action
-       Con      conjugacy classes for the
-                given generating vectors
-       cc_label  label as assigned by
-                generate_ccnums.mag
-       g        genus
-         
+Input: G                  group
+       trans_gp_label     transitive group label
+       sign               signature 
+       Lmonod             generating vector
+       connected_Lmonod   generating vector connected to the groups page
+       H                  full automorphism group
+       signH              signature of full action
+       Con                conjugacy class indices for the generating vector
+       Con_label          conjugacy class labels for the generating vector
+                             (connected to the groups page)
+       cc_label           label as assigned in process_recs.mag
+       braid              braid label as assigned in process_recs.mag
+       topo               topological label as assigned in process_recs.mag
          
 Outcome: determines additional data for
          non-full automorphism groups 
          and writes all computed data to
          the file gxxfinaldata
 **************************************** */ 
-AddlDataNF:=procedure(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+AddlDataNF:=procedure(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,
+                      Con,Con_label,cc_label,braid,topo);
 
    gpsize:=IdentifyGroup(G)[1];
    gpnum:=IdentifyGroup(G)[2];
@@ -212,16 +215,16 @@ AddlDataNF:=procedure(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,
    IdH:=IdentifyGroup(H);
 
 /* Print */
-   PrintFile( storefilename, "NF");
-   groupstring:=  "[" cat IntegerToString(gpsize) cat"," cat
-      IntegerToString(gpnum) cat"]"; 
-   PrintFile( storefilename, groupstring);
-   PrintFile( storefilename,Sprint(sign));
-   PrintFile( storefilename, Sprint(Con));
-   PrintFile( storefilename, [Sprintf("\"%o\"", label) : label in Con_label]);
-   PrintFile( storefilename, cc_label);
-   PrintFile( storefilename, braid);
-   PrintFile( storefilename, topo);
+   PrintFile(storefilename, "NF");
+   groupstring:= "[" cat IntegerToString(gpsize) cat "," cat
+                         IntegerToString(gpnum) cat "]"; 
+   PrintFile(storefilename, groupstring);
+   PrintFile(storefilename, Sprint(sign));
+   PrintFile(storefilename, Sprint(Con));
+   PrintFile(storefilename, [Sprintf("\"%o\"", label) : label in Con_label]);
+   PrintFile(storefilename, cc_label);
+   PrintFile(storefilename, braid);
+   PrintFile(storefilename, topo);
 
    decomp := DecomposeJacobians(G, sign, Lmonod);
    decomp_str := "[ ";
@@ -232,7 +235,7 @@ AddlDataNF:=procedure(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,
          decomp_str := decomp_str cat Sprintf("%o", decomp[i]) cat " ]";
       end if;
    end for;
-   PrintFile( storefilename, decomp_str);
+   PrintFile(storefilename, decomp_str);
 
    ranks := [];
    genvec_str := "[ ";
@@ -244,29 +247,30 @@ AddlDataNF:=procedure(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,
          genvec_str := genvec_str cat Sprintf("%o", Eltseq(Lmonod[i])) cat " ]";
       end if;
    end for;
-   PrintFile( storefilename, ranks);
-   PrintFile( storefilename, genvec_str);
+   PrintFile(storefilename, ranks);
+   PrintFile(storefilename, genvec_str);
    if IsSolvable(G) then
-      PrintFile( storefilename, [Sprintf("\"%o\"", gen) : gen in connected_Lmonod]);
+      PrintFile(storefilename, 
+                [Sprintf("\"%o\"", gen) : gen in connected_Lmonod]);
    else
-      PrintFile( storefilename, "Nonsolvable");
+      PrintFile(storefilename, "Nonsolvable");
    end if;
 
-   PrintFile( storefilename, trans_gp_label);
+   PrintFile(storefilename, trans_gp_label);
    if trans_gp_label eq "N/A" then
       if IsAbelian(G) then
-         PrintFile( storefilename, gpsize);
+         PrintFile(storefilename, gpsize);
       else
-         PrintFile( storefilename, "N/A");
+         PrintFile(storefilename, "N/A");
       end if;
    else
-      PrintFile( storefilename, Degree(G));
+      PrintFile(storefilename, Degree(G));
    end if;
 
-   groupstringH:=  "[" cat IntegerToString(IdH[1]) cat"," cat
-      IntegerToString(IdH[2]) cat"]"; 
-   PrintFile( storefilename, groupstringH);
-   PrintFile( storefilename,Sprint(signH));
+   groupstringH:= "[" cat IntegerToString(IdH[1]) cat "," cat
+                          IntegerToString(IdH[2]) cat "]"; 
+   PrintFile(storefilename, groupstringH);
+   PrintFile(storefilename, Sprint(signH));
   
    PrintFile(storefilename, "@"); 
    

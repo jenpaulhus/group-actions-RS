@@ -1,41 +1,47 @@
+If the entry represents the full automorphism group, then
+it has the following format:
+
 F
 group
-sign
-conjugacy class vector
-conjugacy class label vector
+signature
+conjugacy class indices
+conjugacy class labels
 cc (last two numbers in total_label)
 braid       (or [ 0, 0 ] if g0>0)
 topological (or [ 0, 0 ] if g0>0)
 jacobian decomposition
-ranks
+ranks (genvec as a list of integers)
 genvec
 connected genvec (if group is nonsolvable, then this line is "Nonsolvable")
 transitive group label (or "N/A" if group is not in trans db or 
                                  if it is abelian and the order is too large)
-minimum degree
+minimum transitive degree
 HY or HN (if HN, then the next three lines are "N/A")
 hyperelliptic involution
-hyperelliptic involution rank
+hyperelliptic involution rank (an integer)
 equations
 CY or CN (if CY, then the next two lines are "N/A")
 trigonal automorphism
-trigonal automorphism rank
+trigonal automorphism rank (an integer)
 
+-------------------------------------------------------------------------------
+If the entry does not represent the full automorphism group, then
+it has the following format:
 
 NF
 group
-sign
-conjugacy class vector
-conjugacy class label vector
+signature
+conjugacy class indices
+conjugacy class labels
 cc (last two numbers in total_label)
 braid       (or [ 0, 0 ] if g0>0)
 topological (or [ 0, 0 ] if g0>0)
 jacobian decomposition
-ranks
+ranks (genvec as a list of integers)
 genvec
 connected genvec (if group is nonsolvable, then this line is "Nonsolvable")
 transitive group label (or "N/A" if group is not in trans db or 
                                  if it is abelian and the order is too large)
-minimum degree
+minimum transitive degree
 full automorphism group
-sign of full automorphism group
+signature of full automorphism group

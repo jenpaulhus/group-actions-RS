@@ -1,0 +1,12 @@
+168.42 is nonsolvable, so the perm group from the groups page is passed into RepEpi
+
+60.5 is nonsolvable, so the perm group from the groups page is passed into RepEpi
+
+120.34 is nonsolvable, so the perm group from the groups page is passed into RepEpi
+
+60.5 is nonsolvable, so the perm group from the groups page is passed into RepEpi
+
+perm_gens not available for 120.35, so skip it
+
+Error decoding pc_code for 192.181, so skip it
+

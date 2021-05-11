@@ -7,7 +7,19 @@
 load "orbit_helper_fns.mag";
 
 
-// #genvecs eq #cc
+/* ***************************************
+Function FindOrbits
+
+Inputs: G           permutation group
+		signature   signature
+		genvecs     list of generating vectors corresponding to cc
+		cc          list of labels (last two numbers in total_label)
+		            corresponding to genvecs
+		g0          quotient genus
+
+Outcome: return Braid, a list of braid labels, and
+                Topo, a list of topological labels
+************************************ */
 FindOrbits:=function(G,signature,genvecs,cc,g0);
 
 if g0 eq 0 then
@@ -40,7 +52,7 @@ if g0 eq 0 then
    		TopRep,TopOrbs:=OrbitComputeAut(Vects,aut,#signature-1);
 
 		/* The Braid list will hold the corresponding representatives of the
-	   		entries in cc */
+	   	     entries in cc */
 		Braid := [[] : i in [1..#cc]];
 		// Iterate over all the orbits
     	for i in [1..#BrdOrbs] do
@@ -69,7 +81,7 @@ if g0 eq 0 then
 		end for;
 
 		/* The Topo list will hold the corresponding representatives of the
-		entries in cc */
+		     entries in cc */
 		Topo := [[] : i in [1..#cc]];
 		// Iterate over all the orbits
 		for i in [1..#TopOrbs] do
@@ -100,7 +112,7 @@ if g0 eq 0 then
 
 	return Braid, Topo;
 
-else // g0 > 0
+else  // g0 > 0
 	temp := [[0,0] : i in [1..#genvecs]]; 
 	return temp, temp;
 

@@ -32,7 +32,8 @@ def compute_data(genera, mode='all'):
     gps_decode.py and gps_transitive.py should be rerun to create new 
     gps_decode.mag and gps_transitive.mag files before running this procedure.
 
-  Errors that occurred during computation are logged in errors.txt.
+  The file log.txt will contain errors that occurred during computation and
+  instances where a group not from db.gps_transitive is passed into RepEpi.
   '''
   # Check if arguments are valid
   try:
@@ -46,10 +47,11 @@ def compute_data(genera, mode='all'):
     print('Invalid arguments')
     sys.exit(1)
   
-  # Empty contents of errors.txt 
-  magma.eval('SetOutputFile("%s" : Overwrite:=true)' % 'errors.txt')
+  # Empty contents of log.txt and TBLDATA
+  magma.eval('SetOutputFile("%s" : Overwrite:=true)' % 'log.txt')
+  magma.eval('SetOutputFile("%s" : Overwrite:=true)' % 'OutputFiles/TBLDATA')
   magma.eval('UnsetOutputFile()')
-  magma.set('errorfile', '"%s"' % 'errors.txt')
+  magma.set('logfile', '"%s"' % 'log.txt')
 
   # Iterate over each genus
   for genus in genera:
@@ -59,12 +61,11 @@ def compute_data(genera, mode='all'):
     if genus < 10:
       genus_str = '0' + genus_str
 
-    # Names of temporary files created during computation
+    # Names of temporary files for each genus
     supp_gxx = 'SupplementaryFiles/g%s' % genus_str
     possible_full = 'OutputFiles/g%spossible_full' % genus_str
     full = 'OutputFiles/g%sfull' % genus_str
     notfull = 'OutputFiles/g%snotfull' % genus_str
-    tbldata = 'OutputFiles/TBLDATA'
     gxxfinaldata = 'g%sfinaldata' % genus_str
 
     # Make sure the temporary files are empty before beginning
@@ -72,7 +73,6 @@ def compute_data(genera, mode='all'):
     magma.eval('SetOutputFile("%s" : Overwrite:=true)' % possible_full)
     magma.eval('SetOutputFile("%s" : Overwrite:=true)' % full)
     magma.eval('SetOutputFile("%s" : Overwrite:=true)' % notfull)
-    magma.eval('SetOutputFile("%s" : Overwrite:=true)' % tbldata)
     magma.eval('SetOutputFile("%s" : Overwrite:=true)' % gxxfinaldata)
     magma.eval('UnsetOutputFile()')
 
@@ -139,19 +139,21 @@ def compute_data(genera, mode='all'):
       g0 = signature[0]
       r = len(signature[1:])
       dim = 3*g0 + r - 3
-      con = entry[4]
+      con = put_curly_brackets(entry[4])
       cc = json.loads(entry[5])
-      braid = entry[6]
-      if braid == '[ 0, 0 ]':
+      braid = json.loads(entry[6])
+      if braid == [0,0]:
         braid = 'NULL'
-      topological = entry[7]
-      if topological == '[ 0, 0 ]':
+      topological = json.loads(entry[7])
+      if topological == [0,0]:
         topological = 'NULL'
       jacobian_decomp = entry[8]
-      genvec = entry[9]  # as a list of ranks
+      genvec = put_curly_brackets(entry[9])  # as a list of integers
       connected_genvec = entry[11]
       if connected_genvec == 'Nonsolvable':
         connected_genvec = 'NULL'
+      else:
+        connected_genvec = put_curly_brackets(connected_genvec)
       trans_group = entry[12]
       if trans_group == 'N/A':
         trans_group = 'NULL'
@@ -168,10 +170,10 @@ def compute_data(genera, mode='all'):
       total_label = '%s.%d' % (passport_label, cc[1])
 
       # Line of data so far
-      line = [str(genus), total_label, passport_label, label, group_str, 
-              str(order), str(signature), str(g0), str(r), str(dim), con, 
-              str(cc), braid, topological, jacobian_decomp, genvec, 
-              connected_genvec, trans_group, min_deg]
+      line = [genus, total_label, passport_label, label, group_str, 
+              order, signature, g0, r, dim, con, cc, braid, topological,
+              jacobian_decomp, genvec, connected_genvec, trans_group, min_deg]
+      line = list(map(convert_to_str, line))
 
       # The format of the entry is different depending on whether or not it 
       #   represents a full automorphism group
@@ -179,15 +181,15 @@ def compute_data(genera, mode='all'):
         hy_or_hn = entry[14]
         hyperelliptic = hy_or_hn == 'HY'
         if hyperelliptic:
-          hyp_involution = entry[16]  # as a rank
-          eqn = entry[17]
+          hyp_involution = entry[16]  # as an integer
+          eqn = put_curly_brackets(entry[17])
           line.extend([str(hyperelliptic), hyp_involution, eqn])
         else:
           line.extend([str(hyperelliptic), 'NULL', 'NULL'])
         cy_or_cn = entry[18]
         cyclic_trigonal = cy_or_cn == "CY"
         if cyclic_trigonal:
-          cinv = entry[20]  # as a rank
+          cinv = entry[20]  # as an integer
           line.extend([str(cyclic_trigonal), cinv])
         else:
           line.extend([str(cyclic_trigonal), 'NULL'])
@@ -206,7 +208,7 @@ def compute_data(genera, mode='all'):
           perm_ordersH = '-'.join([str(perm_order) for perm_order in signH[1:]])
         full_label = '%d.%d-%d.%d.%s' % (genus, full_auto[0], full_auto[1], 
                                          signH[0], perm_ordersH)
-        line.extend([full_label, full_auto_str, str(signH)])
+        line.extend([full_label, full_auto_str, convert_to_str(signH)])
       
       # Finally write the line
       output = '|'.join(line) + '\n'
@@ -218,3 +220,21 @@ def compute_data(genera, mode='all'):
   
   # Finished creating upload files for all the specified genera
   print('Done making all upload files')
+
+
+def convert_to_str(val):
+  '''
+  Convert val to a string. If val is a list, put {} around val
+  instead of [], as required by postgresql.
+  '''
+  if isinstance(val, list):
+    return put_curly_brackets(str(val))
+  return str(val)
+
+
+def put_curly_brackets(ls_str):
+  '''
+  Replace the [] with {} around ls_str, a string representation of a
+  list surrounded by [].
+  '''
+  return '{' + ls_str[1:-1] + '}'

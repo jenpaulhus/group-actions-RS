@@ -1,0 +1,61 @@
+/* ********************************************* 
+These programs determine the decomposition of
+Jacobian Varieties, modified for just one genvect
+  
+
+Late Edited Jen 6/13/17  
+
+
+ ********************************************* */
+
+  
+/* *********************************************** 
+  Function  DecomposeJacobians                   
+  Input:  group G                    
+          signature sign  
+          Lmonod
+
+   Output:   decomposition          
+ *********************************************** */
+
+DecomposeJacobians:=function(G, sign,Lmonod)
+
+  T:=[*CharacterTable(G),CharacterTable(sub<G|Id(G)>)*];
+  /* monod:=Lmonod; JEN JULY 5 TEST */
+  monod:=[Lmonod[j]: j in [2*sign[1]+1..2*sign[1]+#sign-1]];
+          
+  for j in [1..#monod] do;
+     Append(~T,CharacterTable(sub<G|G!monod[j]>));
+  end for;  
+          
+  chi:=2*T[1,1]+(#sign-3+2*sign[1])*Induction(T[2,1],G);
+        /* should work more generally for quotient not g=0*/
+  for k in [3..#T]  do;
+     chi:=chi-Induction(T[k,1],G);
+  end for;
+ 
+/* Create Q-irreducibles,  L list of which orbit was taken */    
+  QirrTbl:=[];
+  SchurValues:=[];
+  L:=[];
+  for i in [1..#T[1]] do
+        m:=SchurIndex(T[1,i]);            
+        gsum:= &+(GaloisOrbit(T[1,i]));  /*Sums Orbits */
+        if gsum notin QirrTbl then 
+           Append(~L,i);     
+           Append(~QirrTbl, gsum);
+           Append(~SchurValues,m);
+     end if;
+  end for;
+
+  decomplist:=[];
+         /* will contain entries with decomp info */
+  for j in [1..#QirrTbl] do 
+     InPr:=InnerProduct(QirrTbl[j],chi);
+     if InPr ne 0 then
+        Append(~decomplist, [ SchurValues[j]*(InPr/2),T[1,L[j],1]/SchurValues[j],L[j] ] );                  
+      end if;   
+   end for;
+
+   return decomplist;
+  end function;

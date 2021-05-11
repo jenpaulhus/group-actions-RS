@@ -91,10 +91,10 @@ Outcome: for each entry which satisfies one
          this procedure appends extra Magma commands
          to the file SupplementaryFiles/testingfull
          to test whether the group constructed
-         in FindK* is truly an autorphims group
+         in FindK* is truly a full automorphism group
          for the given genus         
 ************************************  */
-PrintPossibleFullAuto:=procedure(G,strngG, strngH, g,cases,prtfile,ri);
+PrintPossibleFullAuto:=procedure(G,strngG,strngH,g,cases,prtfile,ri);
 
 /* Sorts strngH as it may not be assigned in increasing order */
    SList:=Reverse(Prune(Reverse(strngH)));
@@ -103,13 +103,13 @@ PrintPossibleFullAuto:=procedure(G,strngG, strngH, g,cases,prtfile,ri);
 
    PrintFile(prtfile,"H:=quo<F | Lreln>;"); /* Lreln from FindK* */
    idG:=IdentifyGroup(G);
-   PrintFile(prtfile,"Grp:=SmallGroup(" cat IntegerToString(idG[1]) cat "," cat IntegerToString(idG[2]) cat ");") ;
-
+   PrintFile(prtfile,"Grp:=SmallGroup(" cat IntegerToString(idG[1]) cat "," 
+                                        cat IntegerToString(idG[2]) cat ");");
    signGstrg:="[";
    for gs in [1..#strngG-1] do
        signGstrg:=signGstrg cat IntegerToString(strngG[gs]) cat ",";
    end for;
-   signGstrg:=signGstrg cat IntegerToString(strngG[#strngG]) cat "];" ;
+   signGstrg:=signGstrg cat IntegerToString(strngG[#strngG]) cat "];";
 
   signHstrg:="[";
    for hs in [1..#strngH-1] do
@@ -125,13 +125,13 @@ PrintPossibleFullAuto:=procedure(G,strngG, strngH, g,cases,prtfile,ri);
    PrintFile(prtfile, "t:=ReadCode(H,signH);");
 
    printnotfull_str := 
-      Sprintf("PrintNotFull(G_str,trans_gp_label,H,sign,signH,g,Rlist[%o],connected_Rlist[%o], 
-               Cons[%o], Cons_label[%o], cc_labels[%o], braids[%o], topos[%o]);",
-               ri, ri, ri, ri, ri, ri, ri);
+      Sprintf("PrintNotFull(G_str,trans_gp_label,H,sign,signH,g,Rlist[%o]," cat
+              "connected_Rlist[%o],Cons[%o],Cons_label[%o],cc_labels[%o]," cat
+              "braids[%o], topos[%o]);", ri, ri, ri, ri, ri, ri, ri);
 
-   PrintFile(prtfile," if t then " cat printnotfull_str cat " counttoful:=1;  
-            Append(~NotFullList,[[*IdentifyGroup(Grp),sign*],[*IdentifyGroup(H),signH*]]);end if;"); 
-
+   PrintFile(prtfile," if t then " cat printnotfull_str cat " counttoful:=1; "
+                    cat"Append(~NotFullList,[[*IdentifyGroup(Grp),sign*],"cat 
+                       "[*IdentifyGroup(H),signH*]]); end if;"); 
 end procedure;
 
 /* ***************************************
@@ -775,17 +775,20 @@ end function;
 /* *************************************
 Function CheckRiesTables
 
-Input:   G            automorphism group
-         sign         signature
-         Lmonod       generating vectors
-         Con          conjugacy classes for the
-                      given generating vectors
-         cc_label      label as assigned by
-                      generate_ccnums.mag
-         NotFullList  list of known examples
-                      which are not full, this
-                      is changed inside this
-                      function
+Input:   G                  automorphism group
+         sign               signature
+         G_str              command (string) to create the group
+         trans_gp_label     transitive group label
+         Lmonod             generating vector
+         connected_Lmonod   generating vector connected to the groups page
+         Con                conjugacy class indices for the generating vector
+         Con_label          conjugacy class labels for the generating vector
+                              (connected to the groups page)
+         cc_label           label as assigned in process_recs.mag
+         braid              braid label as assigned in process_recs.mag
+         topo               topological label as assigned in process_recs.mag
+         NotFullList        list of known examples which are not full, this
+                              is changed inside this function
 
 Outcome: returns the (possibly new) NotFullList
         calls PrintNotFull for cases that
@@ -793,33 +796,40 @@ Outcome: returns the (possibly new) NotFullList
         also prints to TBLDATA those cases
         found to be not full here
 **************************************** */ 
-CheckRiesTables:=function(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo,NotFullList);
+CheckRiesTables:=function(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,
+                          Con,Con_label,cc_label,braid,topo,NotFullList);
    tblprt:= "OutputFiles/TBLDATA";   /* records cases determined here */
    brkcount:=0;     
    if #sign eq 4 then  /* restriction for Table 1 */
       t,H,signH:=TestRiesTbl1a(G,sign,g,Lmonod);
       if t then
-         PrintNotFull(G_str,trans_gp_label,H,sign,signH,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo); 
-         Append(~NotFullList,[[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
-         PrintFile(tblprt,"Used Table 1a for genus " cat IntegerToString(g) cat ":");
+         PrintNotFull(G_str,trans_gp_label,H,sign,signH,g,Lmonod,
+                      connected_Lmonod,Con,Con_label,cc_label,braid,topo); 
+         Append(~NotFullList,
+                [[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
+         PrintFile(tblprt, "Used Table 1a for genus " cat 
+                           IntegerToString(g) cat ":");
          PrintFile(tblprt, "Group:");
          PrintFile(tblprt, IdentifyGroup(G));
          PrintFile(tblprt, "Signature:");
          PrintFile(tblprt, sign);
-         PrintFile(tblprt,"--------------");
+         PrintFile(tblprt, "--------------");
          brkcount:=1;  
       end if;
 
       t,H,signH:=TestRiesTbl1b(G,sign,g,Lmonod);
       if t then
-         PrintNotFull(G_str,trans_gp_label,H,sign,signH,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);
-         Append(~NotFullList,[[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
-         PrintFile(tblprt,"Used Table 1b for genus " cat IntegerToString(g) cat ":");
+         PrintNotFull(G_str,trans_gp_label,H,sign,signH,g,Lmonod,
+                      connected_Lmonod,Con,Con_label,cc_label,braid,topo);
+         Append(~NotFullList,
+                [[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
+         PrintFile(tblprt, "Used Table 1b for genus " cat 
+                           IntegerToString(g) cat ":");
          PrintFile(tblprt, "Group:");
          PrintFile(tblprt, IdentifyGroup(G));
          PrintFile(tblprt, "Signature:");
          PrintFile(tblprt, sign);
-         PrintFile(tblprt,"--------------");
+         PrintFile(tblprt, "--------------");
          brkcount:=1;
       end if;
    end if;   
@@ -827,17 +837,21 @@ CheckRiesTables:=function(G,sign,G_str,trans_gp_label,Lmonod,connected_Lmonod,Co
    if brkcount eq 0 then
       t,H,signH :=TestRiesTbl2(G,sign,g,Lmonod);
       if t then
-         PrintNotFull(G_str,trans_gp_label,H,sign,signH,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);
-         Append(~NotFullList,[[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
+         PrintNotFull(G_str,trans_gp_label,H,sign,signH,g,Lmonod,
+                      connected_Lmonod,Con,Con_label,cc_label,braid,topo);
+         Append(~NotFullList,
+                [[*IdentifyGroup(G),sign*],[*IdentifyGroup(H),signH*]]);
          brkcount:=1;
-         PrintFile(tblprt,"Used Table 2 for genus " cat IntegerToString(g) cat ":");
+         PrintFile(tblprt, "Used Table 2 for genus " cat 
+                           IntegerToString(g) cat ":");
          PrintFile(tblprt, "Group:");
          PrintFile(tblprt, IdentifyGroup(G));
          PrintFile(tblprt, "Signature:");
          PrintFile(tblprt, sign);
-         PrintFile(tblprt,"--------------");
+         PrintFile(tblprt, "--------------");
       else 
-         PrintFull(G_str,trans_gp_label,sign,g,Lmonod,connected_Lmonod,Con,Con_label,cc_label,braid,topo);
+         PrintFull(G_str,trans_gp_label,sign,g,Lmonod,connected_Lmonod,
+                   Con,Con_label,cc_label,braid,topo);
       end if;
    end if;    
 
@@ -850,6 +864,7 @@ Function TestRiesCases
 
 Input:   G        automorphism group
          sign     signature
+         gen      genus
          Rlist    generating vectors
          prtfile  output file
          ri       an integer representing
@@ -1075,9 +1090,8 @@ connected_Rlist:=connected_Lgenvects;
 n:=#Rlist;
 
 prtfile:="SupplementaryFiles/testingfull";  /* outputfile */
-PrintFile(prtfile," ": Overwrite:=true);   /* clears the file in all cases
-since nead to load later*/ 
-
+PrintFile(prtfile," ": Overwrite:=true);  /* clears the file in all cases
+                                             since nead to load later */ 
 if #sign lt 6 and sign[1] lt 3 then
   /* Rules out the never cases */
 
@@ -1091,13 +1105,16 @@ if #sign lt 6 and sign[1] lt 3 then
          t:=TestRiesCases(G,sign,g,Rlist[i],prtfile,i);
          if t then  /* true means a case was created but will need to check */
             printfull_str := 
-               Sprintf("PrintFull(G_str,trans_gp_label,sign,g,Rlist[%o],connected_Rlist[%o], 
-                        Cons[%o], Cons_label[%o], cc_labels[%o], braids[%o], topos[%o] : definitely_full:=false);",
-                        i, i, i, i, i, i, i);
-            PrintFile(prtfile,"if counttoful eq 0 then " cat printfull_str cat " end if; ");
+               Sprintf("PrintFull(G_str,trans_gp_label,sign,g,Rlist[%o]," cat
+                       "connected_Rlist[%o],Cons[%o],Cons_label[%o]," cat
+                       "cc_labels[%o], braids[%o], topos[%o] : " cat
+                       "definitely_full:=false);", i, i, i, i, i, i, i);
+            PrintFile(prtfile, "if counttoful eq 0 then " cat printfull_str 
+                               cat " end if; ");
          else
             PrintFull(G_str,trans_gp_label,sign,g,Rlist[i],connected_Rlist[i],
-                      Cons[i],Cons_label[i],cc_labels[i],braids[i],topos[i] : definitely_full:=false);  
+                      Cons[i],Cons_label[i],cc_labels[i],braids[i],topos[i] : 
+                      definitely_full:=false);  
                       /* need to consider the tables in next step */
          end if;
       end if;
