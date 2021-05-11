@@ -1,4 +1,0 @@
-perm_gens not available for 120.35
-
-Error decoding PC group for 192.181
-
