@@ -5514,9 +5514,9 @@ Lgenvects:=[
 (1, 2, 3, 6, 5, 4)]];
 connected_Lgenvects:=[
 [
-"c^2b^3a", 
-"b^5", 
-"c^2b^2a"]];
+"cb^3a", 
+"b", 
+"cb^4a"]];
 Cons:=
 [
 [ 4, 8, 9 ]
