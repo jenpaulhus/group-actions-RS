@@ -4505,8 +4505,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^4a", 
-"fedcb^3a", 
-"fdcb"
+"fdb^3a", 
+"dcb"
 ];
 Con:=
 [ 5, 8, 9 ]
@@ -4535,8 +4535,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^4a", 
-"cba", 
-"feb^3"
+"edba", 
+"db^3"
 ];
 Con:=
 [ 5, 8, 10 ]
@@ -4565,8 +4565,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^4a", 
-"eb^3a", 
-"edcb"
+"fcb^3a", 
+"cb"
 ];
 Con:=
 [ 5, 6, 9 ]
@@ -4595,8 +4595,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^4a", 
-"eb^2a", 
-"ecb^2"
+"fcb^2a", 
+"fedcb^2"
 ];
 Con:=
 [ 5, 6, 10 ]
@@ -4625,8 +4625,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^4a", 
-"edcb^3a", 
-"ecb"
+"cb^3a", 
+"fedcb"
 ];
 Con:=
 [ 5, 7, 9 ]
@@ -4655,8 +4655,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^4a", 
-"eba", 
-"fb^3"
+"fcba", 
+"fdcb^3"
 ];
 Con:=
 [ 5, 7, 10 ]

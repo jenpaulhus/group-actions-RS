@@ -3996,9 +3996,9 @@ Lmonod:=[G!
 (1, 2, 3, 6, 5, 4)
 ];
 connected_Lmonod:=[
-"c^2b^3a", 
-"b^5", 
-"c^2b^2a"
+"cb^3a", 
+"b", 
+"cb^4a"
 ];
 Con:=
 [ 4, 8, 9 ]
