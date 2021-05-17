@@ -93,7 +93,7 @@ braid             | integer  | number of distinct generating vectors, up to brai
 
 
 
-### Completeness Records
+#### Completeness Records
 
 `hgcwa_complete`:  for each genus, list if contains data for quotient genus >0  and whether braid and topological have been computed for that genus. Also totals for distinct families, refined passports, and generating vectors for statistics tables. 
 
