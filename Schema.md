@@ -49,7 +49,7 @@ min_deg | ~~smallint~~ integer | if nonabelian and in Galois group db, the n fro
 
 Column            | Type     | Notes
 ------------------|----------|------
-group             | integer[]| GAP ID encoded as a pair of integers `[N,i]`, where `N` is the order of the group and `i` distinguishes groups of the same order (as determined in GAP or the gps_groups table)
+group             | ~~integer[]~~ text| GAP ID encoded as ~~a pair of integers `[N,i]`~~ text 'N.i', where `N` is the order of the group and `i` distinguishes groups of the same order (as determined in GAP or the gps_groups table)
 genus             | smallint | genus
 g0_is_gt0         | boolean  | whether the group is for quotient genus 0 or quotient genus >= 1
 g0_gt0_list       | integer[]| list of g0 values this group appears for, if greater than 0
