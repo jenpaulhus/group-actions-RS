@@ -45,7 +45,7 @@ min_deg | ~~smallint~~ integer | if nonabelian and in Galois group db, the n fro
 ## Statistics
 
 
-`hgcwa_per_group_stats`:  Counts for the per genus list of groups
+`hgcwa_per_group_stats`: (NEW)  Counts for the per genus list of groups
 
 Column            | Type     | Notes
 ------------------|----------|------
@@ -60,7 +60,7 @@ braid             | integer  | number of distinct generating vectors, up to brai
  
 
 
-`hgcwa_per_genus_stats`:  for each genus, list if contains data for quotient genus >0  and whether braid and topological have been computed for that genus. Also totals for distinct families, refined passports, and generating vectors for statistics tables. 
+`hgcwa_per_genus_stats`: (NEW) for each genus, list if contains data for quotient genus >0  and whether braid and topological have been computed for that genus. Also totals for distinct families, refined passports, and generating vectors for statistics tables. 
 
 Column            | Type     | Notes
 ------------------|----------|------
@@ -144,6 +144,5 @@ nonabelian_only (NEW)  | boolean  | whether only nonabelian groups have been com
 num_families      | integer[]| 1st entry is number of distinct families for this genus total, nth entry is for quotient genus n-2
 num_refined_pp    | integer[]| 1st entry is number of distinct refined passports for this genus, nth entry is for quotient genus n-2
 num_gen_vectors   | integer[]| 1st entry is number of distinct generating vectors for this genus, nth entry is for quotient genus n-2
-num_unique_groups | integer  | number of distinct groups of this genus 
 
 
