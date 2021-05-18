@@ -111,7 +111,7 @@ PrintPossibleFullAuto:=procedure(G,strngG,strngH,g,cases,prtfile,ri);
    end for;
    signGstrg:=signGstrg cat IntegerToString(strngG[#strngG]) cat "];";
 
-  signHstrg:="[";
+   signHstrg:="[";
    for hs in [1..#strngH-1] do
       signHstrg:=signHstrg cat IntegerToString(strngH[hs]) cat ",";
    end for;

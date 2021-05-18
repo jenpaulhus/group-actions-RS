@@ -1,0 +1,7 @@
+genus|g0_gt0_compute|top_braid_compute|top_braid_g0_gt0|nonabelian_only|num_families|num_refined_pp|num_gen_vectors|num_unique_groups
+smallint|boolean|boolean|boolean|boolean|integer[]|integer[]|integer[]|integer
+
+2|True|True|False|False|NULL|NULL|NULL|NULL
+3|True|True|False|False|NULL|NULL|NULL|NULL
+4|True|True|False|False|NULL|NULL|NULL|NULL
+5|True|True|False|False|NULL|NULL|NULL|NULL

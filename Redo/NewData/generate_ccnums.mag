@@ -43,17 +43,26 @@ load "process_recs.mag";
 
 for ell in Ldata do
    sign:=ell[1];
+
+   if sign[1] gt 0 and not g0_gt0_compute then
+      continue;
+   end if;
+
    SmallGrp:=SmallGroup(ell[2,1], ell[2,2]);
-   if IsAbelian(SmallGrp) and mode eq "nonabel" then
+
+   if IsAbelian(SmallGrp) and group_restriction eq "nonabel" then
       continue;
    end if;
-   if not IsAbelian(SmallGrp) and mode eq "abel" then
+   if not IsAbelian(SmallGrp) and group_restriction eq "abel" then
       continue;
    end if;
+
    group_str, trans_gp_label, Cons, Cons_label, cc_labels, 
    Lgenvects, connected_Lgenvects, braids, topos := 
      compute_rec_data(sign, SmallGrp);
+
    if Type(Cons) eq RngIntElt then
+      // some error occurred in compute_rec_data
       continue;
    end if;         
 

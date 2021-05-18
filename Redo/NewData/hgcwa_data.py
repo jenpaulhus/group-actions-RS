@@ -1,5 +1,5 @@
-# This program generates a file that can be uploaded to the hgcwa db via
-#   the copy_from function
+# This program generates a file that can be uploaded to the hgcwa_genvectors 
+#   db via the copy_from function
 
 # Command line instructions:
 # sage
@@ -10,42 +10,66 @@
 # compute_data([2,3,4,5])
 # compute_data([5], 'nonabel')
 
-import sys
 import json
 import itertools
 from sage.interfaces.magma import magma
 
-def compute_data(genera, mode='all'):
+def compute_data(genera, groups='all', g0_gt0_compute=True, 
+                 top_braid_compute=True, top_braid_g0_gt0=False):
   '''
-  Compute hgcwa data for the specified genera and output them in files that 
-    can be uploaded to the hgcwa db via the copy_from function, called 
-    gxx_all_data.txt, gxx_abel_data.txt, or gxx_nonabel_data.txt depending on
-    the value of mode, where gxx refers to the specific genus.
+  Compute hgcwa data for the specified genera (list of integers) and output 
+    the data in files that can be uploaded to the hgcwa db via the copy_from 
+    function, called gxx_allgrps_data.txt, gxx_abelgrps_data.txt, or 
+    gxx_nonabelgrps_data.txt depending on the value of groups, where gxx 
+    refers to the specific genus.
 
-  If mode='all' (the default), then all data will be computed for each genus. 
-  If mode='abel', then only data for abelian groups will be computed
+  If groups='all', then data for all groups will be computed for each genus. 
+  If groups='abel', then only data for abelian groups will be computed
     for each genus.
-  If mode='nonabel', then only data for nonabelian groups will be computed 
+  If groups='nonabel', then only data for nonabelian groups will be computed 
     for each genus.
+
+  The g0_gt0_compute parameter determines whether to compute g0>0 data for
+    each genus.
+  The top_braid_compute parameter determines whether to compute topological,
+    braid equivalences for g0=0 and each genus.
+  The top_braid_g0_gt0 parameter determines whether to compute topological,
+    braid equivalences for g0>0 and each genus.
+  
+  The file gL_complete.txt, where L is the sequence of
+    genera, will contain the completeness values, which can be uploaded to the
+    hgcwa_per_genus_stats db.
 
   If db.gps_groups or db.gps_transitive have been updated recently, the scripts
     gps_decode.py and gps_transitive.py should be rerun to create new 
     gps_decode.mag and gps_transitive.mag files before running this procedure.
 
   The file log.txt will contain errors that occurred during computation and
-  instances where a group not from db.gps_transitive is passed into RepEpi.
+    instances where a group not from db.gps_transitive is passed into RepEpi.
   '''
   # Check if arguments are valid
   try:
     for genus in genera:
-      g = int(genus)
-      if g < 2:
+      if genus < 2 or int(genus) != genus:
         raise ValueError
-    if not(mode == 'all' or mode == 'abel' or mode == 'nonabel'):
+    if not(groups == 'all' or groups == 'abel' or groups == 'nonabel'):
+      raise ValueError
+    if not(type(g0_gt0_compute) == bool and type(top_braid_compute) == bool 
+           and type(top_braid_g0_gt0) == bool):
+      raise ValueError
+    if top_braid_g0_gt0 and not g0_gt0_compute:
+      raise ValueError
+    if top_braid_g0_gt0:
+      print('top,braid for g0>0 not implemented')
       raise ValueError
   except:
     print('Invalid arguments')
-    sys.exit(1)
+    return
+  
+  # Create a file that contains the completeness columns of the 
+  #   hgcwa_per_genus_stats db but is missing the stats columns
+  create_comp_file(genera, groups, g0_gt0_compute, 
+                   top_braid_compute, top_braid_g0_gt0)
   
   # Empty contents of log.txt and TBLDATA
   magma.eval('SetOutputFile("%s" : Overwrite:=true)' % 'log.txt')
@@ -80,7 +104,10 @@ def compute_data(genera, mode='all'):
     magma.load('genvectors.mag')
     magma.load('ries_helper_fn.mag')
     magma.set('g', genus)
-    magma.set('mode', '"%s"' % mode)
+    magma.set('group_restriction', '"%s"' % groups)
+    magma.set('g0_gt0_compute', '%s' % str(g0_gt0_compute).lower())
+    magma.set('top_braid_compute', '%s' % str(top_braid_compute).lower())
+    magma.set('top_braid_g0_gt0', '%s' % str(top_braid_g0_gt0).lower())
     magma.set('NotFullList', [])   
     magma.set('prtfile', '"%s"' % supp_gxx)
     magma.eval('SetColumns(0)')
@@ -118,12 +145,12 @@ def compute_data(genera, mode='all'):
             ['full_label','text'], ['full_auto','text'], ['signH','integer[]']]
     col_names = '|'.join([col[0] for col in cols]) + '\n'  
     col_types = '|'.join([col[1] for col in cols]) + '\n'
-    if mode == 'abel':
-      wf = open('g%s_abel_data.txt' % genus_str, 'w')
-    elif mode == 'nonabel':
-      wf = open('g%s_nonabel_data.txt' % genus_str, 'w')
-    else:  # mode == 'all'
-      wf = open('g%s_all_data.txt' % genus_str, 'w')
+    if groups == 'abel':
+      wf = open('g%s_abelgrps_data.txt' % genus_str, 'w')
+    elif groups == 'nonabel':
+      wf = open('g%s_nonabelgrps_data.txt' % genus_str, 'w')
+    else:  # groups == 'all'
+      wf = open('g%s_allgrps_data.txt' % genus_str, 'w')
     wf.write(col_names)
     wf.write(col_types)
     wf.write('\n')
@@ -220,6 +247,39 @@ def compute_data(genera, mode='all'):
   
   # Finished creating upload files for all the specified genera
   print('Done making all upload files')
+
+
+def create_comp_file(genera, groups, g0_gt0_compute,
+                     top_braid_compute, top_braid_g0_gt0):
+  '''
+  Create the file gL_complete.txt that can be uploaded to the 
+  hgcwa_per_genus_stats db via the copy_from function. The file will only
+  contain values for the completeness columns and will be missing
+  data for the stats columns. 
+  '''
+  print('Making completeness file...')
+  cols = [['genus','smallint'], ['g0_gt0_compute','boolean'], 
+          ['top_braid_compute','boolean'], ['top_braid_g0_gt0','boolean'],
+          ['nonabelian_only','boolean'], ['num_families','integer[]'], 
+          ['num_refined_pp','integer[]'], ['num_gen_vectors','integer[]'], 
+          ['num_unique_groups','integer']]
+  col_names = '|'.join([col[0] for col in cols]) + '\n'
+  col_types = '|'.join([col[1] for col in cols]) + '\n'
+  genera.sort()
+  g_ls_str = ','.join([str(g) for g in genera])
+  f = open('g%scomplete.txt' % g_ls_str, 'w')
+  f.write(col_names)
+  f.write(col_types)
+  f.write('\n')
+  nonabelian_only = groups == 'nonabel'
+  for genus in genera:
+    row = [str(genus), str(g0_gt0_compute), str(top_braid_compute), 
+           str(top_braid_g0_gt0), str(nonabelian_only), 
+           'NULL', 'NULL', 'NULL', 'NULL']
+    line = '|'.join(row)
+    f.write(line + '\n')
+  f.close()
+  print('Done making completeness file')
 
 
 def convert_to_str(val):

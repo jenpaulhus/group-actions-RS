@@ -32,7 +32,7 @@ Attach("random.m");
 gps_db := AssociativeArray();
 for gp in gps_decode do
    gp_label := gp[1];
-   gps_db[gp_label] := [* gp[2], gp[3], gp[4], gp[5], gp[6] *];
+   gps_db[gp_label] := [* gp[2], gp[3], gp[4], gp[5] *];
 end for;
 
 /* Create associative array of transitive groups to input into RepEpi, 
@@ -110,10 +110,6 @@ process_gen := function(gen, G, G_to_pc)
          end if;
       end if;
    end for;
-   /* Reverse processed_gen and to_sort_gen so that evaluating from 
-      right to left gives the correct permutation */
-   processed_gen := Reverse(processed_gen);
-   to_sort_gen := Reverse(to_sort_gen);
    
    processed_gen_str := "";
    to_sort_gen_str := "";
@@ -608,15 +604,6 @@ compute_rec_data := function(sign, small_group)
          return 0,0,0,0,0,0,0,0,0;
       end try;
 
-      /* Check that ngens matches the number of generators in pc_group */
-      ngens := group_data[2];
-      if ngens ne NumberOfGenerators(pc_group) then
-         PrintFile(logfile, Sprintf("Number of generators in PC group of " cat
-                                    "%o does not match ngens in groups " cat
-                                    "db, so skip it\n", group_label));
-         return 0,0,0,0,0,0,0,0,0;
-      end if;
-
       /* Check if the group is in the transitive groups db. If not,
          log this group since a transitive group is not going to be passed 
          into RepiEpi */
@@ -647,7 +634,7 @@ compute_rec_data := function(sign, small_group)
       end if;
 
       /* Call compute_iso and RepEpi */
-      gens_used := group_data[3];
+      gens_used := group_data[2];
       iso, G, G_to_pc := compute_iso(perm_group, pc_group, gens_used);
       recs := RepresentativesEpimorphisms(sign, perm_group);
 
@@ -661,7 +648,7 @@ compute_rec_data := function(sign, small_group)
              Lgenvects, connected_Lgenvects, braids, topos;
    else
       /* Check if we can use perm_gens */
-      perm_gens := group_data[5];
+      perm_gens := group_data[4];
       if Type(perm_gens) eq MonStgElt and perm_gens eq "error" then 
          PrintFile(logfile, Sprintf("perm_gens not available for %o, " cat
                                     "so skip it\n", group_label));
@@ -674,7 +661,7 @@ compute_rec_data := function(sign, small_group)
                                  "from the groups page is passed into " cat
                                  "RepEpi\n", group_label));
       /* Construct group from the groups page and pass it into RepEpi */
-      degree := group_data[4];
+      degree := group_data[3];
       group_str := Sprintf("PermutationGroup<%o|%o>", degree, perm_gens);
       perm_group := eval group_str;
       recs := RepresentativesEpimorphisms(sign, perm_group);
