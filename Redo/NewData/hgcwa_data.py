@@ -1,14 +1,9 @@
 # This program generates a file that can be uploaded to the hgcwa_genvectors 
 #   db via the copy_from function
 
-# Command line instructions:
-# sage
-# from hgcwa_data import compute_data
-# compute_data(genera [, mode])
-
 # Examples: 
 # compute_data([2,3,4,5])
-# compute_data([5], 'nonabel')
+# compute_data([5], groups='nonabel')
 
 import json
 import itertools
