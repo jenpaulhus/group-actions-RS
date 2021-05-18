@@ -42,8 +42,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^-2", 
-"b^-2a", 
-"b^-1a", 
+"ab^-2", 
+"ab^-1", 
 "b"
 ];
 Con:=
@@ -195,7 +195,7 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b^3", 
 "a", 
-"ba", 
+"ab", 
 "b^2"
 ];
 Con:=
@@ -224,8 +224,8 @@ Lmonod:=[G!
 (1, 6, 3, 8, 5, 2, 7, 4)
 ];
 connected_Lmonod:=[
-"b^-2a", 
-"ba", 
+"ab^-2", 
+"ab", 
 "b^-3"
 ];
 Con:=
@@ -254,8 +254,8 @@ Lmonod:=[G!
 (1, 2, 3, 4, 5, 6, 7, 8)
 ];
 connected_Lmonod:=[
-"b^-2a", 
-"b^-3a", 
+"ab^-2", 
+"ab^-3", 
 "b"
 ];
 Con:=
@@ -284,9 +284,9 @@ Lmonod:=[G!
 (1, 8, 9, 4, 5, 12)(2, 3, 10, 11, 6, 7)
 ];
 connected_Lmonod:=[
-"c^4ba", 
-"c^3a", 
-"cb"
+"abc^4", 
+"ac^3", 
+"bc"
 ];
 Con:=
 [ 4, 6, 8 ]
@@ -314,8 +314,8 @@ Lmonod:=[G!
 (1, 2, 9, 10, 5, 6)(3, 4, 11, 12, 7, 8)
 ];
 connected_Lmonod:=[
-"c^4ba", 
-"c^3ba", 
+"abc^4", 
+"abc^3", 
 "c"
 ];
 Con:=
@@ -344,9 +344,9 @@ Lmonod:=[G!
 (1, 2, 3, 4, 5, 6, 7, 8)
 ];
 connected_Lmonod:=[
-"c^-1ba", 
+"abc^-1", 
 "b^2", 
-"c^-1a"
+"ac^-1"
 ];
 Con:=
 [ 3, 4, 7 ]
@@ -374,9 +374,9 @@ Lmonod:=[G!
 (1, 2, 8, 3, 5, 6, 4, 7)
 ];
 connected_Lmonod:=[
-"c^-1ba", 
+"abc^-1", 
 "b", 
-"c^-1b^2a"
+"ab^2c^-1"
 ];
 Con:=
 [ 3, 4, 8 ]

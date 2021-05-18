@@ -185,8 +185,8 @@ connected_Lmonod:=[
 "a", 
 "a", 
 "a", 
-"ba", 
-"ba"
+"ab", 
+"ab"
 ];
 Con:=
 [ 3, 3, 3, 3, 4, 4 ]
@@ -218,10 +218,10 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a", 
 "a", 
-"ba", 
-"ba", 
-"ba", 
-"ba"
+"ab", 
+"ab", 
+"ab", 
+"ab"
 ];
 Con:=
 [ 3, 3, 4, 4, 4, 4 ]
@@ -290,8 +290,8 @@ connected_Lmonod:=[
 "b", 
 "a", 
 "a", 
-"ba", 
-"ba"
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2, 3, 3, 4, 4 ]
@@ -323,10 +323,10 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b", 
 "b", 
-"ba", 
-"ba", 
-"ba", 
-"ba"
+"ab", 
+"ab", 
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2, 4, 4, 4, 4 ]
@@ -395,8 +395,8 @@ connected_Lmonod:=[
 "b", 
 "b", 
 "b", 
-"ba", 
-"ba"
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2, 2, 2, 4, 4 ]
@@ -425,7 +425,7 @@ Lmonod:=[G!
 (1, 2, 3)
 ];
 connected_Lmonod:=[
-"ba", 
+"ab", 
 "a", 
 "a", 
 "a", 
@@ -458,10 +458,10 @@ Lmonod:=[G!
 (1, 3, 2)
 ];
 connected_Lmonod:=[
-"ba", 
+"ab", 
 "a", 
 "a", 
-"b^2a", 
+"ab^2", 
 "b^2"
 ];
 Con:=
@@ -491,9 +491,9 @@ Lmonod:=[G!
 (1, 3, 2)
 ];
 connected_Lmonod:=[
-"ba", 
+"ab", 
 "a", 
-"ba", 
+"ab", 
 "a", 
 "b^2"
 ];
@@ -524,10 +524,10 @@ Lmonod:=[G!
 (1, 2, 3)
 ];
 connected_Lmonod:=[
-"ba", 
+"ab", 
 "a", 
-"ba", 
-"ba", 
+"ab", 
+"ab", 
 "b"
 ];
 Con:=
@@ -557,10 +557,10 @@ Lmonod:=[G!
 (1, 3, 2)
 ];
 connected_Lmonod:=[
-"ba", 
+"ab", 
 "a", 
-"b^2a", 
-"ba", 
+"ab^2", 
+"ab", 
 "b^2"
 ];
 Con:=
@@ -590,10 +590,10 @@ Lmonod:=[G!
 (1, 2, 3)
 ];
 connected_Lmonod:=[
-"ba", 
+"ab", 
 "a", 
-"b^2a", 
-"b^2a", 
+"ab^2", 
+"ab^2", 
 "b"
 ];
 Con:=
@@ -623,10 +623,10 @@ Lmonod:=[G!
 (1, 3, 2)
 ];
 connected_Lmonod:=[
-"ba", 
-"ba", 
+"ab", 
+"ab", 
 "a", 
-"ba", 
+"ab", 
 "b^2"
 ];
 Con:=
@@ -656,10 +656,10 @@ Lmonod:=[G!
 (1, 2, 3)
 ];
 connected_Lmonod:=[
-"ba", 
-"ba", 
+"ab", 
+"ab", 
 "a", 
-"b^2a", 
+"ab^2", 
 "b"
 ];
 Con:=
@@ -689,9 +689,9 @@ Lmonod:=[G!
 (1, 2, 3)
 ];
 connected_Lmonod:=[
-"ba", 
-"ba", 
-"ba", 
+"ab", 
+"ab", 
+"ab", 
 "a", 
 "b"
 ];
@@ -723,10 +723,10 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^-2", 
-"b^-2a", 
+"ab^-2", 
 "a", 
-"b^-1a", 
-"b^-1a"
+"ab^-1", 
+"ab^-1"
 ];
 Con:=
 [ 2, 3, 3, 4, 4 ]
@@ -756,10 +756,10 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^-2", 
-"b^-2a", 
-"b^-2a", 
-"b^-1a", 
-"ba"
+"ab^-2", 
+"ab^-2", 
+"ab^-1", 
+"ab"
 ];
 Con:=
 [ 2, 3, 3, 4, 4 ]
@@ -788,11 +788,11 @@ Lmonod:=[G!
 (1, 6)(2, 5)(3, 4)(7, 8)
 ];
 connected_Lmonod:=[
-"cb", 
-"ca", 
-"ba", 
-"cba", 
-"cba"
+"bc", 
+"ac", 
+"ab", 
+"abc", 
+"abc"
 ];
 Con:=
 [ 4, 6, 7, 8, 8 ]
@@ -821,11 +821,11 @@ Lmonod:=[G!
 (1, 6)(2, 5)(3, 4)(7, 8)
 ];
 connected_Lmonod:=[
-"cb", 
+"bc", 
 "a", 
-"ca", 
-"ca", 
-"cba"
+"ac", 
+"ac", 
+"abc"
 ];
 Con:=
 [ 4, 5, 6, 6, 8 ]
@@ -854,11 +854,11 @@ Lmonod:=[G!
 (1, 6)(2, 5)(3, 4)(7, 8)
 ];
 connected_Lmonod:=[
-"cb", 
+"bc", 
 "a", 
-"ba", 
-"ba", 
-"cba"
+"ab", 
+"ab", 
+"abc"
 ];
 Con:=
 [ 4, 5, 7, 7, 8 ]
@@ -887,11 +887,11 @@ Lmonod:=[G!
 (1, 4)(2, 7)(3, 6)(5, 8)
 ];
 connected_Lmonod:=[
-"cb", 
+"bc", 
 "a", 
 "a", 
-"ca", 
-"ba"
+"ac", 
+"ab"
 ];
 Con:=
 [ 4, 5, 5, 6, 7 ]
@@ -921,10 +921,10 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b", 
-"ca", 
-"ba", 
-"ba", 
-"cba"
+"ac", 
+"ab", 
+"ab", 
+"abc"
 ];
 Con:=
 [ 3, 6, 7, 7, 8 ]
@@ -954,10 +954,10 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b", 
-"cb", 
-"cb", 
-"ca", 
-"cba"
+"bc", 
+"bc", 
+"ac", 
+"abc"
 ];
 Con:=
 [ 3, 4, 4, 6, 8 ]
@@ -987,10 +987,10 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b", 
-"cb", 
-"cb", 
+"bc", 
+"bc", 
 "a", 
-"ba"
+"ab"
 ];
 Con:=
 [ 3, 4, 4, 5, 7 ]
@@ -1021,9 +1021,9 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b", 
 "b", 
-"cb", 
-"ca", 
-"ba"
+"bc", 
+"ac", 
+"ab"
 ];
 Con:=
 [ 3, 3, 4, 6, 7 ]
@@ -1054,9 +1054,9 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b", 
 "b", 
-"cb", 
+"bc", 
 "a", 
-"cba"
+"abc"
 ];
 Con:=
 [ 3, 3, 4, 5, 8 ]
@@ -1087,9 +1087,9 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b", 
 "a", 
-"ca", 
-"ca", 
-"ba"
+"ac", 
+"ac", 
+"ab"
 ];
 Con:=
 [ 3, 5, 6, 6, 7 ]
@@ -1120,9 +1120,9 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b", 
 "a", 
-"ba", 
-"cba", 
-"cba"
+"ab", 
+"abc", 
+"abc"
 ];
 Con:=
 [ 3, 5, 7, 8, 8 ]
@@ -1154,8 +1154,8 @@ connected_Lmonod:=[
 "b", 
 "a", 
 "a", 
-"ca", 
-"cba"
+"ac", 
+"abc"
 ];
 Con:=
 [ 3, 5, 5, 6, 8 ]
@@ -1185,10 +1185,10 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "c", 
-"ca", 
-"ca", 
-"ba", 
-"cba"
+"ac", 
+"ac", 
+"ab", 
+"abc"
 ];
 Con:=
 [ 2, 6, 6, 7, 8 ]
@@ -1218,10 +1218,10 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "c", 
-"cb", 
-"cb", 
-"ba", 
-"cba"
+"bc", 
+"bc", 
+"ab", 
+"abc"
 ];
 Con:=
 [ 2, 4, 4, 7, 8 ]
@@ -1251,10 +1251,10 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "c", 
-"cb", 
-"cb", 
+"bc", 
+"bc", 
 "a", 
-"ca"
+"ac"
 ];
 Con:=
 [ 2, 4, 4, 5, 6 ]
@@ -1285,9 +1285,9 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "c", 
 "b", 
-"cb", 
-"ca", 
-"ca"
+"bc", 
+"ac", 
+"ac"
 ];
 Con:=
 [ 2, 3, 4, 6, 6 ]
@@ -1318,9 +1318,9 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "c", 
 "b", 
-"cb", 
-"ba", 
-"ba"
+"bc", 
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 3, 4, 7, 7 ]
@@ -1351,7 +1351,7 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "c", 
 "b", 
-"cb", 
+"bc", 
 "a", 
 "a"
 ];
@@ -1384,9 +1384,9 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "c", 
 "b", 
-"cb", 
-"cba", 
-"cba"
+"bc", 
+"abc", 
+"abc"
 ];
 Con:=
 [ 2, 3, 4, 8, 8 ]
@@ -1418,8 +1418,8 @@ connected_Lmonod:=[
 "c", 
 "b", 
 "b", 
-"ba", 
-"cba"
+"ab", 
+"abc"
 ];
 Con:=
 [ 2, 3, 3, 7, 8 ]
@@ -1452,7 +1452,7 @@ connected_Lmonod:=[
 "b", 
 "b", 
 "a", 
-"ca"
+"ac"
 ];
 Con:=
 [ 2, 3, 3, 5, 6 ]
@@ -1483,9 +1483,9 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "c", 
 "a", 
-"ca", 
-"ba", 
-"ba"
+"ac", 
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 5, 6, 7, 7 ]
@@ -1516,9 +1516,9 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "c", 
 "a", 
-"ca", 
-"cba", 
-"cba"
+"ac", 
+"abc", 
+"abc"
 ];
 Con:=
 [ 2, 5, 6, 8, 8 ]
@@ -1550,8 +1550,8 @@ connected_Lmonod:=[
 "c", 
 "a", 
 "a", 
-"ba", 
-"cba"
+"ab", 
+"abc"
 ];
 Con:=
 [ 2, 5, 5, 7, 8 ]
@@ -1582,9 +1582,9 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "c", 
 "c", 
-"cb", 
-"ca", 
-"ba"
+"bc", 
+"ac", 
+"ab"
 ];
 Con:=
 [ 2, 2, 4, 6, 7 ]
@@ -1615,9 +1615,9 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "c", 
 "c", 
-"cb", 
+"bc", 
 "a", 
-"cba"
+"abc"
 ];
 Con:=
 [ 2, 2, 4, 5, 8 ]
@@ -1649,8 +1649,8 @@ connected_Lmonod:=[
 "c", 
 "c", 
 "b", 
-"ca", 
-"cba"
+"ac", 
+"abc"
 ];
 Con:=
 [ 2, 2, 3, 6, 8 ]
@@ -1683,7 +1683,7 @@ connected_Lmonod:=[
 "c", 
 "b", 
 "a", 
-"ba"
+"ab"
 ];
 Con:=
 [ 2, 2, 3, 5, 7 ]
@@ -1776,7 +1776,7 @@ connected_Lmonod:=[
 "b^-2", 
 "a", 
 "b", 
-"ba"
+"ab"
 ];
 Con:=
 [ 2, 3, 5, 7 ]
@@ -1807,7 +1807,7 @@ connected_Lmonod:=[
 "b^-2", 
 "a", 
 "b^-1", 
-"b^-1a"
+"ab^-1"
 ];
 Con:=
 [ 2, 3, 6, 8 ]
@@ -1836,9 +1836,9 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^-2", 
-"b^-2a", 
+"ab^-2", 
 "b", 
-"b^-1a"
+"ab^-1"
 ];
 Con:=
 [ 2, 4, 5, 8 ]
@@ -1867,9 +1867,9 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^-2", 
-"b^-2a", 
+"ab^-2", 
 "b^-1", 
-"ba"
+"ab"
 ];
 Con:=
 [ 2, 4, 6, 7 ]
@@ -2072,8 +2072,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^3", 
-"ba", 
-"b^5a", 
+"ab", 
+"ab^5", 
 "b^5"
 ];
 Con:=
@@ -2104,7 +2104,7 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b^3", 
 "a", 
-"b^2a", 
+"ab^2", 
 "b"
 ];
 Con:=
@@ -2308,9 +2308,9 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"c^-1b", 
+"bc^-1", 
 "b", 
-"c^-1a"
+"ac^-1"
 ];
 Con:=
 [ 2, 6, 8, 10 ]
@@ -2339,8 +2339,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"c^-1b", 
-"ba", 
+"bc^-1", 
+"ab", 
 "c^-1"
 ];
 Con:=
@@ -2370,7 +2370,7 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"c^-1ba", 
+"abc^-1", 
 "b", 
 "c^-1"
 ];
@@ -2401,9 +2401,9 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"c^-1ba", 
-"ba", 
-"c^-1a"
+"abc^-1", 
+"ab", 
+"ac^-1"
 ];
 Con:=
 [ 2, 5, 7, 10 ]
@@ -2431,10 +2431,10 @@ Lmonod:=[G!
 (1, 6, 8, 7)(2, 5, 3, 4)
 ];
 connected_Lmonod:=[
-"c^-2a", 
-"c^-1b", 
+"ac^-2", 
+"bc^-1", 
 "b", 
-"ca"
+"ac"
 ];
 Con:=
 [ 4, 6, 8, 10 ]
@@ -2462,9 +2462,9 @@ Lmonod:=[G!
 (1, 4, 8, 5)(2, 7, 3, 6)
 ];
 connected_Lmonod:=[
-"c^-2a", 
-"c^-1b", 
-"ba", 
+"ac^-2", 
+"bc^-1", 
+"ab", 
 "c"
 ];
 Con:=
@@ -2493,8 +2493,8 @@ Lmonod:=[G!
 (1, 4, 8, 5)(2, 7, 3, 6)
 ];
 connected_Lmonod:=[
-"c^-2a", 
-"c^-1ba", 
+"ac^-2", 
+"abc^-1", 
 "b", 
 "c"
 ];
@@ -2524,10 +2524,10 @@ Lmonod:=[G!
 (1, 6, 8, 7)(2, 5, 3, 4)
 ];
 connected_Lmonod:=[
-"c^-2a", 
-"c^-1ba", 
-"ba", 
-"ca"
+"ac^-2", 
+"abc^-1", 
+"ab", 
+"ac"
 ];
 Con:=
 [ 4, 5, 7, 10 ]
@@ -2555,8 +2555,8 @@ Lmonod:=[G!
 (1, 3, 5, 7)(2, 4, 6, 8)
 ];
 connected_Lmonod:=[
-"cba", 
-"c^-2b", 
+"abc", 
+"bc^-2", 
 "a", 
 "c"
 ];
@@ -2586,9 +2586,9 @@ Lmonod:=[G!
 (1, 7, 5, 3)(2, 8, 6, 4)
 ];
 connected_Lmonod:=[
-"cba", 
-"c^-2b", 
-"c^-2a", 
+"abc", 
+"bc^-2", 
+"ac^-2", 
 "c^-1"
 ];
 Con:=
@@ -2616,8 +2616,8 @@ Lmonod:=[G!
 (1, 8, 3, 10, 5, 12, 7, 2, 9, 4, 11, 6)
 ];
 connected_Lmonod:=[
-"b^2a", 
-"b^9a", 
+"ab^2", 
+"ab^9", 
 "b^5"
 ];
 Con:=
@@ -2645,8 +2645,8 @@ Lmonod:=[G!
 (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
 ];
 connected_Lmonod:=[
-"b^2a", 
-"b^3a", 
+"ab^2", 
+"ab^3", 
 "b^11"
 ];
 Con:=
@@ -2674,8 +2674,8 @@ Lmonod:=[G!
 (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
 ];
 connected_Lmonod:=[
-"b^8a", 
-"b^9a", 
+"ab^8", 
+"ab^9", 
 "b^11"
 ];
 Con:=
@@ -2703,8 +2703,8 @@ Lmonod:=[G!
 (1, 8, 3, 10, 5, 12, 7, 2, 9, 4, 11, 6)
 ];
 connected_Lmonod:=[
-"b^8a", 
-"b^3a", 
+"ab^8", 
+"ab^3", 
 "b^5"
 ];
 Con:=
@@ -2733,10 +2733,10 @@ Lmonod:=[G!
 (1, 4, 2)
 ];
 connected_Lmonod:=[
-"dc", 
-"db^2a", 
-"cba", 
-"db"
+"cd", 
+"ab^2d", 
+"abc", 
+"bd"
 ];
 Con:=
 [ 2, 3, 3, 4 ]
@@ -2764,9 +2764,9 @@ Lmonod:=[G!
 (2, 3, 4)
 ];
 connected_Lmonod:=[
-"dc", 
-"db^2a", 
-"dca", 
+"cd", 
+"ab^2d", 
+"acd", 
 "b^2"
 ];
 Con:=
@@ -2795,9 +2795,9 @@ Lmonod:=[G!
 (2, 4, 3)
 ];
 connected_Lmonod:=[
-"dc", 
-"dca", 
-"b^2a", 
+"cd", 
+"acd", 
+"ab^2", 
 "b"
 ];
 Con:=
@@ -2825,9 +2825,9 @@ Lmonod:=[G!
 (1, 3, 5, 7, 9, 11, 14, 16)(2, 4, 6, 8, 10, 12, 13, 15)
 ];
 connected_Lmonod:=[
-"c^-2ba", 
-"c^-1a", 
-"c^-1b"
+"abc^-2", 
+"ac^-1", 
+"bc^-1"
 ];
 Con:=
 [ 6, 10, 14 ]
@@ -2854,8 +2854,8 @@ Lmonod:=[G!
 (1, 8, 14, 4, 9, 15, 5, 12)(2, 7, 13, 3, 10, 16, 6, 11)
 ];
 connected_Lmonod:=[
-"c^-2ba", 
-"cba", 
+"abc^-2", 
+"abc", 
 "c^-3"
 ];
 Con:=
@@ -2883,8 +2883,8 @@ Lmonod:=[G!
 (1, 4, 5, 8, 9, 12, 14, 15)(2, 3, 6, 7, 10, 11, 13, 16)
 ];
 connected_Lmonod:=[
-"c^-2ba", 
-"c^-1ba", 
+"abc^-2", 
+"abc^-1", 
 "c^-1"
 ];
 Con:=
@@ -2912,9 +2912,9 @@ Lmonod:=[G!
 (1, 7, 14, 3, 9, 16, 5, 11)(2, 8, 13, 4, 10, 15, 6, 12)
 ];
 connected_Lmonod:=[
-"c^-2ba", 
-"ca", 
-"c^-3b"
+"abc^-2", 
+"ac", 
+"bc^-3"
 ];
 Con:=
 [ 6, 9, 13 ]
@@ -2941,8 +2941,8 @@ Lmonod:=[G!
 (1, 4, 5, 8, 9, 12, 14, 15)(2, 3, 6, 7, 10, 11, 13, 16)
 ];
 connected_Lmonod:=[
-"c^-2a", 
-"c^-1a", 
+"ac^-2", 
+"ac^-1", 
 "c^-1"
 ];
 Con:=
@@ -2970,9 +2970,9 @@ Lmonod:=[G!
 (1, 7, 14, 3, 9, 16, 5, 11)(2, 8, 13, 4, 10, 15, 6, 12)
 ];
 connected_Lmonod:=[
-"c^-2a", 
-"cba", 
-"c^-3b"
+"ac^-2", 
+"abc", 
+"bc^-3"
 ];
 Con:=
 [ 5, 10, 13 ]
@@ -2999,9 +2999,9 @@ Lmonod:=[G!
 (1, 3, 5, 7, 9, 11, 14, 16)(2, 4, 6, 8, 10, 12, 13, 15)
 ];
 connected_Lmonod:=[
-"c^-2a", 
-"c^-1ba", 
-"c^-1b"
+"ac^-2", 
+"abc^-1", 
+"bc^-1"
 ];
 Con:=
 [ 5, 9, 14 ]
@@ -3028,8 +3028,8 @@ Lmonod:=[G!
 (1, 8, 14, 4, 9, 15, 5, 12)(2, 7, 13, 3, 10, 16, 6, 11)
 ];
 connected_Lmonod:=[
-"c^-2a", 
-"ca", 
+"ac^-2", 
+"ac", 
 "c^-3"
 ];
 Con:=
@@ -3057,9 +3057,9 @@ Lmonod:=[G!
 (1, 3, 5, 4, 6, 2)
 ];
 connected_Lmonod:=[
-"db^5a", 
-"db^4a", 
-"dcb"
+"ab^5d", 
+"ab^4d", 
+"bcd"
 ];
 Con:=
 [ 6, 9, 10 ]
@@ -3086,9 +3086,9 @@ Lmonod:=[G!
 (1, 3, 2, 4, 6, 5)
 ];
 connected_Lmonod:=[
-"b^2a", 
-"dba", 
-"cb"
+"ab^2", 
+"abd", 
+"bc"
 ];
 Con:=
 [ 5, 8, 10 ]
@@ -3115,8 +3115,8 @@ Lmonod:=[G!
 (1, 12, 2, 11)(3, 8, 16, 9, 6, 13, 4, 7, 15, 10, 5, 14)
 ];
 connected_Lmonod:=[
-"cba^3", 
-"b^-2ca^4", 
+"a^3bc", 
+"a^4cb^-2", 
 "a^5"
 ];
 Con:=
@@ -3144,9 +3144,9 @@ Lmonod:=[G!
 (1, 13, 5, 12, 16, 7, 2, 14, 6, 11, 15, 8)(3, 9, 4, 10)
 ];
 connected_Lmonod:=[
-"cba^3", 
+"a^3bc", 
 "a^4", 
-"b^-2cba^5"
+"a^5bcb^-2"
 ];
 Con:=
 [ 3, 5, 13 ]
@@ -3173,9 +3173,9 @@ Lmonod:=[G!
 (1, 9, 6, 12, 3, 8, 2, 10, 5, 11, 4, 7)(13, 15, 14, 16)
 ];
 connected_Lmonod:=[
-"cba^3", 
-"b^-2cba^2", 
-"ba"
+"a^3bc", 
+"a^2bcb^-2", 
+"ab"
 ];
 Con:=
 [ 3, 4, 14 ]
@@ -3202,9 +3202,9 @@ Lmonod:=[G!
 (1, 13, 3, 11, 15, 9, 2, 14, 4, 12, 16, 10)(5, 7, 6, 8)
 ];
 connected_Lmonod:=[
-"cba^3", 
-"b^-2a^2", 
-"b^-2cba"
+"a^3bc", 
+"a^2b^-2", 
+"abcb^-2"
 ];
 Con:=
 [ 3, 4, 12 ]
@@ -3231,9 +3231,9 @@ Lmonod:=[G!
 (1, 3, 10, 12, 7, 9, 4, 6)(2, 5, 8, 11)
 ];
 connected_Lmonod:=[
-"b^2a", 
-"dc^-1b^2", 
-"d^-1ba"
+"ab^2", 
+"b^2c^-1d", 
+"abd^-1"
 ];
 Con:=
 [ 3, 4, 9 ]
@@ -3260,9 +3260,9 @@ Lmonod:=[G!
 (1, 3, 4, 6, 7, 9, 10, 12)(2, 11, 8, 5)
 ];
 connected_Lmonod:=[
-"b^2a", 
-"d^-1cb^2", 
-"dba"
+"ab^2", 
+"b^2cd^-1", 
+"abd"
 ];
 Con:=
 [ 3, 4, 10 ]
@@ -3285,13 +3285,13 @@ trans_gp_label:="N/A";
 sign:=[0, 2, 3, 7];
 Lmonod:=[G!
 (1, 2)(4, 5), G!
-(1, 4, 6)(2, 3, 7), G!
-(1, 6, 5, 4, 2, 7, 3)
+(1, 5, 3)(2, 6, 7), G!
+(1, 3, 4, 5, 2, 7, 6)
 ];
 connected_Lmonod:=[
 "(1, 2)(4, 5)", 
-"(1, 4, 6)(2, 3, 7)", 
-"(1, 6, 5, 4, 2, 7, 3)"
+"(1, 5, 3)(2, 6, 7)", 
+"(1, 3, 4, 5, 2, 7, 6)"
 ];
 Con:=
 [ 2, 3, 6 ]

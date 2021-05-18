@@ -395,9 +395,9 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"b^2a^2", 
-"b^2a^2", 
-"b^2a"
+"a^2b^2", 
+"a^2b^2", 
+"ab^2"
 ];
 Con:=
 [ 4, 7, 7, 8 ]
@@ -429,8 +429,8 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a", 
 "a", 
-"b^2a^2", 
-"ba^2"
+"a^2b^2", 
+"a^2b"
 ];
 Con:=
 [ 4, 4, 7, 9 ]
@@ -462,8 +462,8 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a", 
 "a^2", 
-"ba", 
-"b^2a^2"
+"ab", 
+"a^2b^2"
 ];
 Con:=
 [ 4, 5, 6, 7 ]
@@ -495,8 +495,8 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a", 
 "a^2", 
-"b^2a", 
-"ba^2"
+"ab^2", 
+"a^2b"
 ];
 Con:=
 [ 4, 5, 8, 9 ]
@@ -527,9 +527,9 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"ba", 
-"ba^2", 
-"ba^2"
+"ab", 
+"a^2b", 
+"a^2b"
 ];
 Con:=
 [ 4, 6, 9, 9 ]
@@ -560,9 +560,9 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a^2", 
-"b^2a^2", 
-"b^2a", 
-"b^2a"
+"a^2b^2", 
+"ab^2", 
+"ab^2"
 ];
 Con:=
 [ 5, 7, 8, 8 ]
@@ -594,8 +594,8 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a^2", 
 "a^2", 
-"ba", 
-"b^2a"
+"ab", 
+"ab^2"
 ];
 Con:=
 [ 5, 5, 6, 8 ]
@@ -626,9 +626,9 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a^2", 
-"ba", 
-"ba", 
-"ba^2"
+"ab", 
+"ab", 
+"a^2b"
 ];
 Con:=
 [ 5, 6, 6, 9 ]
@@ -659,9 +659,9 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b", 
-"b^2a^2", 
-"b^2a^2", 
-"ba^2"
+"a^2b^2", 
+"a^2b^2", 
+"a^2b"
 ];
 Con:=
 [ 2, 7, 7, 9 ]
@@ -694,7 +694,7 @@ connected_Lmonod:=[
 "b", 
 "a", 
 "a", 
-"b^2a"
+"ab^2"
 ];
 Con:=
 [ 2, 4, 4, 8 ]
@@ -726,8 +726,8 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b", 
 "a", 
-"ba", 
-"ba"
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 4, 6, 6 ]
@@ -760,7 +760,7 @@ connected_Lmonod:=[
 "b", 
 "a^2", 
 "a^2", 
-"b^2a^2"
+"a^2b^2"
 ];
 Con:=
 [ 2, 5, 5, 7 ]
@@ -792,8 +792,8 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b", 
 "a^2", 
-"ba^2", 
-"ba^2"
+"a^2b", 
+"a^2b"
 ];
 Con:=
 [ 2, 5, 9, 9 ]
@@ -825,8 +825,8 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b", 
 "b", 
-"b^2a^2", 
-"b^2a"
+"a^2b^2", 
+"ab^2"
 ];
 Con:=
 [ 2, 2, 7, 8 ]
@@ -859,7 +859,7 @@ connected_Lmonod:=[
 "b", 
 "b", 
 "a", 
-"ba^2"
+"a^2b"
 ];
 Con:=
 [ 2, 2, 4, 9 ]
@@ -892,7 +892,7 @@ connected_Lmonod:=[
 "b", 
 "b", 
 "a^2", 
-"ba"
+"ab"
 ];
 Con:=
 [ 2, 2, 5, 6 ]
@@ -957,8 +957,8 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b", 
 "b^2", 
-"ba", 
-"b^2a^2"
+"ab", 
+"a^2b^2"
 ];
 Con:=
 [ 2, 3, 6, 7 ]
@@ -990,8 +990,8 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b", 
 "b^2", 
-"b^2a", 
-"ba^2"
+"ab^2", 
+"a^2b"
 ];
 Con:=
 [ 2, 3, 8, 9 ]
@@ -1022,9 +1022,9 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b", 
-"ba", 
-"b^2a", 
-"b^2a"
+"ab", 
+"ab^2", 
+"ab^2"
 ];
 Con:=
 [ 2, 6, 8, 8 ]
@@ -1055,9 +1055,9 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^2", 
-"b^2a^2", 
-"ba^2", 
-"ba^2"
+"a^2b^2", 
+"a^2b", 
+"a^2b"
 ];
 Con:=
 [ 3, 7, 9, 9 ]
@@ -1090,7 +1090,7 @@ connected_Lmonod:=[
 "b^2", 
 "a", 
 "a", 
-"ba"
+"ab"
 ];
 Con:=
 [ 3, 4, 4, 6 ]
@@ -1122,8 +1122,8 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b^2", 
 "a", 
-"b^2a", 
-"b^2a"
+"ab^2", 
+"ab^2"
 ];
 Con:=
 [ 3, 4, 8, 8 ]
@@ -1155,8 +1155,8 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b^2", 
 "a^2", 
-"b^2a^2", 
-"b^2a^2"
+"a^2b^2", 
+"a^2b^2"
 ];
 Con:=
 [ 3, 5, 7, 7 ]
@@ -1189,7 +1189,7 @@ connected_Lmonod:=[
 "b^2", 
 "a^2", 
 "a^2", 
-"ba^2"
+"a^2b"
 ];
 Con:=
 [ 3, 5, 5, 9 ]
@@ -1222,7 +1222,7 @@ connected_Lmonod:=[
 "b^2", 
 "b^2", 
 "a", 
-"b^2a^2"
+"a^2b^2"
 ];
 Con:=
 [ 3, 3, 4, 7 ]
@@ -1255,7 +1255,7 @@ connected_Lmonod:=[
 "b^2", 
 "b^2", 
 "a^2", 
-"b^2a"
+"ab^2"
 ];
 Con:=
 [ 3, 3, 5, 8 ]
@@ -1287,8 +1287,8 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "b^2", 
 "b^2", 
-"ba", 
-"ba^2"
+"ab", 
+"a^2b"
 ];
 Con:=
 [ 3, 3, 6, 9 ]
@@ -1319,9 +1319,9 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^2", 
-"ba", 
-"ba", 
-"b^2a"
+"ab", 
+"ab", 
+"ab^2"
 ];
 Con:=
 [ 3, 6, 6, 8 ]
@@ -1351,10 +1351,10 @@ Lmonod:=[G!
 (1, 8, 3)(2, 6, 4)(5, 9, 7)
 ];
 connected_Lmonod:=[
-"ba", 
-"b^2a^2", 
-"b^2a", 
-"ba^2"
+"ab", 
+"a^2b^2", 
+"ab^2", 
+"a^2b"
 ];
 Con:=
 [ 6, 7, 8, 9 ]
@@ -1508,8 +1508,8 @@ Lmonod:=[G!
 (1, 4, 2, 5, 3)
 ];
 connected_Lmonod:=[
-"b^2a", 
-"b^2a", 
+"ab^2", 
+"ab^2", 
 "b^3", 
 "b^2"
 ];
@@ -1541,8 +1541,8 @@ Lmonod:=[G!
 (1, 4, 2, 5, 3)
 ];
 connected_Lmonod:=[
-"b^2a", 
-"b^3a", 
+"ab^2", 
+"ab^3", 
 "b^2", 
 "b^2"
 ];
@@ -1574,7 +1574,7 @@ Lmonod:=[G!
 (1, 5, 4, 3, 2)
 ];
 connected_Lmonod:=[
-"b^2a", 
+"ab^2", 
 "a", 
 "b", 
 "b"
@@ -1607,8 +1607,8 @@ Lmonod:=[G!
 (1, 5, 4, 3, 2)
 ];
 connected_Lmonod:=[
-"b^2a", 
-"b^2a", 
+"ab^2", 
+"ab^2", 
 "b^4", 
 "b"
 ];
@@ -1706,8 +1706,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^5", 
-"b^2a", 
-"b^5a"
+"ab^2", 
+"ab^5"
 ];
 Con:=
 [ 8, 10, 12 ]
@@ -1737,8 +1737,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b", 
-"b^4a", 
-"ba"
+"ab^4", 
+"ab"
 ];
 Con:=
 [ 7, 9, 11 ]
@@ -1830,7 +1830,7 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"ba", 
+"ab", 
 "b^3"
 ];
 Con:=
@@ -1861,7 +1861,7 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"b^3a", 
+"ab^3", 
 "b"
 ];
 Con:=
@@ -2015,9 +2015,9 @@ Lmonod:=[G!
 (1, 4, 3, 6, 5, 2)
 ];
 connected_Lmonod:=[
-"ba^4", 
-"b^2a", 
-"ba"
+"a^4b", 
+"ab^2", 
+"ab"
 ];
 Con:=
 [ 5, 8, 8 ]
@@ -2047,8 +2047,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b", 
-"b^2a", 
-"ba^5"
+"ab^2", 
+"a^5b"
 ];
 Con:=
 [ 7, 8, 9 ]
@@ -2077,8 +2077,8 @@ Lmonod:=[G!
 (1, 6, 5, 4, 3, 2)
 ];
 connected_Lmonod:=[
-"b^2a^2", 
-"b^2a^5", 
+"a^2b^2", 
+"a^5b^2", 
 "a^5"
 ];
 Con:=
@@ -2109,8 +2109,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^2", 
-"b^3a", 
-"ba^2"
+"ab^3", 
+"a^2b"
 ];
 Con:=
 [ 3, 13, 16 ]
@@ -2140,8 +2140,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^2", 
-"b^5a", 
-"b^5a^2"
+"ab^5", 
+"a^2b^5"
 ];
 Con:=
 [ 3, 15, 18 ]
@@ -2171,8 +2171,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^2", 
-"b^3a^2", 
-"ba"
+"a^2b^3", 
+"ab"
 ];
 Con:=
 [ 3, 14, 17 ]
@@ -2201,9 +2201,9 @@ Lmonod:=[G!
 (1, 16, 5, 2, 15, 6)(3, 11, 8, 4, 12, 7)(9, 17, 14, 10, 18, 13)
 ];
 connected_Lmonod:=[
-"b^4a^2", 
+"a^2b^4", 
 "b^5", 
-"b^3a"
+"ab^3"
 ];
 Con:=
 [ 10, 12, 13 ]
@@ -2232,9 +2232,9 @@ Lmonod:=[G!
 (1, 18, 3, 2, 17, 4)(5, 9, 8, 6, 10, 7)(11, 15, 14, 12, 16, 13)
 ];
 connected_Lmonod:=[
-"b^4a^2", 
-"b^3a^2", 
-"b^5a^2"
+"a^2b^4", 
+"a^2b^3", 
+"a^2b^5"
 ];
 Con:=
 [ 10, 14, 18 ]
@@ -2263,9 +2263,9 @@ Lmonod:=[G!
 (1, 4, 17, 2, 3, 18)(5, 7, 10, 6, 8, 9)(11, 13, 16, 12, 14, 15)
 ];
 connected_Lmonod:=[
-"b^4a^2", 
+"a^2b^4", 
 "b", 
-"ba"
+"ab"
 ];
 Con:=
 [ 10, 11, 17 ]
@@ -2294,9 +2294,9 @@ Lmonod:=[G!
 (1, 6, 15, 2, 5, 16)(3, 7, 12, 4, 8, 11)(9, 13, 18, 10, 14, 17)
 ];
 connected_Lmonod:=[
-"b^4a", 
+"ab^4", 
 "b^5", 
-"b^3a^2"
+"a^2b^3"
 ];
 Con:=
 [ 7, 12, 14 ]
@@ -2325,9 +2325,9 @@ Lmonod:=[G!
 (1, 9, 12, 2, 10, 11)(3, 6, 13, 4, 5, 14)(7, 15, 18, 8, 16, 17)
 ];
 connected_Lmonod:=[
-"b^4a", 
-"b^3a", 
-"b^5a"
+"ab^4", 
+"ab^3", 
+"ab^5"
 ];
 Con:=
 [ 7, 13, 15 ]
@@ -2356,9 +2356,9 @@ Lmonod:=[G!
 (1, 11, 10, 2, 12, 9)(3, 14, 5, 4, 13, 6)(7, 17, 16, 8, 18, 15)
 ];
 connected_Lmonod:=[
-"b^4a", 
+"ab^4", 
 "b", 
-"ba^2"
+"a^2b"
 ];
 Con:=
 [ 7, 11, 16 ]
@@ -2388,8 +2388,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^4", 
-"b^3a", 
-"b^5a^2"
+"ab^3", 
+"a^2b^5"
 ];
 Con:=
 [ 4, 13, 18 ]
@@ -2419,8 +2419,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^4", 
-"ba^2", 
-"ba"
+"a^2b", 
+"ab"
 ];
 Con:=
 [ 4, 16, 17 ]
@@ -2450,8 +2450,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^4", 
-"b^3a^2", 
-"b^5a"
+"a^2b^3", 
+"ab^5"
 ];
 Con:=
 [ 4, 14, 15 ]
@@ -2480,9 +2480,9 @@ Lmonod:=[G!
 (1, 9, 12, 2, 10, 11)(3, 6, 13, 4, 5, 14)(7, 15, 18, 8, 16, 17)
 ];
 connected_Lmonod:=[
-"b^2a^2", 
+"a^2b^2", 
 "b^5", 
-"b^5a"
+"ab^5"
 ];
 Con:=
 [ 8, 12, 15 ]
@@ -2511,9 +2511,9 @@ Lmonod:=[G!
 (1, 11, 10, 2, 12, 9)(3, 14, 5, 4, 13, 6)(7, 17, 16, 8, 18, 15)
 ];
 connected_Lmonod:=[
-"b^2a^2", 
-"b^3a^2", 
-"ba^2"
+"a^2b^2", 
+"a^2b^3", 
+"a^2b"
 ];
 Con:=
 [ 8, 14, 16 ]
@@ -2542,9 +2542,9 @@ Lmonod:=[G!
 (1, 16, 5, 2, 15, 6)(3, 11, 8, 4, 12, 7)(9, 17, 14, 10, 18, 13)
 ];
 connected_Lmonod:=[
-"b^2a^2", 
+"a^2b^2", 
 "b", 
-"b^3a"
+"ab^3"
 ];
 Con:=
 [ 8, 11, 13 ]
@@ -2575,7 +2575,7 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a", 
 "b^5", 
-"ba^2"
+"a^2b"
 ];
 Con:=
 [ 6, 12, 16 ]
@@ -2605,8 +2605,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"b^5a", 
-"ba"
+"ab^5", 
+"ab"
 ];
 Con:=
 [ 6, 15, 17 ]
@@ -2637,7 +2637,7 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a", 
 "b", 
-"b^5a^2"
+"a^2b^5"
 ];
 Con:=
 [ 6, 11, 18 ]
@@ -2666,9 +2666,9 @@ Lmonod:=[G!
 (1, 18, 3, 2, 17, 4)(5, 9, 8, 6, 10, 7)(11, 15, 14, 12, 16, 13)
 ];
 connected_Lmonod:=[
-"b^2a", 
+"ab^2", 
 "b^5", 
-"b^5a^2"
+"a^2b^5"
 ];
 Con:=
 [ 9, 12, 18 ]
@@ -2697,9 +2697,9 @@ Lmonod:=[G!
 (1, 4, 17, 2, 3, 18)(5, 7, 10, 6, 8, 9)(11, 13, 16, 12, 14, 15)
 ];
 connected_Lmonod:=[
-"b^2a", 
-"b^3a", 
-"ba"
+"ab^2", 
+"ab^3", 
+"ab"
 ];
 Con:=
 [ 9, 13, 17 ]
@@ -2728,9 +2728,9 @@ Lmonod:=[G!
 (1, 6, 15, 2, 5, 16)(3, 7, 12, 4, 8, 11)(9, 13, 18, 10, 14, 17)
 ];
 connected_Lmonod:=[
-"b^2a", 
+"ab^2", 
 "b", 
-"b^3a^2"
+"a^2b^3"
 ];
 Con:=
 [ 9, 11, 14 ]
@@ -2761,7 +2761,7 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a^2", 
 "b^5", 
-"ba"
+"ab"
 ];
 Con:=
 [ 5, 12, 17 ]
@@ -2791,8 +2791,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a^2", 
-"ba^2", 
-"b^5a^2"
+"a^2b", 
+"a^2b^5"
 ];
 Con:=
 [ 5, 16, 18 ]
@@ -2823,7 +2823,7 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a^2", 
 "b", 
-"b^5a"
+"ab^5"
 ];
 Con:=
 [ 5, 11, 15 ]
@@ -2855,8 +2855,8 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a^3", 
 "a^3", 
-"ba^4", 
-"b^2a^2"
+"a^4b", 
+"a^2b^2"
 ];
 Con:=
 [ 2, 2, 5, 6 ]
@@ -2887,9 +2887,9 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a^3", 
-"ba^3", 
-"ba^4", 
-"ba^2"
+"a^3b", 
+"a^4b", 
+"a^2b"
 ];
 Con:=
 [ 2, 2, 5, 6 ]
@@ -2919,10 +2919,10 @@ Lmonod:=[G!
 (1, 3, 8)(2, 4, 6)(5, 7, 9)
 ];
 connected_Lmonod:=[
-"ca", 
+"ac", 
 "a", 
-"c^2b^2", 
-"c^2b"
+"b^2c^2", 
+"bc^2"
 ];
 Con:=
 [ 2, 2, 5, 6 ]
@@ -2952,10 +2952,10 @@ Lmonod:=[G!
 (1, 8, 3)(2, 6, 4)(5, 9, 7)
 ];
 connected_Lmonod:=[
-"ca", 
-"cb^2a", 
-"c^2b^2", 
-"cb^2"
+"ac", 
+"ab^2c", 
+"b^2c^2", 
+"b^2c"
 ];
 Con:=
 [ 2, 2, 5, 6 ]
@@ -2985,10 +2985,10 @@ Lmonod:=[G!
 (1, 5, 6)(2, 3, 7)(4, 8, 9)
 ];
 connected_Lmonod:=[
-"ca", 
-"cb^2a", 
+"ac", 
+"ab^2c", 
 "c^2", 
-"cb"
+"bc"
 ];
 Con:=
 [ 2, 2, 3, 5 ]
@@ -3018,10 +3018,10 @@ Lmonod:=[G!
 (1, 5, 6)(2, 3, 7)(4, 8, 9)
 ];
 connected_Lmonod:=[
-"ca", 
-"c^2b^2a", 
+"ac", 
+"ab^2c^2", 
 "c", 
-"cb"
+"bc"
 ];
 Con:=
 [ 2, 2, 3, 5 ]
@@ -3051,8 +3051,8 @@ Lmonod:=[G!
 (1, 4, 7)(2, 5, 8)(3, 6, 9)
 ];
 connected_Lmonod:=[
-"ca", 
-"b^2a", 
+"ac", 
+"ab^2", 
 "c", 
 "b"
 ];
@@ -3084,8 +3084,8 @@ Lmonod:=[G!
 (1, 4, 7)(2, 5, 8)(3, 6, 9)
 ];
 connected_Lmonod:=[
-"ca", 
-"c^2b^2a", 
+"ac", 
+"ab^2c^2", 
 "c^2", 
 "b"
 ];
@@ -3117,10 +3117,10 @@ Lmonod:=[G!
 (1, 3, 8)(2, 4, 6)(5, 7, 9)
 ];
 connected_Lmonod:=[
-"ca", 
-"b^2a", 
+"ac", 
+"ab^2", 
 "c^2", 
-"c^2b"
+"bc^2"
 ];
 Con:=
 [ 2, 2, 3, 6 ]
@@ -3150,10 +3150,10 @@ Lmonod:=[G!
 (1, 3, 8)(2, 4, 6)(5, 7, 9)
 ];
 connected_Lmonod:=[
-"ca", 
-"cb^2a", 
+"ac", 
+"ab^2c", 
 "c", 
-"c^2b"
+"bc^2"
 ];
 Con:=
 [ 2, 2, 3, 6 ]
@@ -3183,10 +3183,10 @@ Lmonod:=[G!
 (1, 5, 6)(2, 3, 7)(4, 8, 9)
 ];
 connected_Lmonod:=[
-"ca", 
+"ac", 
 "a", 
 "b^2", 
-"cb"
+"bc"
 ];
 Con:=
 [ 2, 2, 4, 5 ]
@@ -3216,10 +3216,10 @@ Lmonod:=[G!
 (1, 6, 5)(2, 7, 3)(4, 9, 8)
 ];
 connected_Lmonod:=[
-"ca", 
-"c^2b^2a", 
+"ac", 
+"ab^2c^2", 
 "b^2", 
-"c^2b^2"
+"b^2c^2"
 ];
 Con:=
 [ 2, 2, 4, 5 ]
@@ -3249,10 +3249,10 @@ Lmonod:=[G!
 (1, 8, 3)(2, 6, 4)(5, 9, 7)
 ];
 connected_Lmonod:=[
-"ca", 
+"ac", 
 "a", 
 "b", 
-"cb^2"
+"b^2c"
 ];
 Con:=
 [ 2, 2, 4, 6 ]
@@ -3282,10 +3282,10 @@ Lmonod:=[G!
 (1, 8, 3)(2, 6, 4)(5, 9, 7)
 ];
 connected_Lmonod:=[
-"ca", 
-"b^2a", 
+"ac", 
+"ab^2", 
 "b^2", 
-"cb^2"
+"b^2c"
 ];
 Con:=
 [ 2, 2, 4, 6 ]
@@ -3315,7 +3315,7 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"b^4a^-1", 
+"a^-1b^4", 
 "b"
 ];
 Con:=
@@ -3346,7 +3346,7 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"b^2a^-1", 
+"a^-1b^2", 
 "b^3"
 ];
 Con:=
@@ -3377,8 +3377,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^5", 
-"b^2a", 
-"b^3a"
+"ab^2", 
+"ab^3"
 ];
 Con:=
 [ 2, 15, 20 ]
@@ -3408,8 +3408,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^5", 
-"b^8a", 
-"b^7a"
+"ab^8", 
+"ab^7"
 ];
 Con:=
 [ 2, 14, 17 ]
@@ -3439,8 +3439,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^5", 
-"b^6a", 
-"b^9a"
+"ab^6", 
+"ab^9"
 ];
 Con:=
 [ 2, 13, 19 ]
@@ -3470,8 +3470,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "b^5", 
-"b^4a", 
-"ba"
+"ab^4", 
+"ab"
 ];
 Con:=
 [ 2, 16, 18 ]
@@ -3502,7 +3502,7 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a", 
 "b", 
-"b^9a"
+"ab^9"
 ];
 Con:=
 [ 3, 12, 19 ]
@@ -3533,7 +3533,7 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a", 
 "b^3", 
-"b^7a"
+"ab^7"
 ];
 Con:=
 [ 3, 11, 17 ]
@@ -3564,7 +3564,7 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a", 
 "b^7", 
-"b^3a"
+"ab^3"
 ];
 Con:=
 [ 3, 10, 20 ]
@@ -3595,7 +3595,7 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a", 
 "b^9", 
-"ba"
+"ab"
 ];
 Con:=
 [ 3, 9, 18 ]
@@ -3624,9 +3624,9 @@ Lmonod:=[G!
 (1, 3, 5, 8, 9, 11, 14, 16, 18, 19)(2, 4, 6, 7, 10, 12, 13, 15, 17, 20)
 ];
 connected_Lmonod:=[
-"b^5a", 
+"ab^5", 
 "b", 
-"b^4a"
+"ab^4"
 ];
 Con:=
 [ 4, 12, 16 ]
@@ -3655,9 +3655,9 @@ Lmonod:=[G!
 (1, 8, 14, 19, 5, 11, 18, 3, 9, 16)(2, 7, 13, 20, 6, 12, 17, 4, 10, 15)
 ];
 connected_Lmonod:=[
-"b^5a", 
+"ab^5", 
 "b^3", 
-"b^2a"
+"ab^2"
 ];
 Con:=
 [ 4, 11, 15 ]
@@ -3686,9 +3686,9 @@ Lmonod:=[G!
 (1, 16, 9, 3, 18, 11, 5, 19, 14, 8)(2, 15, 10, 4, 17, 12, 6, 20, 13, 7)
 ];
 connected_Lmonod:=[
-"b^5a", 
+"ab^5", 
 "b^7", 
-"b^8a"
+"ab^8"
 ];
 Con:=
 [ 4, 10, 14 ]
@@ -3717,9 +3717,9 @@ Lmonod:=[G!
 (1, 19, 18, 16, 14, 11, 9, 8, 5, 3)(2, 20, 17, 15, 13, 12, 10, 7, 6, 4)
 ];
 connected_Lmonod:=[
-"b^5a", 
+"ab^5", 
 "b^9", 
-"b^6a"
+"ab^6"
 ];
 Con:=
 [ 4, 9, 13 ]
@@ -3748,9 +3748,9 @@ Lmonod:=[G!
 (1, 2, 3, 6)(4, 5)
 ];
 connected_Lmonod:=[
-"c^2b^2", 
+"b^2c^2", 
 "a", 
-"cba^-1"
+"a^-1bc"
 ];
 Con:=
 [ 3, 5, 6 ]
@@ -3781,7 +3781,7 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "c", 
 "a", 
-"c^2a^-1"
+"a^-1c^2"
 ];
 Con:=
 [ 4, 5, 6 ]
@@ -3810,8 +3810,8 @@ Lmonod:=[G!
 (1, 12, 5, 4, 9, 8)(2, 7, 6, 11, 10, 3)
 ];
 connected_Lmonod:=[
-"c^5ba^2", 
-"c^5ba", 
+"a^2bc^5", 
+"abc^5", 
 "c^5"
 ];
 Con:=
@@ -3841,8 +3841,8 @@ Lmonod:=[G!
 (1, 8, 9, 4, 5, 12)(2, 3, 10, 11, 6, 7)
 ];
 connected_Lmonod:=[
-"c^3ba^2", 
-"c^5ba", 
+"a^2bc^3", 
+"abc^5", 
 "c"
 ];
 Con:=
@@ -3872,8 +3872,8 @@ Lmonod:=[G!
 (1, 12, 5, 4, 9, 8)(2, 7, 6, 11, 10, 3)
 ];
 connected_Lmonod:=[
-"c^3ba^2", 
-"cba", 
+"a^2bc^3", 
+"abc", 
 "c^5"
 ];
 Con:=
@@ -3903,9 +3903,9 @@ Lmonod:=[G!
 (1, 3, 5, 7, 9, 11)(2, 4, 6, 8, 10, 12)
 ];
 connected_Lmonod:=[
-"ba", 
-"ca^2", 
-"c^2b"
+"ab", 
+"a^2c", 
+"bc^2"
 ];
 Con:=
 [ 5, 10, 12 ]
@@ -3934,9 +3934,9 @@ Lmonod:=[G!
 (1, 11, 9, 7, 5, 3)(2, 12, 10, 8, 6, 4)
 ];
 connected_Lmonod:=[
-"ba", 
-"c^5a^2", 
-"c^4b"
+"ab", 
+"a^2c^5", 
+"bc^4"
 ];
 Con:=
 [ 5, 8, 11 ]
@@ -3965,9 +3965,9 @@ Lmonod:=[G!
 (1, 11, 9, 7, 5, 3)(2, 12, 10, 8, 6, 4)
 ];
 connected_Lmonod:=[
-"c^4ba", 
-"ca^2", 
-"c^4b"
+"abc^4", 
+"a^2c", 
+"bc^4"
 ];
 Con:=
 [ 7, 10, 11 ]
@@ -3996,9 +3996,9 @@ Lmonod:=[G!
 (1, 2, 3, 6, 5, 4)
 ];
 connected_Lmonod:=[
-"cb^3a", 
+"ab^3c", 
 "b", 
-"cb^4a"
+"ab^4c"
 ];
 Con:=
 [ 4, 8, 9 ]
@@ -4094,8 +4094,8 @@ Id(G), G!
 connected_Lmonod:=[
 "Id(G)", 
 "a", 
-"ba", 
-"ba"
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2 ]
@@ -4120,15 +4120,15 @@ H:=SmallGroup(12,4);
 signH:=[0, 2, 2, 2, 2, 2];
 Lmonod:=[G!
 Id(G), G!
-(1, 2, 3), G!
+(1, 3), G!
 (1, 2), G!
 (1, 2)
 ];
 connected_Lmonod:=[
 "Id(G)", 
-"b", 
-"ba", 
-"ba"
+"ab^2", 
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2 ]
@@ -4153,15 +4153,15 @@ H:=SmallGroup(12,4);
 signH:=[0, 2, 2, 2, 2, 2];
 Lmonod:=[G!
 Id(G), G!
-(1, 3, 2), G!
+(1, 2, 3), G!
 (1, 2), G!
 (1, 2)
 ];
 connected_Lmonod:=[
 "Id(G)", 
-"b^2", 
-"ba", 
-"ba"
+"b", 
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2 ]
@@ -4186,15 +4186,15 @@ H:=SmallGroup(12,4);
 signH:=[0, 2, 2, 2, 2, 2];
 Lmonod:=[G!
 Id(G), G!
-(1, 3), G!
+(1, 3, 2), G!
 (1, 2), G!
 (1, 2)
 ];
 connected_Lmonod:=[
 "Id(G)", 
-"b^2a", 
-"ba", 
-"ba"
+"b^2", 
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2 ]
@@ -4226,8 +4226,8 @@ Id(G), G!
 connected_Lmonod:=[
 "a", 
 "Id(G)", 
-"ba", 
-"ba"
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2 ]
@@ -4259,8 +4259,8 @@ Lmonod:=[G!
 connected_Lmonod:=[
 "a", 
 "a", 
-"ba", 
-"ba"
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2 ]
@@ -4291,8 +4291,8 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"b^2a", 
-"ba", 
+"ab^2", 
+"ab", 
 "a"
 ];
 Con:=
@@ -4302,7 +4302,7 @@ Con_label:=
 [ "2A", "2A" ]
 ;
 cc_label:=
-[ 1, 8 ]
+[ 1, 7 ]
 ;
 braid:=
 [ 0, 0 ]
@@ -4317,16 +4317,16 @@ sign:=[1, 2, 2];
 H:=SmallGroup(12,4);
 signH:=[0, 2, 2, 2, 2, 2];
 Lmonod:=[G!
-(1, 2, 3), G!
-Id(G), G!
 (1, 2), G!
-(1, 2)
+(2, 3), G!
+(1, 2), G!
+(2, 3)
 ];
 connected_Lmonod:=[
-"b", 
-"Id(G)", 
-"ba", 
-"ba"
+"ab", 
+"a", 
+"ab", 
+"a"
 ];
 Con:=
 [ 2, 2 ]
@@ -4350,16 +4350,16 @@ sign:=[1, 2, 2];
 H:=SmallGroup(12,4);
 signH:=[0, 2, 2, 2, 2, 2];
 Lmonod:=[G!
-(1, 2, 3), G!
-(1, 2, 3), G!
+(1, 3), G!
+Id(G), G!
 (1, 2), G!
 (1, 2)
 ];
 connected_Lmonod:=[
-"b", 
-"b", 
-"ba", 
-"ba"
+"ab^2", 
+"Id(G)", 
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2 ]
@@ -4383,16 +4383,49 @@ sign:=[1, 2, 2];
 H:=SmallGroup(12,4);
 signH:=[0, 2, 2, 2, 2, 2];
 Lmonod:=[G!
-(1, 2, 3), G!
-(1, 3, 2), G!
+(1, 3), G!
+(1, 2), G!
+(1, 2), G!
+(2, 3)
+];
+connected_Lmonod:=[
+"ab^2", 
+"ab", 
+"ab", 
+"a"
+];
+Con:=
+[ 2, 2 ]
+;
+Con_label:=
+[ "2A", "2A" ]
+;
+cc_label:=
+[ 1, 12 ]
+;
+braid:=
+[ 0, 0 ]
+;
+topo:=
+[ 0, 0 ]
+;
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+trans_gp_label:="3T2";
+sign:=[1, 2, 2];
+H:=SmallGroup(12,4);
+signH:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3), G!
+(1, 3), G!
 (1, 2), G!
 (1, 2)
 ];
 connected_Lmonod:=[
-"b", 
-"b^2", 
-"ba", 
-"ba"
+"ab^2", 
+"ab^2", 
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2 ]
@@ -4416,16 +4449,16 @@ sign:=[1, 2, 2];
 H:=SmallGroup(12,4);
 signH:=[0, 2, 2, 2, 2, 2];
 Lmonod:=[G!
+(1, 2, 3), G!
+Id(G), G!
 (1, 2), G!
-(2, 3), G!
-(1, 2), G!
-(2, 3)
+(1, 2)
 ];
 connected_Lmonod:=[
-"ba", 
-"a", 
-"ba", 
-"a"
+"b", 
+"Id(G)", 
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2 ]
@@ -4449,82 +4482,16 @@ sign:=[1, 2, 2];
 H:=SmallGroup(12,4);
 signH:=[0, 2, 2, 2, 2, 2];
 Lmonod:=[G!
-(1, 3, 2), G!
-Id(G), G!
-(1, 2), G!
-(1, 2)
-];
-connected_Lmonod:=[
-"b^2", 
-"Id(G)", 
-"ba", 
-"ba"
-];
-Con:=
-[ 2, 2 ]
-;
-Con_label:=
-[ "2A", "2A" ]
-;
-cc_label:=
-[ 1, 17 ]
-;
-braid:=
-[ 0, 0 ]
-;
-topo:=
-[ 0, 0 ]
-;
-AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
-G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
-trans_gp_label:="3T2";
-sign:=[1, 2, 2];
-H:=SmallGroup(12,4);
-signH:=[0, 2, 2, 2, 2, 2];
-Lmonod:=[G!
-(1, 3, 2), G!
+(1, 2, 3), G!
 (1, 2, 3), G!
 (1, 2), G!
 (1, 2)
 ];
 connected_Lmonod:=[
-"b^2", 
 "b", 
-"ba", 
-"ba"
-];
-Con:=
-[ 2, 2 ]
-;
-Con_label:=
-[ "2A", "2A" ]
-;
-cc_label:=
-[ 1, 18 ]
-;
-braid:=
-[ 0, 0 ]
-;
-topo:=
-[ 0, 0 ]
-;
-AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
-G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
-trans_gp_label:="3T2";
-sign:=[1, 2, 2];
-H:=SmallGroup(12,4);
-signH:=[0, 2, 2, 2, 2, 2];
-Lmonod:=[G!
-(1, 3, 2), G!
-(1, 3, 2), G!
-(1, 2), G!
-(1, 2)
-];
-connected_Lmonod:=[
-"b^2", 
-"b^2", 
-"ba", 
-"ba"
+"b", 
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2 ]
@@ -4548,16 +4515,16 @@ sign:=[1, 2, 2];
 H:=SmallGroup(12,4);
 signH:=[0, 2, 2, 2, 2, 2];
 Lmonod:=[G!
-(1, 3), G!
-Id(G), G!
+(1, 2, 3), G!
+(1, 3, 2), G!
 (1, 2), G!
 (1, 2)
 ];
 connected_Lmonod:=[
-"b^2a", 
-"Id(G)", 
-"ba", 
-"ba"
+"b", 
+"b^2", 
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2 ]
@@ -4581,16 +4548,16 @@ sign:=[1, 2, 2];
 H:=SmallGroup(12,4);
 signH:=[0, 2, 2, 2, 2, 2];
 Lmonod:=[G!
-(1, 3), G!
+(1, 3, 2), G!
+Id(G), G!
 (1, 2), G!
-(1, 2), G!
-(2, 3)
+(1, 2)
 ];
 connected_Lmonod:=[
-"b^2a", 
-"ba", 
-"ba", 
-"a"
+"b^2", 
+"Id(G)", 
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2 ]
@@ -4614,16 +4581,49 @@ sign:=[1, 2, 2];
 H:=SmallGroup(12,4);
 signH:=[0, 2, 2, 2, 2, 2];
 Lmonod:=[G!
-(1, 3), G!
-(1, 3), G!
+(1, 3, 2), G!
+(1, 2, 3), G!
 (1, 2), G!
 (1, 2)
 ];
 connected_Lmonod:=[
-"b^2a", 
-"b^2a", 
-"ba", 
-"ba"
+"b^2", 
+"b", 
+"ab", 
+"ab"
+];
+Con:=
+[ 2, 2 ]
+;
+Con_label:=
+[ "2A", "2A" ]
+;
+cc_label:=
+[ 1, 22 ]
+;
+braid:=
+[ 0, 0 ]
+;
+topo:=
+[ 0, 0 ]
+;
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+G:=PermutationGroup<3|[ (1, 3), (1, 2) ]>;
+trans_gp_label:="3T2";
+sign:=[1, 2, 2];
+H:=SmallGroup(12,4);
+signH:=[0, 2, 2, 2, 2, 2];
+Lmonod:=[G!
+(1, 3, 2), G!
+(1, 3, 2), G!
+(1, 2), G!
+(1, 2)
+];
+connected_Lmonod:=[
+"b^2", 
+"b^2", 
+"ab", 
+"ab"
 ];
 Con:=
 [ 2, 2 ]
@@ -4686,7 +4686,7 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"cba^2", 
+"a^2bc", 
 "c"
 ];
 Con:=
@@ -4696,7 +4696,7 @@ Con_label:=
 [ "2A" ]
 ;
 cc_label:=
-[ 1, 3 ]
+[ 1, 1 ]
 ;
 braid:=
 [ 0, 0 ]
@@ -4717,7 +4717,7 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a^2", 
-"ba", 
+"ab", 
 "c"
 ];
 Con:=
@@ -4742,13 +4742,13 @@ sign:=[1, 2];
 H:=SmallGroup(24,12);
 signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
-(1, 4, 3), G!
-(2, 4, 3), G!
+(1, 4, 2), G!
+(1, 3, 2), G!
 (1, 2)(3, 4)
 ];
 connected_Lmonod:=[
-"ba", 
-"a^2", 
+"a^2b", 
+"abc", 
 "c"
 ];
 Con:=
@@ -4758,7 +4758,7 @@ Con_label:=
 [ "2A" ]
 ;
 cc_label:=
-[ 1, 11 ]
+[ 1, 8 ]
 ;
 braid:=
 [ 0, 0 ]
@@ -4773,13 +4773,75 @@ sign:=[1, 2];
 H:=SmallGroup(24,12);
 signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
-(1, 4, 2), G!
-(1, 3, 2), G!
+(1, 3, 4), G!
+(2, 3, 4), G!
 (1, 2)(3, 4)
 ];
 connected_Lmonod:=[
-"ba^2", 
-"cba", 
+"a^2bc", 
+"a", 
+"c"
+];
+Con:=
+[ 2 ]
+;
+Con_label:=
+[ "2A" ]
+;
+cc_label:=
+[ 1, 10 ]
+;
+braid:=
+[ 0, 0 ]
+;
+topo:=
+[ 0, 0 ]
+;
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
+trans_gp_label:="4T4";
+sign:=[1, 2];
+H:=SmallGroup(24,12);
+signH:=[0, 2, 2, 2, 4];
+Lmonod:=[G!
+(1, 2, 3), G!
+(1, 2, 4), G!
+(1, 2)(3, 4)
+];
+connected_Lmonod:=[
+"a^2c", 
+"ac", 
+"c"
+];
+Con:=
+[ 2 ]
+;
+Con_label:=
+[ "2A" ]
+;
+cc_label:=
+[ 1, 14 ]
+;
+braid:=
+[ 0, 0 ]
+;
+topo:=
+[ 0, 0 ]
+;
+AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
+G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
+trans_gp_label:="4T4";
+sign:=[1, 2];
+H:=SmallGroup(24,12);
+signH:=[0, 2, 2, 2, 4];
+Lmonod:=[G!
+(1, 4, 3), G!
+(2, 4, 3), G!
+(1, 2)(3, 4)
+];
+connected_Lmonod:=[
+"ab", 
+"a^2", 
 "c"
 ];
 Con:=
@@ -4804,75 +4866,13 @@ sign:=[1, 2];
 H:=SmallGroup(24,12);
 signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
-(1, 2, 4), G!
-(1, 2, 3), G!
-(1, 2)(3, 4)
-];
-connected_Lmonod:=[
-"ca", 
-"ca^2", 
-"c"
-];
-Con:=
-[ 2 ]
-;
-Con_label:=
-[ "2A" ]
-;
-cc_label:=
-[ 1, 18 ]
-;
-braid:=
-[ 0, 0 ]
-;
-topo:=
-[ 0, 0 ]
-;
-AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
-G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
-trans_gp_label:="4T4";
-sign:=[1, 2];
-H:=SmallGroup(24,12);
-signH:=[0, 2, 2, 2, 4];
-Lmonod:=[G!
-(1, 2, 3), G!
-(1, 2, 4), G!
-(1, 2)(3, 4)
-];
-connected_Lmonod:=[
-"ca^2", 
-"ca", 
-"c"
-];
-Con:=
-[ 2 ]
-;
-Con_label:=
-[ "2A" ]
-;
-cc_label:=
-[ 1, 21 ]
-;
-braid:=
-[ 0, 0 ]
-;
-topo:=
-[ 0, 0 ]
-;
-AddlDataNF(G,trans_gp_label,sign,Lmonod,connected_Lmonod,H,signH,Con,Con_label,cc_label,braid,topo);
-G:=PermutationGroup<4|[ (2, 3, 4), (1, 3, 4) ]>;
-trans_gp_label:="4T4";
-sign:=[1, 2];
-H:=SmallGroup(24,12);
-signH:=[0, 2, 2, 2, 4];
-Lmonod:=[G!
 (1, 3, 2), G!
 (1, 4, 2), G!
 (1, 2)(3, 4)
 ];
 connected_Lmonod:=[
-"cba", 
-"ba^2", 
+"abc", 
+"a^2b", 
 "c"
 ];
 Con:=
@@ -4882,7 +4882,7 @@ Con_label:=
 [ "2A" ]
 ;
 cc_label:=
-[ 1, 28 ]
+[ 1, 20 ]
 ;
 braid:=
 [ 0, 0 ]
@@ -4897,13 +4897,13 @@ sign:=[1, 2];
 H:=SmallGroup(24,12);
 signH:=[0, 2, 2, 2, 4];
 Lmonod:=[G!
-(1, 3, 4), G!
-(2, 3, 4), G!
+(1, 2, 4), G!
+(1, 2, 3), G!
 (1, 2)(3, 4)
 ];
 connected_Lmonod:=[
-"cba^2", 
-"a", 
+"ac", 
+"a^2c", 
 "c"
 ];
 Con:=
@@ -4913,7 +4913,7 @@ Con_label:=
 [ "2A" ]
 ;
 cc_label:=
-[ 1, 30 ]
+[ 1, 22 ]
 ;
 braid:=
 [ 0, 0 ]
@@ -5289,7 +5289,7 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"ba^-1", 
+"a^-1b", 
 "b^4"
 ];
 Con:=
@@ -5319,8 +5319,8 @@ Lmonod:=[G!
 (1, 8, 3, 10, 5, 12, 7, 2, 9, 4, 11, 6)
 ];
 connected_Lmonod:=[
-"b^9a", 
-"b^8a", 
+"ab^9", 
+"ab^8", 
 "b"
 ];
 Con:=
@@ -5350,8 +5350,8 @@ Lmonod:=[G!
 (1, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2)
 ];
 connected_Lmonod:=[
-"b^9a", 
-"b^4a", 
+"ab^9", 
+"ab^4", 
 "b^5"
 ];
 Con:=
@@ -5382,7 +5382,7 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"ba", 
+"ab", 
 "b^11"
 ];
 Con:=
@@ -5413,7 +5413,7 @@ Lmonod:=[G!
 ];
 connected_Lmonod:=[
 "a", 
-"b^5a", 
+"ab^5", 
 "b^7"
 ];
 Con:=
