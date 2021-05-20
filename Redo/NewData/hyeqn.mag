@@ -1,0 +1,804 @@
+/* *********************************************************** 
+
+hyeqn.mag
+
+Copyright (C) 2016 by Jennifer Paulhus
+    
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+This file determines the equation for a hyperelliptic curve of
+any genus given the automorphism group and signature. It is based
+on the work in:
+
+Shaska, Tanush. Determing the automorphism group of a hyperelliptic
+curve, in ISSAC 2003--Proceedings of the 2003 International
+Symposium of Symbolic and Algebraic Computation, pp. 248-254.
+
+
+Questions or comment about the code may be directed to:
+paulhus@math.grinnell.edu 
+
+************************************************************ */
+
+
+
+/* ***************************************
+Function HypEq
+
+Inputs: G       group of automorphisms 
+        sign    signature
+        g       genus
+
+Outcome: a list of equations of curves in
+the corresponding family written for LaTeX.
+If there is an error, the code returns
+[ Error: Not a hyperelliptic curve ]
+
+WARNING: This code assumes the signature
+is sorted in non-decreasing order.
+************************************ */
+HypEq:=function(G,sign,g);
+
+Eqns:=[];
+
+if IsEven(#G) then  /* can't be odd */
+   ZZ:=Integers();
+   SetColumns(0);
+   IdG:=IdentifyGroup(G);
+
+/* used to determine the A4,S4, and A5 cases */
+   g6:= g mod 6;
+   g12:= g mod 12;
+   g30:= g mod 30;
+   
+
+/* ** A4 cases ** */
+   if g6 eq 5 and IdG eq <24,13> then
+      d:=ZZ!((g+1)/6);
+      L1:=[2 : i in [1..d+1]]; 
+      if sign eq [0] cat L1 cat [3,3] then
+         Gx:="y^2=";
+         if d gt 1 then /* parentheses */
+            for j in [1..d] do
+               Gx:=Gx cat "(x^{12}-a_{" cat IntegerToString(j) cat
+               "}x^{10}-33x^8+2a_{" cat IntegerToString(j) cat
+               "}x^6-33x^4-a_{" cat IntegerToString(j) cat "}x^2+1)";
+            end for;   
+            Append(~Eqns,Gx);
+         else
+            Gx:=Gx cat "x^{12}-a_1x^{10}-33x^8+2a_1x^6-33x^4-a_1x^2+1";
+            Append(~Eqns,Gx);
+         end if;
+      end if;   
+
+   elif g6 eq 1 and IdG eq <24,13> then
+      d:=ZZ!((g-1)/6);
+      L1:=[2 : i in [1..d+1]]; 
+      if sign eq [0] cat L1 cat [3,6] then
+         if d gt 0 then
+            Gx:="";
+            for j in [1..d] do
+               Gx:=Gx cat "(x^{12}-a_{" cat IntegerToString(j) cat
+               "}x^{10}-33x^8+2a_{" cat IntegerToString(j) cat
+               "}x^6-33x^4-a_{" cat IntegerToString(j) cat "}x^2+1)";
+            end for;
+            Gx:="y^2=(x^4+2i\\sqrt{3}x^2+1)" cat Gx;  
+            Append(~Eqns,Gx);
+         else
+            Gx:="y^2=x^4+2i\\sqrt{3}x^2+1" cat Gx;  
+            Append(~Eqns,Gx);
+         end if;   
+      end if;   
+
+   elif g6 eq 3 and IdG eq <24,13> and g gt 3 then
+      d:=ZZ!((g-3)/6);
+      L1:=[2 : i in [1..d+1]]; 
+      if sign eq [0] cat L1 cat [6,6] then
+         if d gt 0 then
+            Gx:="";    
+            for j in [1..d] do
+               Gx:=Gx cat "(x^{12}-a_{" cat IntegerToString(j) cat
+               "}x^{10}-33x^8+2a_{" cat IntegerToString(j) cat
+               "}x^6-33x^4-a_{" cat IntegerToString(j) cat "}x^2+1)";
+            end for;   
+            Gx:="y^2=(x^8 +14x^4+1)" cat Gx;  
+            Append(~Eqns,Gx);
+         else
+            Gx:="y^2=x^8 +14x^4+1";  
+            Append(~Eqns,Gx);
+         end if;   
+      end if;   
+
+   elif g6 eq 2 and IdG eq <24,3> and g gt 2 then
+      d:=ZZ!((g-2)/6);
+      L1:=[2 : i in [1..d]]; 
+      if sign eq [0] cat L1 cat [3,3,4] then
+         Gx:="";    
+         for j in [1..d] do
+            Gx:=Gx cat "(x^{12}-a_{" cat IntegerToString(j) cat
+            "}x^{10}-33x^8+2a_{" cat IntegerToString(j) cat
+            "}x^6-33x^4-a_{" cat IntegerToString(j) cat "}x^2+1)";
+         end for;   
+         Gx:="y^2=x(x^4-1)" cat Gx;  
+         Append(~Eqns,Gx);    
+      end if;   
+
+   elif g6 eq 4 and IdG eq <24,3> then
+      d:=ZZ!((g-4)/6);
+      L1:=[2 : i in [1..d]]; 
+      if sign eq [0] cat L1 cat [3,4,6] then
+         Gx:="";    
+         for j in [1..d] do
+            Gx:=Gx cat "(x^{12}-a_{" cat IntegerToString(j) cat
+            "}x^{10}-33x^8+2a_{" cat IntegerToString(j) cat
+            "}x^6-33x^4-a_{" cat IntegerToString(j) cat "}x^2+1)";
+         end for;   
+         Gx:="y^2=x(x^4-1)(x^4+2i\\sqrt{3}x^2+1)" cat Gx;  
+         Append(~Eqns,Gx);
+      end if;   
+
+   elif IdG eq <24,3> and g gt 6 then
+      d:=ZZ!((g-6)/6);
+      L1:=[2 : i in [1..d]]; 
+      if sign eq [0] cat L1 cat [4,6,6] then
+         Gx:="";    
+         for j in [1..d] do
+            Gx:=Gx cat "(x^{12}-a_{" cat IntegerToString(j) cat
+            "}x^{10}-33x^8+2a_{" cat IntegerToString(j) cat
+            "}x^6-33x^4-a_{" cat IntegerToString(j) cat "}x^2+1)";
+         end for;   
+         Gx:="y^2=x(x^4-1)(x^8+14x^4+1)" cat Gx;  
+         Append(~Eqns,Gx);    
+      end if;   
+   end if;
+
+
+/* ** S4 cases ** */
+   if g12 notin [1,4,7,10] then /* g viable mod 12 for S4 */
+
+      if g12 eq 11 and IdG eq <48,48> then
+         d:=ZZ!((g+1)/12);
+         L1:=[2 : i in [1..d+1]]; 
+         if sign eq [0] cat L1 cat [3,4] then
+            Gx:="y^2=";
+            if d gt 1 then
+               for j in [1..d] do
+                  Gx:=Gx cat "(x^{24}+a_{" cat IntegerToString(j) cat
+                    "x^{20}+(759-4a_{" cat IntegerToString(j) cat
+                    "})x^{16}+2(3a_{"  cat IntegerToString(j) cat
+                    "}+1288)x^{12}+(759-4a_{" cat  IntegerToString(j) cat
+                    "})x^{8}+a_{" cat  IntegerToString(j) cat  "x^4+1)";
+               end for;   
+               Append(~Eqns,Gx);
+            else
+               Gx:=Gx cat "x^{24}+a_1x^{20}+(759-4a_1)x^{16}+2(3a_1+1288)x^{12}+(759-4a_1)x^{8}+a_1x^4+1";
+               Append(~Eqns,Gx);
+            end if;           
+         end if;   
+
+      elif g12 eq 3 and IdG eq <48,48> then
+         d:=ZZ!((g-3)/12);
+         L1:=[2 : i in [1..d+1]];
+         if sign eq [0] cat L1 cat [4,6] then
+            if d gt 0 then
+               Gx:="";    
+               for j in [1..d] do
+                  Gx:=Gx cat "(x^{24}+a_{" cat IntegerToString(j) cat
+                  "x^{20}+(759-4a_{" cat IntegerToString(j) cat
+                  "})x^{16}+2(3a_{"  cat IntegerToString(j) cat
+                  "}+1288)x^{12}+(759-4a_{" cat  IntegerToString(j) cat
+                  "})x^{8}+a_{" cat  IntegerToString(j) cat  "x^4+1)";
+               end for;   
+               Gx:="y^2=(x^8+14x^4+1)" cat Gx;  
+               Append(~Eqns,Gx);
+            else
+               Gx:="y^2=x^8+14x^4+1";  
+               Append(~Eqns,Gx);
+            end if;   
+         end if;   
+
+      elif g12 eq 2 and IdG eq <48,29>  then
+         d:=ZZ!((g-2)/12);
+         L1:=[2 : i in [1..d+1]];
+         if sign eq [0] cat L1 cat [3,8] then
+            Gx:="";    
+            for j in [1..d] do
+               Gx:=Gx cat "(x^{24}+a_{" cat IntegerToString(j) cat
+               "x^{20}+(759-4a_{" cat IntegerToString(j) cat
+               "})x^{16}+2(3a_{"  cat IntegerToString(j) cat
+               "}+1288)x^{12}+(759-4a_{" cat  IntegerToString(j) cat
+               "})x^{8}+a_{" cat  IntegerToString(j) cat  "x^4+1)";
+            end for;   
+            Gx:="y^2=x(x^4-1)" cat Gx;  
+            Append(~Eqns,Gx);
+         end if;   
+
+      elif g12 eq 6 and IdG eq <48,29> then
+         d:=ZZ!((g-6)/12);
+         L1:=[2 : i in [1..d+1]];
+         if sign eq [0] cat L1 cat [6,8] then
+            Gx:="";    
+            for j in [1..d] do
+               Gx:=Gx cat "(x^{24}+a_{" cat IntegerToString(j) cat
+               "x^{20}+(759-4a_{" cat IntegerToString(j) cat
+               "})x^{16}+2(3a_{"  cat IntegerToString(j) cat
+               "}+1288)x^{12}+(759-4a_{" cat  IntegerToString(j) cat
+               "})x^{8}+a_{" cat  IntegerToString(j) cat  "x^4+1)";
+            end for;   
+            Gx:="y^2=x(x^4-1)(x^8+14x^4+1)" cat Gx;  
+            Append(~Eqns,Gx);
+         end if;   
+
+      elif g12 eq 5 and IdG eq <48,30> then
+         d:=ZZ!((g-5)/12);
+         L1:=[2 : i in [1..d]];
+         if sign eq [0] cat L1 cat [3,4,4] then
+            if d gt 0 then
+               Gx:="";    
+               for j in [1..d] do
+                  Gx:=Gx cat "(x^{24}+a_{" cat IntegerToString(j) cat
+                  "x^{20}+(759-4a_{" cat IntegerToString(j) cat
+                  "})x^{16}+2(3a_{"  cat IntegerToString(j) cat
+                  "}+1288)x^{12}+(759-4a_{" cat  IntegerToString(j) cat
+                  "})x^{8}+a_{" cat  IntegerToString(j) cat  "x^4+1)";
+               end for;   
+               Gx:="y^2=(x^{12}-33x^8-33x^4+1)" cat Gx;  
+               Append(~Eqns,Gx);
+            else
+               Gx:="y^2=x^{12}-33x^8-33x^4+1";
+               Append(~Eqns,Gx);
+            end if;   
+         end if;   
+
+      elif g12 eq 9 and IdG eq <48,30> then
+         d:=ZZ!((g-9)/12);
+         L1:=[2 : i in [1..d]];
+         if sign eq [0] cat L1 cat [4,4,6] then
+            Gx:="";    
+            for j in [1..d] do
+               Gx:=Gx cat "(x^{24}+a_{" cat IntegerToString(j) cat
+               "x^{20}+(759-4a_{" cat IntegerToString(j) cat
+               "})x^{16}+2(3a_{"  cat IntegerToString(j) cat
+               "}+1288)x^{12}+(759-4a_{" cat  IntegerToString(j) cat
+               "})x^{8}+a_{" cat  IntegerToString(j) cat  "x^4+1)";
+            end for;   
+            Gx:="y^2=(x^8+14x^4+1)(x^{12}-33x^8-33x^4+1)" cat Gx;  
+            Append(~Eqns,Gx);
+         end if;   
+
+      elif g12 eq 8 and IdG eq <48,28> then
+         d:=ZZ!((g-8)/12);
+         L1:=[2 : i in [1..d]];
+         if sign eq [0] cat L1 cat [3,4,8] then
+            Gx:="";    
+            for j in [1..d] do
+               Gx:=Gx cat "(x^{24}+a_{" cat IntegerToString(j) cat
+               "x^{20}+(759-4a_{" cat IntegerToString(j) cat
+               "})x^{16}+2(3a_{"  cat IntegerToString(j) cat
+               "}+1288)x^{12}+(759-4a_{" cat  IntegerToString(j) cat
+               "})x^{8}+a_{" cat  IntegerToString(j) cat  "x^4+1)";
+            end for;   
+            Gx:="y^2=x(x^4-1)(x^{12}-33x^8-33x^4+1)" cat Gx;  
+            Append(~Eqns,Gx);
+         end if;   
+
+      elif IdG eq <48,28> then
+         d:=ZZ!((g-12)/12);
+         L1:=[2 : i in [1..d]];
+         if sign eq [0] cat L1 cat [4,6,8] then
+            Gx:="";    
+            for j in [1..d] do
+               Gx:=Gx cat "(x^{24}+a_{" cat IntegerToString(j) cat
+               "x^{20}+(759-4a_{" cat IntegerToString(j) cat
+               "})x^{16}+2(3a_{"  cat IntegerToString(j) cat
+               "}+1288)x^{12}+(759-4a_{" cat  IntegerToString(j) cat
+               "})x^{8}+a_{" cat  IntegerToString(j) cat  "x^4+1)";
+            end for;   
+            Gx:="y^2=x(x^4-1)(x^8+14x^4+1)(x^{12}-33x^8-33x^4+1)" cat Gx;  
+            Append(~Eqns,Gx);
+         end if;   
+      end if;
+   end if;  /* g viable mod 12 for S4 */
+
+
+/* ** A5 cases ** */
+   if g30 in [0, 5, 9, 14, 15, 20, 24, 29] then /* g viable mod 30 for A5 */
+
+      if g30 eq 29 and IdG eq <120,35> then
+         d:=ZZ!((g+1)/30);
+         L1:=[2 : i in [1..d+1]];
+         if sign eq [0] cat L1 cat [3,5] then
+            if d gt 1 then
+               Gx:="";    
+               for j in [1..d] do
+                  Gx:=Gx cat "((a_{" cat IntegerToString(j) cat
+                  "}-1)x^{60}-36(19a_{" cat IntegerToString(j) cat
+                  "}+29)x^{55}+6(26239a_{" cat IntegerToString(j) cat
+                  "}-42079)x^{50}-540(23199a_{" cat IntegerToString(j) cat
+                  "}-19343)x^{45}+105(737719a_{" cat IntegerToString(j) cat
+                  "}-953143)x^{40}-72(1815127a_{" cat IntegerToString(j) cat
+                  "}-145087)x^{35}-4(8302981a_{" cat IntegerToString(j) cat
+                  "}+49913771)x^{30}+72(1815127a_{" cat IntegerToString(j) cat
+                  "}-145087)x^{25}+105(737719a_{" cat IntegerToString(j) cat
+                  "}-953143)x^{20}+540(23199a_{" cat IntegerToString(j) cat
+                  "}-19343)x^{15}+6(26239a_{" cat IntegerToString(j) cat
+                  "}-42079)x^{10}+36(19a_{" cat IntegerToString(j) cat
+                  "}+29)x^{5}+(a_{" cat IntegerToString(j) cat "}-1))";
+               end for;
+               Gx:="y^2=" cat Gx;
+               Append(~Eqns,Gx);
+            else
+               Gx:="y^2=(a_1-1)x^{60}-36(19a_1+29)x^{55}+6(26239a_1-42079)x^{50}-540(23199a_1-19343)x^{45}+105(737719a_1-953143)x^{40}-72(1815127a_1-145087)x^{35}-4(8302981a_1+49913771)x^{30}+72(1815127a_1-145087)x^{25}+105(737719a_1-953143)x^{20}+540(23199a_1-19343)x^{15}+6(26239a_1-42079)x^{10}+36(19a_1+29)x^{5}+(a_1-1)";
+               Append(~Eqns,Gx);
+            end if;  
+         end if;
+      
+      elif g30 eq 5 and IdG eq <120,35> then
+         d:=ZZ!((g-5)/30);
+         L1:=[2 : i in [1..d+1]];        
+         if sign eq [0] cat L1 cat [3,10] then
+            Gx:="";    
+            for j in [1..d] do
+               Gx:=Gx cat "((a_{" cat IntegerToString(j) cat
+               "}-1)x^{60}-36(19a_{" cat IntegerToString(j) cat
+               "}+29)x^{55}+6(26239a_{" cat IntegerToString(j) cat
+               "}-42079)x^{50}-540(23199a_{" cat IntegerToString(j) cat
+               "}-19343)x^{45}+105(737719a_{" cat IntegerToString(j) cat
+               "}-953143)x^{40}-72(1815127a_{" cat IntegerToString(j) cat
+               "}-145087)x^{35}-4(8302981a_{" cat IntegerToString(j) cat
+               "}+49913771)x^{30}+72(1815127a_{" cat IntegerToString(j) cat
+               "}-145087)x^{25}+105(737719a_{" cat IntegerToString(j) cat
+               "}-953143)x^{20}+540(23199a_{" cat IntegerToString(j) cat
+               "}-19343)x^{15}+6(26239a_{" cat IntegerToString(j) cat
+               "}-42079)x^{10}+36(19a_{" cat IntegerToString(j) cat
+               "}+29)x^{5}+(a_{" cat IntegerToString(j) cat "}-1))";
+            end for;   
+            Gx:="y^2=x(x^{10}+11x^5-1)" cat Gx;
+            Append(~Eqns,Gx);
+         end if;
+
+      elif g30 eq 15 and IdG eq <120,35> then
+         d:=ZZ!((g-15)/30);
+         L1:=[2 : i in [1..d+1]];
+         if sign eq [0] cat L1 cat [6,10] then
+            Gx:="";    
+            for j in [1..d] do
+               Gx:=Gx cat "((a_{" cat IntegerToString(j) cat
+               "}-1)x^{60}-36(19a_{" cat IntegerToString(j) cat
+               "}+29)x^{55}+6(26239a_{" cat IntegerToString(j) cat
+               "}-42079)x^{50}-540(23199a_{" cat IntegerToString(j) cat
+               "}-19343)x^{45}+105(737719a_{" cat IntegerToString(j) cat
+               "}-953143)x^{40}-72(1815127a_{" cat IntegerToString(j) cat
+               "}-145087)x^{35}-4(8302981a_{" cat IntegerToString(j) cat
+               "}+49913771)x^{30}+72(1815127a_{" cat IntegerToString(j) cat
+               "}-145087)x^{25}+105(737719a_{" cat IntegerToString(j) cat
+               "}-953143)x^{20}+540(23199a_{" cat IntegerToString(j) cat
+               "}-19343)x^{15}+6(26239a_{" cat IntegerToString(j) cat
+               "}-42079)x^{10}+36(19a_{" cat IntegerToString(j) cat
+               "}+29)x^{5}+(a_{" cat IntegerToString(j) cat "}-1))";
+            end for;   
+            Gx:="y^2=x(x^{10}+11x^5-1)(x^{20}-228x^{15}+494x^{10}+228x^5+1)" cat Gx;
+            Append(~Eqns,Gx);
+         end if;
+
+      elif g30 eq 9 and IdG eq <120,35>  then
+         d:=ZZ!((g-9)/30);
+         L1:=[2 : i in [1..d+1]];
+         if sign eq [0] cat L1 cat [5,6] then
+            if d gt 0 then
+               Gx:="";    
+               for j in [1..d] do
+                  Gx:=Gx cat "((a_{" cat IntegerToString(j) cat
+                  "}-1)x^{60}-36(19a_{" cat IntegerToString(j) cat
+                  "}+29)x^{55}+6(26239a_{" cat IntegerToString(j) cat
+                  "}-42079)x^{50}-540(23199a_{" cat IntegerToString(j) cat
+                  "}-19343)x^{45}+105(737719a_{" cat IntegerToString(j) cat
+                  "}-953143)x^{40}-72(1815127a_{" cat IntegerToString(j) cat
+                  "}-145087)x^{35}-4(8302981a_{" cat IntegerToString(j) cat
+                  "}+49913771)x^{30}+72(1815127a_{" cat IntegerToString(j) cat
+                  "}-145087)x^{25}+105(737719a_{" cat IntegerToString(j) cat
+                  "}-953143)x^{20}+540(23199a_{" cat IntegerToString(j) cat
+                  "}-19343)x^{15}+6(26239a_{" cat IntegerToString(j) cat
+                  "}-42079)x^{10}+36(19a_{" cat IntegerToString(j) cat
+                  "}+29)x^{5}+(a_{" cat IntegerToString(j) cat "}-1))";
+               end for;   
+               Gx:="y^2=(x^{20}-228x^{15}+494x^{10}+228x^5+1)" cat Gx;
+               Append(~Eqns,Gx);
+            else
+               Gx:="y^2=x^{20}-228x^{15}+494x^{10}+228x^5+1";
+               Append(~Eqns,Gx);
+            end if;
+         end if;
+         
+      elif g30 eq 14 and IdG eq <120,5> then
+         d:=ZZ!((g-14)/30);
+         L1:=[2 : i in [1..d]];
+         if sign eq [0] cat L1 cat [3,4,5] then
+            if d gt 0  then
+               Gx:="";    
+               for j in [1..d] do
+                  Gx:=Gx cat "((a_{" cat IntegerToString(j) cat
+                  "}-1)x^{60}-36(19a_{" cat IntegerToString(j) cat
+                  "}+29)x^{55}+6(26239a_{" cat IntegerToString(j) cat
+                  "}-42079)x^{50}-540(23199a_{" cat IntegerToString(j) cat
+                  "}-19343)x^{45}+105(737719a_{" cat IntegerToString(j) cat
+                  "}-953143)x^{40}-72(1815127a_{" cat IntegerToString(j) cat
+                  "}-145087)x^{35}-4(8302981a_{" cat IntegerToString(j) cat
+                  "}+49913771)x^{30}+72(1815127a_{" cat IntegerToString(j) cat
+                  "}-145087)x^{25}+105(737719a_{" cat IntegerToString(j) cat
+                  "}-953143)x^{20}+540(23199a_{" cat IntegerToString(j) cat
+                  "}-19343)x^{15}+6(26239a_{" cat IntegerToString(j) cat
+                  "}-42079)x^{10}+36(19a_{" cat IntegerToString(j) cat
+                  "}+29)x^{5}+(a_{" cat IntegerToString(j) cat "}-1))";
+               end for;   
+               Gx:="y^2=(x^{30}+522x^{25}-10005x^{20}-10005x^{15}-522x^5+1)"
+               cat Gx;
+               Append(~Eqns,Gx);
+            else
+               Gx:="y^2=x^{30}+522x^{25}-10005x^{20}-10005x^{15}-522x^5+1";
+               Append(~Eqns,Gx);
+            end if;   
+         end if;
+
+      elif g30 eq 20 and IdG eq <120,5> then
+         d:=ZZ!((g-20)/30);
+         L1:=[2 : i in [1..d]];
+         if sign eq [0] cat L1 cat [3,4,10] then
+            Gx:="";    
+            for j in [1..d] do
+               Gx:=Gx cat "((a_{" cat IntegerToString(j) cat
+               "}-1)x^{60}-36(19a_{" cat IntegerToString(j) cat
+               "}+29)x^{55}+6(26239a_{" cat IntegerToString(j) cat
+               "}-42079)x^{50}-540(23199a_{" cat IntegerToString(j) cat
+               "}-19343)x^{45}+105(737719a_{" cat IntegerToString(j) cat
+               "}-953143)x^{40}-72(1815127a_{" cat IntegerToString(j) cat
+               "}-145087)x^{35}-4(8302981a_{" cat IntegerToString(j) cat
+               "}+49913771)x^{30}+72(1815127a_{" cat IntegerToString(j) cat
+               "}-145087)x^{25}+105(737719a_{" cat IntegerToString(j) cat
+               "}-953143)x^{20}+540(23199a_{" cat IntegerToString(j) cat
+               "}-19343)x^{15}+6(26239a_{" cat IntegerToString(j) cat
+               "}-42079)x^{10}+36(19a_{" cat IntegerToString(j) cat
+               "}+29)x^{5}+(a_{" cat IntegerToString(j) cat "}-1))";
+            end for;   
+            Gx:="y^2=x(x^{10}+11x^5-1)(x^{30}+522x^{25}-10005x^{20}-10005x^{15}-522x^5+1)" cat Gx;
+            Append(~Eqns,Gx);
+         end if;
+        
+      elif g30 eq 24 and IdG eq <120,5> then
+         d:=ZZ!((g-24)/30);
+         L1:=[2 : i in [1..d]];
+         if sign eq [0] cat L1 cat [4,5,6] then
+            Gx:="";    
+            for j in [1..d] do
+               Gx:=Gx cat "((a_{" cat IntegerToString(j) cat
+               "}-1)x^{60}-36(19a_{" cat IntegerToString(j) cat
+               "}+29)x^{55}+6(26239a_{" cat IntegerToString(j) cat
+               "}-42079)x^{50}-540(23199a_{" cat IntegerToString(j) cat
+               "}-19343)x^{45}+105(737719a_{" cat IntegerToString(j) cat
+               "}-953143)x^{40}-72(1815127a_{" cat IntegerToString(j) cat
+               "}-145087)x^{35}-4(8302981a_{" cat IntegerToString(j) cat
+               "}+49913771)x^{30}+72(1815127a_{" cat IntegerToString(j) cat
+               "}-145087)x^{25}+105(737719a_{" cat IntegerToString(j) cat
+               "}-953143)x^{20}+540(23199a_{" cat IntegerToString(j) cat
+               "}-19343)x^{15}+6(26239a_{" cat IntegerToString(j) cat
+               "}-42079)x^{10}+36(19a_{" cat IntegerToString(j) cat
+               "}+29)x^{5}+(a_{" cat IntegerToString(j) cat "}-1))";
+            end for;   
+            Gx:="y^2=(x^{20}-228x^{15}+494x^{10}+228x^5+1)(x^{30}+522x^{25}-10005x^{20}-10005x^{15}-522x^5+1)" cat Gx;
+            Append(~Eqns,Gx);
+         end if;
+
+      elif IdG eq <120,5> then
+         d:=ZZ!((g-30)/30);
+         L1:=[2 : i in [1..d]];
+         if sign eq [0] cat L1 cat [4,6,10] then
+            Gx:="";    
+            for j in [1..d] do
+               Gx:=Gx cat "((a_{" cat IntegerToString(j) cat
+               "}-1)x^{60}-36(19a_{" cat IntegerToString(j) cat
+               "}+29)x^{55}+6(26239a_{" cat IntegerToString(j) cat
+               "}-42079)x^{50}-540(23199a_{" cat IntegerToString(j) cat
+               "}-19343)x^{45}+105(737719a_{" cat IntegerToString(j) cat
+               "}-953143)x^{40}-72(1815127a_{" cat IntegerToString(j) cat
+               "}-145087)x^{35}-4(8302981a_{" cat IntegerToString(j) cat
+               "}+49913771)x^{30}+72(1815127a_{" cat IntegerToString(j) cat
+               "}-145087)x^{25}+105(737719a_{" cat IntegerToString(j) cat
+               "}-953143)x^{20}+540(23199a_{" cat IntegerToString(j) cat
+               "}-19343)x^{15}+6(26239a_{" cat IntegerToString(j) cat
+               "}-42079)x^{10}+36(19a_{" cat IntegerToString(j) cat
+               "}+29)x^{5}+(a_{" cat IntegerToString(j) cat "}-1))";
+            end for;   
+            Gx:="y^2=x(x^{10}+11x^5-1)(x^{20}-228x^{15}+494x^{10}+228x^5+1)(x^{30}+522x^{25}-10005x^{20}-10005x^{15}-522x^5+1)" cat Gx;
+            Append(~Eqns,Gx);
+         end if;
+      end if;
+   end if; /* g viable mod 30 for A5 */
+
+
+/* ** Zn Case 2 and 3 ** */
+   if IsCyclic(G) then
+      n:=ZZ!(#G/2);
+      if (2*g+1) mod n eq 0 then
+         d:=ZZ!((2*g+1)/n)-1;
+         t:=d+1;
+         L1:=[2 : i in [1..d+1]];
+         if sign eq [0] cat L1 cat [n,2*n] then
+            Gx:="y^2=x^{" cat IntegerToString(n*t) cat "}+";
+            for j in [1..d] do
+               if n*(t-j) gt 1 then
+                  Gx:=Gx cat "a_{" cat IntegerToString(j) cat "}x^{" cat
+                  IntegerToString(n*(t-j)) cat "}+";
+               else  /* special case of x^1 */
+                  Gx cat "a_{" cat IntegerToString(j) cat "}x + ";
+               end if;   
+            end for;
+            Gx:=Gx cat "1";
+            Append(~Eqns,Gx);
+         end if;
+      end if;   
+
+      if ((2*g) mod n eq 0) and (n  lt g) then
+         d:=ZZ!((2*g)/n)-1;
+         t:=d+1;
+         L1:=[2 : i in [1..d+1]];
+         if sign eq [0] cat L1 cat [2*n,2*n] then
+            Gx:="y^2=x(x^{" cat IntegerToString(n*t) cat "}+";
+            for j in [1..d] do
+               if n*(t-j) gt 1 then
+                  Gx:=Gx cat "a_{" cat IntegerToString(j) cat "}x^{" cat
+                  IntegerToString(n*(t-j)) cat "}+";
+               else  /* case of x^1 */
+                  Gx:=Gx cat "a_{" cat IntegerToString(j) cat "}x + "; 
+               end if;
+            end for;
+            Gx:=Gx cat "1)";
+            Append(~Eqns,Gx);
+         end if;
+      end if;
+   end if;
+
+
+/* ** Zn Case 1 and Dn Case 1 ** */
+
+   k2:=ZZ!(#G/2);
+
+   if IsIsomorphic(G,DirectProduct(CyclicGroup(2),CyclicGroup(k2))) then
+      n:=k2;
+      if (n lt (g+1)) and ((2*g+2) mod n) eq 0 then
+         d:=ZZ!((2*g+2)/n)-1;
+         t:=d+1;
+         L1:=[2 : i in [1..d+1]];
+         if sign eq [0] cat L1 cat [n,n] then
+            Gx:="y^2=x^{" cat IntegerToString(n*t) cat "}+";
+            for j in [1..d] do
+               if n*(t-j) gt 1 then
+                  Gx:=Gx cat "a_{" cat IntegerToString(j) cat "}x^{" cat
+                  IntegerToString(n*(t-j)) cat "}+";
+               else  /* special x^1 case */
+                  Gx:=Gx cat "a_{" cat IntegerToString(j) cat "}x+";
+               end if;   
+            end for;
+            Gx:=Gx cat "1";
+            Append(~Eqns,Gx);
+         end if;
+      end if; 
+   end if;
+
+
+/* ** remaining Dn cases ** */
+   if (#G mod 4) eq 0 then
+      k4:=ZZ!(#G/4);  /* Test next two cases */
+      if k4 ge 3 then
+         H:=DirectProduct(CyclicGroup(2),DihedralGroup(k4));
+      elif k4 eq 1 then  /* special case where #G=4 or 8 */
+         H:=DirectProduct(CyclicGroup(2),CyclicGroup(2));
+      elif k4 eq 2 then
+         H:=(DirectProduct(CyclicGroup(2),DirectProduct(CyclicGroup(2),CyclicGroup(2))));
+      end if;
+
+      if IsIsomorphic(G,H) then
+         n:=k4;
+         if (g+1) mod n eq 0 then
+            d:=ZZ!((g+1)/n);
+            L1:=[2 : i in [1..d+2]];
+            if sign eq [0] cat L1 cat [n] then
+               Gx:="y^2=";
+               if d gt 1 then
+                  for j in [1..d] do
+                     if n gt 1 then
+                        Gx:=Gx cat "(x^{" cat IntegerToString(2*n) cat
+                        "}+a_{" cat IntegerToString(j) cat "}x^{" cat
+                        IntegerToString(n) cat "}+1)";
+                     else
+                        Gx:=Gx cat "(x^2+a_{" cat IntegerToString(j) cat
+                        "}x+1)";
+                     end if;
+                  end for;
+                  Append(~Eqns,Gx);
+               else
+                  if n gt 1 then       
+                     Gx:=Gx cat "x^{" cat IntegerToString(2*n) cat
+                     "}+a_1x^{" cat IntegerToString(n) cat "}+1";
+                  else
+                     Gx:=Gx cat "x^2+a_1x+1";
+                  end if;   
+                  Append(~Eqns,Gx);
+               end if; 
+            end if;
+         end if;
+      end if;
+
+
+/* ** D2n case ** */
+      if k2 ge 3 then
+         H:=DihedralGroup(k2);
+      elif k2 eq 1 then  /* special case where #G=4 or 8 */
+         H:=CyclicGroup(2);
+      elif k2 eq 2 then
+         H:=DirectProduct(CyclicGroup(2),CyclicGroup(2));
+      end if;
+
+      if IsIsomorphic(G,H) then
+         n:=k4;
+         if (g mod n) eq 0 then
+            d:=ZZ!(g/n);
+            L1:=[2 : i in [1..d+2]];
+            if sign eq [0] cat L1 cat [2*n] then
+               Gx:="";
+               for j in [1..d] do
+                  if n gt 1 then
+                     Gx:=Gx cat "(x^{" cat IntegerToString(2*n) cat
+                     "}+a_{" cat IntegerToString(j) cat "}x^{" cat
+                     IntegerToString(n) cat "}+1)";
+                  else
+                     Gx:=Gx cat "(x^2+a_{" cat IntegerToString(j) cat "}x+1)";
+                  end if;   
+               end for;
+               Gx:="y^2=x" cat Gx;
+               Append(~Eqns,Gx);
+            end if;
+         end if;
+      end if;
+
+
+      F<x,y>:=FreeGroup(2);
+
+/* **  Hn and Gn cases ** */
+      n:=k4;
+      Hn:=PermutationGroup(quo<F|x^4,y^2*x^2,(x*y)^n>);
+      Gn:=PermutationGroup(quo<F|x^2*y^n,y^(2*n),x^-1*y*x*y>);
+      if IsIsomorphic(G,Hn) then
+         if (g+1) mod n eq 0 and (n lt g+1) then
+            d:=ZZ!((g+1)/n)-1;
+            L1:=[2 : i in [1..d]];
+            if n ge 4 then  /* need to make sure sorted */
+               testsign:=[0] cat L1 cat [4,4,n];
+            else
+               testsign:=[0] cat L1 cat [n,4,4];
+            end if;   
+            if sign eq testsign then
+               Gx:="";
+               for j in [1..d] do
+                  if n gt 1 then
+                     Gx:=Gx cat "(x^{" cat IntegerToString(2*n) cat
+                     "}+a_{" cat IntegerToString(j) cat "}x^{" cat
+                     IntegerToString(n) cat "}+1)";
+                  else
+                     Gx:=Gx cat "(x^2+a_{" cat IntegerToString(j) cat
+                     "}x+1)";
+                  end if;   
+               end for;
+               Gx:="y^2=(x^{" cat IntegerToString(2*n) cat"}-1)" cat Gx;
+               Append(~Eqns,Gx);
+            end if;
+         end if;
+      end if; 
+
+      if IsIsomorphic(G,Gn) then
+         if (g mod n) eq 0 and (n lt g) then
+            d:=ZZ!(g/n)-1;
+            L1:=[2 : i in [1..d]];
+            if sign eq [0] cat L1 cat [4,4,2*n] then
+               Gx:="";
+               for j in [1..d] do
+                  if n gt 1 then
+                     Gx:=Gx cat "(x^{" cat IntegerToString(2*n) cat
+                     "}+a_{" cat IntegerToString(j) cat "}x^{" cat
+                     IntegerToString(n) cat "}+1)";
+                  else
+                     Gx:=Gx cat "(x^2+a_{" cat IntegerToString(j) cat "}x+1)";
+                  end if;   
+               end for;
+               Gx:="y^2=x(x^{" cat IntegerToString(2*n) cat"}-1)" cat Gx;
+               Append(~Eqns,Gx);
+            end if;
+         end if;
+      end if;
+   end if;   /* need 4|#G above */
+
+
+/* Vn and Un cases */
+   if (#G mod 4 ne 0) or (#G mod 8 eq 0) then
+      if IsOdd(ZZ!(#G/2)) then
+         n:=ZZ!(#G/2);
+      else
+         n:=ZZ!(#G/4);
+      end if;
+
+      F<x,y>:=FreeGroup(2);
+      Un:=PermutationGroup(quo<F|x^2,y^(2*n),x*y*x*y^(n+1)>);
+      Vn:=PermutationGroup(quo<F|x^4,y^n,(x*y)^2,(x^-1*y)^2>);
+
+      if IsIsomorphic(G,Un) then
+         if ((2*g -n) mod (2*n)) eq 0 and (g ne 2) then
+            d:=ZZ!((g/n)-(1/2));
+            L1:=[2 : i in [1..d+1]];
+            if sign eq [0] cat L1 cat [4,2*n] then
+               Gx:="";
+               for j in [1..d] do
+                  if n gt 1 then
+                     Gx:=Gx cat "(x^{" cat IntegerToString(2*n) cat
+                     "}+a_{" cat IntegerToString(j) cat "}x^{" cat
+                     IntegerToString(n) cat "}+1)";
+                  else
+                     Gx:=Gx cat "(x^2+a_{" cat IntegerToString(j) cat "}x+1)";
+                  end if;   
+               end for;
+               Gx:="y^2=x(x^{" cat IntegerToString(n) cat"}-1)" cat Gx;
+               Append(~Eqns,Gx);
+            end if;    
+         end if;
+      end if;
+
+      if IsIsomorphic(G,Vn) then
+         if (2*g+2-n) mod (2*n) eq 0 then
+            d:=ZZ!(((g+1)/n)-(1/2));
+            L1:=[2 : i in [1..d+1]];
+            if n ge 4 then  /* need to make sure sorted */
+               testsign:=[0] cat L1 cat [4,n];
+            else
+               testsign:=[0] cat L1 cat [n,4];
+            end if;   
+            if sign eq testsign then
+               Gx:="";
+               if d gt 0 then
+                  for j in [1..d] do
+                     if n gt 1 then
+                        Gx:=Gx cat "(x^{" cat IntegerToString(2*n) cat
+                        "}+a_{" cat IntegerToString(j) cat "}x^{" cat
+                        IntegerToString(n) cat "}+1)";
+                     else 
+                        Gx:=Gx cat"(x^2+a_{"cat IntegerToString(j) cat "}x+1)";
+                     end if;
+                  end for;
+                  Gx:="y^2=(x^{" cat IntegerToString(n) cat"}-1)" cat Gx;
+                  Append(~Eqns,Gx);
+               else
+                  Gx:="y^2=x^{" cat IntegerToString(n) cat"}-1" cat Gx;
+                  Append(~Eqns,Gx);
+               end if;    
+            end if;
+         end if;
+      end if;   
+   end if;  /* 2*n n odd or 4*n n even */
+end if; /* need #G to be even */
+
+if #Eqns gt 0 then
+   return Eqns;
+else
+   return ["Error: Not a hyperelliptic curve"];
+end if;
+
+end function;
+

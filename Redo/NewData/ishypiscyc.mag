@@ -1,0 +1,74 @@
+/* *********************************************************** 
+
+ishypiscyc.mag
+
+This is code from David Swinarski to compute if
+a given action represents hyperelliptic or cyclic
+trigonal curves, found here:
+
+http://faculty.fordham.edu/dswinarski/RiemannSurfaceAutomorphisms/
+
+Swinarski, David. Equations of Riemann surfaces with automorphisms
+(2016). https://arxiv.org/abs/1607.04778
+
+Below:  G is the automorphism group
+        genus is the genus of the corresponding Riemann Action
+        M is the generating vectors        
+
+************************************************************ */
+
+//see Breuer Lemma 10.4 page 37
+
+NumberOfFixedPoints:=function(G,M,h)
+  N:=Normalizer(G,sub<G |h>);
+  m:=Order(h);
+  O:=[ Order(M[i]) : i in [1..#M] ];
+  k:=Order(N);
+  sum:=0;
+  for i:=1 to #M do 
+    if IsDivisibleBy(O[i],m) then 
+      if IsConjugate(G,sub<G | h>,sub<G | M[i]^(Round(O[i]/m))>) then
+        sum:=sum+1/O[i];
+      end if;
+    end if;
+  end for;
+  return k*sum;
+end function;
+
+// We test to see if there is a central involution
+// with 2g+2 fixed points
+
+IsHyperelliptic:=function(G,genus,M)
+  Z:=Center(G);
+  if Order(Z) eq 1 then 
+     return false,G.0;
+  end if;
+  L:= {@ z : z in Z | Order(z) eq 2 @}; 
+  if #L eq 0 then
+    return false,G.0;
+  end if;
+  M:={@ z : z in L | NumberOfFixedPoints(G,M,z) eq 2*genus+2 @};
+  if #M eq 0 then 
+   return false,G.0;
+  end if;
+  if #M gt 0 then 
+    return true,M[1];
+  end if; 
+end function;
+
+// We test to see if there is an order 3 automorphism
+// with g+2 fixed points
+
+IsCyclicTrigonal:=function(G,genus,M)
+  L:= {@ g :g in G | Order(g) eq 3 @}; 
+  if #L eq 0 then
+    return false,G.0;
+  end if;
+  M:={@ z : z in L | NumberOfFixedPoints(G,M,z) eq genus+2 @};
+  if #M eq 0 then 
+    return false,G.0;
+  end if;
+  if #M gt 0 then 
+    return true,M;
+  end if; 
+end function;
