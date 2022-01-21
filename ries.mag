@@ -712,7 +712,7 @@ TestRiesTbl2:=function(G,sign,gen,Rlist);
             for k in [1..#Ldata] do
                if ([0,2,2,2*m,2*m] eq Ldata[k,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[k,2,1],Ldata[k,2,2]))) eq <2,1>  then 
                   for ell in [1..#Ldata] do
-                     if ([1,2] eq Ldata[ell,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[ell,2,1],Ldata[ell,2,2]))) eq <2,1>  then 
+                     if ([1,m] eq Ldata[ell,1]) and IdentifyGroup(QuoGp(H,SmallGroup(Ldata[ell,2,1],Ldata[ell,2,2]))) eq <2,1>  then 
                         signH:=[0,2,2,2,2*m];
                         return true, H, signH; 
                         break j;  /* done once find one */
